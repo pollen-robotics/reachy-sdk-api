@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+package reachy.sdk.joint;
+
+enum JointStateField {
+    POSITION = 0;
+    SPEED = 1;
+    LOAD = 2;
+    COMPLIANCY = 3;
+    NAME = 4;
+}
+
+message JointState {
+    string name = 2;
+
+    google.protobuf.FloatValue position = 3;
+    google.protobuf.FloatValue speed = 4;
+    google.protobuf.FloatValue load = 5;
+
+    google.protobuf.BoolValue compliant = 10;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message AllJointsState {
+    repeated JointState joints = 1;
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message JointRequest {
+    string name = 1;
+    repeated JointStateField requested_fields = 2;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message AllJointsRequest {
+    repeated JointStateField requested_fields = 2;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+service JointStateService {
+    rpc GetJointState(JointRequest) returns (JointState);
+    rpc StreamJointState(JointRequest) returns (stream JointState);
+    
+    rpc GetAllJointsState(AllJointsRequest) returns (AllJointsState);
+    rpc StreamAllJointsState(AllJointsRequest) returns (stream AllJointsState);
+}

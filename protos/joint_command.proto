@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package reachy.sdk.joint;
+
+
+message TargetPositionCommand {
+    string name = 1;
+    float target_position = 2;
+}
+
+message CompliancyCommand {
+    string name = 1;
+    bool compliant = 2;
+}
+
+message JointCommandAck {
+    bool success = 1;
+}
+
+
+service JointCommandService {
+    rpc SetTargetPosition(TargetPositionCommand) returns (JointCommandAck);
+    rpc StreamTargetPosition(stream TargetPositionCommand) returns (JointCommandAck);
+
+    rpc SetCompliancy(CompliancyCommand) returns (JointCommandAck);
+}
