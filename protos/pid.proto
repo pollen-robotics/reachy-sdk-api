@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package reachy.sdk.joint;
+
+message PIDValue {
+    float p = 1;
+    float i = 2;
+    float d = 3;
+}

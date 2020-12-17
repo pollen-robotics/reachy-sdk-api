@@ -2,27 +2,50 @@ syntax = "proto3";
 
 import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+import "pid.proto";
 
 package reachy.sdk.joint;
 
 enum JointStateField {
-    POSITION = 0;
-    SPEED = 1;
-    LOAD = 2;
-    COMPLIANCY = 3;
-    NAME = 4;
+    NONE = 0;
+
+    NAME = 1;
+
+    PRESENT_POSITION = 2;
+    PRESENT_SPEED = 3;
+    PRESENT_LOAD = 4;
+    TEMPERATURE = 5;
+
+    COMPLIANT = 10;
+    GOAL_POSITION = 11;
+    SPEED_LIMIT = 12;
+    TORQUE_LIMIT = 13;
+    PID = 14;
+
+    ALL = 15;
 }
 
 message JointState {
-    string name = 2;
+    string name = 1;
 
-    google.protobuf.FloatValue position = 3;
-    google.protobuf.FloatValue speed = 4;
-    google.protobuf.FloatValue load = 5;
+    google.protobuf.FloatValue present_position = 2;
+    google.protobuf.FloatValue present_speed = 3;
+    google.protobuf.FloatValue present_load = 4;
+    google.protobuf.FloatValue temperature = 5;
 
     google.protobuf.BoolValue compliant = 10;
+    google.protobuf.FloatValue goal_position = 11;
+    google.protobuf.FloatValue speed_limit = 12;
+    google.protobuf.FloatValue torque_limit = 13;
+    PIDValue pid = 14;
 
     google.protobuf.Timestamp timestamp = 15;
+}
+
+message JointNames {
+    repeated string names = 1;
 }
 
 message AllJointsState {
@@ -37,16 +60,16 @@ message JointRequest {
     google.protobuf.Timestamp timestamp = 15;
 }
 
-message AllJointsRequest {
+message StreamAllJointsRequest {
     repeated JointStateField requested_fields = 2;
+    float publish_frequency = 3;
 
     google.protobuf.Timestamp timestamp = 15;
 }
 
 service JointStateService {
-    rpc GetJointState(JointRequest) returns (JointState);
-    rpc StreamJointState(JointRequest) returns (stream JointState);
-    
-    rpc GetAllJointsState(AllJointsRequest) returns (AllJointsState);
-    rpc StreamAllJointsState(AllJointsRequest) returns (stream AllJointsState);
+    rpc GetAllJointNames(google.protobuf.Empty) returns (JointNames);
+
+    rpc GetJointState(JointRequest) returns (JointState);    
+    rpc StreamAllJointsState(StreamAllJointsRequest) returns (stream AllJointsState);
 }
