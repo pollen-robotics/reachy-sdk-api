@@ -14,19 +14,9 @@ class JointCommandServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.SetTargetPosition = channel.unary_unary(
-                '/reachy.sdk.joint.JointCommandService/SetTargetPosition',
-                request_serializer=joint__command__pb2.TargetPositionCommand.SerializeToString,
-                response_deserializer=joint__command__pb2.JointCommandAck.FromString,
-                )
-        self.StreamTargetPosition = channel.stream_unary(
-                '/reachy.sdk.joint.JointCommandService/StreamTargetPosition',
-                request_serializer=joint__command__pb2.TargetPositionCommand.SerializeToString,
-                response_deserializer=joint__command__pb2.JointCommandAck.FromString,
-                )
-        self.SetCompliancy = channel.unary_unary(
-                '/reachy.sdk.joint.JointCommandService/SetCompliancy',
-                request_serializer=joint__command__pb2.CompliancyCommand.SerializeToString,
+        self.SendCommand = channel.unary_unary(
+                '/reachy.sdk.joint.JointCommandService/SendCommand',
+                request_serializer=joint__command__pb2.JointCommand.SerializeToString,
                 response_deserializer=joint__command__pb2.JointCommandAck.FromString,
                 )
 
@@ -34,19 +24,7 @@ class JointCommandServiceStub(object):
 class JointCommandServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def SetTargetPosition(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def StreamTargetPosition(self, request_iterator, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SetCompliancy(self, request, context):
+    def SendCommand(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -55,19 +33,9 @@ class JointCommandServiceServicer(object):
 
 def add_JointCommandServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SetTargetPosition': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetTargetPosition,
-                    request_deserializer=joint__command__pb2.TargetPositionCommand.FromString,
-                    response_serializer=joint__command__pb2.JointCommandAck.SerializeToString,
-            ),
-            'StreamTargetPosition': grpc.stream_unary_rpc_method_handler(
-                    servicer.StreamTargetPosition,
-                    request_deserializer=joint__command__pb2.TargetPositionCommand.FromString,
-                    response_serializer=joint__command__pb2.JointCommandAck.SerializeToString,
-            ),
-            'SetCompliancy': grpc.unary_unary_rpc_method_handler(
-                    servicer.SetCompliancy,
-                    request_deserializer=joint__command__pb2.CompliancyCommand.FromString,
+            'SendCommand': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendCommand,
+                    request_deserializer=joint__command__pb2.JointCommand.FromString,
                     response_serializer=joint__command__pb2.JointCommandAck.SerializeToString,
             ),
     }
@@ -81,7 +49,7 @@ class JointCommandService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def SetTargetPosition(request,
+    def SendCommand(request,
             target,
             options=(),
             channel_credentials=None,
@@ -91,42 +59,8 @@ class JointCommandService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.joint.JointCommandService/SetTargetPosition',
-            joint__command__pb2.TargetPositionCommand.SerializeToString,
-            joint__command__pb2.JointCommandAck.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def StreamTargetPosition(request_iterator,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/reachy.sdk.joint.JointCommandService/StreamTargetPosition',
-            joint__command__pb2.TargetPositionCommand.SerializeToString,
-            joint__command__pb2.JointCommandAck.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def SetCompliancy(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.joint.JointCommandService/SetCompliancy',
-            joint__command__pb2.CompliancyCommand.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.joint.JointCommandService/SendCommand',
+            joint__command__pb2.JointCommand.SerializeToString,
             joint__command__pb2.JointCommandAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
