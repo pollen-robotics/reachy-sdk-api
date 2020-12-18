@@ -18,11 +18,11 @@ enum JointStateField {
     PRESENT_LOAD = 4;
     TEMPERATURE = 5;
 
-    COMPLIANT = 10;
-    GOAL_POSITION = 11;
-    SPEED_LIMIT = 12;
-    TORQUE_LIMIT = 13;
-    PID = 14;
+    COMPLIANT = 8;
+    GOAL_POSITION = 9;
+    SPEED_LIMIT = 10;
+    TORQUE_LIMIT = 11;
+    PID = 12;
 
     ALL = 15;
 }
