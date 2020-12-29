@@ -8,7 +8,7 @@ package reachy.sdk.joint;
 
 
 message JointCommand {
-    string name = 1;
+    uint32 id = 1;
 
     google.protobuf.BoolValue compliant = 8;
     google.protobuf.FloatValue goal_position = 9;
