@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13joint_command.proto\x12\x10reachy.sdk.joint\x1a\x1egoogle/protobuf/wrappers.proto\"\xe4\x01\n\x0cJointCommand\x12\x0c\n\x04name\x18\x01 \x01(\t\x12-\n\tcompliant\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\r \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"\"\n\x0fJointCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\x32g\n\x13JointCommandService\x12P\n\x0bSendCommand\x12\x1e.reachy.sdk.joint.JointCommand\x1a!.reachy.sdk.joint.JointCommandAckb\x06proto3'
+  serialized_pb=b'\n\x13joint_command.proto\x12\x10reachy.sdk.joint\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x91\x02\n\x0cJointCommand\x12\n\n\x02id\x18\x01 \x01(\r\x12-\n\tcompliant\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"x\n\x15MultipleJointsCommand\x12\x30\n\x08\x63ommands\x18\x01 \x03(\x0b\x32\x1e.reachy.sdk.joint.JointCommand\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\"\n\x0fJointCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\x32\xcc\x01\n\x13JointCommandService\x12P\n\x0bSendCommand\x12\x1e.reachy.sdk.joint.JointCommand\x1a!.reachy.sdk.joint.JointCommandAck\x12\x63\n\x13StreamJointsCommand\x12\'.reachy.sdk.joint.MultipleJointsCommand\x1a!.reachy.sdk.joint.JointCommandAck(\x01\x62\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
 
 
@@ -36,36 +37,43 @@ _JOINTCOMMAND = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='reachy.sdk.joint.JointCommand.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='id', full_name='reachy.sdk.joint.JointCommand.id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='compliant', full_name='reachy.sdk.joint.JointCommand.compliant', index=1,
-      number=10, type=11, cpp_type=10, label=1,
+      number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='goal_position', full_name='reachy.sdk.joint.JointCommand.goal_position', index=2,
-      number=11, type=11, cpp_type=10, label=1,
+      number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='speed_limit', full_name='reachy.sdk.joint.JointCommand.speed_limit', index=3,
-      number=12, type=11, cpp_type=10, label=1,
+      number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='torque_limit', full_name='reachy.sdk.joint.JointCommand.torque_limit', index=4,
-      number=13, type=11, cpp_type=10, label=1,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='reachy.sdk.joint.JointCommand.timestamp', index=5,
+      number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -82,8 +90,47 @@ _JOINTCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=74,
-  serialized_end=302,
+  serialized_start=107,
+  serialized_end=380,
+)
+
+
+_MULTIPLEJOINTSCOMMAND = _descriptor.Descriptor(
+  name='MultipleJointsCommand',
+  full_name='reachy.sdk.joint.MultipleJointsCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='commands', full_name='reachy.sdk.joint.MultipleJointsCommand.commands', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='reachy.sdk.joint.MultipleJointsCommand.timestamp', index=1,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=382,
+  serialized_end=502,
 )
 
 
@@ -114,15 +161,19 @@ _JOINTCOMMANDACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=304,
-  serialized_end=338,
+  serialized_start=504,
+  serialized_end=538,
 )
 
 _JOINTCOMMAND.fields_by_name['compliant'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _JOINTCOMMAND.fields_by_name['goal_position'].message_type = google_dot_protobuf_dot_wrappers__pb2._FLOATVALUE
 _JOINTCOMMAND.fields_by_name['speed_limit'].message_type = google_dot_protobuf_dot_wrappers__pb2._FLOATVALUE
 _JOINTCOMMAND.fields_by_name['torque_limit'].message_type = google_dot_protobuf_dot_wrappers__pb2._FLOATVALUE
+_JOINTCOMMAND.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_MULTIPLEJOINTSCOMMAND.fields_by_name['commands'].message_type = _JOINTCOMMAND
+_MULTIPLEJOINTSCOMMAND.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['JointCommand'] = _JOINTCOMMAND
+DESCRIPTOR.message_types_by_name['MultipleJointsCommand'] = _MULTIPLEJOINTSCOMMAND
 DESCRIPTOR.message_types_by_name['JointCommandAck'] = _JOINTCOMMANDACK
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -132,6 +183,13 @@ JointCommand = _reflection.GeneratedProtocolMessageType('JointCommand', (_messag
   # @@protoc_insertion_point(class_scope:reachy.sdk.joint.JointCommand)
   })
 _sym_db.RegisterMessage(JointCommand)
+
+MultipleJointsCommand = _reflection.GeneratedProtocolMessageType('MultipleJointsCommand', (_message.Message,), {
+  'DESCRIPTOR' : _MULTIPLEJOINTSCOMMAND,
+  '__module__' : 'joint_command_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.joint.MultipleJointsCommand)
+  })
+_sym_db.RegisterMessage(MultipleJointsCommand)
 
 JointCommandAck = _reflection.GeneratedProtocolMessageType('JointCommandAck', (_message.Message,), {
   'DESCRIPTOR' : _JOINTCOMMANDACK,
@@ -149,8 +207,8 @@ _JOINTCOMMANDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=340,
-  serialized_end=443,
+  serialized_start=541,
+  serialized_end=745,
   methods=[
   _descriptor.MethodDescriptor(
     name='SendCommand',
@@ -158,6 +216,16 @@ _JOINTCOMMANDSERVICE = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=_JOINTCOMMAND,
+    output_type=_JOINTCOMMANDACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='StreamJointsCommand',
+    full_name='reachy.sdk.joint.JointCommandService.StreamJointsCommand',
+    index=1,
+    containing_service=None,
+    input_type=_MULTIPLEJOINTSCOMMAND,
     output_type=_JOINTCOMMANDACK,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
