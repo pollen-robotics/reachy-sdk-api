@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
 // import "pid.proto";
@@ -15,6 +16,13 @@ message JointCommand {
     google.protobuf.FloatValue speed_limit = 10;
     google.protobuf.FloatValue torque_limit = 11;
     // PIDValue pid = 12;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message MultipleJointsCommand {
+    repeated JointCommand commands = 1;
+    google.protobuf.Timestamp timestamp = 15;
 }
 
 message JointCommandAck {
@@ -24,4 +32,5 @@ message JointCommandAck {
 
 service JointCommandService {
     rpc SendCommand(JointCommand) returns (JointCommandAck);
+    rpc StreamJointsCommand(stream MultipleJointsCommand) returns (JointCommandAck);
 }
