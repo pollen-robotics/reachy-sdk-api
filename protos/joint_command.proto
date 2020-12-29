@@ -10,11 +10,11 @@ package reachy.sdk.joint;
 message JointCommand {
     string name = 1;
 
-    google.protobuf.BoolValue compliant = 10;
-    google.protobuf.FloatValue goal_position = 11;
-    google.protobuf.FloatValue speed_limit = 12;
-    google.protobuf.FloatValue torque_limit = 13;
-    // PIDValue pid = 14;
+    google.protobuf.BoolValue compliant = 8;
+    google.protobuf.FloatValue goal_position = 9;
+    google.protobuf.FloatValue speed_limit = 10;
+    google.protobuf.FloatValue torque_limit = 11;
+    // PIDValue pid = 12;
 }
 
 message JointCommandAck {
