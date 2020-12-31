@@ -4,7 +4,7 @@ import "google/protobuf/wrappers.proto";
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 
-import "pid.proto";
+// import "pid.proto";
 
 package reachy.sdk.joint;
 
@@ -39,7 +39,7 @@ message JointState {
     google.protobuf.FloatValue goal_position = 11;
     google.protobuf.FloatValue speed_limit = 12;
     google.protobuf.FloatValue torque_limit = 13;
-    PIDValue pid = 14;
+    // PIDValue pid = 14;
 
     google.protobuf.Timestamp timestamp = 15;
 }
