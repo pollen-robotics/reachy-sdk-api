@@ -7,7 +7,7 @@ message Image {
 }
 
 message Side {
-    bool side = 1;
+    string side = 1;
 }
 
 service CameraService {

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x63\x61mera.proto\x12\x11reachy.sdk.camera\"\x16\n\x05Image\x12\r\n\x05image\x18\x01 \x01(\x0c\"\x14\n\x04Side\x12\x0c\n\x04side\x18\x01 \x01(\x08\x32N\n\rCameraService\x12=\n\x08GetImage\x12\x17.reachy.sdk.camera.Side\x1a\x18.reachy.sdk.camera.Imageb\x06proto3'
+  serialized_pb=b'\n\x0c\x63\x61mera.proto\x12\x11reachy.sdk.camera\"\x16\n\x05Image\x12\r\n\x05image\x18\x01 \x01(\x0c\"\x14\n\x04Side\x12\x0c\n\x04side\x18\x01 \x01(\t2N\n\rCameraService\x12=\n\x08GetImage\x12\x17.reachy.sdk.camera.Side\x1a\x18.reachy.sdk.camera.Imageb\x06proto3'
 )
 
 
@@ -67,8 +67,8 @@ _SIDE = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='side', full_name='reachy.sdk.camera.Side.side', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
