@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x63\x61mera.proto\x12\x11reachy.sdk.camera\"\x16\n\x05Image\x12\r\n\x05image\x18\x01 \x01(\x0c\"\x14\n\x04Side\x12\x0c\n\x04side\x18\x01 \x01(\t2N\n\rCameraService\x12=\n\x08GetImage\x12\x17.reachy.sdk.camera.Side\x1a\x18.reachy.sdk.camera.Imageb\x06proto3'
+  serialized_pb=b'\n\x0c\x63\x61mera.proto\x12\x11reachy.sdk.camera\"\x15\n\x05Image\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x14\n\x04Side\x12\x0c\n\x04side\x18\x01 \x01(\t2N\n\rCameraService\x12=\n\x08GetImage\x12\x17.reachy.sdk.camera.Side\x1a\x18.reachy.sdk.camera.Imageb\x06proto3'
 )
 
 
@@ -34,7 +34,7 @@ _IMAGE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='image', full_name='reachy.sdk.camera.Image.image', index=0,
+      name='data', full_name='reachy.sdk.camera.Image.data', index=0,
       number=1, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
@@ -53,7 +53,7 @@ _IMAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=35,
-  serialized_end=57,
+  serialized_end=56,
 )
 
 
@@ -84,8 +84,8 @@ _SIDE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=59,
-  serialized_end=79,
+  serialized_start=58,
+  serialized_end=78,
 )
 
 DESCRIPTOR.message_types_by_name['Image'] = _IMAGE
@@ -115,8 +115,8 @@ _CAMERASERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=81,
-  serialized_end=159,
+  serialized_start=80,
+  serialized_end=158,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetImage',

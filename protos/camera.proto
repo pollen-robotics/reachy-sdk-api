@@ -3,7 +3,7 @@ syntax = "proto3";
 package reachy.sdk.camera;
 
 message Image {
-    bytes image = 1;
+    bytes data = 1;
 }
 
 message Side {
