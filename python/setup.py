@@ -18,7 +18,7 @@ setup(
 
     install_requires=[
         'grpcio',
-        'protobuf>3',
+        'protobuf>=3.14.0',
     ],
 
     author='Pollen Robotics',
