@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package reachy.sdk.joint;
+
+message LoadValue {
+    float load = 1;
+}
+
+message Side {
+    string side = 1;
+}
+
+service LoadService {
+    rpc GetLoad(Side) returns (LoadValue);
+}
