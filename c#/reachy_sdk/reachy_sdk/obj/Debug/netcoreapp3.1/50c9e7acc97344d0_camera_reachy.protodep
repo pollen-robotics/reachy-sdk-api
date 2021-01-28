@@ -1,0 +1,2 @@
+..\..\..\protos\../c#/CameraReachy.cs \
+..\..\..\protos\../c#/CameraReachyGrpc.cs: ../../../protos/camera_reachy.proto

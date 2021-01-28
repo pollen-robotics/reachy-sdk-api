@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Pollen\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Pollen\\.nuget\\packages"
+    ]
+  }
+}

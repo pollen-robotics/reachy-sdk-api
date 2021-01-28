@@ -1,0 +1,5 @@
+..\..\..\protos\../c#/JointState.cs \
+..\..\..\protos\../c#/JointStateGrpc.cs: C:/Users/Pollen/.nuget/packages/grpc.tools/2.34.1/build/native/include/google/protobuf/wrappers.proto\
+ C:/Users/Pollen/.nuget/packages/grpc.tools/2.34.1/build/native/include/google/protobuf/timestamp.proto\
+ C:/Users/Pollen/.nuget/packages/grpc.tools/2.34.1/build/native/include/google/protobuf/empty.proto\
+ ../../../protos/joint_state.proto
