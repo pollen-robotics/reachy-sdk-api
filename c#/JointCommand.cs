@@ -35,12 +35,14 @@ namespace Reachy.Sdk.Joint {
             "ZS5wcm90b2J1Zi5UaW1lc3RhbXAieAoVTXVsdGlwbGVKb2ludHNDb21tYW5k",
             "EjAKCGNvbW1hbmRzGAEgAygLMh4ucmVhY2h5LnNkay5qb2ludC5Kb2ludENv",
             "bW1hbmQSLQoJdGltZXN0YW1wGA8gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
-            "bWVzdGFtcCIiCg9Kb2ludENvbW1hbmRBY2sSDwoHc3VjY2VzcxgBIAEoCDLM",
-            "AQoTSm9pbnRDb21tYW5kU2VydmljZRJQCgtTZW5kQ29tbWFuZBIeLnJlYWNo",
+            "bWVzdGFtcCIiCg9Kb2ludENvbW1hbmRBY2sSDwoHc3VjY2VzcxgBIAEoCDKw",
+            "AgoTSm9pbnRDb21tYW5kU2VydmljZRJQCgtTZW5kQ29tbWFuZBIeLnJlYWNo",
             "eS5zZGsuam9pbnQuSm9pbnRDb21tYW5kGiEucmVhY2h5LnNkay5qb2ludC5K",
-            "b2ludENvbW1hbmRBY2sSYwoTU3RyZWFtSm9pbnRzQ29tbWFuZBInLnJlYWNo",
-            "eS5zZGsuam9pbnQuTXVsdGlwbGVKb2ludHNDb21tYW5kGiEucmVhY2h5LnNk",
-            "ay5qb2ludC5Kb2ludENvbW1hbmRBY2soAWIGcHJvdG8z"));
+            "b2ludENvbW1hbmRBY2sSYgoUU2VuZEFsbEpvaW50c0NvbW1hbmQSJy5yZWFj",
+            "aHkuc2RrLmpvaW50Lk11bHRpcGxlSm9pbnRzQ29tbWFuZBohLnJlYWNoeS5z",
+            "ZGsuam9pbnQuSm9pbnRDb21tYW5kQWNrEmMKE1N0cmVhbUpvaW50c0NvbW1h",
+            "bmQSJy5yZWFjaHkuc2RrLmpvaW50Lk11bHRpcGxlSm9pbnRzQ29tbWFuZBoh",
+            "LnJlYWNoeS5zZGsuam9pbnQuSm9pbnRDb21tYW5kQWNrKAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
