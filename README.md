@@ -12,5 +12,5 @@
 
 * For C#:
 
-Open reachy_sdk.sln in Visual Studio
+Open reachy_sdk.sln in Visual Studio\
 Click Build > Build Solution
