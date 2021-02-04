@@ -43,22 +43,27 @@ namespace Reachy.Sdk.Joint {
             "cBgPIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiiAEKDEpvaW50",
             "UmVxdWVzdBIMCgRuYW1lGAEgASgJEjsKEHJlcXVlc3RlZF9maWVsZHMYAiAD",
             "KA4yIS5yZWFjaHkuc2RrLmpvaW50LkpvaW50U3RhdGVGaWVsZBItCgl0aW1l",
-            "c3RhbXAYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIp8BChZT",
-            "dHJlYW1BbGxKb2ludHNSZXF1ZXN0EjsKEHJlcXVlc3RlZF9maWVsZHMYAiAD",
-            "KA4yIS5yZWFjaHkuc2RrLmpvaW50LkpvaW50U3RhdGVGaWVsZBIZChFwdWJs",
-            "aXNoX2ZyZXF1ZW5jeRgDIAEoAhItCgl0aW1lc3RhbXAYDyABKAsyGi5nb29n",
-            "bGUucHJvdG9idWYuVGltZXN0YW1wKsgBCg9Kb2ludFN0YXRlRmllbGQSCAoE",
-            "Tk9ORRAAEggKBE5BTUUQARIUChBQUkVTRU5UX1BPU0lUSU9OEAISEQoNUFJF",
-            "U0VOVF9TUEVFRBADEhAKDFBSRVNFTlRfTE9BRBAEEg8KC1RFTVBFUkFUVVJF",
-            "EAUSDQoJQ09NUExJQU5UEAgSEQoNR09BTF9QT1NJVElPThAJEg8KC1NQRUVE",
-            "X0xJTUlUEAoSEAoMVE9SUVVFX0xJTUlUEAsSBwoDUElEEAwSBwoDQUxMEA8y",
-            "kgIKEUpvaW50U3RhdGVTZXJ2aWNlEkgKEEdldEFsbEpvaW50TmFtZXMSFi5n",
-            "b29nbGUucHJvdG9idWYuRW1wdHkaHC5yZWFjaHkuc2RrLmpvaW50LkpvaW50",
-            "TmFtZXMSTQoNR2V0Sm9pbnRTdGF0ZRIeLnJlYWNoeS5zZGsuam9pbnQuSm9p",
-            "bnRSZXF1ZXN0GhwucmVhY2h5LnNkay5qb2ludC5Kb2ludFN0YXRlEmQKFFN0",
-            "cmVhbUFsbEpvaW50c1N0YXRlEigucmVhY2h5LnNkay5qb2ludC5TdHJlYW1B",
-            "bGxKb2ludHNSZXF1ZXN0GiAucmVhY2h5LnNkay5qb2ludC5BbGxKb2ludHNT",
-            "dGF0ZTABYgZwcm90bzM="));
+            "c3RhbXAYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIn4KEEFs",
+            "bEpvaW50c1JlcXVlc3QSOwoQcmVxdWVzdGVkX2ZpZWxkcxgCIAMoDjIhLnJl",
+            "YWNoeS5zZGsuam9pbnQuSm9pbnRTdGF0ZUZpZWxkEi0KCXRpbWVzdGFtcBgP",
+            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAinwEKFlN0cmVhbUFs",
+            "bEpvaW50c1JlcXVlc3QSOwoQcmVxdWVzdGVkX2ZpZWxkcxgCIAMoDjIhLnJl",
+            "YWNoeS5zZGsuam9pbnQuSm9pbnRTdGF0ZUZpZWxkEhkKEXB1Ymxpc2hfZnJl",
+            "cXVlbmN5GAMgASgCEi0KCXRpbWVzdGFtcBgPIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXAqyAEKD0pvaW50U3RhdGVGaWVsZBIICgROT05FEAAS",
+            "CAoETkFNRRABEhQKEFBSRVNFTlRfUE9TSVRJT04QAhIRCg1QUkVTRU5UX1NQ",
+            "RUVEEAMSEAoMUFJFU0VOVF9MT0FEEAQSDwoLVEVNUEVSQVRVUkUQBRINCglD",
+            "T01QTElBTlQQCBIRCg1HT0FMX1BPU0lUSU9OEAkSDwoLU1BFRURfTElNSVQQ",
+            "ChIQCgxUT1JRVUVfTElNSVQQCxIHCgNQSUQQDBIHCgNBTEwQDzLtAgoRSm9p",
+            "bnRTdGF0ZVNlcnZpY2USSAoQR2V0QWxsSm9pbnROYW1lcxIWLmdvb2dsZS5w",
+            "cm90b2J1Zi5FbXB0eRocLnJlYWNoeS5zZGsuam9pbnQuSm9pbnROYW1lcxJN",
+            "Cg1HZXRKb2ludFN0YXRlEh4ucmVhY2h5LnNkay5qb2ludC5Kb2ludFJlcXVl",
+            "c3QaHC5yZWFjaHkuc2RrLmpvaW50LkpvaW50U3RhdGUSWQoRR2V0QWxsSm9p",
+            "bnRzU3RhdGUSIi5yZWFjaHkuc2RrLmpvaW50LkFsbEpvaW50c1JlcXVlc3Qa",
+            "IC5yZWFjaHkuc2RrLmpvaW50LkFsbEpvaW50c1N0YXRlEmQKFFN0cmVhbUFs",
+            "bEpvaW50c1N0YXRlEigucmVhY2h5LnNkay5qb2ludC5TdHJlYW1BbGxKb2lu",
+            "dHNSZXF1ZXN0GiAucmVhY2h5LnNkay5qb2ludC5BbGxKb2ludHNTdGF0ZTAB",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Reachy.Sdk.Joint.JointStateField), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -66,6 +71,7 @@ namespace Reachy.Sdk.Joint {
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.JointNames), global::Reachy.Sdk.Joint.JointNames.Parser, new[]{ "Names" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.AllJointsState), global::Reachy.Sdk.Joint.AllJointsState.Parser, new[]{ "Joints", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.JointRequest), global::Reachy.Sdk.Joint.JointRequest.Parser, new[]{ "Name", "RequestedFields", "Timestamp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.AllJointsRequest), global::Reachy.Sdk.Joint.AllJointsRequest.Parser, new[]{ "RequestedFields", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.StreamAllJointsRequest), global::Reachy.Sdk.Joint.StreamAllJointsRequest.Parser, new[]{ "RequestedFields", "PublishFrequency", "Timestamp" }, null, null, null, null)
           }));
     }
@@ -1274,6 +1280,214 @@ namespace Reachy.Sdk.Joint {
 
   }
 
+  public sealed partial class AllJointsRequest : pb::IMessage<AllJointsRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AllJointsRequest> _parser = new pb::MessageParser<AllJointsRequest>(() => new AllJointsRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AllJointsRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Joint.JointStateReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AllJointsRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AllJointsRequest(AllJointsRequest other) : this() {
+      requestedFields_ = other.requestedFields_.Clone();
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AllJointsRequest Clone() {
+      return new AllJointsRequest(this);
+    }
+
+    /// <summary>Field number for the "requested_fields" field.</summary>
+    public const int RequestedFieldsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Reachy.Sdk.Joint.JointStateField> _repeated_requestedFields_codec
+        = pb::FieldCodec.ForEnum(18, x => (int) x, x => (global::Reachy.Sdk.Joint.JointStateField) x);
+    private readonly pbc::RepeatedField<global::Reachy.Sdk.Joint.JointStateField> requestedFields_ = new pbc::RepeatedField<global::Reachy.Sdk.Joint.JointStateField>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Reachy.Sdk.Joint.JointStateField> RequestedFields {
+      get { return requestedFields_; }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 15;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AllJointsRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AllJointsRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!requestedFields_.Equals(other.requestedFields_)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= requestedFields_.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      requestedFields_.WriteTo(output, _repeated_requestedFields_codec);
+      if (timestamp_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      requestedFields_.WriteTo(ref output, _repeated_requestedFields_codec);
+      if (timestamp_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += requestedFields_.CalculateSize(_repeated_requestedFields_codec);
+      if (timestamp_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AllJointsRequest other) {
+      if (other == null) {
+        return;
+      }
+      requestedFields_.Add(other.requestedFields_);
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18:
+          case 16: {
+            requestedFields_.AddEntriesFrom(input, _repeated_requestedFields_codec);
+            break;
+          }
+          case 122: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18:
+          case 16: {
+            requestedFields_.AddEntriesFrom(ref input, _repeated_requestedFields_codec);
+            break;
+          }
+          case 122: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class StreamAllJointsRequest : pb::IMessage<StreamAllJointsRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1286,7 +1500,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointStateReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Reachy.Sdk.Joint.JointStateReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
