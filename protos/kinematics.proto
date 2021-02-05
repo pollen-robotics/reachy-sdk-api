@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package reachy.sdk.kinematics;
+
+message Quaternion {
+    double w = 1;
+    double x = 2;
+    double y = 3;
+    double z = 4;
+}
+
+message JointsPosition {
+    repeated double positions = 1;
+}
+
+message Matrix4x4 {
+    repeated double data = 1;
+}

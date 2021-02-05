@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package reachy.sdk.kinematics;
+
+import "kinematics.proto";
+
+message OrbitaTarget {
+    Quaternion q = 1;
+}
+
+service OrbitaKinematic {
+    rpc ComputeOrbitaIK(OrbitaTarget) returns (JointsPosition);
+}
