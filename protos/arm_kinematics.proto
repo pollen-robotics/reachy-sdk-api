@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package reachy.sdk.kinematics;
+
+import "kinematics.proto";
+
+enum ArmSide {
+    LEFT = 0;
+    RIGHT = 1;
+}
+
+message ArmEndEffector {
+    ArmSide side = 1;
+    Matrix4x4 target = 2;
+    JointsPosition q0 = 4;
+}
+
+message ArmJointsPosition {
+    ArmSide side = 1;
+    JointsPosition positions = 2;
+}
+
+service ArmKinematic {
+    rpc ComputeArmFK(ArmJointsPosition) returns (ArmEndEffector);
+    rpc ComputeArmIK(ArmEndEffector) returns (ArmJointsPosition);
+}
