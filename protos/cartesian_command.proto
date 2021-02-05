@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package reachy.sdk.kinematics;
+
+import "arm_kinematics.proto";
+import "orbita_kinematics.proto";
+
+
+message CartesianCommandAck {
+    bool success = 1;
+}
+
+message FullBodyCartesianCommand {
+    ArmEndEffector left_arm_end_effector = 1;
+    ArmEndEffector right_arm_end_effector = 2;
+    OrbitaTarget orbita_target = 3;
+}
+
+service JointCommandService {
+    rpc SendCartesianCommand(FullBodyCartesianCommand) returns (CartesianCommandAck);
+    rpc StreamCartesianCommands(stream FullBodyCartesianCommand) returns (CartesianCommandAck);
+}
