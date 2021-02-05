@@ -1,0 +1,5 @@
+..\..\..\protos\../c#/CartesianCommand.cs \
+..\..\..\protos\../c#/CartesianCommandGrpc.cs: ../../../protos/kinematics.proto\
+ ../../../protos/arm_kinematics.proto\
+ ../../../protos/orbita_kinematics.proto\
+ ../../../protos/cartesian_command.proto

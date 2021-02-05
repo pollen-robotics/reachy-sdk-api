@@ -1,0 +1,3 @@
+..\..\..\protos\../c#/ArmKinematics.cs \
+..\..\..\protos\../c#/ArmKinematicsGrpc.cs: ../../../protos/kinematics.proto\
+ ../../../protos/arm_kinematics.proto
