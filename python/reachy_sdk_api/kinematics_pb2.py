@@ -19,63 +19,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10kinematics.proto\x12\x15reachy.sdk.kinematics\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\"#\n\x0eJointsPosition\x12\x11\n\tpositions\x18\x01 \x03(\x01\"\x19\n\tMatrix4x4\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x01\x62\x06proto3'
+  serialized_pb=b'\n\x10kinematics.proto\x12\x15reachy.sdk.kinematics\"#\n\x0eJointsPosition\x12\x11\n\tpositions\x18\x01 \x03(\x01\"\x19\n\tMatrix4x4\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x01\x62\x06proto3'
 )
 
 
-
-
-_QUATERNION = _descriptor.Descriptor(
-  name='Quaternion',
-  full_name='reachy.sdk.kinematics.Quaternion',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='w', full_name='reachy.sdk.kinematics.Quaternion.w', index=0,
-      number=1, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='x', full_name='reachy.sdk.kinematics.Quaternion.x', index=1,
-      number=2, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='y', full_name='reachy.sdk.kinematics.Quaternion.y', index=2,
-      number=3, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='z', full_name='reachy.sdk.kinematics.Quaternion.z', index=3,
-      number=4, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=43,
-  serialized_end=99,
-)
 
 
 _JOINTSPOSITION = _descriptor.Descriptor(
@@ -105,8 +52,8 @@ _JOINTSPOSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=101,
-  serialized_end=136,
+  serialized_start=43,
+  serialized_end=78,
 )
 
 
@@ -137,21 +84,13 @@ _MATRIX4X4 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=138,
-  serialized_end=163,
+  serialized_start=80,
+  serialized_end=105,
 )
 
-DESCRIPTOR.message_types_by_name['Quaternion'] = _QUATERNION
 DESCRIPTOR.message_types_by_name['JointsPosition'] = _JOINTSPOSITION
 DESCRIPTOR.message_types_by_name['Matrix4x4'] = _MATRIX4X4
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Quaternion = _reflection.GeneratedProtocolMessageType('Quaternion', (_message.Message,), {
-  'DESCRIPTOR' : _QUATERNION,
-  '__module__' : 'kinematics_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.Quaternion)
-  })
-_sym_db.RegisterMessage(Quaternion)
 
 JointsPosition = _reflection.GeneratedProtocolMessageType('JointsPosition', (_message.Message,), {
   'DESCRIPTOR' : _JOINTSPOSITION,
