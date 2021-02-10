@@ -20,8 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17orbita_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"<\n\x0cOrbitaTarget\x12,\n\x01q\x18\x01 \x01(\x0b\x32!.reachy.sdk.kinematics.Quaternion\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\x32p\n\x0fOrbitaKinematic\x12]\n\x0f\x43omputeOrbitaIK\x12#.reachy.sdk.kinematics.OrbitaTarget\x1a%.reachy.sdk.kinematics.JointsPositionb\x06proto3'
-  ,
+  serialized_pb=b'\n\x17orbita_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"<\n\x0cOrbitaTarget\x12,\n\x01q\x18\x01 \x01(\x0b\x32!.reachy.sdk.kinematics.Quaternion\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\x32p\n\x0fOrbitaKinematic\x12]\n\x0f\x43omputeOrbitaIK\x12#.reachy.sdk.kinematics.OrbitaTarget\x1a%.reachy.sdk.kinematics.JointsPositionb\x06proto3',
   dependencies=[kinematics__pb2.DESCRIPTOR,])
 
 
@@ -129,7 +128,6 @@ Quaternion = _reflection.GeneratedProtocolMessageType('Quaternion', (_message.Me
   # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.Quaternion)
   })
 _sym_db.RegisterMessage(Quaternion)
-
 
 
 _ORBITAKINEMATIC = _descriptor.ServiceDescriptor(
