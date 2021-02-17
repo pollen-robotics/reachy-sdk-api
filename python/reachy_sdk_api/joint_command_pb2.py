@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13joint_command.proto\x12\x10reachy.sdk.joint\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x91\x02\n\x0cJointCommand\x12\n\n\x02id\x18\x01 \x01(\r\x12-\n\tcompliant\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"x\n\x15MultipleJointsCommand\x12\x30\n\x08\x63ommands\x18\x01 \x03(\x0b\x32\x1e.reachy.sdk.joint.JointCommand\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\"\n\x0fJointCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\x32\xcc\x01\n\x13JointCommandService\x12P\n\x0bSendCommand\x12\x1e.reachy.sdk.joint.JointCommand\x1a!.reachy.sdk.joint.JointCommandAck\x12\x63\n\x13StreamJointsCommand\x12\'.reachy.sdk.joint.MultipleJointsCommand\x1a!.reachy.sdk.joint.JointCommandAck(\x01\x62\x06proto3'
+  serialized_pb=b'\n\x13joint_command.proto\x12\x10reachy.sdk.joint\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x91\x02\n\x0cJointCommand\x12\n\n\x02id\x18\x01 \x01(\r\x12-\n\tcompliant\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"x\n\x15MultipleJointsCommand\x12\x30\n\x08\x63ommands\x18\x01 \x03(\x0b\x32\x1e.reachy.sdk.joint.JointCommand\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\"\n\x0fJointCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\x32\xb0\x02\n\x13JointCommandService\x12P\n\x0bSendCommand\x12\x1e.reachy.sdk.joint.JointCommand\x1a!.reachy.sdk.joint.JointCommandAck\x12\x62\n\x14SendAllJointsCommand\x12\'.reachy.sdk.joint.MultipleJointsCommand\x1a!.reachy.sdk.joint.JointCommandAck\x12\x63\n\x13StreamJointsCommand\x12\'.reachy.sdk.joint.MultipleJointsCommand\x1a!.reachy.sdk.joint.JointCommandAck(\x01\x62\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
@@ -208,7 +208,7 @@ _JOINTCOMMANDSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=541,
-  serialized_end=745,
+  serialized_end=845,
   methods=[
   _descriptor.MethodDescriptor(
     name='SendCommand',
@@ -221,9 +221,19 @@ _JOINTCOMMANDSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='SendAllJointsCommand',
+    full_name='reachy.sdk.joint.JointCommandService.SendAllJointsCommand',
+    index=1,
+    containing_service=None,
+    input_type=_MULTIPLEJOINTSCOMMAND,
+    output_type=_JOINTCOMMANDACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='StreamJointsCommand',
     full_name='reachy.sdk.joint.JointCommandService.StreamJointsCommand',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_MULTIPLEJOINTSCOMMAND,
     output_type=_JOINTCOMMANDACK,

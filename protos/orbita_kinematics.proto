@@ -15,6 +15,13 @@ message OrbitaTarget {
     Quaternion q = 1;
 }
 
+message Quaternion {
+    double w = 1;
+    double x = 2;
+    double y = 3;
+    double z = 4;
+}
+
 service OrbitaKinematic {
     rpc ComputeOrbitaIK(OrbitaTarget) returns (JointsPosition);
 }

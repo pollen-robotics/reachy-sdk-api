@@ -32,5 +32,6 @@ message JointCommandAck {
 
 service JointCommandService {
     rpc SendCommand(JointCommand) returns (JointCommandAck);
+    rpc SendAllJointsCommand(MultipleJointsCommand) returns (JointCommandAck);
     rpc StreamJointsCommand(stream MultipleJointsCommand) returns (JointCommandAck);
 }

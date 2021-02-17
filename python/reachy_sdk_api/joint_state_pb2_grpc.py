@@ -25,6 +25,11 @@ class JointStateServiceStub(object):
                 request_serializer=joint__state__pb2.JointRequest.SerializeToString,
                 response_deserializer=joint__state__pb2.JointState.FromString,
                 )
+        self.GetAllJointsState = channel.unary_unary(
+                '/reachy.sdk.joint.JointStateService/GetAllJointsState',
+                request_serializer=joint__state__pb2.AllJointsRequest.SerializeToString,
+                response_deserializer=joint__state__pb2.AllJointsState.FromString,
+                )
         self.StreamAllJointsState = channel.unary_stream(
                 '/reachy.sdk.joint.JointStateService/StreamAllJointsState',
                 request_serializer=joint__state__pb2.StreamAllJointsRequest.SerializeToString,
@@ -42,6 +47,12 @@ class JointStateServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetJointState(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAllJointsState(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -65,6 +76,11 @@ def add_JointStateServiceServicer_to_server(servicer, server):
                     servicer.GetJointState,
                     request_deserializer=joint__state__pb2.JointRequest.FromString,
                     response_serializer=joint__state__pb2.JointState.SerializeToString,
+            ),
+            'GetAllJointsState': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAllJointsState,
+                    request_deserializer=joint__state__pb2.AllJointsRequest.FromString,
+                    response_serializer=joint__state__pb2.AllJointsState.SerializeToString,
             ),
             'StreamAllJointsState': grpc.unary_stream_rpc_method_handler(
                     servicer.StreamAllJointsState,
@@ -112,6 +128,23 @@ class JointStateService(object):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.joint.JointStateService/GetJointState',
             joint__state__pb2.JointRequest.SerializeToString,
             joint__state__pb2.JointState.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAllJointsState(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.joint.JointStateService/GetAllJointsState',
+            joint__state__pb2.AllJointsRequest.SerializeToString,
+            joint__state__pb2.AllJointsState.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

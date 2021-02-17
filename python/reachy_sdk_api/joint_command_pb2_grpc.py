@@ -19,6 +19,11 @@ class JointCommandServiceStub(object):
                 request_serializer=joint__command__pb2.JointCommand.SerializeToString,
                 response_deserializer=joint__command__pb2.JointCommandAck.FromString,
                 )
+        self.SendAllJointsCommand = channel.unary_unary(
+                '/reachy.sdk.joint.JointCommandService/SendAllJointsCommand',
+                request_serializer=joint__command__pb2.MultipleJointsCommand.SerializeToString,
+                response_deserializer=joint__command__pb2.JointCommandAck.FromString,
+                )
         self.StreamJointsCommand = channel.stream_unary(
                 '/reachy.sdk.joint.JointCommandService/StreamJointsCommand',
                 request_serializer=joint__command__pb2.MultipleJointsCommand.SerializeToString,
@@ -30,6 +35,12 @@ class JointCommandServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def SendCommand(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SendAllJointsCommand(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -47,6 +58,11 @@ def add_JointCommandServiceServicer_to_server(servicer, server):
             'SendCommand': grpc.unary_unary_rpc_method_handler(
                     servicer.SendCommand,
                     request_deserializer=joint__command__pb2.JointCommand.FromString,
+                    response_serializer=joint__command__pb2.JointCommandAck.SerializeToString,
+            ),
+            'SendAllJointsCommand': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendAllJointsCommand,
+                    request_deserializer=joint__command__pb2.MultipleJointsCommand.FromString,
                     response_serializer=joint__command__pb2.JointCommandAck.SerializeToString,
             ),
             'StreamJointsCommand': grpc.stream_unary_rpc_method_handler(
@@ -77,6 +93,23 @@ class JointCommandService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.joint.JointCommandService/SendCommand',
             joint__command__pb2.JointCommand.SerializeToString,
+            joint__command__pb2.JointCommandAck.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SendAllJointsCommand(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.joint.JointCommandService/SendAllJointsCommand',
+            joint__command__pb2.MultipleJointsCommand.SerializeToString,
             joint__command__pb2.JointCommandAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

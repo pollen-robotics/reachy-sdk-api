@@ -60,6 +60,12 @@ message JointRequest {
     google.protobuf.Timestamp timestamp = 15;
 }
 
+message AllJointsRequest {
+    repeated JointStateField requested_fields = 2;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
 message StreamAllJointsRequest {
     repeated JointStateField requested_fields = 2;
     float publish_frequency = 3;
@@ -70,6 +76,7 @@ message StreamAllJointsRequest {
 service JointStateService {
     rpc GetAllJointNames(google.protobuf.Empty) returns (JointNames);
 
-    rpc GetJointState(JointRequest) returns (JointState);    
+    rpc GetJointState(JointRequest) returns (JointState);
+    rpc GetAllJointsState(AllJointsRequest) returns (AllJointsState);
     rpc StreamAllJointsState(StreamAllJointsRequest) returns (stream AllJointsState);
 }
