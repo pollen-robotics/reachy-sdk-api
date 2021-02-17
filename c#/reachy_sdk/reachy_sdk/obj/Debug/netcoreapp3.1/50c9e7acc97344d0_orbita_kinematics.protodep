@@ -1,3 +1,0 @@
-..\..\..\protos\../c#/OrbitaKinematics.cs \
-..\..\..\protos\../c#/OrbitaKinematicsGrpc.cs: ../../../protos/kinematics.proto\
- ../../../protos/orbita_kinematics.proto

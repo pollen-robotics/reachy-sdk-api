@@ -1,2 +1,0 @@
-..\..\..\protos\../c#/LoadSensor.cs \
-..\..\..\protos\../c#/LoadSensorGrpc.cs: ../../../protos/load_sensor.proto

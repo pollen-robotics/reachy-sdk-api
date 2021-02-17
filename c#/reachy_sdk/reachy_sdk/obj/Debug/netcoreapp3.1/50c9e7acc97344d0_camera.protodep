@@ -1,2 +1,0 @@
-..\..\..\protos/Camera.cs \
-..\..\..\protos/CameraGrpc.cs: ../../../protos/camera.proto
