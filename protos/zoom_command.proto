@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package reachy.sdk.zoom;
+
+message ZoomSpeed {
+    uint32 speed = 1;
+}
+
+message ZoomCommand {
+    string side = 1;
+    string command = 2;
+}
+
+message Empty {
+    google.protobuf.Empty empty=1;
+}
+
+service ZoomControllerService {
+    rpc SetZoomSpeed(ZoomSpeed) returns (Empty);
+    rpc SendZoomCommand(ZoomCommand) returns (Empty);
+}
