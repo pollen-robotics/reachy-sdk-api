@@ -16,7 +16,7 @@ message FullBodyCartesianCommand {
     OrbitaTarget orbita_target = 3;
 }
 
-service JointCommandService {
+service CartesianCommandService {
     rpc SendCartesianCommand(FullBodyCartesianCommand) returns (CartesianCommandAck);
     rpc StreamCartesianCommands(stream FullBodyCartesianCommand) returns (CartesianCommandAck);
 }

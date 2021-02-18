@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x63\x61rtesian_command.proto\x12\x15reachy.sdk.kinematics\x1a\x14\x61rm_kinematics.proto\x1a\x17orbita_kinematics.proto\"&\n\x13\x43\x61rtesianCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\xe3\x01\n\x18\x46ullBodyCartesianCommand\x12\x44\n\x15left_arm_end_effector\x18\x01 \x01(\x0b\x32%.reachy.sdk.kinematics.ArmEndEffector\x12\x45\n\x16right_arm_end_effector\x18\x02 \x01(\x0b\x32%.reachy.sdk.kinematics.ArmEndEffector\x12:\n\rorbita_target\x18\x03 \x01(\x0b\x32#.reachy.sdk.kinematics.OrbitaTarget2\x84\x02\n\x13JointCommandService\x12s\n\x14SendCartesianCommand\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a*.reachy.sdk.kinematics.CartesianCommandAck\x12x\n\x17StreamCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a*.reachy.sdk.kinematics.CartesianCommandAck(\x01\x62\x06proto3'
+  serialized_pb=b'\n\x17\x63\x61rtesian_command.proto\x12\x15reachy.sdk.kinematics\x1a\x14\x61rm_kinematics.proto\x1a\x17orbita_kinematics.proto\"&\n\x13\x43\x61rtesianCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\xe3\x01\n\x18\x46ullBodyCartesianCommand\x12\x44\n\x15left_arm_end_effector\x18\x01 \x01(\x0b\x32%.reachy.sdk.kinematics.ArmEndEffector\x12\x45\n\x16right_arm_end_effector\x18\x02 \x01(\x0b\x32%.reachy.sdk.kinematics.ArmEndEffector\x12:\n\rorbita_target\x18\x03 \x01(\x0b\x32#.reachy.sdk.kinematics.OrbitaTarget2\x88\x02\n\x17\x43\x61rtesianCommandService\x12s\n\x14SendCartesianCommand\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a*.reachy.sdk.kinematics.CartesianCommandAck\x12x\n\x17StreamCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a*.reachy.sdk.kinematics.CartesianCommandAck(\x01\x62\x06proto3'
   ,
   dependencies=[arm__kinematics__pb2.DESCRIPTOR,orbita__kinematics__pb2.DESCRIPTOR,])
 
@@ -128,19 +128,19 @@ _sym_db.RegisterMessage(FullBodyCartesianCommand)
 
 
 
-_JOINTCOMMANDSERVICE = _descriptor.ServiceDescriptor(
-  name='JointCommandService',
-  full_name='reachy.sdk.kinematics.JointCommandService',
+_CARTESIANCOMMANDSERVICE = _descriptor.ServiceDescriptor(
+  name='CartesianCommandService',
+  full_name='reachy.sdk.kinematics.CartesianCommandService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=368,
-  serialized_end=628,
+  serialized_end=632,
   methods=[
   _descriptor.MethodDescriptor(
     name='SendCartesianCommand',
-    full_name='reachy.sdk.kinematics.JointCommandService.SendCartesianCommand',
+    full_name='reachy.sdk.kinematics.CartesianCommandService.SendCartesianCommand',
     index=0,
     containing_service=None,
     input_type=_FULLBODYCARTESIANCOMMAND,
@@ -150,7 +150,7 @@ _JOINTCOMMANDSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='StreamCartesianCommands',
-    full_name='reachy.sdk.kinematics.JointCommandService.StreamCartesianCommands',
+    full_name='reachy.sdk.kinematics.CartesianCommandService.StreamCartesianCommands',
     index=1,
     containing_service=None,
     input_type=_FULLBODYCARTESIANCOMMAND,
@@ -159,8 +159,8 @@ _JOINTCOMMANDSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_JOINTCOMMANDSERVICE)
+_sym_db.RegisterServiceDescriptor(_CARTESIANCOMMANDSERVICE)
 
-DESCRIPTOR.services_by_name['JointCommandService'] = _JOINTCOMMANDSERVICE
+DESCRIPTOR.services_by_name['CartesianCommandService'] = _CARTESIANCOMMANDSERVICE
 
 # @@protoc_insertion_point(module_scope)
