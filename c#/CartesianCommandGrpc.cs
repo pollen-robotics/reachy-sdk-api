@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace Reachy.Sdk.Kinematics {
-  public static partial class JointCommandService
+  public static partial class CartesianCommandService
   {
-    static readonly string __ServiceName = "reachy.sdk.kinematics.JointCommandService";
+    static readonly string __ServiceName = "reachy.sdk.kinematics.CartesianCommandService";
 
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
     {
@@ -65,9 +65,9 @@ namespace Reachy.Sdk.Kinematics {
       get { return global::Reachy.Sdk.Kinematics.CartesianCommandReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of JointCommandService</summary>
-    [grpc::BindServiceMethod(typeof(JointCommandService), "BindService")]
-    public abstract partial class JointCommandServiceBase
+    /// <summary>Base class for server-side implementations of CartesianCommandService</summary>
+    [grpc::BindServiceMethod(typeof(CartesianCommandService), "BindService")]
+    public abstract partial class CartesianCommandServiceBase
     {
       public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Kinematics.CartesianCommandAck> SendCartesianCommand(global::Reachy.Sdk.Kinematics.FullBodyCartesianCommand request, grpc::ServerCallContext context)
       {
@@ -81,26 +81,26 @@ namespace Reachy.Sdk.Kinematics {
 
     }
 
-    /// <summary>Client for JointCommandService</summary>
-    public partial class JointCommandServiceClient : grpc::ClientBase<JointCommandServiceClient>
+    /// <summary>Client for CartesianCommandService</summary>
+    public partial class CartesianCommandServiceClient : grpc::ClientBase<CartesianCommandServiceClient>
     {
-      /// <summary>Creates a new client for JointCommandService</summary>
+      /// <summary>Creates a new client for CartesianCommandService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
-      public JointCommandServiceClient(grpc::ChannelBase channel) : base(channel)
+      public CartesianCommandServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for JointCommandService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for CartesianCommandService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-      public JointCommandServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public CartesianCommandServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
-      protected JointCommandServiceClient() : base()
+      protected CartesianCommandServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
-      protected JointCommandServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected CartesianCommandServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -129,15 +129,15 @@ namespace Reachy.Sdk.Kinematics {
         return CallInvoker.AsyncClientStreamingCall(__Method_StreamCartesianCommands, null, options);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
-      protected override JointCommandServiceClient NewInstance(ClientBaseConfiguration configuration)
+      protected override CartesianCommandServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new JointCommandServiceClient(configuration);
+        return new CartesianCommandServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static grpc::ServerServiceDefinition BindService(JointCommandServiceBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(CartesianCommandServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_SendCartesianCommand, serviceImpl.SendCartesianCommand)
@@ -148,7 +148,7 @@ namespace Reachy.Sdk.Kinematics {
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, JointCommandServiceBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, CartesianCommandServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_SendCartesianCommand, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Kinematics.FullBodyCartesianCommand, global::Reachy.Sdk.Kinematics.CartesianCommandAck>(serviceImpl.SendCartesianCommand));
       serviceBinder.AddMethod(__Method_StreamCartesianCommands, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::Reachy.Sdk.Kinematics.FullBodyCartesianCommand, global::Reachy.Sdk.Kinematics.CartesianCommandAck>(serviceImpl.StreamCartesianCommands));
