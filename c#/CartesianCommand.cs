@@ -32,13 +32,13 @@ namespace Reachy.Sdk.Kinematics {
             "ZEVmZmVjdG9yEkUKFnJpZ2h0X2FybV9lbmRfZWZmZWN0b3IYAiABKAsyJS5y",
             "ZWFjaHkuc2RrLmtpbmVtYXRpY3MuQXJtRW5kRWZmZWN0b3ISOgoNb3JiaXRh",
             "X3RhcmdldBgDIAEoCzIjLnJlYWNoeS5zZGsua2luZW1hdGljcy5PcmJpdGFU",
-            "YXJnZXQyhAIKE0pvaW50Q29tbWFuZFNlcnZpY2UScwoUU2VuZENhcnRlc2lh",
-            "bkNvbW1hbmQSLy5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuRnVsbEJvZHlDYXJ0",
-            "ZXNpYW5Db21tYW5kGioucmVhY2h5LnNkay5raW5lbWF0aWNzLkNhcnRlc2lh",
-            "bkNvbW1hbmRBY2sSeAoXU3RyZWFtQ2FydGVzaWFuQ29tbWFuZHMSLy5yZWFj",
-            "aHkuc2RrLmtpbmVtYXRpY3MuRnVsbEJvZHlDYXJ0ZXNpYW5Db21tYW5kGiou",
-            "cmVhY2h5LnNkay5raW5lbWF0aWNzLkNhcnRlc2lhbkNvbW1hbmRBY2soAWIG",
-            "cHJvdG8z"));
+            "YXJnZXQyiAIKF0NhcnRlc2lhbkNvbW1hbmRTZXJ2aWNlEnMKFFNlbmRDYXJ0",
+            "ZXNpYW5Db21tYW5kEi8ucmVhY2h5LnNkay5raW5lbWF0aWNzLkZ1bGxCb2R5",
+            "Q2FydGVzaWFuQ29tbWFuZBoqLnJlYWNoeS5zZGsua2luZW1hdGljcy5DYXJ0",
+            "ZXNpYW5Db21tYW5kQWNrEngKF1N0cmVhbUNhcnRlc2lhbkNvbW1hbmRzEi8u",
+            "cmVhY2h5LnNkay5raW5lbWF0aWNzLkZ1bGxCb2R5Q2FydGVzaWFuQ29tbWFu",
+            "ZBoqLnJlYWNoeS5zZGsua2luZW1hdGljcy5DYXJ0ZXNpYW5Db21tYW5kQWNr",
+            "KAFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Reachy.Sdk.Kinematics.ArmKinematicsReflection.Descriptor, global::Reachy.Sdk.Kinematics.OrbitaKinematicsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
