@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17orbita_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\"<\n\x0cOrbitaTarget\x12,\n\x01q\x18\x01 \x01(\x0b\x32!.reachy.sdk.kinematics.Quaternion2p\n\x0fOrbitaKinematic\x12]\n\x0f\x43omputeOrbitaIK\x12#.reachy.sdk.kinematics.OrbitaTarget\x1a%.reachy.sdk.kinematics.JointsPositionb\x06proto3'
+  serialized_pb=b'\n\x17orbita_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\"<\n\x0cOrbitaTarget\x12,\n\x01q\x18\x01 \x01(\x0b\x32!.reachy.sdk.kinematics.Quaternion\"(\n\x05Point\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x32\xcd\x01\n\x0fOrbitaKinematic\x12]\n\x0f\x43omputeOrbitaIK\x12#.reachy.sdk.kinematics.OrbitaTarget\x1a%.reachy.sdk.kinematics.JointsPosition\x12[\n\x16GetQuaternionTransform\x12\x1c.reachy.sdk.kinematics.Point\x1a#.reachy.sdk.kinematics.OrbitaTargetb\x06proto3'
   ,
   dependencies=[kinematics__pb2.DESCRIPTOR,])
 
@@ -111,9 +111,56 @@ _ORBITATARGET = _descriptor.Descriptor(
   serialized_end=186,
 )
 
+
+_POINT = _descriptor.Descriptor(
+  name='Point',
+  full_name='reachy.sdk.kinematics.Point',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='x', full_name='reachy.sdk.kinematics.Point.x', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='reachy.sdk.kinematics.Point.y', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='z', full_name='reachy.sdk.kinematics.Point.z', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=188,
+  serialized_end=228,
+)
+
 _ORBITATARGET.fields_by_name['q'].message_type = _QUATERNION
 DESCRIPTOR.message_types_by_name['Quaternion'] = _QUATERNION
 DESCRIPTOR.message_types_by_name['OrbitaTarget'] = _ORBITATARGET
+DESCRIPTOR.message_types_by_name['Point'] = _POINT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Quaternion = _reflection.GeneratedProtocolMessageType('Quaternion', (_message.Message,), {
@@ -130,6 +177,13 @@ OrbitaTarget = _reflection.GeneratedProtocolMessageType('OrbitaTarget', (_messag
   })
 _sym_db.RegisterMessage(OrbitaTarget)
 
+Point = _reflection.GeneratedProtocolMessageType('Point', (_message.Message,), {
+  'DESCRIPTOR' : _POINT,
+  '__module__' : 'orbita_kinematics_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.Point)
+  })
+_sym_db.RegisterMessage(Point)
+
 
 
 _ORBITAKINEMATIC = _descriptor.ServiceDescriptor(
@@ -139,8 +193,8 @@ _ORBITAKINEMATIC = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=188,
-  serialized_end=300,
+  serialized_start=231,
+  serialized_end=436,
   methods=[
   _descriptor.MethodDescriptor(
     name='ComputeOrbitaIK',
@@ -149,6 +203,16 @@ _ORBITAKINEMATIC = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_ORBITATARGET,
     output_type=kinematics__pb2._JOINTSPOSITION,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetQuaternionTransform',
+    full_name='reachy.sdk.kinematics.OrbitaKinematic.GetQuaternionTransform',
+    index=1,
+    containing_service=None,
+    input_type=_POINT,
+    output_type=_ORBITATARGET,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
