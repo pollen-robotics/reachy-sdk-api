@@ -31,18 +31,21 @@ namespace Reachy.Sdk.Kinematics {
             "CgJxMBgEIAEoCzIlLnJlYWNoeS5zZGsua2luZW1hdGljcy5Kb2ludHNQb3Np",
             "dGlvbiJ7ChFBcm1Kb2ludHNQb3NpdGlvbhIsCgRzaWRlGAEgASgOMh4ucmVh",
             "Y2h5LnNkay5raW5lbWF0aWNzLkFybVNpZGUSOAoJcG9zaXRpb25zGAIgASgL",
-            "MiUucmVhY2h5LnNkay5raW5lbWF0aWNzLkpvaW50c1Bvc2l0aW9uKh4KB0Fy",
-            "bVNpZGUSCAoETEVGVBAAEgkKBVJJR0hUEAEy0AEKDEFybUtpbmVtYXRpYxJf",
-            "CgxDb21wdXRlQXJtRksSKC5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuQXJtSm9p",
-            "bnRzUG9zaXRpb24aJS5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuQXJtRW5kRWZm",
-            "ZWN0b3ISXwoMQ29tcHV0ZUFybUlLEiUucmVhY2h5LnNkay5raW5lbWF0aWNz",
-            "LkFybUVuZEVmZmVjdG9yGigucmVhY2h5LnNkay5raW5lbWF0aWNzLkFybUpv",
-            "aW50c1Bvc2l0aW9uYgZwcm90bzM="));
+            "MiUucmVhY2h5LnNkay5raW5lbWF0aWNzLkpvaW50c1Bvc2l0aW9uIlcKDUFy",
+            "bUlLU29sdXRpb24SDwoHc3VjY2VzcxgBIAEoCBI1CgNzb2wYAiABKAsyKC5y",
+            "ZWFjaHkuc2RrLmtpbmVtYXRpY3MuQXJtSm9pbnRzUG9zaXRpb24qHgoHQXJt",
+            "U2lkZRIICgRMRUZUEAASCQoFUklHSFQQATLMAQoMQXJtS2luZW1hdGljEl8K",
+            "DENvbXB1dGVBcm1GSxIoLnJlYWNoeS5zZGsua2luZW1hdGljcy5Bcm1Kb2lu",
+            "dHNQb3NpdGlvbholLnJlYWNoeS5zZGsua2luZW1hdGljcy5Bcm1FbmRFZmZl",
+            "Y3RvchJbCgxDb21wdXRlQXJtSUsSJS5yZWFjaHkuc2RrLmtpbmVtYXRpY3Mu",
+            "QXJtRW5kRWZmZWN0b3IaJC5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuQXJtSUtT",
+            "b2x1dGlvbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Reachy.Sdk.Kinematics.KinematicsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Reachy.Sdk.Kinematics.ArmSide), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.ArmEndEffector), global::Reachy.Sdk.Kinematics.ArmEndEffector.Parser, new[]{ "Side", "Target", "Q0" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.ArmJointsPosition), global::Reachy.Sdk.Kinematics.ArmJointsPosition.Parser, new[]{ "Side", "Positions" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.ArmJointsPosition), global::Reachy.Sdk.Kinematics.ArmJointsPosition.Parser, new[]{ "Side", "Positions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.ArmIKSolution), global::Reachy.Sdk.Kinematics.ArmIKSolution.Parser, new[]{ "Success", "Sol" }, null, null, null, null)
           }));
     }
     #endregion
@@ -527,6 +530,223 @@ namespace Reachy.Sdk.Kinematics {
               Positions = new global::Reachy.Sdk.Kinematics.JointsPosition();
             }
             input.ReadMessage(Positions);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ArmIKSolution : pb::IMessage<ArmIKSolution>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ArmIKSolution> _parser = new pb::MessageParser<ArmIKSolution>(() => new ArmIKSolution());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ArmIKSolution> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Kinematics.ArmKinematicsReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ArmIKSolution() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ArmIKSolution(ArmIKSolution other) : this() {
+      success_ = other.success_;
+      sol_ = other.sol_ != null ? other.sol_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ArmIKSolution Clone() {
+      return new ArmIKSolution(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sol" field.</summary>
+    public const int SolFieldNumber = 2;
+    private global::Reachy.Sdk.Kinematics.ArmJointsPosition sol_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Kinematics.ArmJointsPosition Sol {
+      get { return sol_; }
+      set {
+        sol_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ArmIKSolution);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ArmIKSolution other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      if (!object.Equals(Sol, other.Sol)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (sol_ != null) hash ^= Sol.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (sol_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Sol);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (sol_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Sol);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (sol_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Sol);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ArmIKSolution other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      if (other.sol_ != null) {
+        if (sol_ == null) {
+          Sol = new global::Reachy.Sdk.Kinematics.ArmJointsPosition();
+        }
+        Sol.MergeFrom(other.Sol);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 18: {
+            if (sol_ == null) {
+              Sol = new global::Reachy.Sdk.Kinematics.ArmJointsPosition();
+            }
+            input.ReadMessage(Sol);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 18: {
+            if (sol_ == null) {
+              Sol = new global::Reachy.Sdk.Kinematics.ArmJointsPosition();
+            }
+            input.ReadMessage(Sol);
             break;
           }
         }

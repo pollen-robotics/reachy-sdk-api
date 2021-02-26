@@ -22,7 +22,7 @@ class ArmKinematicStub(object):
         self.ComputeArmIK = channel.unary_unary(
                 '/reachy.sdk.kinematics.ArmKinematic/ComputeArmIK',
                 request_serializer=arm__kinematics__pb2.ArmEndEffector.SerializeToString,
-                response_deserializer=arm__kinematics__pb2.ArmJointsPosition.FromString,
+                response_deserializer=arm__kinematics__pb2.ArmIKSolution.FromString,
                 )
 
 
@@ -52,7 +52,7 @@ def add_ArmKinematicServicer_to_server(servicer, server):
             'ComputeArmIK': grpc.unary_unary_rpc_method_handler(
                     servicer.ComputeArmIK,
                     request_deserializer=arm__kinematics__pb2.ArmEndEffector.FromString,
-                    response_serializer=arm__kinematics__pb2.ArmJointsPosition.SerializeToString,
+                    response_serializer=arm__kinematics__pb2.ArmIKSolution.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -94,6 +94,6 @@ class ArmKinematic(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.ArmKinematic/ComputeArmIK',
             arm__kinematics__pb2.ArmEndEffector.SerializeToString,
-            arm__kinematics__pb2.ArmJointsPosition.FromString,
+            arm__kinematics__pb2.ArmIKSolution.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
