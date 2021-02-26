@@ -2,7 +2,6 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import kinematics_pb2 as kinematics__pb2
 import orbita_kinematics_pb2 as orbita__kinematics__pb2
 
 
@@ -18,7 +17,7 @@ class OrbitaKinematicStub(object):
         self.ComputeOrbitaIK = channel.unary_unary(
                 '/reachy.sdk.kinematics.OrbitaKinematic/ComputeOrbitaIK',
                 request_serializer=orbita__kinematics__pb2.OrbitaTarget.SerializeToString,
-                response_deserializer=kinematics__pb2.JointsPosition.FromString,
+                response_deserializer=orbita__kinematics__pb2.OrbitaIKSolution.FromString,
                 )
 
 
@@ -37,7 +36,7 @@ def add_OrbitaKinematicServicer_to_server(servicer, server):
             'ComputeOrbitaIK': grpc.unary_unary_rpc_method_handler(
                     servicer.ComputeOrbitaIK,
                     request_deserializer=orbita__kinematics__pb2.OrbitaTarget.FromString,
-                    response_serializer=kinematics__pb2.JointsPosition.SerializeToString,
+                    response_serializer=orbita__kinematics__pb2.OrbitaIKSolution.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -62,6 +61,6 @@ class OrbitaKinematic(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.OrbitaKinematic/ComputeOrbitaIK',
             orbita__kinematics__pb2.OrbitaTarget.SerializeToString,
-            kinematics__pb2.JointsPosition.FromString,
+            orbita__kinematics__pb2.OrbitaIKSolution.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
