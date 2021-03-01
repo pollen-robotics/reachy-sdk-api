@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17orbita_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\"<\n\x0cOrbitaTarget\x12,\n\x01q\x18\x01 \x01(\x0b\x32!.reachy.sdk.kinematics.Quaternion\"(\n\x05Point\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\x32\xcd\x01\n\x0fOrbitaKinematic\x12]\n\x0f\x43omputeOrbitaIK\x12#.reachy.sdk.kinematics.OrbitaTarget\x1a%.reachy.sdk.kinematics.JointsPosition\x12[\n\x16GetQuaternionTransform\x12\x1c.reachy.sdk.kinematics.Point\x1a#.reachy.sdk.kinematics.OrbitaTargetb\x06proto3'
+  serialized_pb=b'\n\x17orbita_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\"<\n\x0cOrbitaTarget\x12,\n\x01q\x18\x01 \x01(\x0b\x32!.reachy.sdk.kinematics.Quaternion\"(\n\x05Point\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\"W\n\x10OrbitaIKSolution\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x32\n\x03sol\x18\x02 \x01(\x0b\x32%.reachy.sdk.kinematics.JointsPosition2\xcf\x01\n\x0fOrbitaKinematic\x12_\n\x0f\x43omputeOrbitaIK\x12#.reachy.sdk.kinematics.OrbitaTarget\x1a\'.reachy.sdk.kinematics.OrbitaIKSolution\x12[\n\x16GetQuaternionTransform\x12\x1c.reachy.sdk.kinematics.Point\x1a#.reachy.sdk.kinematics.OrbitaTargetb\x06proto3'
   ,
   dependencies=[kinematics__pb2.DESCRIPTOR,])
 
@@ -157,10 +157,51 @@ _POINT = _descriptor.Descriptor(
   serialized_end=228,
 )
 
+
+_ORBITAIKSOLUTION = _descriptor.Descriptor(
+  name='OrbitaIKSolution',
+  full_name='reachy.sdk.kinematics.OrbitaIKSolution',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='reachy.sdk.kinematics.OrbitaIKSolution.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sol', full_name='reachy.sdk.kinematics.OrbitaIKSolution.sol', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=230,
+  serialized_end=317,
+)
+
 _ORBITATARGET.fields_by_name['q'].message_type = _QUATERNION
+_ORBITAIKSOLUTION.fields_by_name['sol'].message_type = kinematics__pb2._JOINTSPOSITION
 DESCRIPTOR.message_types_by_name['Quaternion'] = _QUATERNION
 DESCRIPTOR.message_types_by_name['OrbitaTarget'] = _ORBITATARGET
 DESCRIPTOR.message_types_by_name['Point'] = _POINT
+DESCRIPTOR.message_types_by_name['OrbitaIKSolution'] = _ORBITAIKSOLUTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Quaternion = _reflection.GeneratedProtocolMessageType('Quaternion', (_message.Message,), {
@@ -184,6 +225,13 @@ Point = _reflection.GeneratedProtocolMessageType('Point', (_message.Message,), {
   })
 _sym_db.RegisterMessage(Point)
 
+OrbitaIKSolution = _reflection.GeneratedProtocolMessageType('OrbitaIKSolution', (_message.Message,), {
+  'DESCRIPTOR' : _ORBITAIKSOLUTION,
+  '__module__' : 'orbita_kinematics_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.OrbitaIKSolution)
+  })
+_sym_db.RegisterMessage(OrbitaIKSolution)
+
 
 
 _ORBITAKINEMATIC = _descriptor.ServiceDescriptor(
@@ -193,8 +241,8 @@ _ORBITAKINEMATIC = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=231,
-  serialized_end=436,
+  serialized_start=320,
+  serialized_end=527,
   methods=[
   _descriptor.MethodDescriptor(
     name='ComputeOrbitaIK',
@@ -202,7 +250,7 @@ _ORBITAKINEMATIC = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=_ORBITATARGET,
-    output_type=kinematics__pb2._JOINTSPOSITION,
+    output_type=_ORBITAIKSOLUTION,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
