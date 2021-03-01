@@ -157,7 +157,6 @@ _POINT = _descriptor.Descriptor(
   serialized_end=228,
 )
 
-
 _ORBITAIKSOLUTION = _descriptor.Descriptor(
   name='OrbitaIKSolution',
   full_name='reachy.sdk.kinematics.OrbitaIKSolution',

@@ -7,7 +7,9 @@ import "orbita_kinematics.proto";
 
 
 message CartesianCommandAck {
-    bool success = 1;
+    bool left_arm_success = 1;
+    bool right_arm_success = 2;
+    bool orbita_head_success = 3;
 }
 
 message FullBodyCartesianCommand {

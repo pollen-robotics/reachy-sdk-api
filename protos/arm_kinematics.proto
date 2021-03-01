@@ -20,7 +20,12 @@ message ArmJointsPosition {
     JointsPosition positions = 2;
 }
 
+message ArmIKSolution {
+    bool success = 1;
+    ArmJointsPosition sol = 2;
+}
+
 service ArmKinematic {
     rpc ComputeArmFK(ArmJointsPosition) returns (ArmEndEffector);
-    rpc ComputeArmIK(ArmEndEffector) returns (ArmJointsPosition);
+    rpc ComputeArmIK(ArmEndEffector) returns (ArmIKSolution);
 }

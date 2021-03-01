@@ -44,6 +44,7 @@ namespace Reachy.Sdk.Kinematics {
 
     static readonly grpc::Marshaller<global::Reachy.Sdk.Kinematics.ArmJointsPosition> __Marshaller_reachy_sdk_kinematics_ArmJointsPosition = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Kinematics.ArmJointsPosition.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Kinematics.ArmEndEffector> __Marshaller_reachy_sdk_kinematics_ArmEndEffector = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Kinematics.ArmEndEffector.Parser));
+    static readonly grpc::Marshaller<global::Reachy.Sdk.Kinematics.ArmIKSolution> __Marshaller_reachy_sdk_kinematics_ArmIKSolution = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Kinematics.ArmIKSolution.Parser));
 
     static readonly grpc::Method<global::Reachy.Sdk.Kinematics.ArmJointsPosition, global::Reachy.Sdk.Kinematics.ArmEndEffector> __Method_ComputeArmFK = new grpc::Method<global::Reachy.Sdk.Kinematics.ArmJointsPosition, global::Reachy.Sdk.Kinematics.ArmEndEffector>(
         grpc::MethodType.Unary,
@@ -52,12 +53,12 @@ namespace Reachy.Sdk.Kinematics {
         __Marshaller_reachy_sdk_kinematics_ArmJointsPosition,
         __Marshaller_reachy_sdk_kinematics_ArmEndEffector);
 
-    static readonly grpc::Method<global::Reachy.Sdk.Kinematics.ArmEndEffector, global::Reachy.Sdk.Kinematics.ArmJointsPosition> __Method_ComputeArmIK = new grpc::Method<global::Reachy.Sdk.Kinematics.ArmEndEffector, global::Reachy.Sdk.Kinematics.ArmJointsPosition>(
+    static readonly grpc::Method<global::Reachy.Sdk.Kinematics.ArmEndEffector, global::Reachy.Sdk.Kinematics.ArmIKSolution> __Method_ComputeArmIK = new grpc::Method<global::Reachy.Sdk.Kinematics.ArmEndEffector, global::Reachy.Sdk.Kinematics.ArmIKSolution>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ComputeArmIK",
         __Marshaller_reachy_sdk_kinematics_ArmEndEffector,
-        __Marshaller_reachy_sdk_kinematics_ArmJointsPosition);
+        __Marshaller_reachy_sdk_kinematics_ArmIKSolution);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -74,7 +75,7 @@ namespace Reachy.Sdk.Kinematics {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Kinematics.ArmJointsPosition> ComputeArmIK(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Kinematics.ArmIKSolution> ComputeArmIK(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -120,19 +121,19 @@ namespace Reachy.Sdk.Kinematics {
       {
         return CallInvoker.AsyncUnaryCall(__Method_ComputeArmFK, null, options, request);
       }
-      public virtual global::Reachy.Sdk.Kinematics.ArmJointsPosition ComputeArmIK(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Reachy.Sdk.Kinematics.ArmIKSolution ComputeArmIK(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ComputeArmIK(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Reachy.Sdk.Kinematics.ArmJointsPosition ComputeArmIK(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::CallOptions options)
+      public virtual global::Reachy.Sdk.Kinematics.ArmIKSolution ComputeArmIK(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ComputeArmIK, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Kinematics.ArmJointsPosition> ComputeArmIKAsync(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Kinematics.ArmIKSolution> ComputeArmIKAsync(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ComputeArmIKAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Kinematics.ArmJointsPosition> ComputeArmIKAsync(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Kinematics.ArmIKSolution> ComputeArmIKAsync(global::Reachy.Sdk.Kinematics.ArmEndEffector request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ComputeArmIK, null, options, request);
       }
@@ -159,7 +160,7 @@ namespace Reachy.Sdk.Kinematics {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ArmKinematicBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_ComputeArmFK, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Kinematics.ArmJointsPosition, global::Reachy.Sdk.Kinematics.ArmEndEffector>(serviceImpl.ComputeArmFK));
-      serviceBinder.AddMethod(__Method_ComputeArmIK, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Kinematics.ArmEndEffector, global::Reachy.Sdk.Kinematics.ArmJointsPosition>(serviceImpl.ComputeArmIK));
+      serviceBinder.AddMethod(__Method_ComputeArmIK, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Kinematics.ArmEndEffector, global::Reachy.Sdk.Kinematics.ArmIKSolution>(serviceImpl.ComputeArmIK));
     }
 
   }
