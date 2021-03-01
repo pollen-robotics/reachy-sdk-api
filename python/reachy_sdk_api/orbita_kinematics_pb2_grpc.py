@@ -19,12 +19,23 @@ class OrbitaKinematicStub(object):
                 request_serializer=orbita__kinematics__pb2.OrbitaTarget.SerializeToString,
                 response_deserializer=orbita__kinematics__pb2.OrbitaIKSolution.FromString,
                 )
+        self.GetQuaternionTransform = channel.unary_unary(
+                '/reachy.sdk.kinematics.OrbitaKinematic/GetQuaternionTransform',
+                request_serializer=orbita__kinematics__pb2.Point.SerializeToString,
+                response_deserializer=orbita__kinematics__pb2.OrbitaTarget.FromString,
+                )
 
 
 class OrbitaKinematicServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def ComputeOrbitaIK(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetQuaternionTransform(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -37,6 +48,11 @@ def add_OrbitaKinematicServicer_to_server(servicer, server):
                     servicer.ComputeOrbitaIK,
                     request_deserializer=orbita__kinematics__pb2.OrbitaTarget.FromString,
                     response_serializer=orbita__kinematics__pb2.OrbitaIKSolution.SerializeToString,
+            ),
+            'GetQuaternionTransform': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetQuaternionTransform,
+                    request_deserializer=orbita__kinematics__pb2.Point.FromString,
+                    response_serializer=orbita__kinematics__pb2.OrbitaTarget.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -62,5 +78,22 @@ class OrbitaKinematic(object):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.OrbitaKinematic/ComputeOrbitaIK',
             orbita__kinematics__pb2.OrbitaTarget.SerializeToString,
             orbita__kinematics__pb2.OrbitaIKSolution.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetQuaternionTransform(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.OrbitaKinematic/GetQuaternionTransform',
+            orbita__kinematics__pb2.Point.SerializeToString,
+            orbita__kinematics__pb2.OrbitaTarget.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

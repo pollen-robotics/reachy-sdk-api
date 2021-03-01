@@ -15,6 +15,12 @@ message OrbitaTarget {
     Quaternion q = 1;
 }
 
+message Point {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+}
+
 message OrbitaIKSolution {
     bool success = 1;
     JointsPosition sol = 2;
@@ -22,4 +28,5 @@ message OrbitaIKSolution {
 
 service OrbitaKinematic {
     rpc ComputeOrbitaIK(OrbitaTarget) returns (OrbitaIKSolution);
+    rpc GetQuaternionTransform(Point) returns (OrbitaTarget);
 }
