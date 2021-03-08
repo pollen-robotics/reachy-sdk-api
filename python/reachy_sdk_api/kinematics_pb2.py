@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+import joint_pb2 as joint__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,8 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10kinematics.proto\x12\x15reachy.sdk.kinematics\"/\n\rJointPosition\x12\x0b\n\x03ids\x18\x01 \x03(\r\x12\x11\n\tpositions\x18\x02 \x03(\x01\"\x19\n\tMatrix4x4\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x01\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\x62\x06proto3'
-)
+  serialized_pb=b'\n\x10kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x0bjoint.proto\"J\n\rJointPosition\x12&\n\x03ids\x18\x01 \x03(\x0b\x32\x19.reachy.sdk.joint.JointId\x12\x11\n\tpositions\x18\x02 \x03(\x01\"\x19\n\tMatrix4x4\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x01\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\x62\x06proto3'
+  ,
+  dependencies=[joint__pb2.DESCRIPTOR,])
 
 
 
@@ -35,7 +37,7 @@ _JOINTPOSITION = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='ids', full_name='reachy.sdk.kinematics.JointPosition.ids', index=0,
-      number=1, type=13, cpp_type=3, label=3,
+      number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -59,8 +61,8 @@ _JOINTPOSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=43,
-  serialized_end=90,
+  serialized_start=56,
+  serialized_end=130,
 )
 
 
@@ -91,8 +93,8 @@ _MATRIX4X4 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=92,
-  serialized_end=117,
+  serialized_start=132,
+  serialized_end=157,
 )
 
 
@@ -144,10 +146,11 @@ _QUATERNION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=119,
-  serialized_end=175,
+  serialized_start=159,
+  serialized_end=215,
 )
 
+_JOINTPOSITION.fields_by_name['ids'].message_type = joint__pb2._JOINTID
 DESCRIPTOR.message_types_by_name['JointPosition'] = _JOINTPOSITION
 DESCRIPTOR.message_types_by_name['Matrix4x4'] = _MATRIX4X4
 DESCRIPTOR.message_types_by_name['Quaternion'] = _QUATERNION
