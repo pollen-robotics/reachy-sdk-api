@@ -105,7 +105,7 @@ service JointService {
     rpc GetAllJointsId(google.protobuf.Empty) returns (JointsId);
 
     rpc GetJointsState(JointsStateRequest) returns (JointsState);
-    rpc StreamAllJointsState(StreamJointsRequest) returns (stream JointsState);
+    rpc StreamJointsState(StreamJointsRequest) returns (stream JointsState);
 
     rpc SendCommands(JointsCommand) returns (JointCommandAck);
     rpc StreamJointsCommand(stream JointsCommand) returns (JointCommandAck);
