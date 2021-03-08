@@ -2,8 +2,10 @@ syntax = "proto3";
 
 package reachy.sdk.kinematics;
 
+import "joint.proto";
+
 message JointPosition {
-    repeated uint32 ids = 1;
+    repeated reachy.sdk.joint.JointId ids = 1;
     repeated double positions = 2;
 }
 
