@@ -68,7 +68,7 @@ message JointsId {
 }
 
 message JointsStateRequest {
-    repeated JointId ids  = 1;
+    repeated JointId ids = 1;
     repeated JointField requested_fields = 2;
 
     google.protobuf.Timestamp timestamp = 15;
