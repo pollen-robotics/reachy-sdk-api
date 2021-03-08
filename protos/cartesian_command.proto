@@ -18,7 +18,7 @@ message FullBodyCartesianCommand {
     OrbitaIKRequest neck = 3;
 }
 
-service CartesianCommandService {
+service FullBodyCartesianCommandService {
     rpc SendFullBodyCartesianCommand(FullBodyCartesianCommand) returns (FullBodyCartesianCommandAck);
     rpc StreamCartesianCommands(stream FullBodyCartesianCommand) returns (FullBodyCartesianCommandAck);
 }

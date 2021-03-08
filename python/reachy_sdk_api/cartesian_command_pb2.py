@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x63\x61rtesian_command.proto\x12\x15reachy.sdk.kinematics\x1a\x14\x61rm_kinematics.proto\x1a\x17orbita_kinematics.proto\"\x80\x01\n\x1b\x46ullBodyCartesianCommandAck\x12 \n\x18left_arm_command_success\x18\x01 \x01(\x08\x12!\n\x19right_arm_command_success\x18\x02 \x01(\x08\x12\x1c\n\x14neck_command_success\x18\x03 \x01(\x08\"\xbf\x01\n\x18\x46ullBodyCartesianCommand\x12\x35\n\x08left_arm\x18\x01 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x36\n\tright_arm\x18\x02 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x34\n\x04neck\x18\x03 \x01(\x0b\x32&.reachy.sdk.kinematics.OrbitaIKRequest2\xa2\x02\n\x17\x43\x61rtesianCommandService\x12\x83\x01\n\x1cSendFullBodyCartesianCommand\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck\x12\x80\x01\n\x17StreamCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck(\x01\x62\x06proto3'
+  serialized_pb=b'\n\x17\x63\x61rtesian_command.proto\x12\x15reachy.sdk.kinematics\x1a\x14\x61rm_kinematics.proto\x1a\x17orbita_kinematics.proto\"\x80\x01\n\x1b\x46ullBodyCartesianCommandAck\x12 \n\x18left_arm_command_success\x18\x01 \x01(\x08\x12!\n\x19right_arm_command_success\x18\x02 \x01(\x08\x12\x1c\n\x14neck_command_success\x18\x03 \x01(\x08\"\xbf\x01\n\x18\x46ullBodyCartesianCommand\x12\x35\n\x08left_arm\x18\x01 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x36\n\tright_arm\x18\x02 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x34\n\x04neck\x18\x03 \x01(\x0b\x32&.reachy.sdk.kinematics.OrbitaIKRequest2\xaa\x02\n\x1f\x46ullBodyCartesianCommandService\x12\x83\x01\n\x1cSendFullBodyCartesianCommand\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck\x12\x80\x01\n\x17StreamCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck(\x01\x62\x06proto3'
   ,
   dependencies=[arm__kinematics__pb2.DESCRIPTOR,orbita__kinematics__pb2.DESCRIPTOR,])
 
@@ -142,19 +142,19 @@ _sym_db.RegisterMessage(FullBodyCartesianCommand)
 
 
 
-_CARTESIANCOMMANDSERVICE = _descriptor.ServiceDescriptor(
-  name='CartesianCommandService',
-  full_name='reachy.sdk.kinematics.CartesianCommandService',
+_FULLBODYCARTESIANCOMMANDSERVICE = _descriptor.ServiceDescriptor(
+  name='FullBodyCartesianCommandService',
+  full_name='reachy.sdk.kinematics.FullBodyCartesianCommandService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=423,
-  serialized_end=713,
+  serialized_end=721,
   methods=[
   _descriptor.MethodDescriptor(
     name='SendFullBodyCartesianCommand',
-    full_name='reachy.sdk.kinematics.CartesianCommandService.SendFullBodyCartesianCommand',
+    full_name='reachy.sdk.kinematics.FullBodyCartesianCommandService.SendFullBodyCartesianCommand',
     index=0,
     containing_service=None,
     input_type=_FULLBODYCARTESIANCOMMAND,
@@ -164,7 +164,7 @@ _CARTESIANCOMMANDSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='StreamCartesianCommands',
-    full_name='reachy.sdk.kinematics.CartesianCommandService.StreamCartesianCommands',
+    full_name='reachy.sdk.kinematics.FullBodyCartesianCommandService.StreamCartesianCommands',
     index=1,
     containing_service=None,
     input_type=_FULLBODYCARTESIANCOMMAND,
@@ -173,8 +173,8 @@ _CARTESIANCOMMANDSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_CARTESIANCOMMANDSERVICE)
+_sym_db.RegisterServiceDescriptor(_FULLBODYCARTESIANCOMMANDSERVICE)
 
-DESCRIPTOR.services_by_name['CartesianCommandService'] = _CARTESIANCOMMANDSERVICE
+DESCRIPTOR.services_by_name['FullBodyCartesianCommandService'] = _FULLBODYCARTESIANCOMMANDSERVICE
 
 # @@protoc_insertion_point(module_scope)
