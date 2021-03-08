@@ -6,19 +6,19 @@ import "arm_kinematics.proto";
 import "orbita_kinematics.proto";
 
 
-message CartesianCommandAck {
-    bool left_arm_success = 1;
-    bool right_arm_success = 2;
-    bool orbita_head_success = 3;
+message FullBodyCartesianCommandAck {
+    bool left_arm_command_success = 1;
+    bool right_arm_command_success = 2;
+    bool neck_command_success = 3;
 }
 
 message FullBodyCartesianCommand {
-    ArmEndEffector left_arm_end_effector = 1;
-    ArmEndEffector right_arm_end_effector = 2;
-    OrbitaTarget orbita_target = 3;
+    ArmIKRequest left_arm = 1;
+    ArmIKRequest right_arm = 2;
+    OrbitaIKRequest neck = 3;
 }
 
 service CartesianCommandService {
-    rpc SendCartesianCommand(FullBodyCartesianCommand) returns (CartesianCommandAck);
-    rpc StreamCartesianCommands(stream FullBodyCartesianCommand) returns (CartesianCommandAck);
+    rpc SendFullBodyCartesianCommand(FullBodyCartesianCommand) returns (FullBodyCartesianCommandAck);
+    rpc StreamCartesianCommands(stream FullBodyCartesianCommand) returns (FullBodyCartesianCommandAck);
 }

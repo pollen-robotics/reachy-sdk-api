@@ -5,7 +5,7 @@ import grpc
 import arm_kinematics_pb2 as arm__kinematics__pb2
 
 
-class ArmKinematicStub(object):
+class ArmKinematicsStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,18 +15,18 @@ class ArmKinematicStub(object):
             channel: A grpc.Channel.
         """
         self.ComputeArmFK = channel.unary_unary(
-                '/reachy.sdk.kinematics.ArmKinematic/ComputeArmFK',
-                request_serializer=arm__kinematics__pb2.ArmJointsPosition.SerializeToString,
-                response_deserializer=arm__kinematics__pb2.ArmEndEffector.FromString,
+                '/reachy.sdk.kinematics.ArmKinematics/ComputeArmFK',
+                request_serializer=arm__kinematics__pb2.ArmFKRequest.SerializeToString,
+                response_deserializer=arm__kinematics__pb2.ArmFKSolution.FromString,
                 )
         self.ComputeArmIK = channel.unary_unary(
-                '/reachy.sdk.kinematics.ArmKinematic/ComputeArmIK',
-                request_serializer=arm__kinematics__pb2.ArmEndEffector.SerializeToString,
+                '/reachy.sdk.kinematics.ArmKinematics/ComputeArmIK',
+                request_serializer=arm__kinematics__pb2.ArmIKRequest.SerializeToString,
                 response_deserializer=arm__kinematics__pb2.ArmIKSolution.FromString,
                 )
 
 
-class ArmKinematicServicer(object):
+class ArmKinematicsServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def ComputeArmFK(self, request, context):
@@ -42,26 +42,26 @@ class ArmKinematicServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ArmKinematicServicer_to_server(servicer, server):
+def add_ArmKinematicsServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ComputeArmFK': grpc.unary_unary_rpc_method_handler(
                     servicer.ComputeArmFK,
-                    request_deserializer=arm__kinematics__pb2.ArmJointsPosition.FromString,
-                    response_serializer=arm__kinematics__pb2.ArmEndEffector.SerializeToString,
+                    request_deserializer=arm__kinematics__pb2.ArmFKRequest.FromString,
+                    response_serializer=arm__kinematics__pb2.ArmFKSolution.SerializeToString,
             ),
             'ComputeArmIK': grpc.unary_unary_rpc_method_handler(
                     servicer.ComputeArmIK,
-                    request_deserializer=arm__kinematics__pb2.ArmEndEffector.FromString,
+                    request_deserializer=arm__kinematics__pb2.ArmIKRequest.FromString,
                     response_serializer=arm__kinematics__pb2.ArmIKSolution.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'reachy.sdk.kinematics.ArmKinematic', rpc_method_handlers)
+            'reachy.sdk.kinematics.ArmKinematics', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class ArmKinematic(object):
+class ArmKinematics(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -75,9 +75,9 @@ class ArmKinematic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.ArmKinematic/ComputeArmFK',
-            arm__kinematics__pb2.ArmJointsPosition.SerializeToString,
-            arm__kinematics__pb2.ArmEndEffector.FromString,
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.ArmKinematics/ComputeArmFK',
+            arm__kinematics__pb2.ArmFKRequest.SerializeToString,
+            arm__kinematics__pb2.ArmFKSolution.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -92,8 +92,8 @@ class ArmKinematic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.ArmKinematic/ComputeArmIK',
-            arm__kinematics__pb2.ArmEndEffector.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.ArmKinematics/ComputeArmIK',
+            arm__kinematics__pb2.ArmIKRequest.SerializeToString,
             arm__kinematics__pb2.ArmIKSolution.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

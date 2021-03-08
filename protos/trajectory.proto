@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+package reachy.sdk.trajectory;
+
+message TrajectoryRequest {
+    google.protobuf.FloatValue starting_position = 1;
+    google.protobuf.FloatValue target_position = 2;
+    google.protobuf.FloatValue duration = 3;
+    google.protobuf.FloatValue dt = 4;
+}
+
+message Trajectory {
+    repeated double positions = 1;
+    double dt = 2;
+}
+
+service KinematicsService {
+    rpc ComputeMinimumJerkTrajectory(TrajectoryRequest) returns (Trajectory);
+}

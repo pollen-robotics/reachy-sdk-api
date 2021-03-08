@@ -2,10 +2,10 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import load_sensor_pb2 as load__sensor__pb2
+import trajectory_pb2 as trajectory__pb2
 
 
-class LoadServiceStub(object):
+class KinematicsServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -14,42 +14,42 @@ class LoadServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetLoad = channel.unary_unary(
-                '/reachy.sdk.joint.LoadService/GetLoad',
-                request_serializer=load__sensor__pb2.Side.SerializeToString,
-                response_deserializer=load__sensor__pb2.LoadValue.FromString,
+        self.ComputeMinimumJerkTrajectory = channel.unary_unary(
+                '/reachy.sdk.trajectory.KinematicsService/ComputeMinimumJerkTrajectory',
+                request_serializer=trajectory__pb2.TrajectoryRequest.SerializeToString,
+                response_deserializer=trajectory__pb2.Trajectory.FromString,
                 )
 
 
-class LoadServiceServicer(object):
+class KinematicsServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def GetLoad(self, request, context):
+    def ComputeMinimumJerkTrajectory(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_LoadServiceServicer_to_server(servicer, server):
+def add_KinematicsServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetLoad': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetLoad,
-                    request_deserializer=load__sensor__pb2.Side.FromString,
-                    response_serializer=load__sensor__pb2.LoadValue.SerializeToString,
+            'ComputeMinimumJerkTrajectory': grpc.unary_unary_rpc_method_handler(
+                    servicer.ComputeMinimumJerkTrajectory,
+                    request_deserializer=trajectory__pb2.TrajectoryRequest.FromString,
+                    response_serializer=trajectory__pb2.Trajectory.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'reachy.sdk.joint.LoadService', rpc_method_handlers)
+            'reachy.sdk.trajectory.KinematicsService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class LoadService(object):
+class KinematicsService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def GetLoad(request,
+    def ComputeMinimumJerkTrajectory(request,
             target,
             options=(),
             channel_credentials=None,
@@ -59,8 +59,8 @@ class LoadService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.joint.LoadService/GetLoad',
-            load__sensor__pb2.Side.SerializeToString,
-            load__sensor__pb2.LoadValue.FromString,
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.trajectory.KinematicsService/ComputeMinimumJerkTrajectory',
+            trajectory__pb2.TrajectoryRequest.SerializeToString,
+            trajectory__pb2.Trajectory.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,24 +19,30 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x1egoogle/protobuf/wrappers.proto\"#\n\x0eJointsPosition\x12\x11\n\tpositions\x18\x01 \x03(\x01\"\x19\n\tMatrix4x4\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x01\"\x1f\n\nTrajectory\x12\x11\n\tpositions\x18\x01 \x03(\x01\"\xaa\x01\n\x0eMinjerkRequest\x12\x35\n\x10present_position\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x32\n\rgoal_position\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue2o\n\x11KinematicsService\x12Z\n\x0e\x43omputeMinjerk\x12%.reachy.sdk.kinematics.MinjerkRequest\x1a!.reachy.sdk.kinematics.Trajectoryb\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
+  serialized_pb=b'\n\x10kinematics.proto\x12\x15reachy.sdk.kinematics\"/\n\rJointPosition\x12\x0b\n\x03ids\x18\x01 \x03(\r\x12\x11\n\tpositions\x18\x02 \x03(\x01\"\x19\n\tMatrix4x4\x12\x0c\n\x04\x64\x61ta\x18\x01 \x03(\x01\"8\n\nQuaternion\x12\t\n\x01w\x18\x01 \x01(\x01\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\t\n\x01z\x18\x04 \x01(\x01\x62\x06proto3'
+)
 
 
 
 
-_JOINTSPOSITION = _descriptor.Descriptor(
-  name='JointsPosition',
-  full_name='reachy.sdk.kinematics.JointsPosition',
+_JOINTPOSITION = _descriptor.Descriptor(
+  name='JointPosition',
+  full_name='reachy.sdk.kinematics.JointPosition',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='positions', full_name='reachy.sdk.kinematics.JointsPosition.positions', index=0,
-      number=1, type=1, cpp_type=5, label=3,
+      name='ids', full_name='reachy.sdk.kinematics.JointPosition.ids', index=0,
+      number=1, type=13, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='positions', full_name='reachy.sdk.kinematics.JointPosition.positions', index=1,
+      number=2, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -54,8 +59,8 @@ _JOINTSPOSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=75,
-  serialized_end=110,
+  serialized_start=43,
+  serialized_end=90,
 )
 
 
@@ -86,23 +91,44 @@ _MATRIX4X4 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=112,
-  serialized_end=137,
+  serialized_start=92,
+  serialized_end=117,
 )
 
 
-_TRAJECTORY = _descriptor.Descriptor(
-  name='Trajectory',
-  full_name='reachy.sdk.kinematics.Trajectory',
+_QUATERNION = _descriptor.Descriptor(
+  name='Quaternion',
+  full_name='reachy.sdk.kinematics.Quaternion',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='positions', full_name='reachy.sdk.kinematics.Trajectory.positions', index=0,
-      number=1, type=1, cpp_type=5, label=3,
-      has_default_value=False, default_value=[],
+      name='w', full_name='reachy.sdk.kinematics.Quaternion.w', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='x', full_name='reachy.sdk.kinematics.Quaternion.x', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='reachy.sdk.kinematics.Quaternion.y', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='z', full_name='reachy.sdk.kinematics.Quaternion.z', index=3,
+      number=4, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -118,71 +144,21 @@ _TRAJECTORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=139,
-  serialized_end=170,
+  serialized_start=119,
+  serialized_end=175,
 )
 
-
-_MINJERKREQUEST = _descriptor.Descriptor(
-  name='MinjerkRequest',
-  full_name='reachy.sdk.kinematics.MinjerkRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='present_position', full_name='reachy.sdk.kinematics.MinjerkRequest.present_position', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='goal_position', full_name='reachy.sdk.kinematics.MinjerkRequest.goal_position', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='duration', full_name='reachy.sdk.kinematics.MinjerkRequest.duration', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=173,
-  serialized_end=343,
-)
-
-_MINJERKREQUEST.fields_by_name['present_position'].message_type = google_dot_protobuf_dot_wrappers__pb2._FLOATVALUE
-_MINJERKREQUEST.fields_by_name['goal_position'].message_type = google_dot_protobuf_dot_wrappers__pb2._FLOATVALUE
-_MINJERKREQUEST.fields_by_name['duration'].message_type = google_dot_protobuf_dot_wrappers__pb2._FLOATVALUE
-DESCRIPTOR.message_types_by_name['JointsPosition'] = _JOINTSPOSITION
+DESCRIPTOR.message_types_by_name['JointPosition'] = _JOINTPOSITION
 DESCRIPTOR.message_types_by_name['Matrix4x4'] = _MATRIX4X4
-DESCRIPTOR.message_types_by_name['Trajectory'] = _TRAJECTORY
-DESCRIPTOR.message_types_by_name['MinjerkRequest'] = _MINJERKREQUEST
+DESCRIPTOR.message_types_by_name['Quaternion'] = _QUATERNION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-JointsPosition = _reflection.GeneratedProtocolMessageType('JointsPosition', (_message.Message,), {
-  'DESCRIPTOR' : _JOINTSPOSITION,
+JointPosition = _reflection.GeneratedProtocolMessageType('JointPosition', (_message.Message,), {
+  'DESCRIPTOR' : _JOINTPOSITION,
   '__module__' : 'kinematics_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.JointsPosition)
+  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.JointPosition)
   })
-_sym_db.RegisterMessage(JointsPosition)
+_sym_db.RegisterMessage(JointPosition)
 
 Matrix4x4 = _reflection.GeneratedProtocolMessageType('Matrix4x4', (_message.Message,), {
   'DESCRIPTOR' : _MATRIX4X4,
@@ -191,45 +167,12 @@ Matrix4x4 = _reflection.GeneratedProtocolMessageType('Matrix4x4', (_message.Mess
   })
 _sym_db.RegisterMessage(Matrix4x4)
 
-Trajectory = _reflection.GeneratedProtocolMessageType('Trajectory', (_message.Message,), {
-  'DESCRIPTOR' : _TRAJECTORY,
+Quaternion = _reflection.GeneratedProtocolMessageType('Quaternion', (_message.Message,), {
+  'DESCRIPTOR' : _QUATERNION,
   '__module__' : 'kinematics_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.Trajectory)
+  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.Quaternion)
   })
-_sym_db.RegisterMessage(Trajectory)
+_sym_db.RegisterMessage(Quaternion)
 
-MinjerkRequest = _reflection.GeneratedProtocolMessageType('MinjerkRequest', (_message.Message,), {
-  'DESCRIPTOR' : _MINJERKREQUEST,
-  '__module__' : 'kinematics_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.MinjerkRequest)
-  })
-_sym_db.RegisterMessage(MinjerkRequest)
-
-
-
-_KINEMATICSSERVICE = _descriptor.ServiceDescriptor(
-  name='KinematicsService',
-  full_name='reachy.sdk.kinematics.KinematicsService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=345,
-  serialized_end=456,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ComputeMinjerk',
-    full_name='reachy.sdk.kinematics.KinematicsService.ComputeMinjerk',
-    index=0,
-    containing_service=None,
-    input_type=_MINJERKREQUEST,
-    output_type=_TRAJECTORY,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_KINEMATICSSERVICE)
-
-DESCRIPTOR.services_by_name['KinematicsService'] = _KINEMATICSSERVICE
 
 # @@protoc_insertion_point(module_scope)

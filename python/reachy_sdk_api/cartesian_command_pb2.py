@@ -21,37 +21,37 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x63\x61rtesian_command.proto\x12\x15reachy.sdk.kinematics\x1a\x14\x61rm_kinematics.proto\x1a\x17orbita_kinematics.proto\"g\n\x13\x43\x61rtesianCommandAck\x12\x18\n\x10left_arm_success\x18\x01 \x01(\x08\x12\x19\n\x11right_arm_success\x18\x02 \x01(\x08\x12\x1b\n\x13orbita_head_success\x18\x03 \x01(\x08\"\xe3\x01\n\x18\x46ullBodyCartesianCommand\x12\x44\n\x15left_arm_end_effector\x18\x01 \x01(\x0b\x32%.reachy.sdk.kinematics.ArmEndEffector\x12\x45\n\x16right_arm_end_effector\x18\x02 \x01(\x0b\x32%.reachy.sdk.kinematics.ArmEndEffector\x12:\n\rorbita_target\x18\x03 \x01(\x0b\x32#.reachy.sdk.kinematics.OrbitaTarget2\x88\x02\n\x17\x43\x61rtesianCommandService\x12s\n\x14SendCartesianCommand\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a*.reachy.sdk.kinematics.CartesianCommandAck\x12x\n\x17StreamCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a*.reachy.sdk.kinematics.CartesianCommandAck(\x01\x62\x06proto3'
+  serialized_pb=b'\n\x17\x63\x61rtesian_command.proto\x12\x15reachy.sdk.kinematics\x1a\x14\x61rm_kinematics.proto\x1a\x17orbita_kinematics.proto\"\x80\x01\n\x1b\x46ullBodyCartesianCommandAck\x12 \n\x18left_arm_command_success\x18\x01 \x01(\x08\x12!\n\x19right_arm_command_success\x18\x02 \x01(\x08\x12\x1c\n\x14neck_command_success\x18\x03 \x01(\x08\"\xbf\x01\n\x18\x46ullBodyCartesianCommand\x12\x35\n\x08left_arm\x18\x01 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x36\n\tright_arm\x18\x02 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x34\n\x04neck\x18\x03 \x01(\x0b\x32&.reachy.sdk.kinematics.OrbitaIKRequest2\xa2\x02\n\x17\x43\x61rtesianCommandService\x12\x83\x01\n\x1cSendFullBodyCartesianCommand\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck\x12\x80\x01\n\x17StreamCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck(\x01\x62\x06proto3'
   ,
   dependencies=[arm__kinematics__pb2.DESCRIPTOR,orbita__kinematics__pb2.DESCRIPTOR,])
 
 
 
 
-_CARTESIANCOMMANDACK = _descriptor.Descriptor(
-  name='CartesianCommandAck',
-  full_name='reachy.sdk.kinematics.CartesianCommandAck',
+_FULLBODYCARTESIANCOMMANDACK = _descriptor.Descriptor(
+  name='FullBodyCartesianCommandAck',
+  full_name='reachy.sdk.kinematics.FullBodyCartesianCommandAck',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='left_arm_success', full_name='reachy.sdk.kinematics.CartesianCommandAck.left_arm_success', index=0,
+      name='left_arm_command_success', full_name='reachy.sdk.kinematics.FullBodyCartesianCommandAck.left_arm_command_success', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='right_arm_success', full_name='reachy.sdk.kinematics.CartesianCommandAck.right_arm_success', index=1,
+      name='right_arm_command_success', full_name='reachy.sdk.kinematics.FullBodyCartesianCommandAck.right_arm_command_success', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orbita_head_success', full_name='reachy.sdk.kinematics.CartesianCommandAck.orbita_head_success', index=2,
+      name='neck_command_success', full_name='reachy.sdk.kinematics.FullBodyCartesianCommandAck.neck_command_success', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -69,8 +69,8 @@ _CARTESIANCOMMANDACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=97,
-  serialized_end=200,
+  serialized_start=98,
+  serialized_end=226,
 )
 
 
@@ -83,21 +83,21 @@ _FULLBODYCARTESIANCOMMAND = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='left_arm_end_effector', full_name='reachy.sdk.kinematics.FullBodyCartesianCommand.left_arm_end_effector', index=0,
+      name='left_arm', full_name='reachy.sdk.kinematics.FullBodyCartesianCommand.left_arm', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='right_arm_end_effector', full_name='reachy.sdk.kinematics.FullBodyCartesianCommand.right_arm_end_effector', index=1,
+      name='right_arm', full_name='reachy.sdk.kinematics.FullBodyCartesianCommand.right_arm', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='orbita_target', full_name='reachy.sdk.kinematics.FullBodyCartesianCommand.orbita_target', index=2,
+      name='neck', full_name='reachy.sdk.kinematics.FullBodyCartesianCommand.neck', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -115,23 +115,23 @@ _FULLBODYCARTESIANCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=203,
-  serialized_end=430,
+  serialized_start=229,
+  serialized_end=420,
 )
 
-_FULLBODYCARTESIANCOMMAND.fields_by_name['left_arm_end_effector'].message_type = arm__kinematics__pb2._ARMENDEFFECTOR
-_FULLBODYCARTESIANCOMMAND.fields_by_name['right_arm_end_effector'].message_type = arm__kinematics__pb2._ARMENDEFFECTOR
-_FULLBODYCARTESIANCOMMAND.fields_by_name['orbita_target'].message_type = orbita__kinematics__pb2._ORBITATARGET
-DESCRIPTOR.message_types_by_name['CartesianCommandAck'] = _CARTESIANCOMMANDACK
+_FULLBODYCARTESIANCOMMAND.fields_by_name['left_arm'].message_type = arm__kinematics__pb2._ARMIKREQUEST
+_FULLBODYCARTESIANCOMMAND.fields_by_name['right_arm'].message_type = arm__kinematics__pb2._ARMIKREQUEST
+_FULLBODYCARTESIANCOMMAND.fields_by_name['neck'].message_type = orbita__kinematics__pb2._ORBITAIKREQUEST
+DESCRIPTOR.message_types_by_name['FullBodyCartesianCommandAck'] = _FULLBODYCARTESIANCOMMANDACK
 DESCRIPTOR.message_types_by_name['FullBodyCartesianCommand'] = _FULLBODYCARTESIANCOMMAND
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-CartesianCommandAck = _reflection.GeneratedProtocolMessageType('CartesianCommandAck', (_message.Message,), {
-  'DESCRIPTOR' : _CARTESIANCOMMANDACK,
+FullBodyCartesianCommandAck = _reflection.GeneratedProtocolMessageType('FullBodyCartesianCommandAck', (_message.Message,), {
+  'DESCRIPTOR' : _FULLBODYCARTESIANCOMMANDACK,
   '__module__' : 'cartesian_command_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.CartesianCommandAck)
+  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.FullBodyCartesianCommandAck)
   })
-_sym_db.RegisterMessage(CartesianCommandAck)
+_sym_db.RegisterMessage(FullBodyCartesianCommandAck)
 
 FullBodyCartesianCommand = _reflection.GeneratedProtocolMessageType('FullBodyCartesianCommand', (_message.Message,), {
   'DESCRIPTOR' : _FULLBODYCARTESIANCOMMAND,
@@ -149,16 +149,16 @@ _CARTESIANCOMMANDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=433,
-  serialized_end=697,
+  serialized_start=423,
+  serialized_end=713,
   methods=[
   _descriptor.MethodDescriptor(
-    name='SendCartesianCommand',
-    full_name='reachy.sdk.kinematics.CartesianCommandService.SendCartesianCommand',
+    name='SendFullBodyCartesianCommand',
+    full_name='reachy.sdk.kinematics.CartesianCommandService.SendFullBodyCartesianCommand',
     index=0,
     containing_service=None,
     input_type=_FULLBODYCARTESIANCOMMAND,
-    output_type=_CARTESIANCOMMANDACK,
+    output_type=_FULLBODYCARTESIANCOMMANDACK,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
@@ -168,7 +168,7 @@ _CARTESIANCOMMANDSERVICE = _descriptor.ServiceDescriptor(
     index=1,
     containing_service=None,
     input_type=_FULLBODYCARTESIANCOMMAND,
-    output_type=_CARTESIANCOMMANDACK,
+    output_type=_FULLBODYCARTESIANCOMMANDACK,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
