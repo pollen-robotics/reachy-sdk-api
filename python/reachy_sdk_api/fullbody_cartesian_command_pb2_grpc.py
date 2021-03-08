@@ -19,8 +19,8 @@ class FullBodyCartesianCommandServiceStub(object):
                 request_serializer=fullbody__cartesian__command__pb2.FullBodyCartesianCommand.SerializeToString,
                 response_deserializer=fullbody__cartesian__command__pb2.FullBodyCartesianCommandAck.FromString,
                 )
-        self.StreamCartesianCommands = channel.stream_unary(
-                '/reachy.sdk.kinematics.FullBodyCartesianCommandService/StreamCartesianCommands',
+        self.StreamFullBodyCartesianCommands = channel.stream_unary(
+                '/reachy.sdk.kinematics.FullBodyCartesianCommandService/StreamFullBodyCartesianCommands',
                 request_serializer=fullbody__cartesian__command__pb2.FullBodyCartesianCommand.SerializeToString,
                 response_deserializer=fullbody__cartesian__command__pb2.FullBodyCartesianCommandAck.FromString,
                 )
@@ -35,7 +35,7 @@ class FullBodyCartesianCommandServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def StreamCartesianCommands(self, request_iterator, context):
+    def StreamFullBodyCartesianCommands(self, request_iterator, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -49,8 +49,8 @@ def add_FullBodyCartesianCommandServiceServicer_to_server(servicer, server):
                     request_deserializer=fullbody__cartesian__command__pb2.FullBodyCartesianCommand.FromString,
                     response_serializer=fullbody__cartesian__command__pb2.FullBodyCartesianCommandAck.SerializeToString,
             ),
-            'StreamCartesianCommands': grpc.stream_unary_rpc_method_handler(
-                    servicer.StreamCartesianCommands,
+            'StreamFullBodyCartesianCommands': grpc.stream_unary_rpc_method_handler(
+                    servicer.StreamFullBodyCartesianCommands,
                     request_deserializer=fullbody__cartesian__command__pb2.FullBodyCartesianCommand.FromString,
                     response_serializer=fullbody__cartesian__command__pb2.FullBodyCartesianCommandAck.SerializeToString,
             ),
@@ -82,7 +82,7 @@ class FullBodyCartesianCommandService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def StreamCartesianCommands(request_iterator,
+    def StreamFullBodyCartesianCommands(request_iterator,
             target,
             options=(),
             channel_credentials=None,
@@ -92,7 +92,7 @@ class FullBodyCartesianCommandService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/reachy.sdk.kinematics.FullBodyCartesianCommandService/StreamCartesianCommands',
+        return grpc.experimental.stream_unary(request_iterator, target, '/reachy.sdk.kinematics.FullBodyCartesianCommandService/StreamFullBodyCartesianCommands',
             fullbody__cartesian__command__pb2.FullBodyCartesianCommand.SerializeToString,
             fullbody__cartesian__command__pb2.FullBodyCartesianCommandAck.FromString,
             options, channel_credentials,

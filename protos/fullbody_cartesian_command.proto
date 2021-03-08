@@ -20,5 +20,5 @@ message FullBodyCartesianCommand {
 
 service FullBodyCartesianCommandService {
     rpc SendFullBodyCartesianCommand(FullBodyCartesianCommand) returns (FullBodyCartesianCommandAck);
-    rpc StreamCartesianCommands(stream FullBodyCartesianCommand) returns (FullBodyCartesianCommandAck);
+    rpc StreamFullBodyCartesianCommands(stream FullBodyCartesianCommand) returns (FullBodyCartesianCommandAck);
 }
