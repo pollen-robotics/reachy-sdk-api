@@ -107,6 +107,6 @@ service JointService {
     rpc GetJointsState(JointsStateRequest) returns (JointsState);
     rpc StreamJointsState(StreamJointsRequest) returns (stream JointsState);
 
-    rpc SendCommands(JointsCommand) returns (JointCommandAck);
-    rpc StreamJointsCommand(stream JointsCommand) returns (JointCommandAck);
+    rpc SendJointsCommands(JointsCommand) returns (JointCommandAck);
+    rpc StreamJointsCommands(stream JointsCommand) returns (JointCommandAck);
 }
