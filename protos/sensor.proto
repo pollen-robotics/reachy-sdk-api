@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+package reachy.sdk.joint;
+
+message SensorId {
+    oneof id {
+        string name = 1;
+        uint32 uid = 2;
+    }
+}
+
+message SensorsId {
+    repeated string names = 1;
+    repeated uint32 uids = 2;
+}
+
+message ForceSensorState {
+    float force = 1;
+}
+
+message SensorState {
+    oneof state {
+        ForceSensorState force_sensor_state = 1;
+    }
+}
+
+
+message SensorsState {
+    repeated SensorId ids = 1;
+    repeated SensorState states = 2;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message SensorsStateRequest {
+    repeated SensorId ids = 1;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message StreamSensorsStateRequest {
+    SensorsStateRequest request = 1;
+    float publish_frequency = 2;
+}
+
+service SensorService {
+    rpc GetAllForceSensorsId(google.protobuf.Empty) returns (SensorsId);
+
+    rpc GetSensorsState(SensorsStateRequest) returns (SensorsState);
+    rpc StreamSensorStates(StreamSensorsStateRequest) returns (stream SensorsState);
+}

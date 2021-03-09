@@ -1,0 +1,112 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+package reachy.sdk.joint;
+
+enum JointField {
+    NONE = 0;
+
+    NAME = 1;
+    UID = 2;
+
+    PRESENT_POSITION = 3;
+    PRESENT_SPEED = 4;
+    PRESENT_LOAD = 5;
+    TEMPERATURE = 6;
+
+    COMPLIANT = 7;
+    GOAL_POSITION = 8;
+    SPEED_LIMIT = 9;
+    TORQUE_LIMIT = 10;
+    PID = 11;
+
+    ALL = 15;
+}
+
+message PIDValue {
+    float p = 1;
+    float i = 2;
+    float d = 3;
+}
+
+message JointId {
+    oneof id {
+        string name = 1;
+        uint32 uid = 2;
+    }
+}
+
+message JointState {
+    string name = 1;
+    uint32 uid = 2;
+
+    google.protobuf.FloatValue present_position = 3;
+    google.protobuf.FloatValue present_speed = 4;
+    google.protobuf.FloatValue present_load = 5;
+    google.protobuf.FloatValue temperature = 6;
+
+    google.protobuf.BoolValue compliant = 7;
+    google.protobuf.FloatValue goal_position = 8;
+    google.protobuf.FloatValue speed_limit = 9;
+    google.protobuf.FloatValue torque_limit = 10;
+    PIDValue pid = 11;
+}
+
+message JointsState {
+    repeated JointId ids = 1;
+    repeated JointState states = 2;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message JointsId {
+    repeated string names = 1;
+    repeated uint32 uids = 2;
+}
+
+message JointsStateRequest {
+    repeated JointId ids = 1;
+    repeated JointField requested_fields = 2;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message StreamJointsRequest {
+    JointsStateRequest request = 1;
+    float publish_frequency = 2;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message JointCommand {
+    JointId id = 1;
+
+    google.protobuf.BoolValue compliant = 7;
+    google.protobuf.FloatValue goal_position = 8;
+    google.protobuf.FloatValue speed_limit = 9;
+    google.protobuf.FloatValue torque_limit = 10;
+    PIDValue pid = 11;
+}
+
+message JointsCommand {
+    repeated JointCommand commands = 1;
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message JointCommandAck {
+    bool success = 1;
+}
+
+
+service JointService {
+    rpc GetAllJointsId(google.protobuf.Empty) returns (JointsId);
+
+    rpc GetJointsState(JointsStateRequest) returns (JointsState);
+    rpc StreamJointsState(StreamJointsRequest) returns (stream JointsState);
+
+    rpc SendJointsCommands(JointsCommand) returns (JointCommandAck);
+    rpc StreamJointsCommands(stream JointsCommand) returns (JointCommandAck);
+}

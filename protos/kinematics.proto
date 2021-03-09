@@ -1,27 +1,21 @@
 syntax = "proto3";
 
-import "google/protobuf/wrappers.proto";
-
 package reachy.sdk.kinematics;
 
-message JointsPosition {
-    repeated double positions = 1;
+import "joint.proto";
+
+message JointPosition {
+    repeated reachy.sdk.joint.JointId ids = 1;
+    repeated double positions = 2;
 }
 
 message Matrix4x4 {
     repeated double data = 1;
 }
 
-message Trajectory {
-    repeated double positions = 1;
-}
-
-message MinjerkRequest {
-    google.protobuf.FloatValue present_position = 1;
-    google.protobuf.FloatValue goal_position = 2;
-    google.protobuf.FloatValue duration = 3;
-}
-
-service KinematicsService {
-    rpc ComputeMinjerk(MinjerkRequest) returns (Trajectory);
+message Quaternion {
+    double w = 1;
+    double x = 2;
+    double y = 3;
+    double z = 4;
 }

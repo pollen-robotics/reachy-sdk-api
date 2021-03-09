@@ -5,7 +5,7 @@ import grpc
 import cartesian_command_pb2 as cartesian__command__pb2
 
 
-class CartesianCommandServiceStub(object):
+class FullBodyCartesianCommandServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -14,22 +14,22 @@ class CartesianCommandServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.SendCartesianCommand = channel.unary_unary(
-                '/reachy.sdk.kinematics.CartesianCommandService/SendCartesianCommand',
+        self.SendFullBodyCartesianCommand = channel.unary_unary(
+                '/reachy.sdk.kinematics.FullBodyCartesianCommandService/SendFullBodyCartesianCommand',
                 request_serializer=cartesian__command__pb2.FullBodyCartesianCommand.SerializeToString,
-                response_deserializer=cartesian__command__pb2.CartesianCommandAck.FromString,
+                response_deserializer=cartesian__command__pb2.FullBodyCartesianCommandAck.FromString,
                 )
         self.StreamCartesianCommands = channel.stream_unary(
-                '/reachy.sdk.kinematics.CartesianCommandService/StreamCartesianCommands',
+                '/reachy.sdk.kinematics.FullBodyCartesianCommandService/StreamCartesianCommands',
                 request_serializer=cartesian__command__pb2.FullBodyCartesianCommand.SerializeToString,
-                response_deserializer=cartesian__command__pb2.CartesianCommandAck.FromString,
+                response_deserializer=cartesian__command__pb2.FullBodyCartesianCommandAck.FromString,
                 )
 
 
-class CartesianCommandServiceServicer(object):
+class FullBodyCartesianCommandServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def SendCartesianCommand(self, request, context):
+    def SendFullBodyCartesianCommand(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -42,30 +42,30 @@ class CartesianCommandServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_CartesianCommandServiceServicer_to_server(servicer, server):
+def add_FullBodyCartesianCommandServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SendCartesianCommand': grpc.unary_unary_rpc_method_handler(
-                    servicer.SendCartesianCommand,
+            'SendFullBodyCartesianCommand': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendFullBodyCartesianCommand,
                     request_deserializer=cartesian__command__pb2.FullBodyCartesianCommand.FromString,
-                    response_serializer=cartesian__command__pb2.CartesianCommandAck.SerializeToString,
+                    response_serializer=cartesian__command__pb2.FullBodyCartesianCommandAck.SerializeToString,
             ),
             'StreamCartesianCommands': grpc.stream_unary_rpc_method_handler(
                     servicer.StreamCartesianCommands,
                     request_deserializer=cartesian__command__pb2.FullBodyCartesianCommand.FromString,
-                    response_serializer=cartesian__command__pb2.CartesianCommandAck.SerializeToString,
+                    response_serializer=cartesian__command__pb2.FullBodyCartesianCommandAck.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'reachy.sdk.kinematics.CartesianCommandService', rpc_method_handlers)
+            'reachy.sdk.kinematics.FullBodyCartesianCommandService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class CartesianCommandService(object):
+class FullBodyCartesianCommandService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def SendCartesianCommand(request,
+    def SendFullBodyCartesianCommand(request,
             target,
             options=(),
             channel_credentials=None,
@@ -75,9 +75,9 @@ class CartesianCommandService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.CartesianCommandService/SendCartesianCommand',
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.FullBodyCartesianCommandService/SendFullBodyCartesianCommand',
             cartesian__command__pb2.FullBodyCartesianCommand.SerializeToString,
-            cartesian__command__pb2.CartesianCommandAck.FromString,
+            cartesian__command__pb2.FullBodyCartesianCommandAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -92,8 +92,8 @@ class CartesianCommandService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.stream_unary(request_iterator, target, '/reachy.sdk.kinematics.CartesianCommandService/StreamCartesianCommands',
+        return grpc.experimental.stream_unary(request_iterator, target, '/reachy.sdk.kinematics.FullBodyCartesianCommandService/StreamCartesianCommands',
             cartesian__command__pb2.FullBodyCartesianCommand.SerializeToString,
-            cartesian__command__pb2.CartesianCommandAck.FromString,
+            cartesian__command__pb2.FullBodyCartesianCommandAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

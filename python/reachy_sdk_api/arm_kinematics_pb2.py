@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x61rm_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"\xa3\x01\n\x0e\x41rmEndEffector\x12,\n\x04side\x18\x01 \x01(\x0e\x32\x1e.reachy.sdk.kinematics.ArmSide\x12\x30\n\x06target\x18\x02 \x01(\x0b\x32 .reachy.sdk.kinematics.Matrix4x4\x12\x31\n\x02q0\x18\x04 \x01(\x0b\x32%.reachy.sdk.kinematics.JointsPosition\"{\n\x11\x41rmJointsPosition\x12,\n\x04side\x18\x01 \x01(\x0e\x32\x1e.reachy.sdk.kinematics.ArmSide\x12\x38\n\tpositions\x18\x02 \x01(\x0b\x32%.reachy.sdk.kinematics.JointsPosition\"W\n\rArmIKSolution\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x35\n\x03sol\x18\x02 \x01(\x0b\x32(.reachy.sdk.kinematics.ArmJointsPosition*\x1e\n\x07\x41rmSide\x12\x08\n\x04LEFT\x10\x00\x12\t\n\x05RIGHT\x10\x01\x32\xcc\x01\n\x0c\x41rmKinematic\x12_\n\x0c\x43omputeArmFK\x12(.reachy.sdk.kinematics.ArmJointsPosition\x1a%.reachy.sdk.kinematics.ArmEndEffector\x12[\n\x0c\x43omputeArmIK\x12%.reachy.sdk.kinematics.ArmEndEffector\x1a$.reachy.sdk.kinematics.ArmIKSolutionb\x06proto3'
+  serialized_pb=b'\n\x14\x61rm_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"n\n\x0e\x41rmEndEffector\x12,\n\x04side\x18\x01 \x01(\x0e\x32\x1e.reachy.sdk.kinematics.ArmSide\x12.\n\x04pose\x18\x02 \x01(\x0b\x32 .reachy.sdk.kinematics.Matrix4x4\"y\n\x10\x41rmJointPosition\x12,\n\x04side\x18\x01 \x01(\x0e\x32\x1e.reachy.sdk.kinematics.ArmSide\x12\x37\n\tpositions\x18\x02 \x01(\x0b\x32$.reachy.sdk.kinematics.JointPosition\"M\n\x0c\x41rmFKRequest\x12=\n\x0c\x61rm_position\x18\x01 \x01(\x0b\x32\'.reachy.sdk.kinematics.ArmJointPosition\"]\n\rArmFKSolution\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12;\n\x0c\x65nd_effector\x18\x02 \x01(\x0b\x32%.reachy.sdk.kinematics.ArmEndEffector\"w\n\x0c\x41rmIKRequest\x12\x35\n\x06target\x18\x01 \x01(\x0b\x32%.reachy.sdk.kinematics.ArmEndEffector\x12\x30\n\x02q0\x18\x02 \x01(\x0b\x32$.reachy.sdk.kinematics.JointPosition\"_\n\rArmIKSolution\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12=\n\x0c\x61rm_position\x18\x02 \x01(\x0b\x32\'.reachy.sdk.kinematics.ArmJointPosition*\x1e\n\x07\x41rmSide\x12\x08\n\x04LEFT\x10\x00\x12\t\n\x05RIGHT\x10\x01\x32\xc5\x01\n\rArmKinematics\x12Y\n\x0c\x43omputeArmFK\x12#.reachy.sdk.kinematics.ArmFKRequest\x1a$.reachy.sdk.kinematics.ArmFKSolution\x12Y\n\x0c\x43omputeArmIK\x12#.reachy.sdk.kinematics.ArmIKRequest\x1a$.reachy.sdk.kinematics.ArmIKSolutionb\x06proto3'
   ,
   dependencies=[kinematics__pb2.DESCRIPTOR,])
 
@@ -45,8 +45,8 @@ _ARMSIDE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=445,
-  serialized_end=475,
+  serialized_start=692,
+  serialized_end=722,
 )
 _sym_db.RegisterEnumDescriptor(_ARMSIDE)
 
@@ -72,15 +72,8 @@ _ARMENDEFFECTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='target', full_name='reachy.sdk.kinematics.ArmEndEffector.target', index=1,
+      name='pose', full_name='reachy.sdk.kinematics.ArmEndEffector.pose', index=1,
       number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='q0', full_name='reachy.sdk.kinematics.ArmEndEffector.q0', index=2,
-      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -97,28 +90,28 @@ _ARMENDEFFECTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=66,
-  serialized_end=229,
+  serialized_start=65,
+  serialized_end=175,
 )
 
 
-_ARMJOINTSPOSITION = _descriptor.Descriptor(
-  name='ArmJointsPosition',
-  full_name='reachy.sdk.kinematics.ArmJointsPosition',
+_ARMJOINTPOSITION = _descriptor.Descriptor(
+  name='ArmJointPosition',
+  full_name='reachy.sdk.kinematics.ArmJointPosition',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='side', full_name='reachy.sdk.kinematics.ArmJointsPosition.side', index=0,
+      name='side', full_name='reachy.sdk.kinematics.ArmJointPosition.side', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='positions', full_name='reachy.sdk.kinematics.ArmJointsPosition.positions', index=1,
+      name='positions', full_name='reachy.sdk.kinematics.ArmJointPosition.positions', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -136,8 +129,118 @@ _ARMJOINTSPOSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=231,
-  serialized_end=354,
+  serialized_start=177,
+  serialized_end=298,
+)
+
+
+_ARMFKREQUEST = _descriptor.Descriptor(
+  name='ArmFKRequest',
+  full_name='reachy.sdk.kinematics.ArmFKRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='arm_position', full_name='reachy.sdk.kinematics.ArmFKRequest.arm_position', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=300,
+  serialized_end=377,
+)
+
+
+_ARMFKSOLUTION = _descriptor.Descriptor(
+  name='ArmFKSolution',
+  full_name='reachy.sdk.kinematics.ArmFKSolution',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='reachy.sdk.kinematics.ArmFKSolution.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='end_effector', full_name='reachy.sdk.kinematics.ArmFKSolution.end_effector', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=379,
+  serialized_end=472,
+)
+
+
+_ARMIKREQUEST = _descriptor.Descriptor(
+  name='ArmIKRequest',
+  full_name='reachy.sdk.kinematics.ArmIKRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='target', full_name='reachy.sdk.kinematics.ArmIKRequest.target', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='q0', full_name='reachy.sdk.kinematics.ArmIKRequest.q0', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=474,
+  serialized_end=593,
 )
 
 
@@ -157,7 +260,7 @@ _ARMIKSOLUTION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sol', full_name='reachy.sdk.kinematics.ArmIKSolution.sol', index=1,
+      name='arm_position', full_name='reachy.sdk.kinematics.ArmIKSolution.arm_position', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -175,18 +278,24 @@ _ARMIKSOLUTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=356,
-  serialized_end=443,
+  serialized_start=595,
+  serialized_end=690,
 )
 
 _ARMENDEFFECTOR.fields_by_name['side'].enum_type = _ARMSIDE
-_ARMENDEFFECTOR.fields_by_name['target'].message_type = kinematics__pb2._MATRIX4X4
-_ARMENDEFFECTOR.fields_by_name['q0'].message_type = kinematics__pb2._JOINTSPOSITION
-_ARMJOINTSPOSITION.fields_by_name['side'].enum_type = _ARMSIDE
-_ARMJOINTSPOSITION.fields_by_name['positions'].message_type = kinematics__pb2._JOINTSPOSITION
-_ARMIKSOLUTION.fields_by_name['sol'].message_type = _ARMJOINTSPOSITION
+_ARMENDEFFECTOR.fields_by_name['pose'].message_type = kinematics__pb2._MATRIX4X4
+_ARMJOINTPOSITION.fields_by_name['side'].enum_type = _ARMSIDE
+_ARMJOINTPOSITION.fields_by_name['positions'].message_type = kinematics__pb2._JOINTPOSITION
+_ARMFKREQUEST.fields_by_name['arm_position'].message_type = _ARMJOINTPOSITION
+_ARMFKSOLUTION.fields_by_name['end_effector'].message_type = _ARMENDEFFECTOR
+_ARMIKREQUEST.fields_by_name['target'].message_type = _ARMENDEFFECTOR
+_ARMIKREQUEST.fields_by_name['q0'].message_type = kinematics__pb2._JOINTPOSITION
+_ARMIKSOLUTION.fields_by_name['arm_position'].message_type = _ARMJOINTPOSITION
 DESCRIPTOR.message_types_by_name['ArmEndEffector'] = _ARMENDEFFECTOR
-DESCRIPTOR.message_types_by_name['ArmJointsPosition'] = _ARMJOINTSPOSITION
+DESCRIPTOR.message_types_by_name['ArmJointPosition'] = _ARMJOINTPOSITION
+DESCRIPTOR.message_types_by_name['ArmFKRequest'] = _ARMFKREQUEST
+DESCRIPTOR.message_types_by_name['ArmFKSolution'] = _ARMFKSOLUTION
+DESCRIPTOR.message_types_by_name['ArmIKRequest'] = _ARMIKREQUEST
 DESCRIPTOR.message_types_by_name['ArmIKSolution'] = _ARMIKSOLUTION
 DESCRIPTOR.enum_types_by_name['ArmSide'] = _ARMSIDE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -198,12 +307,33 @@ ArmEndEffector = _reflection.GeneratedProtocolMessageType('ArmEndEffector', (_me
   })
 _sym_db.RegisterMessage(ArmEndEffector)
 
-ArmJointsPosition = _reflection.GeneratedProtocolMessageType('ArmJointsPosition', (_message.Message,), {
-  'DESCRIPTOR' : _ARMJOINTSPOSITION,
+ArmJointPosition = _reflection.GeneratedProtocolMessageType('ArmJointPosition', (_message.Message,), {
+  'DESCRIPTOR' : _ARMJOINTPOSITION,
   '__module__' : 'arm_kinematics_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.ArmJointsPosition)
+  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.ArmJointPosition)
   })
-_sym_db.RegisterMessage(ArmJointsPosition)
+_sym_db.RegisterMessage(ArmJointPosition)
+
+ArmFKRequest = _reflection.GeneratedProtocolMessageType('ArmFKRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ARMFKREQUEST,
+  '__module__' : 'arm_kinematics_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.ArmFKRequest)
+  })
+_sym_db.RegisterMessage(ArmFKRequest)
+
+ArmFKSolution = _reflection.GeneratedProtocolMessageType('ArmFKSolution', (_message.Message,), {
+  'DESCRIPTOR' : _ARMFKSOLUTION,
+  '__module__' : 'arm_kinematics_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.ArmFKSolution)
+  })
+_sym_db.RegisterMessage(ArmFKSolution)
+
+ArmIKRequest = _reflection.GeneratedProtocolMessageType('ArmIKRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ARMIKREQUEST,
+  '__module__' : 'arm_kinematics_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.ArmIKRequest)
+  })
+_sym_db.RegisterMessage(ArmIKRequest)
 
 ArmIKSolution = _reflection.GeneratedProtocolMessageType('ArmIKSolution', (_message.Message,), {
   'DESCRIPTOR' : _ARMIKSOLUTION,
@@ -214,39 +344,39 @@ _sym_db.RegisterMessage(ArmIKSolution)
 
 
 
-_ARMKINEMATIC = _descriptor.ServiceDescriptor(
-  name='ArmKinematic',
-  full_name='reachy.sdk.kinematics.ArmKinematic',
+_ARMKINEMATICS = _descriptor.ServiceDescriptor(
+  name='ArmKinematics',
+  full_name='reachy.sdk.kinematics.ArmKinematics',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=478,
-  serialized_end=682,
+  serialized_start=725,
+  serialized_end=922,
   methods=[
   _descriptor.MethodDescriptor(
     name='ComputeArmFK',
-    full_name='reachy.sdk.kinematics.ArmKinematic.ComputeArmFK',
+    full_name='reachy.sdk.kinematics.ArmKinematics.ComputeArmFK',
     index=0,
     containing_service=None,
-    input_type=_ARMJOINTSPOSITION,
-    output_type=_ARMENDEFFECTOR,
+    input_type=_ARMFKREQUEST,
+    output_type=_ARMFKSOLUTION,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ComputeArmIK',
-    full_name='reachy.sdk.kinematics.ArmKinematic.ComputeArmIK',
+    full_name='reachy.sdk.kinematics.ArmKinematics.ComputeArmIK',
     index=1,
     containing_service=None,
-    input_type=_ARMENDEFFECTOR,
+    input_type=_ARMIKREQUEST,
     output_type=_ARMIKSOLUTION,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_ARMKINEMATIC)
+_sym_db.RegisterServiceDescriptor(_ARMKINEMATICS)
 
-DESCRIPTOR.services_by_name['ArmKinematic'] = _ARMKINEMATIC
+DESCRIPTOR.services_by_name['ArmKinematics'] = _ARMKINEMATICS
 
 # @@protoc_insertion_point(module_scope)

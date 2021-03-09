@@ -2,10 +2,11 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+import kinematics_pb2 as kinematics__pb2
 import orbita_kinematics_pb2 as orbita__kinematics__pb2
 
 
-class OrbitaKinematicStub(object):
+class OrbitaKinematicsStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,18 +16,18 @@ class OrbitaKinematicStub(object):
             channel: A grpc.Channel.
         """
         self.ComputeOrbitaIK = channel.unary_unary(
-                '/reachy.sdk.kinematics.OrbitaKinematic/ComputeOrbitaIK',
-                request_serializer=orbita__kinematics__pb2.OrbitaTarget.SerializeToString,
+                '/reachy.sdk.kinematics.OrbitaKinematics/ComputeOrbitaIK',
+                request_serializer=orbita__kinematics__pb2.OrbitaIKRequest.SerializeToString,
                 response_deserializer=orbita__kinematics__pb2.OrbitaIKSolution.FromString,
                 )
         self.GetQuaternionTransform = channel.unary_unary(
-                '/reachy.sdk.kinematics.OrbitaKinematic/GetQuaternionTransform',
-                request_serializer=orbita__kinematics__pb2.Point.SerializeToString,
-                response_deserializer=orbita__kinematics__pb2.OrbitaTarget.FromString,
+                '/reachy.sdk.kinematics.OrbitaKinematics/GetQuaternionTransform',
+                request_serializer=orbita__kinematics__pb2.LookVector.SerializeToString,
+                response_deserializer=kinematics__pb2.Quaternion.FromString,
                 )
 
 
-class OrbitaKinematicServicer(object):
+class OrbitaKinematicsServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def ComputeOrbitaIK(self, request, context):
@@ -42,26 +43,26 @@ class OrbitaKinematicServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_OrbitaKinematicServicer_to_server(servicer, server):
+def add_OrbitaKinematicsServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ComputeOrbitaIK': grpc.unary_unary_rpc_method_handler(
                     servicer.ComputeOrbitaIK,
-                    request_deserializer=orbita__kinematics__pb2.OrbitaTarget.FromString,
+                    request_deserializer=orbita__kinematics__pb2.OrbitaIKRequest.FromString,
                     response_serializer=orbita__kinematics__pb2.OrbitaIKSolution.SerializeToString,
             ),
             'GetQuaternionTransform': grpc.unary_unary_rpc_method_handler(
                     servicer.GetQuaternionTransform,
-                    request_deserializer=orbita__kinematics__pb2.Point.FromString,
-                    response_serializer=orbita__kinematics__pb2.OrbitaTarget.SerializeToString,
+                    request_deserializer=orbita__kinematics__pb2.LookVector.FromString,
+                    response_serializer=kinematics__pb2.Quaternion.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'reachy.sdk.kinematics.OrbitaKinematic', rpc_method_handlers)
+            'reachy.sdk.kinematics.OrbitaKinematics', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class OrbitaKinematic(object):
+class OrbitaKinematics(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -75,8 +76,8 @@ class OrbitaKinematic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.OrbitaKinematic/ComputeOrbitaIK',
-            orbita__kinematics__pb2.OrbitaTarget.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.OrbitaKinematics/ComputeOrbitaIK',
+            orbita__kinematics__pb2.OrbitaIKRequest.SerializeToString,
             orbita__kinematics__pb2.OrbitaIKSolution.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -92,8 +93,8 @@ class OrbitaKinematic(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.OrbitaKinematic/GetQuaternionTransform',
-            orbita__kinematics__pb2.Point.SerializeToString,
-            orbita__kinematics__pb2.OrbitaTarget.FromString,
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.kinematics.OrbitaKinematics/GetQuaternionTransform',
+            orbita__kinematics__pb2.LookVector.SerializeToString,
+            kinematics__pb2.Quaternion.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

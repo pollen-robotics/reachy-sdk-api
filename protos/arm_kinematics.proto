@@ -11,21 +11,34 @@ enum ArmSide {
 
 message ArmEndEffector {
     ArmSide side = 1;
-    Matrix4x4 target = 2;
-    JointsPosition q0 = 4;
+    Matrix4x4 pose = 2;
 }
 
-message ArmJointsPosition {
+message ArmJointPosition {
     ArmSide side = 1;
-    JointsPosition positions = 2;
+    JointPosition positions = 2;
+}
+
+message ArmFKRequest {
+    ArmJointPosition arm_position = 1;
+}
+
+message ArmFKSolution {
+    bool success = 1;
+    ArmEndEffector end_effector = 2;
+}
+
+message ArmIKRequest {
+    ArmEndEffector target = 1;
+    JointPosition q0 = 2;
 }
 
 message ArmIKSolution {
     bool success = 1;
-    ArmJointsPosition sol = 2;
+    ArmJointPosition arm_position = 2;
 }
 
-service ArmKinematic {
-    rpc ComputeArmFK(ArmJointsPosition) returns (ArmEndEffector);
-    rpc ComputeArmIK(ArmEndEffector) returns (ArmIKSolution);
+service ArmKinematics {
+    rpc ComputeArmFK(ArmFKRequest) returns (ArmFKSolution);
+    rpc ComputeArmIK(ArmIKRequest) returns (ArmIKSolution);
 }
