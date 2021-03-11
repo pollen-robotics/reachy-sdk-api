@@ -16,6 +16,6 @@ message Trajectory {
     double dt = 2;
 }
 
-service KinematicsService {
+service TrajectoryService {
     rpc ComputeMinimumJerkTrajectory(TrajectoryRequest) returns (Trajectory);
 }

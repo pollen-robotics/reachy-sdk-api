@@ -5,7 +5,7 @@ import grpc
 import trajectory_pb2 as trajectory__pb2
 
 
-class KinematicsServiceStub(object):
+class TrajectoryServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,13 +15,13 @@ class KinematicsServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ComputeMinimumJerkTrajectory = channel.unary_unary(
-                '/reachy.sdk.trajectory.KinematicsService/ComputeMinimumJerkTrajectory',
+                '/reachy.sdk.trajectory.TrajectoryService/ComputeMinimumJerkTrajectory',
                 request_serializer=trajectory__pb2.TrajectoryRequest.SerializeToString,
                 response_deserializer=trajectory__pb2.Trajectory.FromString,
                 )
 
 
-class KinematicsServiceServicer(object):
+class TrajectoryServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def ComputeMinimumJerkTrajectory(self, request, context):
@@ -31,7 +31,7 @@ class KinematicsServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_KinematicsServiceServicer_to_server(servicer, server):
+def add_TrajectoryServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ComputeMinimumJerkTrajectory': grpc.unary_unary_rpc_method_handler(
                     servicer.ComputeMinimumJerkTrajectory,
@@ -40,12 +40,12 @@ def add_KinematicsServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'reachy.sdk.trajectory.KinematicsService', rpc_method_handlers)
+            'reachy.sdk.trajectory.TrajectoryService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class KinematicsService(object):
+class TrajectoryService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -59,7 +59,7 @@ class KinematicsService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.trajectory.KinematicsService/ComputeMinimumJerkTrajectory',
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.trajectory.TrajectoryService/ComputeMinimumJerkTrajectory',
             trajectory__pb2.TrajectoryRequest.SerializeToString,
             trajectory__pb2.Trajectory.FromString,
             options, channel_credentials,

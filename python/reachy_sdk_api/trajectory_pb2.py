@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10trajectory.proto\x12\x15reachy.sdk.trajectory\x1a\x1egoogle/protobuf/wrappers.proto\"\xd9\x01\n\x11TrajectoryRequest\x12\x36\n\x11starting_position\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x34\n\x0ftarget_position\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x02\x64t\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"+\n\nTrajectory\x12\x11\n\tpositions\x18\x01 \x03(\x01\x12\n\n\x02\x64t\x18\x02 \x01(\x01\x32\x80\x01\n\x11KinematicsService\x12k\n\x1c\x43omputeMinimumJerkTrajectory\x12(.reachy.sdk.trajectory.TrajectoryRequest\x1a!.reachy.sdk.trajectory.Trajectoryb\x06proto3'
+  serialized_pb=b'\n\x10trajectory.proto\x12\x15reachy.sdk.trajectory\x1a\x1egoogle/protobuf/wrappers.proto\"\xd9\x01\n\x11TrajectoryRequest\x12\x36\n\x11starting_position\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x34\n\x0ftarget_position\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x02\x64t\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"+\n\nTrajectory\x12\x11\n\tpositions\x18\x01 \x03(\x01\x12\n\n\x02\x64t\x18\x02 \x01(\x01\x32\x80\x01\n\x11TrajectoryService\x12k\n\x1c\x43omputeMinimumJerkTrajectory\x12(.reachy.sdk.trajectory.TrajectoryRequest\x1a!.reachy.sdk.trajectory.Trajectoryb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
@@ -142,9 +142,9 @@ _sym_db.RegisterMessage(Trajectory)
 
 
 
-_KINEMATICSSERVICE = _descriptor.ServiceDescriptor(
-  name='KinematicsService',
-  full_name='reachy.sdk.trajectory.KinematicsService',
+_TRAJECTORYSERVICE = _descriptor.ServiceDescriptor(
+  name='TrajectoryService',
+  full_name='reachy.sdk.trajectory.TrajectoryService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
@@ -154,7 +154,7 @@ _KINEMATICSSERVICE = _descriptor.ServiceDescriptor(
   methods=[
   _descriptor.MethodDescriptor(
     name='ComputeMinimumJerkTrajectory',
-    full_name='reachy.sdk.trajectory.KinematicsService.ComputeMinimumJerkTrajectory',
+    full_name='reachy.sdk.trajectory.TrajectoryService.ComputeMinimumJerkTrajectory',
     index=0,
     containing_service=None,
     input_type=_TRAJECTORYREQUEST,
@@ -163,8 +163,8 @@ _KINEMATICSSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_KINEMATICSSERVICE)
+_sym_db.RegisterServiceDescriptor(_TRAJECTORYSERVICE)
 
-DESCRIPTOR.services_by_name['KinematicsService'] = _KINEMATICSSERVICE
+DESCRIPTOR.services_by_name['TrajectoryService'] = _TRAJECTORYSERVICE
 
 # @@protoc_insertion_point(module_scope)
