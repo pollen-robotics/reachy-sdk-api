@@ -25,35 +25,38 @@ namespace Reachy.Sdk.Kinematics {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChdvcmJpdGFfa2luZW1hdGljcy5wcm90bxIVcmVhY2h5LnNkay5raW5lbWF0",
-            "aWNzGhBraW5lbWF0aWNzLnByb3RvIjgKClF1YXRlcm5pb24SCQoBdxgBIAEo",
-            "ARIJCgF4GAIgASgBEgkKAXkYAyABKAESCQoBehgEIAEoASI8CgxPcmJpdGFU",
-            "YXJnZXQSLAoBcRgBIAEoCzIhLnJlYWNoeS5zZGsua2luZW1hdGljcy5RdWF0",
-            "ZXJuaW9uIlcKEE9yYml0YUlLU29sdXRpb24SDwoHc3VjY2VzcxgBIAEoCBIy",
-            "CgNzb2wYAiABKAsyJS5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuSm9pbnRzUG9z",
-            "aXRpb24ycgoPT3JiaXRhS2luZW1hdGljEl8KD0NvbXB1dGVPcmJpdGFJSxIj",
-            "LnJlYWNoeS5zZGsua2luZW1hdGljcy5PcmJpdGFUYXJnZXQaJy5yZWFjaHku",
-            "c2RrLmtpbmVtYXRpY3MuT3JiaXRhSUtTb2x1dGlvbmIGcHJvdG8z"));
+            "aWNzGhBraW5lbWF0aWNzLnByb3RvIj8KD09yYml0YUlLUmVxdWVzdBIsCgFx",
+            "GAEgASgLMiEucmVhY2h5LnNkay5raW5lbWF0aWNzLlF1YXRlcm5pb24iLQoK",
+            "TG9va1ZlY3RvchIJCgF4GAEgASgBEgkKAXkYAiABKAESCQoBehgDIAEoASJg",
+            "ChBPcmJpdGFJS1NvbHV0aW9uEg8KB3N1Y2Nlc3MYASABKAgSOwoNZGlza19w",
+            "b3NpdGlvbhgCIAEoCzIkLnJlYWNoeS5zZGsua2luZW1hdGljcy5Kb2ludFBv",
+            "c2l0aW9uMtYBChBPcmJpdGFLaW5lbWF0aWNzEmIKD0NvbXB1dGVPcmJpdGFJ",
+            "SxImLnJlYWNoeS5zZGsua2luZW1hdGljcy5PcmJpdGFJS1JlcXVlc3QaJy5y",
+            "ZWFjaHkuc2RrLmtpbmVtYXRpY3MuT3JiaXRhSUtTb2x1dGlvbhJeChZHZXRR",
+            "dWF0ZXJuaW9uVHJhbnNmb3JtEiEucmVhY2h5LnNkay5raW5lbWF0aWNzLkxv",
+            "b2tWZWN0b3IaIS5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuUXVhdGVybmlvbmIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Reachy.Sdk.Kinematics.KinematicsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.Quaternion), global::Reachy.Sdk.Kinematics.Quaternion.Parser, new[]{ "W", "X", "Y", "Z" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.OrbitaTarget), global::Reachy.Sdk.Kinematics.OrbitaTarget.Parser, new[]{ "Q" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.OrbitaIKSolution), global::Reachy.Sdk.Kinematics.OrbitaIKSolution.Parser, new[]{ "Success", "Sol" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.OrbitaIKRequest), global::Reachy.Sdk.Kinematics.OrbitaIKRequest.Parser, new[]{ "Q" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.LookVector), global::Reachy.Sdk.Kinematics.LookVector.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.OrbitaIKSolution), global::Reachy.Sdk.Kinematics.OrbitaIKSolution.Parser, new[]{ "Success", "DiskPosition" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class Quaternion : pb::IMessage<Quaternion>
+  public sealed partial class OrbitaIKRequest : pb::IMessage<OrbitaIKRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<Quaternion> _parser = new pb::MessageParser<Quaternion>(() => new Quaternion());
+    private static readonly pb::MessageParser<OrbitaIKRequest> _parser = new pb::MessageParser<OrbitaIKRequest>(() => new OrbitaIKRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Quaternion> Parser { get { return _parser; } }
+    public static pb::MessageParser<OrbitaIKRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -66,301 +69,21 @@ namespace Reachy.Sdk.Kinematics {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Quaternion() {
+    public OrbitaIKRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Quaternion(Quaternion other) : this() {
-      w_ = other.w_;
-      x_ = other.x_;
-      y_ = other.y_;
-      z_ = other.z_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Quaternion Clone() {
-      return new Quaternion(this);
-    }
-
-    /// <summary>Field number for the "w" field.</summary>
-    public const int WFieldNumber = 1;
-    private double w_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double W {
-      get { return w_; }
-      set {
-        w_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "x" field.</summary>
-    public const int XFieldNumber = 2;
-    private double x_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double X {
-      get { return x_; }
-      set {
-        x_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "y" field.</summary>
-    public const int YFieldNumber = 3;
-    private double y_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double Y {
-      get { return y_; }
-      set {
-        y_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "z" field.</summary>
-    public const int ZFieldNumber = 4;
-    private double z_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double Z {
-      get { return z_; }
-      set {
-        z_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Quaternion);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Quaternion other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(W, other.W)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(X, other.X)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Y, other.Y)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Z, other.Z)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (W != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(W);
-      if (X != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(X);
-      if (Y != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Y);
-      if (Z != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Z);
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (W != 0D) {
-        output.WriteRawTag(9);
-        output.WriteDouble(W);
-      }
-      if (X != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(X);
-      }
-      if (Y != 0D) {
-        output.WriteRawTag(25);
-        output.WriteDouble(Y);
-      }
-      if (Z != 0D) {
-        output.WriteRawTag(33);
-        output.WriteDouble(Z);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (W != 0D) {
-        output.WriteRawTag(9);
-        output.WriteDouble(W);
-      }
-      if (X != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(X);
-      }
-      if (Y != 0D) {
-        output.WriteRawTag(25);
-        output.WriteDouble(Y);
-      }
-      if (Z != 0D) {
-        output.WriteRawTag(33);
-        output.WriteDouble(Z);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (W != 0D) {
-        size += 1 + 8;
-      }
-      if (X != 0D) {
-        size += 1 + 8;
-      }
-      if (Y != 0D) {
-        size += 1 + 8;
-      }
-      if (Z != 0D) {
-        size += 1 + 8;
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Quaternion other) {
-      if (other == null) {
-        return;
-      }
-      if (other.W != 0D) {
-        W = other.W;
-      }
-      if (other.X != 0D) {
-        X = other.X;
-      }
-      if (other.Y != 0D) {
-        Y = other.Y;
-      }
-      if (other.Z != 0D) {
-        Z = other.Z;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 9: {
-            W = input.ReadDouble();
-            break;
-          }
-          case 17: {
-            X = input.ReadDouble();
-            break;
-          }
-          case 25: {
-            Y = input.ReadDouble();
-            break;
-          }
-          case 33: {
-            Z = input.ReadDouble();
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 9: {
-            W = input.ReadDouble();
-            break;
-          }
-          case 17: {
-            X = input.ReadDouble();
-            break;
-          }
-          case 25: {
-            Y = input.ReadDouble();
-            break;
-          }
-          case 33: {
-            Z = input.ReadDouble();
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  public sealed partial class OrbitaTarget : pb::IMessage<OrbitaTarget>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<OrbitaTarget> _parser = new pb::MessageParser<OrbitaTarget>(() => new OrbitaTarget());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<OrbitaTarget> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Kinematics.OrbitaKinematicsReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OrbitaTarget() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OrbitaTarget(OrbitaTarget other) : this() {
+    public OrbitaIKRequest(OrbitaIKRequest other) : this() {
       q_ = other.q_ != null ? other.q_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public OrbitaTarget Clone() {
-      return new OrbitaTarget(this);
+    public OrbitaIKRequest Clone() {
+      return new OrbitaIKRequest(this);
     }
 
     /// <summary>Field number for the "q" field.</summary>
@@ -376,11 +99,11 @@ namespace Reachy.Sdk.Kinematics {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as OrbitaTarget);
+      return Equals(other as OrbitaIKRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(OrbitaTarget other) {
+    public bool Equals(OrbitaIKRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -447,7 +170,7 @@ namespace Reachy.Sdk.Kinematics {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(OrbitaTarget other) {
+    public void MergeFrom(OrbitaIKRequest other) {
       if (other == null) {
         return;
       }
@@ -506,6 +229,250 @@ namespace Reachy.Sdk.Kinematics {
 
   }
 
+  public sealed partial class LookVector : pb::IMessage<LookVector>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<LookVector> _parser = new pb::MessageParser<LookVector>(() => new LookVector());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<LookVector> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Kinematics.OrbitaKinematicsReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LookVector() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LookVector(LookVector other) : this() {
+      x_ = other.x_;
+      y_ = other.y_;
+      z_ = other.z_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public LookVector Clone() {
+      return new LookVector(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private double x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private double y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "z" field.</summary>
+    public const int ZFieldNumber = 3;
+    private double z_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Z {
+      get { return z_; }
+      set {
+        z_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as LookVector);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(LookVector other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Z, other.Z)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (X != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(X);
+      if (Y != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Y);
+      if (Z != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Z);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (X != 0D) {
+        output.WriteRawTag(9);
+        output.WriteDouble(X);
+      }
+      if (Y != 0D) {
+        output.WriteRawTag(17);
+        output.WriteDouble(Y);
+      }
+      if (Z != 0D) {
+        output.WriteRawTag(25);
+        output.WriteDouble(Z);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (X != 0D) {
+        output.WriteRawTag(9);
+        output.WriteDouble(X);
+      }
+      if (Y != 0D) {
+        output.WriteRawTag(17);
+        output.WriteDouble(Y);
+      }
+      if (Z != 0D) {
+        output.WriteRawTag(25);
+        output.WriteDouble(Z);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (X != 0D) {
+        size += 1 + 8;
+      }
+      if (Y != 0D) {
+        size += 1 + 8;
+      }
+      if (Z != 0D) {
+        size += 1 + 8;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(LookVector other) {
+      if (other == null) {
+        return;
+      }
+      if (other.X != 0D) {
+        X = other.X;
+      }
+      if (other.Y != 0D) {
+        Y = other.Y;
+      }
+      if (other.Z != 0D) {
+        Z = other.Z;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 9: {
+            X = input.ReadDouble();
+            break;
+          }
+          case 17: {
+            Y = input.ReadDouble();
+            break;
+          }
+          case 25: {
+            Z = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 9: {
+            X = input.ReadDouble();
+            break;
+          }
+          case 17: {
+            Y = input.ReadDouble();
+            break;
+          }
+          case 25: {
+            Z = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class OrbitaIKSolution : pb::IMessage<OrbitaIKSolution>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -536,7 +503,7 @@ namespace Reachy.Sdk.Kinematics {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public OrbitaIKSolution(OrbitaIKSolution other) : this() {
       success_ = other.success_;
-      sol_ = other.sol_ != null ? other.sol_.Clone() : null;
+      diskPosition_ = other.diskPosition_ != null ? other.diskPosition_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -556,14 +523,14 @@ namespace Reachy.Sdk.Kinematics {
       }
     }
 
-    /// <summary>Field number for the "sol" field.</summary>
-    public const int SolFieldNumber = 2;
-    private global::Reachy.Sdk.Kinematics.JointsPosition sol_;
+    /// <summary>Field number for the "disk_position" field.</summary>
+    public const int DiskPositionFieldNumber = 2;
+    private global::Reachy.Sdk.Kinematics.JointPosition diskPosition_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Reachy.Sdk.Kinematics.JointsPosition Sol {
-      get { return sol_; }
+    public global::Reachy.Sdk.Kinematics.JointPosition DiskPosition {
+      get { return diskPosition_; }
       set {
-        sol_ = value;
+        diskPosition_ = value;
       }
     }
 
@@ -581,7 +548,7 @@ namespace Reachy.Sdk.Kinematics {
         return true;
       }
       if (Success != other.Success) return false;
-      if (!object.Equals(Sol, other.Sol)) return false;
+      if (!object.Equals(DiskPosition, other.DiskPosition)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -589,7 +556,7 @@ namespace Reachy.Sdk.Kinematics {
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
-      if (sol_ != null) hash ^= Sol.GetHashCode();
+      if (diskPosition_ != null) hash ^= DiskPosition.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -610,9 +577,9 @@ namespace Reachy.Sdk.Kinematics {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
-      if (sol_ != null) {
+      if (diskPosition_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(Sol);
+        output.WriteMessage(DiskPosition);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -627,9 +594,9 @@ namespace Reachy.Sdk.Kinematics {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
-      if (sol_ != null) {
+      if (diskPosition_ != null) {
         output.WriteRawTag(18);
-        output.WriteMessage(Sol);
+        output.WriteMessage(DiskPosition);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -643,8 +610,8 @@ namespace Reachy.Sdk.Kinematics {
       if (Success != false) {
         size += 1 + 1;
       }
-      if (sol_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Sol);
+      if (diskPosition_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DiskPosition);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -660,11 +627,11 @@ namespace Reachy.Sdk.Kinematics {
       if (other.Success != false) {
         Success = other.Success;
       }
-      if (other.sol_ != null) {
-        if (sol_ == null) {
-          Sol = new global::Reachy.Sdk.Kinematics.JointsPosition();
+      if (other.diskPosition_ != null) {
+        if (diskPosition_ == null) {
+          DiskPosition = new global::Reachy.Sdk.Kinematics.JointPosition();
         }
-        Sol.MergeFrom(other.Sol);
+        DiskPosition.MergeFrom(other.DiskPosition);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -685,10 +652,10 @@ namespace Reachy.Sdk.Kinematics {
             break;
           }
           case 18: {
-            if (sol_ == null) {
-              Sol = new global::Reachy.Sdk.Kinematics.JointsPosition();
+            if (diskPosition_ == null) {
+              DiskPosition = new global::Reachy.Sdk.Kinematics.JointPosition();
             }
-            input.ReadMessage(Sol);
+            input.ReadMessage(DiskPosition);
             break;
           }
         }
@@ -710,10 +677,10 @@ namespace Reachy.Sdk.Kinematics {
             break;
           }
           case 18: {
-            if (sol_ == null) {
-              Sol = new global::Reachy.Sdk.Kinematics.JointsPosition();
+            if (diskPosition_ == null) {
+              DiskPosition = new global::Reachy.Sdk.Kinematics.JointPosition();
             }
-            input.ReadMessage(Sol);
+            input.ReadMessage(DiskPosition);
             break;
           }
         }
