@@ -26,10 +26,24 @@ enum JointField {
     ALL = 15;
 }
 
-message PIDValue {
+message PIDGains {
     float p = 1;
     float i = 2;
     float d = 3;
+}
+
+message ComplianceMarginSlope {
+    float cw_compliance_margin = 1;
+    float ccw_compliance_margin = 2;
+    float cw_compliance_slope = 3;
+    float ccw_compliance_slope = 4;
+}
+
+message PIDValue {
+    oneof gains {
+        PIDGains pid = 1;
+        ComplianceMarginSlope compliance = 2;
+    }
 }
 
 message JointId {
