@@ -51,7 +51,7 @@ Service: **ZoomControllerService**
 * **SetZoomSpeed** - Change Reachy's camera zoom speed into the requested value
 * **SendZoomCommand** - Change Reachy's camera zoom into the requested position
 ### In *trajectory*:
-Service: **KinematicsService**
+Service: **TrajectoryService**
 * **ComputeMinimumJerkTrajectory** - Compute a trajectory with a minimum jerk interpolation between a starting and a goal position in a given time
 ### In *sensor*:
 Service: **SensorService**
