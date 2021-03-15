@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0bjoint.proto\x12\x10reachy.sdk.joint\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\"+\n\x08PIDValue\x12\t\n\x01p\x18\x01 \x01(\x02\x12\t\n\x01i\x18\x02 \x01(\x02\x12\t\n\x01\x64\x18\x03 \x01(\x02\".\n\x07JointId\x12\x0e\n\x04name\x18\x01 \x01(\tH\x00\x12\r\n\x03uid\x18\x02 \x01(\rH\x00\x42\x04\n\x02id\"\xe8\x03\n\nJointState\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uid\x18\x02 \x01(\r\x12\x35\n\x10present_position\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x32\n\rpresent_speed\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0cpresent_load\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0btemperature\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\tcompliant\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x03pid\x18\x0b \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDValue\"\x92\x01\n\x0bJointsState\x12&\n\x03ids\x18\x01 \x03(\x0b\x32\x19.reachy.sdk.joint.JointId\x12,\n\x06states\x18\x02 \x03(\x0b\x32\x1c.reachy.sdk.joint.JointState\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\'\n\x08JointsId\x12\r\n\x05names\x18\x01 \x03(\t\x12\x0c\n\x04uids\x18\x02 \x03(\r\"\xa3\x01\n\x12JointsStateRequest\x12&\n\x03ids\x18\x01 \x03(\x0b\x32\x19.reachy.sdk.joint.JointId\x12\x36\n\x10requested_fields\x18\x02 \x03(\x0e\x32\x1c.reachy.sdk.joint.JointField\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x96\x01\n\x13StreamJointsRequest\x12\x35\n\x07request\x18\x01 \x01(\x0b\x32$.reachy.sdk.joint.JointsStateRequest\x12\x19\n\x11publish_frequency\x18\x02 \x01(\x02\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa6\x02\n\x0cJointCommand\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.joint.JointId\x12-\n\tcompliant\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x03pid\x18\x0b \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDValue\"p\n\rJointsCommand\x12\x30\n\x08\x63ommands\x18\x01 \x03(\x0b\x32\x1e.reachy.sdk.joint.JointCommand\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"#\n\x10JointsCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08*\xcc\x01\n\nJointField\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x07\n\x03UID\x10\x02\x12\x14\n\x10PRESENT_POSITION\x10\x03\x12\x11\n\rPRESENT_SPEED\x10\x04\x12\x10\n\x0cPRESENT_LOAD\x10\x05\x12\x0f\n\x0bTEMPERATURE\x10\x06\x12\r\n\tCOMPLIANT\x10\x07\x12\x11\n\rGOAL_POSITION\x10\x08\x12\x0f\n\x0bSPEED_LIMIT\x10\t\x12\x10\n\x0cTORQUE_LIMIT\x10\n\x12\x07\n\x03PID\x10\x0b\x12\x07\n\x03\x41LL\x10\x0f\x32\xc2\x03\n\x0cJointService\x12\x44\n\x0eGetAllJointsId\x12\x16.google.protobuf.Empty\x1a\x1a.reachy.sdk.joint.JointsId\x12U\n\x0eGetJointsState\x12$.reachy.sdk.joint.JointsStateRequest\x1a\x1d.reachy.sdk.joint.JointsState\x12[\n\x11StreamJointsState\x12%.reachy.sdk.joint.StreamJointsRequest\x1a\x1d.reachy.sdk.joint.JointsState0\x01\x12Y\n\x12SendJointsCommands\x12\x1f.reachy.sdk.joint.JointsCommand\x1a\".reachy.sdk.joint.JointsCommandAck\x12]\n\x14StreamJointsCommands\x12\x1f.reachy.sdk.joint.JointsCommand\x1a\".reachy.sdk.joint.JointsCommandAck(\x01\x62\x06proto3'
+  serialized_pb=b'\n\x0bjoint.proto\x12\x10reachy.sdk.joint\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\"+\n\x08PIDGains\x12\t\n\x01p\x18\x01 \x01(\x02\x12\t\n\x01i\x18\x02 \x01(\x02\x12\t\n\x01\x64\x18\x03 \x01(\x02\"\x8f\x01\n\x15\x43omplianceMarginSlope\x12\x1c\n\x14\x63w_compliance_margin\x18\x01 \x01(\x02\x12\x1d\n\x15\x63\x63w_compliance_margin\x18\x02 \x01(\x02\x12\x1b\n\x13\x63w_compliance_slope\x18\x03 \x01(\x02\x12\x1c\n\x14\x63\x63w_compliance_slope\x18\x04 \x01(\x02\"}\n\x08PIDValue\x12)\n\x03pid\x18\x01 \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDGainsH\x00\x12=\n\ncompliance\x18\x02 \x01(\x0b\x32\'.reachy.sdk.joint.ComplianceMarginSlopeH\x00\x42\x07\n\x05gains\".\n\x07JointId\x12\x0e\n\x04name\x18\x01 \x01(\tH\x00\x12\r\n\x03uid\x18\x02 \x01(\rH\x00\x42\x04\n\x02id\"\xe8\x03\n\nJointState\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uid\x18\x02 \x01(\r\x12\x35\n\x10present_position\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x32\n\rpresent_speed\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0cpresent_load\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0btemperature\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\tcompliant\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x03pid\x18\x0b \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDValue\"\x92\x01\n\x0bJointsState\x12&\n\x03ids\x18\x01 \x03(\x0b\x32\x19.reachy.sdk.joint.JointId\x12,\n\x06states\x18\x02 \x03(\x0b\x32\x1c.reachy.sdk.joint.JointState\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\'\n\x08JointsId\x12\r\n\x05names\x18\x01 \x03(\t\x12\x0c\n\x04uids\x18\x02 \x03(\r\"\xa3\x01\n\x12JointsStateRequest\x12&\n\x03ids\x18\x01 \x03(\x0b\x32\x19.reachy.sdk.joint.JointId\x12\x36\n\x10requested_fields\x18\x02 \x03(\x0e\x32\x1c.reachy.sdk.joint.JointField\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x96\x01\n\x13StreamJointsRequest\x12\x35\n\x07request\x18\x01 \x01(\x0b\x32$.reachy.sdk.joint.JointsStateRequest\x12\x19\n\x11publish_frequency\x18\x02 \x01(\x02\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa6\x02\n\x0cJointCommand\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.joint.JointId\x12-\n\tcompliant\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x03pid\x18\x0b \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDValue\"p\n\rJointsCommand\x12\x30\n\x08\x63ommands\x18\x01 \x03(\x0b\x32\x1e.reachy.sdk.joint.JointCommand\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\"\n\x0fJointCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08*\xcc\x01\n\nJointField\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x07\n\x03UID\x10\x02\x12\x14\n\x10PRESENT_POSITION\x10\x03\x12\x11\n\rPRESENT_SPEED\x10\x04\x12\x10\n\x0cPRESENT_LOAD\x10\x05\x12\x0f\n\x0bTEMPERATURE\x10\x06\x12\r\n\tCOMPLIANT\x10\x07\x12\x11\n\rGOAL_POSITION\x10\x08\x12\x0f\n\x0bSPEED_LIMIT\x10\t\x12\x10\n\x0cTORQUE_LIMIT\x10\n\x12\x07\n\x03PID\x10\x0b\x12\x07\n\x03\x41LL\x10\x0f\x32\xc0\x03\n\x0cJointService\x12\x44\n\x0eGetAllJointsId\x12\x16.google.protobuf.Empty\x1a\x1a.reachy.sdk.joint.JointsId\x12U\n\x0eGetJointsState\x12$.reachy.sdk.joint.JointsStateRequest\x1a\x1d.reachy.sdk.joint.JointsState\x12[\n\x11StreamJointsState\x12%.reachy.sdk.joint.StreamJointsRequest\x1a\x1d.reachy.sdk.joint.JointsState0\x01\x12X\n\x12SendJointsCommands\x12\x1f.reachy.sdk.joint.JointsCommand\x1a!.reachy.sdk.joint.JointCommandAck\x12\\\n\x14StreamJointsCommands\x12\x1f.reachy.sdk.joint.JointsCommand\x1a!.reachy.sdk.joint.JointCommandAck(\x01\x62\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -102,8 +102,8 @@ _JOINTFIELD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1669,
-  serialized_end=1873,
+  serialized_start=1941,
+  serialized_end=2145,
 )
 _sym_db.RegisterEnumDescriptor(_JOINTFIELD)
 
@@ -124,30 +124,30 @@ ALL = 15
 
 
 
-_PIDVALUE = _descriptor.Descriptor(
-  name='PIDValue',
-  full_name='reachy.sdk.joint.PIDValue',
+_PIDGAINS = _descriptor.Descriptor(
+  name='PIDGains',
+  full_name='reachy.sdk.joint.PIDGains',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='p', full_name='reachy.sdk.joint.PIDValue.p', index=0,
+      name='p', full_name='reachy.sdk.joint.PIDGains.p', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='i', full_name='reachy.sdk.joint.PIDValue.i', index=1,
+      name='i', full_name='reachy.sdk.joint.PIDGains.i', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='d', full_name='reachy.sdk.joint.PIDValue.d', index=2,
+      name='d', full_name='reachy.sdk.joint.PIDGains.d', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -167,6 +167,103 @@ _PIDVALUE = _descriptor.Descriptor(
   ],
   serialized_start=127,
   serialized_end=170,
+)
+
+
+_COMPLIANCEMARGINSLOPE = _descriptor.Descriptor(
+  name='ComplianceMarginSlope',
+  full_name='reachy.sdk.joint.ComplianceMarginSlope',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cw_compliance_margin', full_name='reachy.sdk.joint.ComplianceMarginSlope.cw_compliance_margin', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ccw_compliance_margin', full_name='reachy.sdk.joint.ComplianceMarginSlope.ccw_compliance_margin', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cw_compliance_slope', full_name='reachy.sdk.joint.ComplianceMarginSlope.cw_compliance_slope', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ccw_compliance_slope', full_name='reachy.sdk.joint.ComplianceMarginSlope.ccw_compliance_slope', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=173,
+  serialized_end=316,
+)
+
+
+_PIDVALUE = _descriptor.Descriptor(
+  name='PIDValue',
+  full_name='reachy.sdk.joint.PIDValue',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pid', full_name='reachy.sdk.joint.PIDValue.pid', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='compliance', full_name='reachy.sdk.joint.PIDValue.compliance', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='gains', full_name='reachy.sdk.joint.PIDValue.gains',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=318,
+  serialized_end=443,
 )
 
 
@@ -209,8 +306,8 @@ _JOINTID = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=172,
-  serialized_end=218,
+  serialized_start=445,
+  serialized_end=491,
 )
 
 
@@ -311,8 +408,8 @@ _JOINTSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=221,
-  serialized_end=709,
+  serialized_start=494,
+  serialized_end=982,
 )
 
 
@@ -357,8 +454,8 @@ _JOINTSSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=712,
-  serialized_end=858,
+  serialized_start=985,
+  serialized_end=1131,
 )
 
 
@@ -396,8 +493,8 @@ _JOINTSID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=860,
-  serialized_end=899,
+  serialized_start=1133,
+  serialized_end=1172,
 )
 
 
@@ -442,8 +539,8 @@ _JOINTSSTATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=902,
-  serialized_end=1065,
+  serialized_start=1175,
+  serialized_end=1338,
 )
 
 
@@ -488,8 +585,8 @@ _STREAMJOINTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1068,
-  serialized_end=1218,
+  serialized_start=1341,
+  serialized_end=1491,
 )
 
 
@@ -555,8 +652,8 @@ _JOINTCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1221,
-  serialized_end=1515,
+  serialized_start=1494,
+  serialized_end=1788,
 )
 
 
@@ -594,8 +691,8 @@ _JOINTSCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1517,
-  serialized_end=1629,
+  serialized_start=1790,
+  serialized_end=1902,
 )
 
 
@@ -626,10 +723,18 @@ _JOINTSCOMMANDACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1631,
-  serialized_end=1666,
+  serialized_start=1904,
+  serialized_end=1938,
 )
 
+_PIDVALUE.fields_by_name['pid'].message_type = _PIDGAINS
+_PIDVALUE.fields_by_name['compliance'].message_type = _COMPLIANCEMARGINSLOPE
+_PIDVALUE.oneofs_by_name['gains'].fields.append(
+  _PIDVALUE.fields_by_name['pid'])
+_PIDVALUE.fields_by_name['pid'].containing_oneof = _PIDVALUE.oneofs_by_name['gains']
+_PIDVALUE.oneofs_by_name['gains'].fields.append(
+  _PIDVALUE.fields_by_name['compliance'])
+_PIDVALUE.fields_by_name['compliance'].containing_oneof = _PIDVALUE.oneofs_by_name['gains']
 _JOINTID.oneofs_by_name['id'].fields.append(
   _JOINTID.fields_by_name['name'])
 _JOINTID.fields_by_name['name'].containing_oneof = _JOINTID.oneofs_by_name['id']
@@ -661,6 +766,8 @@ _JOINTCOMMAND.fields_by_name['torque_limit'].message_type = google_dot_protobuf_
 _JOINTCOMMAND.fields_by_name['pid'].message_type = _PIDVALUE
 _JOINTSCOMMAND.fields_by_name['commands'].message_type = _JOINTCOMMAND
 _JOINTSCOMMAND.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+DESCRIPTOR.message_types_by_name['PIDGains'] = _PIDGAINS
+DESCRIPTOR.message_types_by_name['ComplianceMarginSlope'] = _COMPLIANCEMARGINSLOPE
 DESCRIPTOR.message_types_by_name['PIDValue'] = _PIDVALUE
 DESCRIPTOR.message_types_by_name['JointId'] = _JOINTID
 DESCRIPTOR.message_types_by_name['JointState'] = _JOINTSTATE
@@ -673,6 +780,20 @@ DESCRIPTOR.message_types_by_name['JointsCommand'] = _JOINTSCOMMAND
 DESCRIPTOR.message_types_by_name['JointsCommandAck'] = _JOINTSCOMMANDACK
 DESCRIPTOR.enum_types_by_name['JointField'] = _JOINTFIELD
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+PIDGains = _reflection.GeneratedProtocolMessageType('PIDGains', (_message.Message,), {
+  'DESCRIPTOR' : _PIDGAINS,
+  '__module__' : 'joint_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.joint.PIDGains)
+  })
+_sym_db.RegisterMessage(PIDGains)
+
+ComplianceMarginSlope = _reflection.GeneratedProtocolMessageType('ComplianceMarginSlope', (_message.Message,), {
+  'DESCRIPTOR' : _COMPLIANCEMARGINSLOPE,
+  '__module__' : 'joint_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.joint.ComplianceMarginSlope)
+  })
+_sym_db.RegisterMessage(ComplianceMarginSlope)
 
 PIDValue = _reflection.GeneratedProtocolMessageType('PIDValue', (_message.Message,), {
   'DESCRIPTOR' : _PIDVALUE,
@@ -753,8 +874,8 @@ _JOINTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1876,
-  serialized_end=2326,
+  serialized_start=2148,
+  serialized_end=2596,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetAllJointsId',
