@@ -33,12 +33,12 @@ class JointServiceStub(object):
         self.SendJointsCommands = channel.unary_unary(
                 '/reachy.sdk.joint.JointService/SendJointsCommands',
                 request_serializer=joint__pb2.JointsCommand.SerializeToString,
-                response_deserializer=joint__pb2.JointCommandAck.FromString,
+                response_deserializer=joint__pb2.JointsCommandAck.FromString,
                 )
         self.StreamJointsCommands = channel.stream_unary(
                 '/reachy.sdk.joint.JointService/StreamJointsCommands',
                 request_serializer=joint__pb2.JointsCommand.SerializeToString,
-                response_deserializer=joint__pb2.JointCommandAck.FromString,
+                response_deserializer=joint__pb2.JointsCommandAck.FromString,
                 )
 
 
@@ -96,12 +96,12 @@ def add_JointServiceServicer_to_server(servicer, server):
             'SendJointsCommands': grpc.unary_unary_rpc_method_handler(
                     servicer.SendJointsCommands,
                     request_deserializer=joint__pb2.JointsCommand.FromString,
-                    response_serializer=joint__pb2.JointCommandAck.SerializeToString,
+                    response_serializer=joint__pb2.JointsCommandAck.SerializeToString,
             ),
             'StreamJointsCommands': grpc.stream_unary_rpc_method_handler(
                     servicer.StreamJointsCommands,
                     request_deserializer=joint__pb2.JointsCommand.FromString,
-                    response_serializer=joint__pb2.JointCommandAck.SerializeToString,
+                    response_serializer=joint__pb2.JointsCommandAck.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -177,7 +177,7 @@ class JointService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.joint.JointService/SendJointsCommands',
             joint__pb2.JointsCommand.SerializeToString,
-            joint__pb2.JointCommandAck.FromString,
+            joint__pb2.JointsCommandAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -194,6 +194,6 @@ class JointService(object):
             metadata=None):
         return grpc.experimental.stream_unary(request_iterator, target, '/reachy.sdk.joint.JointService/StreamJointsCommands',
             joint__pb2.JointsCommand.SerializeToString,
-            joint__pb2.JointCommandAck.FromString,
+            joint__pb2.JointsCommandAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
