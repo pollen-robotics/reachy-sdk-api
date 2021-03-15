@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+package reachy.sdk.fan;
+
+message FanId {
+    oneof id {
+        string name = 1;
+        uint32 uid = 2;
+    }
+}
+
+message FansId {
+    repeated string names = 1;
+    repeated uint32 uids = 2;
+}
+
+message FansStateRequest {
+    repeated FanId ids = 1;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message FanState {
+    bool on = 1;
+}
+
+message FansState {
+    repeated FanId ids = 1;
+    repeated FanState states = 2;
+
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message FanCommand {
+    FanId id = 1;
+    bool on = 2;
+}
+
+message FansCommand {
+    repeated FanCommand commands = 1;
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+message FansCommandAck {
+    bool success = 1;
+}
+
+
+service FanControllerService {
+    rpc GetAllFansId(google.protobuf.Empty) returns (FansId);
+
+    rpc GetFansState(FansStateRequest) returns (FansState);
+    rpc SendFansCommands(FansCommand) returns (FansCommandAck);
+
+}
