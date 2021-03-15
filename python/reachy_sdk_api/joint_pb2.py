@@ -696,16 +696,16 @@ _JOINTSCOMMAND = _descriptor.Descriptor(
 )
 
 
-_JOINTCOMMANDACK = _descriptor.Descriptor(
-  name='JointCommandAck',
-  full_name='reachy.sdk.joint.JointCommandAck',
+_JOINTSCOMMANDACK = _descriptor.Descriptor(
+  name='JointsCommandAck',
+  full_name='reachy.sdk.joint.JointsCommandAck',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='success', full_name='reachy.sdk.joint.JointCommandAck.success', index=0,
+      name='success', full_name='reachy.sdk.joint.JointsCommandAck.success', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -777,7 +777,7 @@ DESCRIPTOR.message_types_by_name['JointsStateRequest'] = _JOINTSSTATEREQUEST
 DESCRIPTOR.message_types_by_name['StreamJointsRequest'] = _STREAMJOINTSREQUEST
 DESCRIPTOR.message_types_by_name['JointCommand'] = _JOINTCOMMAND
 DESCRIPTOR.message_types_by_name['JointsCommand'] = _JOINTSCOMMAND
-DESCRIPTOR.message_types_by_name['JointCommandAck'] = _JOINTCOMMANDACK
+DESCRIPTOR.message_types_by_name['JointsCommandAck'] = _JOINTSCOMMANDACK
 DESCRIPTOR.enum_types_by_name['JointField'] = _JOINTFIELD
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -858,12 +858,12 @@ JointsCommand = _reflection.GeneratedProtocolMessageType('JointsCommand', (_mess
   })
 _sym_db.RegisterMessage(JointsCommand)
 
-JointCommandAck = _reflection.GeneratedProtocolMessageType('JointCommandAck', (_message.Message,), {
-  'DESCRIPTOR' : _JOINTCOMMANDACK,
+JointsCommandAck = _reflection.GeneratedProtocolMessageType('JointsCommandAck', (_message.Message,), {
+  'DESCRIPTOR' : _JOINTSCOMMANDACK,
   '__module__' : 'joint_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.joint.JointCommandAck)
+  # @@protoc_insertion_point(class_scope:reachy.sdk.joint.JointsCommandAck)
   })
-_sym_db.RegisterMessage(JointCommandAck)
+_sym_db.RegisterMessage(JointsCommandAck)
 
 
 
@@ -913,7 +913,7 @@ _JOINTSERVICE = _descriptor.ServiceDescriptor(
     index=3,
     containing_service=None,
     input_type=_JOINTSCOMMAND,
-    output_type=_JOINTCOMMANDACK,
+    output_type=_JOINTSCOMMANDACK,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
@@ -923,7 +923,7 @@ _JOINTSERVICE = _descriptor.ServiceDescriptor(
     index=4,
     containing_service=None,
     input_type=_JOINTSCOMMAND,
-    output_type=_JOINTCOMMANDACK,
+    output_type=_JOINTSCOMMANDACK,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

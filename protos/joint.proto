@@ -110,7 +110,7 @@ message JointsCommand {
     google.protobuf.Timestamp timestamp = 15;
 }
 
-message JointCommandAck {
+message JointsCommandAck {
     bool success = 1;
 }
 
@@ -121,6 +121,6 @@ service JointService {
     rpc GetJointsState(JointsStateRequest) returns (JointsState);
     rpc StreamJointsState(StreamJointsRequest) returns (stream JointsState);
 
-    rpc SendJointsCommands(JointsCommand) returns (JointCommandAck);
-    rpc StreamJointsCommands(stream JointsCommand) returns (JointCommandAck);
+    rpc SendJointsCommands(JointsCommand) returns (JointsCommandAck);
+    rpc StreamJointsCommands(stream JointsCommand) returns (JointsCommandAck);
 }
