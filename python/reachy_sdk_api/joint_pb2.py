@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0bjoint.proto\x12\x10reachy.sdk.joint\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\"+\n\x08PIDGains\x12\t\n\x01p\x18\x01 \x01(\x02\x12\t\n\x01i\x18\x02 \x01(\x02\x12\t\n\x01\x64\x18\x03 \x01(\x02\"\x8f\x01\n\x15\x43omplianceMarginSlope\x12\x1c\n\x14\x63w_compliance_margin\x18\x01 \x01(\x02\x12\x1d\n\x15\x63\x63w_compliance_margin\x18\x02 \x01(\x02\x12\x1b\n\x13\x63w_compliance_slope\x18\x03 \x01(\x02\x12\x1c\n\x14\x63\x63w_compliance_slope\x18\x04 \x01(\x02\"}\n\x08PIDValue\x12)\n\x03pid\x18\x01 \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDGainsH\x00\x12=\n\ncompliance\x18\x02 \x01(\x0b\x32\'.reachy.sdk.joint.ComplianceMarginSlopeH\x00\x42\x07\n\x05gains\".\n\x07JointId\x12\x0e\n\x04name\x18\x01 \x01(\tH\x00\x12\r\n\x03uid\x18\x02 \x01(\rH\x00\x42\x04\n\x02id\"\xe8\x03\n\nJointState\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uid\x18\x02 \x01(\r\x12\x35\n\x10present_position\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x32\n\rpresent_speed\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0cpresent_load\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0btemperature\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\tcompliant\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x03pid\x18\x0b \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDValue\"\x92\x01\n\x0bJointsState\x12&\n\x03ids\x18\x01 \x03(\x0b\x32\x19.reachy.sdk.joint.JointId\x12,\n\x06states\x18\x02 \x03(\x0b\x32\x1c.reachy.sdk.joint.JointState\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\'\n\x08JointsId\x12\r\n\x05names\x18\x01 \x03(\t\x12\x0c\n\x04uids\x18\x02 \x03(\r\"\xa3\x01\n\x12JointsStateRequest\x12&\n\x03ids\x18\x01 \x03(\x0b\x32\x19.reachy.sdk.joint.JointId\x12\x36\n\x10requested_fields\x18\x02 \x03(\x0e\x32\x1c.reachy.sdk.joint.JointField\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x96\x01\n\x13StreamJointsRequest\x12\x35\n\x07request\x18\x01 \x01(\x0b\x32$.reachy.sdk.joint.JointsStateRequest\x12\x19\n\x11publish_frequency\x18\x02 \x01(\x02\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa6\x02\n\x0cJointCommand\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.joint.JointId\x12-\n\tcompliant\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x03pid\x18\x0b \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDValue\"p\n\rJointsCommand\x12\x30\n\x08\x63ommands\x18\x01 \x03(\x0b\x32\x1e.reachy.sdk.joint.JointCommand\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\"\n\x0fJointCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08*\xcc\x01\n\nJointField\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x07\n\x03UID\x10\x02\x12\x14\n\x10PRESENT_POSITION\x10\x03\x12\x11\n\rPRESENT_SPEED\x10\x04\x12\x10\n\x0cPRESENT_LOAD\x10\x05\x12\x0f\n\x0bTEMPERATURE\x10\x06\x12\r\n\tCOMPLIANT\x10\x07\x12\x11\n\rGOAL_POSITION\x10\x08\x12\x0f\n\x0bSPEED_LIMIT\x10\t\x12\x10\n\x0cTORQUE_LIMIT\x10\n\x12\x07\n\x03PID\x10\x0b\x12\x07\n\x03\x41LL\x10\x0f\x32\xc0\x03\n\x0cJointService\x12\x44\n\x0eGetAllJointsId\x12\x16.google.protobuf.Empty\x1a\x1a.reachy.sdk.joint.JointsId\x12U\n\x0eGetJointsState\x12$.reachy.sdk.joint.JointsStateRequest\x1a\x1d.reachy.sdk.joint.JointsState\x12[\n\x11StreamJointsState\x12%.reachy.sdk.joint.StreamJointsRequest\x1a\x1d.reachy.sdk.joint.JointsState0\x01\x12X\n\x12SendJointsCommands\x12\x1f.reachy.sdk.joint.JointsCommand\x1a!.reachy.sdk.joint.JointCommandAck\x12\\\n\x14StreamJointsCommands\x12\x1f.reachy.sdk.joint.JointsCommand\x1a!.reachy.sdk.joint.JointCommandAck(\x01\x62\x06proto3'
+  serialized_pb=b'\n\x0bjoint.proto\x12\x10reachy.sdk.joint\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\"+\n\x08PIDGains\x12\t\n\x01p\x18\x01 \x01(\x02\x12\t\n\x01i\x18\x02 \x01(\x02\x12\t\n\x01\x64\x18\x03 \x01(\x02\"\x8f\x01\n\x15\x43omplianceMarginSlope\x12\x1c\n\x14\x63w_compliance_margin\x18\x01 \x01(\x02\x12\x1d\n\x15\x63\x63w_compliance_margin\x18\x02 \x01(\x02\x12\x1b\n\x13\x63w_compliance_slope\x18\x03 \x01(\x02\x12\x1c\n\x14\x63\x63w_compliance_slope\x18\x04 \x01(\x02\"}\n\x08PIDValue\x12)\n\x03pid\x18\x01 \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDGainsH\x00\x12=\n\ncompliance\x18\x02 \x01(\x0b\x32\'.reachy.sdk.joint.ComplianceMarginSlopeH\x00\x42\x07\n\x05gains\".\n\x07JointId\x12\x0e\n\x04name\x18\x01 \x01(\tH\x00\x12\r\n\x03uid\x18\x02 \x01(\rH\x00\x42\x04\n\x02id\"\x86\x04\n\nJointState\x12\x0c\n\x04name\x18\x01 \x01(\t\x12)\n\x03uid\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x35\n\x10present_position\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x32\n\rpresent_speed\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0cpresent_load\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0btemperature\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\tcompliant\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x03pid\x18\x0b \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDValue\"\x92\x01\n\x0bJointsState\x12&\n\x03ids\x18\x01 \x03(\x0b\x32\x19.reachy.sdk.joint.JointId\x12,\n\x06states\x18\x02 \x03(\x0b\x32\x1c.reachy.sdk.joint.JointState\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\'\n\x08JointsId\x12\r\n\x05names\x18\x01 \x03(\t\x12\x0c\n\x04uids\x18\x02 \x03(\r\"\xa3\x01\n\x12JointsStateRequest\x12&\n\x03ids\x18\x01 \x03(\x0b\x32\x19.reachy.sdk.joint.JointId\x12\x36\n\x10requested_fields\x18\x02 \x03(\x0e\x32\x1c.reachy.sdk.joint.JointField\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x96\x01\n\x13StreamJointsRequest\x12\x35\n\x07request\x18\x01 \x01(\x0b\x32$.reachy.sdk.joint.JointsStateRequest\x12\x19\n\x11publish_frequency\x18\x02 \x01(\x02\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa6\x02\n\x0cJointCommand\x12%\n\x02id\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.joint.JointId\x12-\n\tcompliant\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rgoal_position\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0bspeed_limit\x18\t \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x31\n\x0ctorque_limit\x18\n \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\'\n\x03pid\x18\x0b \x01(\x0b\x32\x1a.reachy.sdk.joint.PIDValue\"p\n\rJointsCommand\x12\x30\n\x08\x63ommands\x18\x01 \x03(\x0b\x32\x1e.reachy.sdk.joint.JointCommand\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"#\n\x10JointsCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08*\xcc\x01\n\nJointField\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04NAME\x10\x01\x12\x07\n\x03UID\x10\x02\x12\x14\n\x10PRESENT_POSITION\x10\x03\x12\x11\n\rPRESENT_SPEED\x10\x04\x12\x10\n\x0cPRESENT_LOAD\x10\x05\x12\x0f\n\x0bTEMPERATURE\x10\x06\x12\r\n\tCOMPLIANT\x10\x07\x12\x11\n\rGOAL_POSITION\x10\x08\x12\x0f\n\x0bSPEED_LIMIT\x10\t\x12\x10\n\x0cTORQUE_LIMIT\x10\n\x12\x07\n\x03PID\x10\x0b\x12\x07\n\x03\x41LL\x10\x0f\x32\xc2\x03\n\x0cJointService\x12\x44\n\x0eGetAllJointsId\x12\x16.google.protobuf.Empty\x1a\x1a.reachy.sdk.joint.JointsId\x12U\n\x0eGetJointsState\x12$.reachy.sdk.joint.JointsStateRequest\x1a\x1d.reachy.sdk.joint.JointsState\x12[\n\x11StreamJointsState\x12%.reachy.sdk.joint.StreamJointsRequest\x1a\x1d.reachy.sdk.joint.JointsState0\x01\x12Y\n\x12SendJointsCommands\x12\x1f.reachy.sdk.joint.JointsCommand\x1a\".reachy.sdk.joint.JointsCommandAck\x12]\n\x14StreamJointsCommands\x12\x1f.reachy.sdk.joint.JointsCommand\x1a\".reachy.sdk.joint.JointsCommandAck(\x01\x62\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -102,8 +102,8 @@ _JOINTFIELD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1941,
-  serialized_end=2145,
+  serialized_start=1972,
+  serialized_end=2176,
 )
 _sym_db.RegisterEnumDescriptor(_JOINTFIELD)
 
@@ -328,8 +328,8 @@ _JOINTSTATE = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='uid', full_name='reachy.sdk.joint.JointState.uid', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -409,7 +409,7 @@ _JOINTSTATE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=494,
-  serialized_end=982,
+  serialized_end=1012,
 )
 
 
@@ -454,8 +454,8 @@ _JOINTSSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=985,
-  serialized_end=1131,
+  serialized_start=1015,
+  serialized_end=1161,
 )
 
 
@@ -493,8 +493,8 @@ _JOINTSID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1133,
-  serialized_end=1172,
+  serialized_start=1163,
+  serialized_end=1202,
 )
 
 
@@ -539,8 +539,8 @@ _JOINTSSTATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1175,
-  serialized_end=1338,
+  serialized_start=1205,
+  serialized_end=1368,
 )
 
 
@@ -585,8 +585,8 @@ _STREAMJOINTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1341,
-  serialized_end=1491,
+  serialized_start=1371,
+  serialized_end=1521,
 )
 
 
@@ -652,8 +652,8 @@ _JOINTCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1494,
-  serialized_end=1788,
+  serialized_start=1524,
+  serialized_end=1818,
 )
 
 
@@ -691,8 +691,8 @@ _JOINTSCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1790,
-  serialized_end=1902,
+  serialized_start=1820,
+  serialized_end=1932,
 )
 
 
@@ -723,8 +723,8 @@ _JOINTSCOMMANDACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1904,
-  serialized_end=1938,
+  serialized_start=1934,
+  serialized_end=1969,
 )
 
 _PIDVALUE.fields_by_name['pid'].message_type = _PIDGAINS
@@ -741,6 +741,7 @@ _JOINTID.fields_by_name['name'].containing_oneof = _JOINTID.oneofs_by_name['id']
 _JOINTID.oneofs_by_name['id'].fields.append(
   _JOINTID.fields_by_name['uid'])
 _JOINTID.fields_by_name['uid'].containing_oneof = _JOINTID.oneofs_by_name['id']
+_JOINTSTATE.fields_by_name['uid'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
 _JOINTSTATE.fields_by_name['present_position'].message_type = google_dot_protobuf_dot_wrappers__pb2._FLOATVALUE
 _JOINTSTATE.fields_by_name['present_speed'].message_type = google_dot_protobuf_dot_wrappers__pb2._FLOATVALUE
 _JOINTSTATE.fields_by_name['present_load'].message_type = google_dot_protobuf_dot_wrappers__pb2._FLOATVALUE
@@ -874,8 +875,8 @@ _JOINTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2148,
-  serialized_end=2596,
+  serialized_start=2179,
+  serialized_end=2629,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetAllJointsId',
