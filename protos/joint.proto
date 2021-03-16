@@ -55,7 +55,7 @@ message JointId {
 
 message JointState {
     string name = 1;
-    uint32 uid = 2;
+    google.protobuf.UInt32Value uid = 2;
 
     google.protobuf.FloatValue present_position = 3;
     google.protobuf.FloatValue present_speed = 4;
