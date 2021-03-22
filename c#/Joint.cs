@@ -26,60 +26,69 @@ namespace Reachy.Sdk.Joint {
           string.Concat(
             "Cgtqb2ludC5wcm90bxIQcmVhY2h5LnNkay5qb2ludBoeZ29vZ2xlL3Byb3Rv",
             "YnVmL3dyYXBwZXJzLnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1w",
-            "LnByb3RvGhtnb29nbGUvcHJvdG9idWYvZW1wdHkucHJvdG8iKwoIUElEVmFs",
-            "dWUSCQoBcBgBIAEoAhIJCgFpGAIgASgCEgkKAWQYAyABKAIiLgoHSm9pbnRJ",
-            "ZBIOCgRuYW1lGAEgASgJSAASDQoDdWlkGAIgASgNSABCBAoCaWQi6AMKCkpv",
-            "aW50U3RhdGUSDAoEbmFtZRgBIAEoCRILCgN1aWQYAiABKA0SNQoQcHJlc2Vu",
-            "dF9wb3NpdGlvbhgDIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5GbG9hdFZhbHVl",
-            "EjIKDXByZXNlbnRfc3BlZWQYBCABKAsyGy5nb29nbGUucHJvdG9idWYuRmxv",
-            "YXRWYWx1ZRIxCgxwcmVzZW50X2xvYWQYBSABKAsyGy5nb29nbGUucHJvdG9i",
-            "dWYuRmxvYXRWYWx1ZRIwCgt0ZW1wZXJhdHVyZRgGIAEoCzIbLmdvb2dsZS5w",
-            "cm90b2J1Zi5GbG9hdFZhbHVlEi0KCWNvbXBsaWFudBgHIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5Cb29sVmFsdWUSMgoNZ29hbF9wb3NpdGlvbhgIIAEoCzIb",
-            "Lmdvb2dsZS5wcm90b2J1Zi5GbG9hdFZhbHVlEjAKC3NwZWVkX2xpbWl0GAkg",
-            "ASgLMhsuZ29vZ2xlLnByb3RvYnVmLkZsb2F0VmFsdWUSMQoMdG9ycXVlX2xp",
-            "bWl0GAogASgLMhsuZ29vZ2xlLnByb3RvYnVmLkZsb2F0VmFsdWUSJwoDcGlk",
-            "GAsgASgLMhoucmVhY2h5LnNkay5qb2ludC5QSURWYWx1ZSKSAQoLSm9pbnRz",
-            "U3RhdGUSJgoDaWRzGAEgAygLMhkucmVhY2h5LnNkay5qb2ludC5Kb2ludElk",
-            "EiwKBnN0YXRlcxgCIAMoCzIcLnJlYWNoeS5zZGsuam9pbnQuSm9pbnRTdGF0",
-            "ZRItCgl0aW1lc3RhbXAYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wIicKCEpvaW50c0lkEg0KBW5hbWVzGAEgAygJEgwKBHVpZHMYAiADKA0i",
-            "owEKEkpvaW50c1N0YXRlUmVxdWVzdBImCgNpZHMYASADKAsyGS5yZWFjaHku",
-            "c2RrLmpvaW50LkpvaW50SWQSNgoQcmVxdWVzdGVkX2ZpZWxkcxgCIAMoDjIc",
-            "LnJlYWNoeS5zZGsuam9pbnQuSm9pbnRGaWVsZBItCgl0aW1lc3RhbXAYDyAB",
-            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIpYBChNTdHJlYW1Kb2lu",
-            "dHNSZXF1ZXN0EjUKB3JlcXVlc3QYASABKAsyJC5yZWFjaHkuc2RrLmpvaW50",
-            "LkpvaW50c1N0YXRlUmVxdWVzdBIZChFwdWJsaXNoX2ZyZXF1ZW5jeRgCIAEo",
-            "AhItCgl0aW1lc3RhbXAYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0",
-            "YW1wIqYCCgxKb2ludENvbW1hbmQSJQoCaWQYASABKAsyGS5yZWFjaHkuc2Rr",
-            "LmpvaW50LkpvaW50SWQSLQoJY29tcGxpYW50GAcgASgLMhouZ29vZ2xlLnBy",
-            "b3RvYnVmLkJvb2xWYWx1ZRIyCg1nb2FsX3Bvc2l0aW9uGAggASgLMhsuZ29v",
-            "Z2xlLnByb3RvYnVmLkZsb2F0VmFsdWUSMAoLc3BlZWRfbGltaXQYCSABKAsy",
-            "Gy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZRIxCgx0b3JxdWVfbGltaXQY",
-            "CiABKAsyGy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZRInCgNwaWQYCyAB",
-            "KAsyGi5yZWFjaHkuc2RrLmpvaW50LlBJRFZhbHVlInAKDUpvaW50c0NvbW1h",
-            "bmQSMAoIY29tbWFuZHMYASADKAsyHi5yZWFjaHkuc2RrLmpvaW50LkpvaW50",
-            "Q29tbWFuZBItCgl0aW1lc3RhbXAYDyABKAsyGi5nb29nbGUucHJvdG9idWYu",
-            "VGltZXN0YW1wIiIKD0pvaW50Q29tbWFuZEFjaxIPCgdzdWNjZXNzGAEgASgI",
-            "KswBCgpKb2ludEZpZWxkEggKBE5PTkUQABIICgROQU1FEAESBwoDVUlEEAIS",
-            "FAoQUFJFU0VOVF9QT1NJVElPThADEhEKDVBSRVNFTlRfU1BFRUQQBBIQCgxQ",
-            "UkVTRU5UX0xPQUQQBRIPCgtURU1QRVJBVFVSRRAGEg0KCUNPTVBMSUFOVBAH",
-            "EhEKDUdPQUxfUE9TSVRJT04QCBIPCgtTUEVFRF9MSU1JVBAJEhAKDFRPUlFV",
-            "RV9MSU1JVBAKEgcKA1BJRBALEgcKA0FMTBAPMsADCgxKb2ludFNlcnZpY2US",
-            "RAoOR2V0QWxsSm9pbnRzSWQSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaGi5y",
-            "ZWFjaHkuc2RrLmpvaW50LkpvaW50c0lkElUKDkdldEpvaW50c1N0YXRlEiQu",
-            "cmVhY2h5LnNkay5qb2ludC5Kb2ludHNTdGF0ZVJlcXVlc3QaHS5yZWFjaHku",
-            "c2RrLmpvaW50LkpvaW50c1N0YXRlElsKEVN0cmVhbUpvaW50c1N0YXRlEiUu",
-            "cmVhY2h5LnNkay5qb2ludC5TdHJlYW1Kb2ludHNSZXF1ZXN0Gh0ucmVhY2h5",
-            "LnNkay5qb2ludC5Kb2ludHNTdGF0ZTABElgKElNlbmRKb2ludHNDb21tYW5k",
-            "cxIfLnJlYWNoeS5zZGsuam9pbnQuSm9pbnRzQ29tbWFuZBohLnJlYWNoeS5z",
-            "ZGsuam9pbnQuSm9pbnRDb21tYW5kQWNrElwKFFN0cmVhbUpvaW50c0NvbW1h",
-            "bmRzEh8ucmVhY2h5LnNkay5qb2ludC5Kb2ludHNDb21tYW5kGiEucmVhY2h5",
-            "LnNkay5qb2ludC5Kb2ludENvbW1hbmRBY2soAWIGcHJvdG8z"));
+            "LnByb3RvGhtnb29nbGUvcHJvdG9idWYvZW1wdHkucHJvdG8iKwoIUElER2Fp",
+            "bnMSCQoBcBgBIAEoAhIJCgFpGAIgASgCEgkKAWQYAyABKAIijwEKFUNvbXBs",
+            "aWFuY2VNYXJnaW5TbG9wZRIcChRjd19jb21wbGlhbmNlX21hcmdpbhgBIAEo",
+            "AhIdChVjY3dfY29tcGxpYW5jZV9tYXJnaW4YAiABKAISGwoTY3dfY29tcGxp",
+            "YW5jZV9zbG9wZRgDIAEoAhIcChRjY3dfY29tcGxpYW5jZV9zbG9wZRgEIAEo",
+            "AiJ9CghQSURWYWx1ZRIpCgNwaWQYASABKAsyGi5yZWFjaHkuc2RrLmpvaW50",
+            "LlBJREdhaW5zSAASPQoKY29tcGxpYW5jZRgCIAEoCzInLnJlYWNoeS5zZGsu",
+            "am9pbnQuQ29tcGxpYW5jZU1hcmdpblNsb3BlSABCBwoFZ2FpbnMiLgoHSm9p",
+            "bnRJZBIOCgRuYW1lGAEgASgJSAASDQoDdWlkGAIgASgNSABCBAoCaWQihgQK",
+            "CkpvaW50U3RhdGUSDAoEbmFtZRgBIAEoCRIpCgN1aWQYAiABKAsyHC5nb29n",
+            "bGUucHJvdG9idWYuVUludDMyVmFsdWUSNQoQcHJlc2VudF9wb3NpdGlvbhgD",
+            "IAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5GbG9hdFZhbHVlEjIKDXByZXNlbnRf",
+            "c3BlZWQYBCABKAsyGy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZRIxCgxw",
+            "cmVzZW50X2xvYWQYBSABKAsyGy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1",
+            "ZRIwCgt0ZW1wZXJhdHVyZRgGIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5GbG9h",
+            "dFZhbHVlEi0KCWNvbXBsaWFudBgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5C",
+            "b29sVmFsdWUSMgoNZ29hbF9wb3NpdGlvbhgIIAEoCzIbLmdvb2dsZS5wcm90",
+            "b2J1Zi5GbG9hdFZhbHVlEjAKC3NwZWVkX2xpbWl0GAkgASgLMhsuZ29vZ2xl",
+            "LnByb3RvYnVmLkZsb2F0VmFsdWUSMQoMdG9ycXVlX2xpbWl0GAogASgLMhsu",
+            "Z29vZ2xlLnByb3RvYnVmLkZsb2F0VmFsdWUSJwoDcGlkGAsgASgLMhoucmVh",
+            "Y2h5LnNkay5qb2ludC5QSURWYWx1ZSKSAQoLSm9pbnRzU3RhdGUSJgoDaWRz",
+            "GAEgAygLMhkucmVhY2h5LnNkay5qb2ludC5Kb2ludElkEiwKBnN0YXRlcxgC",
+            "IAMoCzIcLnJlYWNoeS5zZGsuam9pbnQuSm9pbnRTdGF0ZRItCgl0aW1lc3Rh",
+            "bXAYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIicKCEpvaW50",
+            "c0lkEg0KBW5hbWVzGAEgAygJEgwKBHVpZHMYAiADKA0iowEKEkpvaW50c1N0",
+            "YXRlUmVxdWVzdBImCgNpZHMYASADKAsyGS5yZWFjaHkuc2RrLmpvaW50Lkpv",
+            "aW50SWQSNgoQcmVxdWVzdGVkX2ZpZWxkcxgCIAMoDjIcLnJlYWNoeS5zZGsu",
+            "am9pbnQuSm9pbnRGaWVsZBItCgl0aW1lc3RhbXAYDyABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wIpYBChNTdHJlYW1Kb2ludHNSZXF1ZXN0EjUK",
+            "B3JlcXVlc3QYASABKAsyJC5yZWFjaHkuc2RrLmpvaW50LkpvaW50c1N0YXRl",
+            "UmVxdWVzdBIZChFwdWJsaXNoX2ZyZXF1ZW5jeRgCIAEoAhItCgl0aW1lc3Rh",
+            "bXAYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIqYCCgxKb2lu",
+            "dENvbW1hbmQSJQoCaWQYASABKAsyGS5yZWFjaHkuc2RrLmpvaW50LkpvaW50",
+            "SWQSLQoJY29tcGxpYW50GAcgASgLMhouZ29vZ2xlLnByb3RvYnVmLkJvb2xW",
+            "YWx1ZRIyCg1nb2FsX3Bvc2l0aW9uGAggASgLMhsuZ29vZ2xlLnByb3RvYnVm",
+            "LkZsb2F0VmFsdWUSMAoLc3BlZWRfbGltaXQYCSABKAsyGy5nb29nbGUucHJv",
+            "dG9idWYuRmxvYXRWYWx1ZRIxCgx0b3JxdWVfbGltaXQYCiABKAsyGy5nb29n",
+            "bGUucHJvdG9idWYuRmxvYXRWYWx1ZRInCgNwaWQYCyABKAsyGi5yZWFjaHku",
+            "c2RrLmpvaW50LlBJRFZhbHVlInAKDUpvaW50c0NvbW1hbmQSMAoIY29tbWFu",
+            "ZHMYASADKAsyHi5yZWFjaHkuc2RrLmpvaW50LkpvaW50Q29tbWFuZBItCgl0",
+            "aW1lc3RhbXAYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIiMK",
+            "EEpvaW50c0NvbW1hbmRBY2sSDwoHc3VjY2VzcxgBIAEoCCrMAQoKSm9pbnRG",
+            "aWVsZBIICgROT05FEAASCAoETkFNRRABEgcKA1VJRBACEhQKEFBSRVNFTlRf",
+            "UE9TSVRJT04QAxIRCg1QUkVTRU5UX1NQRUVEEAQSEAoMUFJFU0VOVF9MT0FE",
+            "EAUSDwoLVEVNUEVSQVRVUkUQBhINCglDT01QTElBTlQQBxIRCg1HT0FMX1BP",
+            "U0lUSU9OEAgSDwoLU1BFRURfTElNSVQQCRIQCgxUT1JRVUVfTElNSVQQChIH",
+            "CgNQSUQQCxIHCgNBTEwQDzLCAwoMSm9pbnRTZXJ2aWNlEkQKDkdldEFsbEpv",
+            "aW50c0lkEhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5GhoucmVhY2h5LnNkay5q",
+            "b2ludC5Kb2ludHNJZBJVCg5HZXRKb2ludHNTdGF0ZRIkLnJlYWNoeS5zZGsu",
+            "am9pbnQuSm9pbnRzU3RhdGVSZXF1ZXN0Gh0ucmVhY2h5LnNkay5qb2ludC5K",
+            "b2ludHNTdGF0ZRJbChFTdHJlYW1Kb2ludHNTdGF0ZRIlLnJlYWNoeS5zZGsu",
+            "am9pbnQuU3RyZWFtSm9pbnRzUmVxdWVzdBodLnJlYWNoeS5zZGsuam9pbnQu",
+            "Sm9pbnRzU3RhdGUwARJZChJTZW5kSm9pbnRzQ29tbWFuZHMSHy5yZWFjaHku",
+            "c2RrLmpvaW50LkpvaW50c0NvbW1hbmQaIi5yZWFjaHkuc2RrLmpvaW50Lkpv",
+            "aW50c0NvbW1hbmRBY2sSXQoUU3RyZWFtSm9pbnRzQ29tbWFuZHMSHy5yZWFj",
+            "aHkuc2RrLmpvaW50LkpvaW50c0NvbW1hbmQaIi5yZWFjaHkuc2RrLmpvaW50",
+            "LkpvaW50c0NvbW1hbmRBY2soAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Reachy.Sdk.Joint.JointField), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.PIDValue), global::Reachy.Sdk.Joint.PIDValue.Parser, new[]{ "P", "I", "D" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.PIDGains), global::Reachy.Sdk.Joint.PIDGains.Parser, new[]{ "P", "I", "D" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.ComplianceMarginSlope), global::Reachy.Sdk.Joint.ComplianceMarginSlope.Parser, new[]{ "CwComplianceMargin", "CcwComplianceMargin", "CwComplianceSlope", "CcwComplianceSlope" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.PIDValue), global::Reachy.Sdk.Joint.PIDValue.Parser, new[]{ "Pid", "Compliance" }, new[]{ "Gains" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.JointId), global::Reachy.Sdk.Joint.JointId.Parser, new[]{ "Name", "Uid" }, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.JointState), global::Reachy.Sdk.Joint.JointState.Parser, new[]{ "Name", "Uid", "PresentPosition", "PresentSpeed", "PresentLoad", "Temperature", "Compliant", "GoalPosition", "SpeedLimit", "TorqueLimit", "Pid" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.JointsState), global::Reachy.Sdk.Joint.JointsState.Parser, new[]{ "Ids", "States", "Timestamp" }, null, null, null, null),
@@ -88,7 +97,7 @@ namespace Reachy.Sdk.Joint {
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.StreamJointsRequest), global::Reachy.Sdk.Joint.StreamJointsRequest.Parser, new[]{ "Request", "PublishFrequency", "Timestamp" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.JointCommand), global::Reachy.Sdk.Joint.JointCommand.Parser, new[]{ "Id", "Compliant", "GoalPosition", "SpeedLimit", "TorqueLimit", "Pid" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.JointsCommand), global::Reachy.Sdk.Joint.JointsCommand.Parser, new[]{ "Commands", "Timestamp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.JointCommandAck), global::Reachy.Sdk.Joint.JointCommandAck.Parser, new[]{ "Success" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.JointsCommandAck), global::Reachy.Sdk.Joint.JointsCommandAck.Parser, new[]{ "Success" }, null, null, null, null)
           }));
     }
     #endregion
@@ -114,15 +123,15 @@ namespace Reachy.Sdk.Joint {
   #endregion
 
   #region Messages
-  public sealed partial class PIDValue : pb::IMessage<PIDValue>
+  public sealed partial class PIDGains : pb::IMessage<PIDGains>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<PIDValue> _parser = new pb::MessageParser<PIDValue>(() => new PIDValue());
+    private static readonly pb::MessageParser<PIDGains> _parser = new pb::MessageParser<PIDGains>(() => new PIDGains());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<PIDValue> Parser { get { return _parser; } }
+    public static pb::MessageParser<PIDGains> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -135,14 +144,14 @@ namespace Reachy.Sdk.Joint {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PIDValue() {
+    public PIDGains() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PIDValue(PIDValue other) : this() {
+    public PIDGains(PIDGains other) : this() {
       p_ = other.p_;
       i_ = other.i_;
       d_ = other.d_;
@@ -150,8 +159,8 @@ namespace Reachy.Sdk.Joint {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public PIDValue Clone() {
-      return new PIDValue(this);
+    public PIDGains Clone() {
+      return new PIDGains(this);
     }
 
     /// <summary>Field number for the "p" field.</summary>
@@ -189,11 +198,11 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as PIDValue);
+      return Equals(other as PIDGains);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(PIDValue other) {
+    public bool Equals(PIDGains other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -286,7 +295,7 @@ namespace Reachy.Sdk.Joint {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(PIDValue other) {
+    public void MergeFrom(PIDGains other) {
       if (other == null) {
         return;
       }
@@ -358,6 +367,551 @@ namespace Reachy.Sdk.Joint {
 
   }
 
+  public sealed partial class ComplianceMarginSlope : pb::IMessage<ComplianceMarginSlope>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ComplianceMarginSlope> _parser = new pb::MessageParser<ComplianceMarginSlope>(() => new ComplianceMarginSlope());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ComplianceMarginSlope> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ComplianceMarginSlope() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ComplianceMarginSlope(ComplianceMarginSlope other) : this() {
+      cwComplianceMargin_ = other.cwComplianceMargin_;
+      ccwComplianceMargin_ = other.ccwComplianceMargin_;
+      cwComplianceSlope_ = other.cwComplianceSlope_;
+      ccwComplianceSlope_ = other.ccwComplianceSlope_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ComplianceMarginSlope Clone() {
+      return new ComplianceMarginSlope(this);
+    }
+
+    /// <summary>Field number for the "cw_compliance_margin" field.</summary>
+    public const int CwComplianceMarginFieldNumber = 1;
+    private float cwComplianceMargin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CwComplianceMargin {
+      get { return cwComplianceMargin_; }
+      set {
+        cwComplianceMargin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ccw_compliance_margin" field.</summary>
+    public const int CcwComplianceMarginFieldNumber = 2;
+    private float ccwComplianceMargin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CcwComplianceMargin {
+      get { return ccwComplianceMargin_; }
+      set {
+        ccwComplianceMargin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cw_compliance_slope" field.</summary>
+    public const int CwComplianceSlopeFieldNumber = 3;
+    private float cwComplianceSlope_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CwComplianceSlope {
+      get { return cwComplianceSlope_; }
+      set {
+        cwComplianceSlope_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ccw_compliance_slope" field.</summary>
+    public const int CcwComplianceSlopeFieldNumber = 4;
+    private float ccwComplianceSlope_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float CcwComplianceSlope {
+      get { return ccwComplianceSlope_; }
+      set {
+        ccwComplianceSlope_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ComplianceMarginSlope);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ComplianceMarginSlope other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CwComplianceMargin, other.CwComplianceMargin)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CcwComplianceMargin, other.CcwComplianceMargin)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CwComplianceSlope, other.CwComplianceSlope)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(CcwComplianceSlope, other.CcwComplianceSlope)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CwComplianceMargin != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CwComplianceMargin);
+      if (CcwComplianceMargin != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CcwComplianceMargin);
+      if (CwComplianceSlope != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CwComplianceSlope);
+      if (CcwComplianceSlope != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(CcwComplianceSlope);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CwComplianceMargin != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(CwComplianceMargin);
+      }
+      if (CcwComplianceMargin != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(CcwComplianceMargin);
+      }
+      if (CwComplianceSlope != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(CwComplianceSlope);
+      }
+      if (CcwComplianceSlope != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(CcwComplianceSlope);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CwComplianceMargin != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(CwComplianceMargin);
+      }
+      if (CcwComplianceMargin != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(CcwComplianceMargin);
+      }
+      if (CwComplianceSlope != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(CwComplianceSlope);
+      }
+      if (CcwComplianceSlope != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(CcwComplianceSlope);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (CwComplianceMargin != 0F) {
+        size += 1 + 4;
+      }
+      if (CcwComplianceMargin != 0F) {
+        size += 1 + 4;
+      }
+      if (CwComplianceSlope != 0F) {
+        size += 1 + 4;
+      }
+      if (CcwComplianceSlope != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ComplianceMarginSlope other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CwComplianceMargin != 0F) {
+        CwComplianceMargin = other.CwComplianceMargin;
+      }
+      if (other.CcwComplianceMargin != 0F) {
+        CcwComplianceMargin = other.CcwComplianceMargin;
+      }
+      if (other.CwComplianceSlope != 0F) {
+        CwComplianceSlope = other.CwComplianceSlope;
+      }
+      if (other.CcwComplianceSlope != 0F) {
+        CcwComplianceSlope = other.CcwComplianceSlope;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            CwComplianceMargin = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            CcwComplianceMargin = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            CwComplianceSlope = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            CcwComplianceSlope = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 13: {
+            CwComplianceMargin = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            CcwComplianceMargin = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            CwComplianceSlope = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            CcwComplianceSlope = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class PIDValue : pb::IMessage<PIDValue>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PIDValue> _parser = new pb::MessageParser<PIDValue>(() => new PIDValue());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PIDValue> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PIDValue() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PIDValue(PIDValue other) : this() {
+      switch (other.GainsCase) {
+        case GainsOneofCase.Pid:
+          Pid = other.Pid.Clone();
+          break;
+        case GainsOneofCase.Compliance:
+          Compliance = other.Compliance.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PIDValue Clone() {
+      return new PIDValue(this);
+    }
+
+    /// <summary>Field number for the "pid" field.</summary>
+    public const int PidFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Joint.PIDGains Pid {
+      get { return gainsCase_ == GainsOneofCase.Pid ? (global::Reachy.Sdk.Joint.PIDGains) gains_ : null; }
+      set {
+        gains_ = value;
+        gainsCase_ = value == null ? GainsOneofCase.None : GainsOneofCase.Pid;
+      }
+    }
+
+    /// <summary>Field number for the "compliance" field.</summary>
+    public const int ComplianceFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Joint.ComplianceMarginSlope Compliance {
+      get { return gainsCase_ == GainsOneofCase.Compliance ? (global::Reachy.Sdk.Joint.ComplianceMarginSlope) gains_ : null; }
+      set {
+        gains_ = value;
+        gainsCase_ = value == null ? GainsOneofCase.None : GainsOneofCase.Compliance;
+      }
+    }
+
+    private object gains_;
+    /// <summary>Enum of possible cases for the "gains" oneof.</summary>
+    public enum GainsOneofCase {
+      None = 0,
+      Pid = 1,
+      Compliance = 2,
+    }
+    private GainsOneofCase gainsCase_ = GainsOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GainsOneofCase GainsCase {
+      get { return gainsCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearGains() {
+      gainsCase_ = GainsOneofCase.None;
+      gains_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PIDValue);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PIDValue other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Pid, other.Pid)) return false;
+      if (!object.Equals(Compliance, other.Compliance)) return false;
+      if (GainsCase != other.GainsCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (gainsCase_ == GainsOneofCase.Pid) hash ^= Pid.GetHashCode();
+      if (gainsCase_ == GainsOneofCase.Compliance) hash ^= Compliance.GetHashCode();
+      hash ^= (int) gainsCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (gainsCase_ == GainsOneofCase.Pid) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Pid);
+      }
+      if (gainsCase_ == GainsOneofCase.Compliance) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Compliance);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (gainsCase_ == GainsOneofCase.Pid) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Pid);
+      }
+      if (gainsCase_ == GainsOneofCase.Compliance) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Compliance);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (gainsCase_ == GainsOneofCase.Pid) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pid);
+      }
+      if (gainsCase_ == GainsOneofCase.Compliance) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Compliance);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PIDValue other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.GainsCase) {
+        case GainsOneofCase.Pid:
+          if (Pid == null) {
+            Pid = new global::Reachy.Sdk.Joint.PIDGains();
+          }
+          Pid.MergeFrom(other.Pid);
+          break;
+        case GainsOneofCase.Compliance:
+          if (Compliance == null) {
+            Compliance = new global::Reachy.Sdk.Joint.ComplianceMarginSlope();
+          }
+          Compliance.MergeFrom(other.Compliance);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::Reachy.Sdk.Joint.PIDGains subBuilder = new global::Reachy.Sdk.Joint.PIDGains();
+            if (gainsCase_ == GainsOneofCase.Pid) {
+              subBuilder.MergeFrom(Pid);
+            }
+            input.ReadMessage(subBuilder);
+            Pid = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Reachy.Sdk.Joint.ComplianceMarginSlope subBuilder = new global::Reachy.Sdk.Joint.ComplianceMarginSlope();
+            if (gainsCase_ == GainsOneofCase.Compliance) {
+              subBuilder.MergeFrom(Compliance);
+            }
+            input.ReadMessage(subBuilder);
+            Compliance = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::Reachy.Sdk.Joint.PIDGains subBuilder = new global::Reachy.Sdk.Joint.PIDGains();
+            if (gainsCase_ == GainsOneofCase.Pid) {
+              subBuilder.MergeFrom(Pid);
+            }
+            input.ReadMessage(subBuilder);
+            Pid = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Reachy.Sdk.Joint.ComplianceMarginSlope subBuilder = new global::Reachy.Sdk.Joint.ComplianceMarginSlope();
+            if (gainsCase_ == GainsOneofCase.Compliance) {
+              subBuilder.MergeFrom(Compliance);
+            }
+            input.ReadMessage(subBuilder);
+            Compliance = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class JointId : pb::IMessage<JointId>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -370,7 +924,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -609,7 +1163,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -627,7 +1181,7 @@ namespace Reachy.Sdk.Joint {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public JointState(JointState other) : this() {
       name_ = other.name_;
-      uid_ = other.uid_;
+      Uid = other.Uid;
       PresentPosition = other.PresentPosition;
       PresentSpeed = other.PresentSpeed;
       PresentLoad = other.PresentLoad;
@@ -658,14 +1212,16 @@ namespace Reachy.Sdk.Joint {
 
     /// <summary>Field number for the "uid" field.</summary>
     public const int UidFieldNumber = 2;
-    private uint uid_;
+    private static readonly pb::FieldCodec<uint?> _single_uid_codec = pb::FieldCodec.ForStructWrapper<uint>(18);
+    private uint? uid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public uint Uid {
+    public uint? Uid {
       get { return uid_; }
       set {
         uid_ = value;
       }
     }
+
 
     /// <summary>Field number for the "present_position" field.</summary>
     public const int PresentPositionFieldNumber = 3;
@@ -813,7 +1369,7 @@ namespace Reachy.Sdk.Joint {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (uid_ != null) hash ^= Uid.GetHashCode();
       if (presentPosition_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(PresentPosition);
       if (presentSpeed_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(PresentSpeed);
       if (presentLoad_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(PresentLoad);
@@ -843,9 +1399,8 @@ namespace Reachy.Sdk.Joint {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Uid);
+      if (uid_ != null) {
+        _single_uid_codec.WriteTagAndValue(output, Uid);
       }
       if (presentPosition_ != null) {
         _single_presentPosition_codec.WriteTagAndValue(output, PresentPosition);
@@ -888,9 +1443,8 @@ namespace Reachy.Sdk.Joint {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Uid != 0) {
-        output.WriteRawTag(16);
-        output.WriteUInt32(Uid);
+      if (uid_ != null) {
+        _single_uid_codec.WriteTagAndValue(ref output, Uid);
       }
       if (presentPosition_ != null) {
         _single_presentPosition_codec.WriteTagAndValue(ref output, PresentPosition);
@@ -932,8 +1486,8 @@ namespace Reachy.Sdk.Joint {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Uid != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      if (uid_ != null) {
+        size += _single_uid_codec.CalculateSizeWithTag(Uid);
       }
       if (presentPosition_ != null) {
         size += _single_presentPosition_codec.CalculateSizeWithTag(PresentPosition);
@@ -976,8 +1530,10 @@ namespace Reachy.Sdk.Joint {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Uid != 0) {
-        Uid = other.Uid;
+      if (other.uid_ != null) {
+        if (uid_ == null || other.Uid != 0) {
+          Uid = other.Uid;
+        }
       }
       if (other.presentPosition_ != null) {
         if (presentPosition_ == null || other.PresentPosition != 0F) {
@@ -1043,8 +1599,11 @@ namespace Reachy.Sdk.Joint {
             Name = input.ReadString();
             break;
           }
-          case 16: {
-            Uid = input.ReadUInt32();
+          case 18: {
+            uint? value = _single_uid_codec.Read(input);
+            if (uid_ == null || value != 0) {
+              Uid = value;
+            }
             break;
           }
           case 26: {
@@ -1128,8 +1687,11 @@ namespace Reachy.Sdk.Joint {
             Name = input.ReadString();
             break;
           }
-          case 16: {
-            Uid = input.ReadUInt32();
+          case 18: {
+            uint? value = _single_uid_codec.Read(ref input);
+            if (uid_ == null || value != 0) {
+              Uid = value;
+            }
             break;
           }
           case 26: {
@@ -1214,7 +1776,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1445,7 +2007,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1633,7 +2195,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1866,7 +2428,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2128,7 +2690,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2530,7 +3092,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2724,19 +3286,19 @@ namespace Reachy.Sdk.Joint {
 
   }
 
-  public sealed partial class JointCommandAck : pb::IMessage<JointCommandAck>
+  public sealed partial class JointsCommandAck : pb::IMessage<JointsCommandAck>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<JointCommandAck> _parser = new pb::MessageParser<JointCommandAck>(() => new JointCommandAck());
+    private static readonly pb::MessageParser<JointsCommandAck> _parser = new pb::MessageParser<JointsCommandAck>(() => new JointsCommandAck());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<JointCommandAck> Parser { get { return _parser; } }
+    public static pb::MessageParser<JointsCommandAck> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Reachy.Sdk.Joint.JointReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2745,21 +3307,21 @@ namespace Reachy.Sdk.Joint {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public JointCommandAck() {
+    public JointsCommandAck() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public JointCommandAck(JointCommandAck other) : this() {
+    public JointsCommandAck(JointsCommandAck other) : this() {
       success_ = other.success_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public JointCommandAck Clone() {
-      return new JointCommandAck(this);
+    public JointsCommandAck Clone() {
+      return new JointsCommandAck(this);
     }
 
     /// <summary>Field number for the "success" field.</summary>
@@ -2775,11 +3337,11 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as JointCommandAck);
+      return Equals(other as JointsCommandAck);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(JointCommandAck other) {
+    public bool Equals(JointsCommandAck other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2846,7 +3408,7 @@ namespace Reachy.Sdk.Joint {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(JointCommandAck other) {
+    public void MergeFrom(JointsCommandAck other) {
       if (other == null) {
         return;
       }

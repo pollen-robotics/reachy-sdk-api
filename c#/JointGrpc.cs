@@ -48,7 +48,7 @@ namespace Reachy.Sdk.Joint {
     static readonly grpc::Marshaller<global::Reachy.Sdk.Joint.JointsState> __Marshaller_reachy_sdk_joint_JointsState = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Joint.JointsState.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Joint.StreamJointsRequest> __Marshaller_reachy_sdk_joint_StreamJointsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Joint.StreamJointsRequest.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Joint.JointsCommand> __Marshaller_reachy_sdk_joint_JointsCommand = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Joint.JointsCommand.Parser));
-    static readonly grpc::Marshaller<global::Reachy.Sdk.Joint.JointCommandAck> __Marshaller_reachy_sdk_joint_JointCommandAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Joint.JointCommandAck.Parser));
+    static readonly grpc::Marshaller<global::Reachy.Sdk.Joint.JointsCommandAck> __Marshaller_reachy_sdk_joint_JointsCommandAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Joint.JointsCommandAck.Parser));
 
     static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Joint.JointsId> __Method_GetAllJointsId = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Joint.JointsId>(
         grpc::MethodType.Unary,
@@ -71,19 +71,19 @@ namespace Reachy.Sdk.Joint {
         __Marshaller_reachy_sdk_joint_StreamJointsRequest,
         __Marshaller_reachy_sdk_joint_JointsState);
 
-    static readonly grpc::Method<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointCommandAck> __Method_SendJointsCommands = new grpc::Method<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointCommandAck>(
+    static readonly grpc::Method<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointsCommandAck> __Method_SendJointsCommands = new grpc::Method<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointsCommandAck>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SendJointsCommands",
         __Marshaller_reachy_sdk_joint_JointsCommand,
-        __Marshaller_reachy_sdk_joint_JointCommandAck);
+        __Marshaller_reachy_sdk_joint_JointsCommandAck);
 
-    static readonly grpc::Method<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointCommandAck> __Method_StreamJointsCommands = new grpc::Method<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointCommandAck>(
+    static readonly grpc::Method<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointsCommandAck> __Method_StreamJointsCommands = new grpc::Method<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointsCommandAck>(
         grpc::MethodType.ClientStreaming,
         __ServiceName,
         "StreamJointsCommands",
         __Marshaller_reachy_sdk_joint_JointsCommand,
-        __Marshaller_reachy_sdk_joint_JointCommandAck);
+        __Marshaller_reachy_sdk_joint_JointsCommandAck);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -110,12 +110,12 @@ namespace Reachy.Sdk.Joint {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Joint.JointCommandAck> SendJointsCommands(global::Reachy.Sdk.Joint.JointsCommand request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Joint.JointsCommandAck> SendJointsCommands(global::Reachy.Sdk.Joint.JointsCommand request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Joint.JointCommandAck> StreamJointsCommands(grpc::IAsyncStreamReader<global::Reachy.Sdk.Joint.JointsCommand> requestStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Joint.JointsCommandAck> StreamJointsCommands(grpc::IAsyncStreamReader<global::Reachy.Sdk.Joint.JointsCommand> requestStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -185,27 +185,27 @@ namespace Reachy.Sdk.Joint {
       {
         return CallInvoker.AsyncServerStreamingCall(__Method_StreamJointsState, null, options, request);
       }
-      public virtual global::Reachy.Sdk.Joint.JointCommandAck SendJointsCommands(global::Reachy.Sdk.Joint.JointsCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Reachy.Sdk.Joint.JointsCommandAck SendJointsCommands(global::Reachy.Sdk.Joint.JointsCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendJointsCommands(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Reachy.Sdk.Joint.JointCommandAck SendJointsCommands(global::Reachy.Sdk.Joint.JointsCommand request, grpc::CallOptions options)
+      public virtual global::Reachy.Sdk.Joint.JointsCommandAck SendJointsCommands(global::Reachy.Sdk.Joint.JointsCommand request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SendJointsCommands, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Joint.JointCommandAck> SendJointsCommandsAsync(global::Reachy.Sdk.Joint.JointsCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Joint.JointsCommandAck> SendJointsCommandsAsync(global::Reachy.Sdk.Joint.JointsCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendJointsCommandsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Joint.JointCommandAck> SendJointsCommandsAsync(global::Reachy.Sdk.Joint.JointsCommand request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Joint.JointsCommandAck> SendJointsCommandsAsync(global::Reachy.Sdk.Joint.JointsCommand request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SendJointsCommands, null, options, request);
       }
-      public virtual grpc::AsyncClientStreamingCall<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointCommandAck> StreamJointsCommands(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncClientStreamingCall<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointsCommandAck> StreamJointsCommands(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return StreamJointsCommands(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncClientStreamingCall<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointCommandAck> StreamJointsCommands(grpc::CallOptions options)
+      public virtual grpc::AsyncClientStreamingCall<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointsCommandAck> StreamJointsCommands(grpc::CallOptions options)
       {
         return CallInvoker.AsyncClientStreamingCall(__Method_StreamJointsCommands, null, options);
       }
@@ -237,8 +237,8 @@ namespace Reachy.Sdk.Joint {
       serviceBinder.AddMethod(__Method_GetAllJointsId, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Joint.JointsId>(serviceImpl.GetAllJointsId));
       serviceBinder.AddMethod(__Method_GetJointsState, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Joint.JointsStateRequest, global::Reachy.Sdk.Joint.JointsState>(serviceImpl.GetJointsState));
       serviceBinder.AddMethod(__Method_StreamJointsState, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Reachy.Sdk.Joint.StreamJointsRequest, global::Reachy.Sdk.Joint.JointsState>(serviceImpl.StreamJointsState));
-      serviceBinder.AddMethod(__Method_SendJointsCommands, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointCommandAck>(serviceImpl.SendJointsCommands));
-      serviceBinder.AddMethod(__Method_StreamJointsCommands, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointCommandAck>(serviceImpl.StreamJointsCommands));
+      serviceBinder.AddMethod(__Method_SendJointsCommands, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointsCommandAck>(serviceImpl.SendJointsCommands));
+      serviceBinder.AddMethod(__Method_StreamJointsCommands, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::Reachy.Sdk.Joint.JointsCommand, global::Reachy.Sdk.Joint.JointsCommandAck>(serviceImpl.StreamJointsCommands));
     }
 
   }
