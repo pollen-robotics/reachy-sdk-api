@@ -19,7 +19,34 @@ message StreamImageRequest {
     ImageRequest request = 1;
 }
 
+message ZoomSpeedCommand {
+    uint32 speed = 1;
+}
+
+message ZoomHomingCommand {}
+
+enum ZoomLevelCommand {
+    IN = 0;
+    INTER = 1;
+    OUT = 2;
+}
+
+message ZoomCommandAck {
+    bool success = 1;
+}
+
+message ZoomCommand {
+    Camera camera = 1;
+    oneof command {
+        ZoomHomingCommand homing = 2;
+        ZoomSpeedCommand speed = 3;
+        ZoomLevelCommand level = 4;
+    }
+}
+
 service CameraService {
     rpc GetImage(ImageRequest) returns (Image);
     rpc StreamImage(StreamImageRequest) returns (stream Image);
+
+    rpc SendZoomCommand(ZoomCommand) returns (ZoomCommandAck);
 }
