@@ -6,10 +6,20 @@ message Image {
     bytes data = 1;
 }
 
-message Side {
-    string side = 1;
+enum Camera {
+    LEFT = 0;
+    RIGHT = 1;
+}
+
+message ImageRequest {
+    Camera camera = 1;
+}
+
+message StreamImageRequest {
+    ImageRequest request = 1;
 }
 
 service CameraService {
-    rpc GetImage(Side) returns (Image);
+    rpc GetImage(ImageRequest) returns (Image);
+    rpc StreamImage(StreamImageRequest) returns (stream Image);
 }
