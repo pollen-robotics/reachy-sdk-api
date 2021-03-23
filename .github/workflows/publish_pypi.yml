@@ -20,7 +20,7 @@ jobs:
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-      working-dir: ./python
+      working-directory: ./python
       run: |
         python setup.py sdist bdist_wheel
         twine upload dist/*
