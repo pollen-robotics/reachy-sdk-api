@@ -16,8 +16,18 @@ class CameraServiceStub(object):
         """
         self.GetImage = channel.unary_unary(
                 '/reachy.sdk.camera.CameraService/GetImage',
-                request_serializer=camera__reachy__pb2.Side.SerializeToString,
+                request_serializer=camera__reachy__pb2.ImageRequest.SerializeToString,
                 response_deserializer=camera__reachy__pb2.Image.FromString,
+                )
+        self.StreamImage = channel.unary_stream(
+                '/reachy.sdk.camera.CameraService/StreamImage',
+                request_serializer=camera__reachy__pb2.StreamImageRequest.SerializeToString,
+                response_deserializer=camera__reachy__pb2.Image.FromString,
+                )
+        self.SendZoomCommand = channel.unary_unary(
+                '/reachy.sdk.camera.CameraService/SendZoomCommand',
+                request_serializer=camera__reachy__pb2.ZoomCommand.SerializeToString,
+                response_deserializer=camera__reachy__pb2.ZoomCommandAck.FromString,
                 )
 
 
@@ -30,13 +40,35 @@ class CameraServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StreamImage(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SendZoomCommand(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CameraServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetImage': grpc.unary_unary_rpc_method_handler(
                     servicer.GetImage,
-                    request_deserializer=camera__reachy__pb2.Side.FromString,
+                    request_deserializer=camera__reachy__pb2.ImageRequest.FromString,
                     response_serializer=camera__reachy__pb2.Image.SerializeToString,
+            ),
+            'StreamImage': grpc.unary_stream_rpc_method_handler(
+                    servicer.StreamImage,
+                    request_deserializer=camera__reachy__pb2.StreamImageRequest.FromString,
+                    response_serializer=camera__reachy__pb2.Image.SerializeToString,
+            ),
+            'SendZoomCommand': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendZoomCommand,
+                    request_deserializer=camera__reachy__pb2.ZoomCommand.FromString,
+                    response_serializer=camera__reachy__pb2.ZoomCommandAck.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -60,7 +92,41 @@ class CameraService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.camera.CameraService/GetImage',
-            camera__reachy__pb2.Side.SerializeToString,
+            camera__reachy__pb2.ImageRequest.SerializeToString,
             camera__reachy__pb2.Image.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StreamImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/reachy.sdk.camera.CameraService/StreamImage',
+            camera__reachy__pb2.StreamImageRequest.SerializeToString,
+            camera__reachy__pb2.Image.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SendZoomCommand(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.camera.CameraService/SendZoomCommand',
+            camera__reachy__pb2.ZoomCommand.SerializeToString,
+            camera__reachy__pb2.ZoomCommandAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
