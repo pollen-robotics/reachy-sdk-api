@@ -6,9 +6,13 @@ message Image {
     bytes data = 1;
 }
 
-enum Camera {
+enum CameraId {
     LEFT = 0;
     RIGHT = 1;
+}
+
+message Camera {
+    CameraId id = 1;
 }
 
 message ImageRequest {
@@ -19,16 +23,20 @@ message StreamImageRequest {
     ImageRequest request = 1;
 }
 
-message ZoomSpeedCommand {
+message ZoomSpeed {
     uint32 speed = 1;
 }
 
-message ZoomHomingCommand {}
+message ZoomHoming {}
 
-enum ZoomLevelCommand {
+enum ZoomLevelPossibilities {
     IN = 0;
     INTER = 1;
     OUT = 2;
+}
+
+message ZoomLevel {
+    ZoomLevelPossibilities level = 1;
 }
 
 message ZoomCommandAck {
@@ -38,9 +46,9 @@ message ZoomCommandAck {
 message ZoomCommand {
     Camera camera = 1;
     oneof command {
-        ZoomHomingCommand homing = 2;
-        ZoomSpeedCommand speed = 3;
-        ZoomLevelCommand level = 4;
+        ZoomHoming homing_command = 2;
+        ZoomSpeed speed_command = 3;
+        ZoomLevel level_command = 4;
     }
 }
 
@@ -48,5 +56,7 @@ service CameraService {
     rpc GetImage(ImageRequest) returns (Image);
     rpc StreamImage(StreamImageRequest) returns (stream Image);
 
+    rpc GetZoomLevel(Camera) returns (ZoomLevel);
+    rpc GetZoomSpeed(Camera) returns (ZoomSpeed);
     rpc SendZoomCommand(ZoomCommand) returns (ZoomCommandAck);
 }
