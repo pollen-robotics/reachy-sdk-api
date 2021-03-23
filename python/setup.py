@@ -11,7 +11,8 @@ with open(path.join(here, '..', 'README.md'), encoding='utf-8') as f:
 setup(
     name='reachy-sdk-api',
     version='0.1.0',
-    packages=find_packages(exclude=['tests']),    install_requires=[
+    packages=find_packages(exclude=['tests']),    
+    install_requires=[
         'grpcio',
         'protobuf>=3.14.0',
     ],    author='Pollen Robotics',
