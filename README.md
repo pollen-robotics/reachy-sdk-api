@@ -5,6 +5,10 @@ Custom gRPC messages and services used by Reachy's SDK server.
 
 ## Install Python SDK API
 
+Via pip:
+```pip install reachy-sdk-api```
+
+From source:
 ```bash
 git clone https://github.com/pollen-robotics/reachy-sdk-api.git
 cd ~/reachy-sdk-api/
