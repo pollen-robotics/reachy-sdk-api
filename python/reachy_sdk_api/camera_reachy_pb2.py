@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13\x63\x61mera_reachy.proto\x12\x11reachy.sdk.camera\"\x15\n\x05Image\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"1\n\x06\x43\x61mera\x12\'\n\x02id\x18\x01 \x01(\x0e\x32\x1b.reachy.sdk.camera.CameraId\"9\n\x0cImageRequest\x12)\n\x06\x63\x61mera\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.camera.Camera\"F\n\x12StreamImageRequest\x12\x30\n\x07request\x18\x01 \x01(\x0b\x32\x1f.reachy.sdk.camera.ImageRequest\"\x1a\n\tZoomSpeed\x12\r\n\x05speed\x18\x01 \x01(\r\"\x0c\n\nZoomHoming\"E\n\tZoomLevel\x12\x38\n\x05level\x18\x01 \x01(\x0e\x32).reachy.sdk.camera.ZoomLevelPossibilities\"!\n\x0eZoomCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\xea\x01\n\x0bZoomCommand\x12)\n\x06\x63\x61mera\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.camera.Camera\x12\x37\n\x0ehoming_command\x18\x02 \x01(\x0b\x32\x1d.reachy.sdk.camera.ZoomHomingH\x00\x12\x35\n\rspeed_command\x18\x03 \x01(\x0b\x32\x1c.reachy.sdk.camera.ZoomSpeedH\x00\x12\x35\n\rlevel_command\x18\x04 \x01(\x0b\x32\x1c.reachy.sdk.camera.ZoomLevelH\x00\x42\t\n\x07\x63ommand*\x1f\n\x08\x43\x61meraId\x12\x08\n\x04LEFT\x10\x00\x12\t\n\x05RIGHT\x10\x01*4\n\x16ZoomLevelPossibilities\x12\x06\n\x02IN\x10\x00\x12\t\n\x05INTER\x10\x01\x12\x07\n\x03OUT\x10\x02\x32\x90\x03\n\rCameraService\x12\x45\n\x08GetImage\x12\x1f.reachy.sdk.camera.ImageRequest\x1a\x18.reachy.sdk.camera.Image\x12P\n\x0bStreamImage\x12%.reachy.sdk.camera.StreamImageRequest\x1a\x18.reachy.sdk.camera.Image0\x01\x12G\n\x0cGetZoomLevel\x12\x19.reachy.sdk.camera.Camera\x1a\x1c.reachy.sdk.camera.ZoomLevel\x12G\n\x0cGetZoomSpeed\x12\x19.reachy.sdk.camera.Camera\x1a\x1c.reachy.sdk.camera.ZoomSpeed\x12T\n\x0fSendZoomCommand\x12\x1e.reachy.sdk.camera.ZoomCommand\x1a!.reachy.sdk.camera.ZoomCommandAckb\x06proto3'
+  serialized_pb=b'\n\x13\x63\x61mera_reachy.proto\x12\x11reachy.sdk.camera\"\x15\n\x05Image\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"1\n\x06\x43\x61mera\x12\'\n\x02id\x18\x01 \x01(\x0e\x32\x1b.reachy.sdk.camera.CameraId\"9\n\x0cImageRequest\x12)\n\x06\x63\x61mera\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.camera.Camera\"F\n\x12StreamImageRequest\x12\x30\n\x07request\x18\x01 \x01(\x0b\x32\x1f.reachy.sdk.camera.ImageRequest\"\x1a\n\tZoomSpeed\x12\r\n\x05speed\x18\x01 \x01(\r\"\x0c\n\nZoomHoming\"E\n\tZoomLevel\x12\x38\n\x05level\x18\x01 \x01(\x0e\x32).reachy.sdk.camera.ZoomLevelPossibilities\"!\n\x0eZoomCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\xea\x01\n\x0bZoomCommand\x12)\n\x06\x63\x61mera\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.camera.Camera\x12\x37\n\x0ehoming_command\x18\x02 \x01(\x0b\x32\x1d.reachy.sdk.camera.ZoomHomingH\x00\x12\x35\n\rspeed_command\x18\x03 \x01(\x0b\x32\x1c.reachy.sdk.camera.ZoomSpeedH\x00\x12\x35\n\rlevel_command\x18\x04 \x01(\x0b\x32\x1c.reachy.sdk.camera.ZoomLevelH\x00\x42\t\n\x07\x63ommand*\x1f\n\x08\x43\x61meraId\x12\x08\n\x04LEFT\x10\x00\x12\t\n\x05RIGHT\x10\x01*>\n\x16ZoomLevelPossibilities\x12\x08\n\x04ZERO\x10\x00\x12\x06\n\x02IN\x10\x01\x12\t\n\x05INTER\x10\x02\x12\x07\n\x03OUT\x10\x03\x32\x90\x03\n\rCameraService\x12\x45\n\x08GetImage\x12\x1f.reachy.sdk.camera.ImageRequest\x1a\x18.reachy.sdk.camera.Image\x12P\n\x0bStreamImage\x12%.reachy.sdk.camera.StreamImageRequest\x1a\x18.reachy.sdk.camera.Image0\x01\x12G\n\x0cGetZoomLevel\x12\x19.reachy.sdk.camera.Camera\x1a\x1c.reachy.sdk.camera.ZoomLevel\x12G\n\x0cGetZoomSpeed\x12\x19.reachy.sdk.camera.Camera\x1a\x1c.reachy.sdk.camera.ZoomSpeed\x12T\n\x0fSendZoomCommand\x12\x1e.reachy.sdk.camera.ZoomCommand\x1a!.reachy.sdk.camera.ZoomCommandAckb\x06proto3'
 )
 
 _CAMERAID = _descriptor.EnumDescriptor(
@@ -57,17 +57,22 @@ _ZOOMLEVELPOSSIBILITIES = _descriptor.EnumDescriptor(
   create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
-      name='IN', index=0, number=0,
+      name='ZERO', index=0, number=0,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='INTER', index=1, number=1,
+      name='IN', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='OUT', index=2, number=2,
+      name='INTER', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='OUT', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
@@ -75,16 +80,17 @@ _ZOOMLEVELPOSSIBILITIES = _descriptor.EnumDescriptor(
   containing_type=None,
   serialized_options=None,
   serialized_start=665,
-  serialized_end=717,
+  serialized_end=727,
 )
 _sym_db.RegisterEnumDescriptor(_ZOOMLEVELPOSSIBILITIES)
 
 ZoomLevelPossibilities = enum_type_wrapper.EnumTypeWrapper(_ZOOMLEVELPOSSIBILITIES)
 LEFT = 0
 RIGHT = 1
-IN = 0
-INTER = 1
-OUT = 2
+ZERO = 0
+IN = 1
+INTER = 2
+OUT = 3
 
 
 
@@ -496,8 +502,8 @@ _CAMERASERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=720,
-  serialized_end=1120,
+  serialized_start=730,
+  serialized_end=1130,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetImage',

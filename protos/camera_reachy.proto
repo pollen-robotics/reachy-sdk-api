@@ -30,9 +30,10 @@ message ZoomSpeed {
 message ZoomHoming {}
 
 enum ZoomLevelPossibilities {
-    IN = 0;
-    INTER = 1;
-    OUT = 2;
+    ZERO = 0;
+    IN = 1;
+    INTER = 2;
+    OUT = 3;
 }
 
 message ZoomLevel {
