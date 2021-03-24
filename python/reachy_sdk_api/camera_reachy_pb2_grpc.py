@@ -24,6 +24,16 @@ class CameraServiceStub(object):
                 request_serializer=camera__reachy__pb2.StreamImageRequest.SerializeToString,
                 response_deserializer=camera__reachy__pb2.Image.FromString,
                 )
+        self.GetZoomLevel = channel.unary_unary(
+                '/reachy.sdk.camera.CameraService/GetZoomLevel',
+                request_serializer=camera__reachy__pb2.Camera.SerializeToString,
+                response_deserializer=camera__reachy__pb2.ZoomLevel.FromString,
+                )
+        self.GetZoomSpeed = channel.unary_unary(
+                '/reachy.sdk.camera.CameraService/GetZoomSpeed',
+                request_serializer=camera__reachy__pb2.Camera.SerializeToString,
+                response_deserializer=camera__reachy__pb2.ZoomSpeed.FromString,
+                )
         self.SendZoomCommand = channel.unary_unary(
                 '/reachy.sdk.camera.CameraService/SendZoomCommand',
                 request_serializer=camera__reachy__pb2.ZoomCommand.SerializeToString,
@@ -41,6 +51,18 @@ class CameraServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def StreamImage(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetZoomLevel(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetZoomSpeed(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -64,6 +86,16 @@ def add_CameraServiceServicer_to_server(servicer, server):
                     servicer.StreamImage,
                     request_deserializer=camera__reachy__pb2.StreamImageRequest.FromString,
                     response_serializer=camera__reachy__pb2.Image.SerializeToString,
+            ),
+            'GetZoomLevel': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetZoomLevel,
+                    request_deserializer=camera__reachy__pb2.Camera.FromString,
+                    response_serializer=camera__reachy__pb2.ZoomLevel.SerializeToString,
+            ),
+            'GetZoomSpeed': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetZoomSpeed,
+                    request_deserializer=camera__reachy__pb2.Camera.FromString,
+                    response_serializer=camera__reachy__pb2.ZoomSpeed.SerializeToString,
             ),
             'SendZoomCommand': grpc.unary_unary_rpc_method_handler(
                     servicer.SendZoomCommand,
@@ -111,6 +143,40 @@ class CameraService(object):
         return grpc.experimental.unary_stream(request, target, '/reachy.sdk.camera.CameraService/StreamImage',
             camera__reachy__pb2.StreamImageRequest.SerializeToString,
             camera__reachy__pb2.Image.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetZoomLevel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.camera.CameraService/GetZoomLevel',
+            camera__reachy__pb2.Camera.SerializeToString,
+            camera__reachy__pb2.ZoomLevel.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetZoomSpeed(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.camera.CameraService/GetZoomSpeed',
+            camera__reachy__pb2.Camera.SerializeToString,
+            camera__reachy__pb2.ZoomSpeed.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
