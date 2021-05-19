@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace Reachy.Sdk.Mobility {
-  public static partial class CameraService
+  public static partial class MobilityService
   {
-    static readonly string __ServiceName = "reachy.sdk.mobility.CameraService";
+    static readonly string __ServiceName = "reachy.sdk.mobility.MobilityService";
 
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
     {
@@ -67,9 +67,9 @@ namespace Reachy.Sdk.Mobility {
       get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of CameraService</summary>
-    [grpc::BindServiceMethod(typeof(CameraService), "BindService")]
-    public abstract partial class CameraServiceBase
+    /// <summary>Base class for server-side implementations of MobilityService</summary>
+    [grpc::BindServiceMethod(typeof(MobilityService), "BindService")]
+    public abstract partial class MobilityServiceBase
     {
       public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.TargetDirectionCommandAck> SendDirection(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::ServerCallContext context)
       {
@@ -83,26 +83,26 @@ namespace Reachy.Sdk.Mobility {
 
     }
 
-    /// <summary>Client for CameraService</summary>
-    public partial class CameraServiceClient : grpc::ClientBase<CameraServiceClient>
+    /// <summary>Client for MobilityService</summary>
+    public partial class MobilityServiceClient : grpc::ClientBase<MobilityServiceClient>
     {
-      /// <summary>Creates a new client for CameraService</summary>
+      /// <summary>Creates a new client for MobilityService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
-      public CameraServiceClient(grpc::ChannelBase channel) : base(channel)
+      public MobilityServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for CameraService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for MobilityService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-      public CameraServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public MobilityServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
-      protected CameraServiceClient() : base()
+      protected MobilityServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
-      protected CameraServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected MobilityServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
@@ -139,15 +139,15 @@ namespace Reachy.Sdk.Mobility {
         return CallInvoker.AsyncUnaryCall(__Method_SetWheelingMode, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
-      protected override CameraServiceClient NewInstance(ClientBaseConfiguration configuration)
+      protected override MobilityServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new CameraServiceClient(configuration);
+        return new MobilityServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static grpc::ServerServiceDefinition BindService(CameraServiceBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(MobilityServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_SendDirection, serviceImpl.SendDirection)
@@ -158,7 +158,7 @@ namespace Reachy.Sdk.Mobility {
     /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
     /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static void BindService(grpc::ServiceBinderBase serviceBinder, CameraServiceBase serviceImpl)
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, MobilityServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_SendDirection, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.TargetDirectionCommand, global::Reachy.Sdk.Mobility.TargetDirectionCommandAck>(serviceImpl.SendDirection));
       serviceBinder.AddMethod(__Method_SetWheelingMode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.WheelingModeCommand, global::Reachy.Sdk.Mobility.WheelingModeCommandAck>(serviceImpl.SetWheelingMode));

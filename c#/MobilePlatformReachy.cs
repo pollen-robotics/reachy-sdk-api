@@ -32,13 +32,13 @@ namespace Reachy.Sdk.Mobility {
             "V2hlZWxpbmdNb2RlQ29tbWFuZBI7CgRtb2RlGAEgASgOMi0ucmVhY2h5LnNk",
             "ay5tb2JpbGl0eS5XaGVlbGluZ01vZGVQb3NzaWJsaXRpZXMiKQoWV2hlZWxp",
             "bmdNb2RlQ29tbWFuZEFjaxIPCgdzdWNjZXNzGAEgASgIKjQKGFdoZWVsaW5n",
-            "TW9kZVBvc3NpYmxpdGllcxIICgRJRExFEAASDgoKQ0xPU0VfTE9PUBABMucB",
-            "Cg1DYW1lcmFTZXJ2aWNlEmwKDVNlbmREaXJlY3Rpb24SKy5yZWFjaHkuc2Rr",
-            "Lm1vYmlsaXR5LlRhcmdldERpcmVjdGlvbkNvbW1hbmQaLi5yZWFjaHkuc2Rr",
-            "Lm1vYmlsaXR5LlRhcmdldERpcmVjdGlvbkNvbW1hbmRBY2sSaAoPU2V0V2hl",
-            "ZWxpbmdNb2RlEigucmVhY2h5LnNkay5tb2JpbGl0eS5XaGVlbGluZ01vZGVD",
-            "b21tYW5kGisucmVhY2h5LnNkay5tb2JpbGl0eS5XaGVlbGluZ01vZGVDb21t",
-            "YW5kQWNrYgZwcm90bzM="));
+            "TW9kZVBvc3NpYmxpdGllcxIICgRJRExFEAASDgoKQ0xPU0VfTE9PUBABMukB",
+            "Cg9Nb2JpbGl0eVNlcnZpY2USbAoNU2VuZERpcmVjdGlvbhIrLnJlYWNoeS5z",
+            "ZGsubW9iaWxpdHkuVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZBouLnJlYWNoeS5z",
+            "ZGsubW9iaWxpdHkuVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZEFjaxJoCg9TZXRX",
+            "aGVlbGluZ01vZGUSKC5yZWFjaHkuc2RrLm1vYmlsaXR5LldoZWVsaW5nTW9k",
+            "ZUNvbW1hbmQaKy5yZWFjaHkuc2RrLm1vYmlsaXR5LldoZWVsaW5nTW9kZUNv",
+            "bW1hbmRBY2tiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Reachy.Sdk.Mobility.WheelingModePossiblities), }, null, new pbr::GeneratedClrTypeInfo[] {
