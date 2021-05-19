@@ -24,34 +24,37 @@ namespace Reachy.Sdk.Camera {
     static CameraReachyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNjYW1lcmFfcmVhY2h5LnByb3RvEhFyZWFjaHkuc2RrLmNhbWVyYSIVCgVJ",
-            "bWFnZRIMCgRkYXRhGAEgASgMIjEKBkNhbWVyYRInCgJpZBgBIAEoDjIbLnJl",
-            "YWNoeS5zZGsuY2FtZXJhLkNhbWVyYUlkIjkKDEltYWdlUmVxdWVzdBIpCgZj",
-            "YW1lcmEYASABKAsyGS5yZWFjaHkuc2RrLmNhbWVyYS5DYW1lcmEiRgoSU3Ry",
-            "ZWFtSW1hZ2VSZXF1ZXN0EjAKB3JlcXVlc3QYASABKAsyHy5yZWFjaHkuc2Rr",
-            "LmNhbWVyYS5JbWFnZVJlcXVlc3QiGgoJWm9vbVNwZWVkEg0KBXNwZWVkGAEg",
-            "ASgNIgwKClpvb21Ib21pbmciRQoJWm9vbUxldmVsEjgKBWxldmVsGAEgASgO",
-            "MikucmVhY2h5LnNkay5jYW1lcmEuWm9vbUxldmVsUG9zc2liaWxpdGllcyIh",
-            "Cg5ab29tQ29tbWFuZEFjaxIPCgdzdWNjZXNzGAEgASgIIuoBCgtab29tQ29t",
-            "bWFuZBIpCgZjYW1lcmEYASABKAsyGS5yZWFjaHkuc2RrLmNhbWVyYS5DYW1l",
-            "cmESNwoOaG9taW5nX2NvbW1hbmQYAiABKAsyHS5yZWFjaHkuc2RrLmNhbWVy",
-            "YS5ab29tSG9taW5nSAASNQoNc3BlZWRfY29tbWFuZBgDIAEoCzIcLnJlYWNo",
-            "eS5zZGsuY2FtZXJhLlpvb21TcGVlZEgAEjUKDWxldmVsX2NvbW1hbmQYBCAB",
-            "KAsyHC5yZWFjaHkuc2RrLmNhbWVyYS5ab29tTGV2ZWxIAEIJCgdjb21tYW5k",
-            "Kh8KCENhbWVyYUlkEggKBExFRlQQABIJCgVSSUdIVBABKj4KFlpvb21MZXZl",
-            "bFBvc3NpYmlsaXRpZXMSCAoEWkVSTxAAEgYKAklOEAESCQoFSU5URVIQAhIH",
-            "CgNPVVQQAzKQAwoNQ2FtZXJhU2VydmljZRJFCghHZXRJbWFnZRIfLnJlYWNo",
-            "eS5zZGsuY2FtZXJhLkltYWdlUmVxdWVzdBoYLnJlYWNoeS5zZGsuY2FtZXJh",
-            "LkltYWdlElAKC1N0cmVhbUltYWdlEiUucmVhY2h5LnNkay5jYW1lcmEuU3Ry",
-            "ZWFtSW1hZ2VSZXF1ZXN0GhgucmVhY2h5LnNkay5jYW1lcmEuSW1hZ2UwARJH",
-            "CgxHZXRab29tTGV2ZWwSGS5yZWFjaHkuc2RrLmNhbWVyYS5DYW1lcmEaHC5y",
-            "ZWFjaHkuc2RrLmNhbWVyYS5ab29tTGV2ZWwSRwoMR2V0Wm9vbVNwZWVkEhku",
-            "cmVhY2h5LnNkay5jYW1lcmEuQ2FtZXJhGhwucmVhY2h5LnNkay5jYW1lcmEu",
-            "Wm9vbVNwZWVkElQKD1NlbmRab29tQ29tbWFuZBIeLnJlYWNoeS5zZGsuY2Ft",
-            "ZXJhLlpvb21Db21tYW5kGiEucmVhY2h5LnNkay5jYW1lcmEuWm9vbUNvbW1h",
-            "bmRBY2tiBnByb3RvMw=="));
+            "ChNjYW1lcmFfcmVhY2h5LnByb3RvEhFyZWFjaHkuc2RrLmNhbWVyYRobZ29v",
+            "Z2xlL3Byb3RvYnVmL2VtcHR5LnByb3RvIhUKBUltYWdlEgwKBGRhdGEYASAB",
+            "KAwiMQoGQ2FtZXJhEicKAmlkGAEgASgOMhsucmVhY2h5LnNkay5jYW1lcmEu",
+            "Q2FtZXJhSWQiOQoMSW1hZ2VSZXF1ZXN0EikKBmNhbWVyYRgBIAEoCzIZLnJl",
+            "YWNoeS5zZGsuY2FtZXJhLkNhbWVyYSJGChJTdHJlYW1JbWFnZVJlcXVlc3QS",
+            "MAoHcmVxdWVzdBgBIAEoCzIfLnJlYWNoeS5zZGsuY2FtZXJhLkltYWdlUmVx",
+            "dWVzdCIaCglab29tU3BlZWQSDQoFc3BlZWQYASABKA0iDAoKWm9vbUhvbWlu",
+            "ZyJFCglab29tTGV2ZWwSOAoFbGV2ZWwYASABKA4yKS5yZWFjaHkuc2RrLmNh",
+            "bWVyYS5ab29tTGV2ZWxQb3NzaWJpbGl0aWVzIiEKDlpvb21Db21tYW5kQWNr",
+            "Eg8KB3N1Y2Nlc3MYASABKAgiJAoRUmVzdGFydENvbW1hbmRBY2sSDwoHc3Vj",
+            "Y2VzcxgBIAEoCCLqAQoLWm9vbUNvbW1hbmQSKQoGY2FtZXJhGAEgASgLMhku",
+            "cmVhY2h5LnNkay5jYW1lcmEuQ2FtZXJhEjcKDmhvbWluZ19jb21tYW5kGAIg",
+            "ASgLMh0ucmVhY2h5LnNkay5jYW1lcmEuWm9vbUhvbWluZ0gAEjUKDXNwZWVk",
+            "X2NvbW1hbmQYAyABKAsyHC5yZWFjaHkuc2RrLmNhbWVyYS5ab29tU3BlZWRI",
+            "ABI1Cg1sZXZlbF9jb21tYW5kGAQgASgLMhwucmVhY2h5LnNkay5jYW1lcmEu",
+            "Wm9vbUxldmVsSABCCQoHY29tbWFuZCofCghDYW1lcmFJZBIICgRMRUZUEAAS",
+            "CQoFUklHSFQQASo+ChZab29tTGV2ZWxQb3NzaWJpbGl0aWVzEggKBFpFUk8Q",
+            "ABIGCgJJThABEgkKBUlOVEVSEAISBwoDT1VUEAMy5AMKDUNhbWVyYVNlcnZp",
+            "Y2USRQoIR2V0SW1hZ2USHy5yZWFjaHkuc2RrLmNhbWVyYS5JbWFnZVJlcXVl",
+            "c3QaGC5yZWFjaHkuc2RrLmNhbWVyYS5JbWFnZRJQCgtTdHJlYW1JbWFnZRIl",
+            "LnJlYWNoeS5zZGsuY2FtZXJhLlN0cmVhbUltYWdlUmVxdWVzdBoYLnJlYWNo",
+            "eS5zZGsuY2FtZXJhLkltYWdlMAESRwoMR2V0Wm9vbUxldmVsEhkucmVhY2h5",
+            "LnNkay5jYW1lcmEuQ2FtZXJhGhwucmVhY2h5LnNkay5jYW1lcmEuWm9vbUxl",
+            "dmVsEkcKDEdldFpvb21TcGVlZBIZLnJlYWNoeS5zZGsuY2FtZXJhLkNhbWVy",
+            "YRocLnJlYWNoeS5zZGsuY2FtZXJhLlpvb21TcGVlZBJUCg9TZW5kWm9vbUNv",
+            "bW1hbmQSHi5yZWFjaHkuc2RrLmNhbWVyYS5ab29tQ29tbWFuZBohLnJlYWNo",
+            "eS5zZGsuY2FtZXJhLlpvb21Db21tYW5kQWNrElIKElNlbmRSZXN0YXJ0UmVx",
+            "dWVzdBIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRokLnJlYWNoeS5zZGsuY2Ft",
+            "ZXJhLlJlc3RhcnRDb21tYW5kQWNrYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Reachy.Sdk.Camera.CameraId), typeof(global::Reachy.Sdk.Camera.ZoomLevelPossibilities), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Camera.Image), global::Reachy.Sdk.Camera.Image.Parser, new[]{ "Data" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Camera.Camera), global::Reachy.Sdk.Camera.Camera.Parser, new[]{ "Id" }, null, null, null, null),
@@ -61,6 +64,7 @@ namespace Reachy.Sdk.Camera {
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Camera.ZoomHoming), global::Reachy.Sdk.Camera.ZoomHoming.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Camera.ZoomLevel), global::Reachy.Sdk.Camera.ZoomLevel.Parser, new[]{ "Level" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Camera.ZoomCommandAck), global::Reachy.Sdk.Camera.ZoomCommandAck.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Camera.RestartCommandAck), global::Reachy.Sdk.Camera.RestartCommandAck.Parser, new[]{ "Success" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Camera.ZoomCommand), global::Reachy.Sdk.Camera.ZoomCommand.Parser, new[]{ "Camera", "HomingCommand", "SpeedCommand", "LevelCommand" }, new[]{ "Command" }, null, null, null)
           }));
     }
@@ -1441,6 +1445,178 @@ namespace Reachy.Sdk.Camera {
 
   }
 
+  public sealed partial class RestartCommandAck : pb::IMessage<RestartCommandAck>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RestartCommandAck> _parser = new pb::MessageParser<RestartCommandAck>(() => new RestartCommandAck());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RestartCommandAck> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Camera.CameraReachyReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RestartCommandAck() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RestartCommandAck(RestartCommandAck other) : this() {
+      success_ = other.success_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RestartCommandAck Clone() {
+      return new RestartCommandAck(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RestartCommandAck);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RestartCommandAck other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RestartCommandAck other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class ZoomCommand : pb::IMessage<ZoomCommand>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1453,7 +1629,7 @@ namespace Reachy.Sdk.Camera {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Camera.CameraReachyReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Reachy.Sdk.Camera.CameraReachyReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

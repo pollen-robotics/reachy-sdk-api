@@ -50,6 +50,8 @@ namespace Reachy.Sdk.Camera {
     static readonly grpc::Marshaller<global::Reachy.Sdk.Camera.ZoomSpeed> __Marshaller_reachy_sdk_camera_ZoomSpeed = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Camera.ZoomSpeed.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Camera.ZoomCommand> __Marshaller_reachy_sdk_camera_ZoomCommand = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Camera.ZoomCommand.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Camera.ZoomCommandAck> __Marshaller_reachy_sdk_camera_ZoomCommandAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Camera.ZoomCommandAck.Parser));
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+    static readonly grpc::Marshaller<global::Reachy.Sdk.Camera.RestartCommandAck> __Marshaller_reachy_sdk_camera_RestartCommandAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Camera.RestartCommandAck.Parser));
 
     static readonly grpc::Method<global::Reachy.Sdk.Camera.ImageRequest, global::Reachy.Sdk.Camera.Image> __Method_GetImage = new grpc::Method<global::Reachy.Sdk.Camera.ImageRequest, global::Reachy.Sdk.Camera.Image>(
         grpc::MethodType.Unary,
@@ -86,6 +88,13 @@ namespace Reachy.Sdk.Camera {
         __Marshaller_reachy_sdk_camera_ZoomCommand,
         __Marshaller_reachy_sdk_camera_ZoomCommandAck);
 
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Camera.RestartCommandAck> __Method_SendRestartRequest = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Camera.RestartCommandAck>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SendRestartRequest",
+        __Marshaller_google_protobuf_Empty,
+        __Marshaller_reachy_sdk_camera_RestartCommandAck);
+
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
@@ -117,6 +126,11 @@ namespace Reachy.Sdk.Camera {
       }
 
       public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Camera.ZoomCommandAck> SendZoomCommand(global::Reachy.Sdk.Camera.ZoomCommand request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Camera.RestartCommandAck> SendRestartRequest(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -218,6 +232,22 @@ namespace Reachy.Sdk.Camera {
       {
         return CallInvoker.AsyncUnaryCall(__Method_SendZoomCommand, null, options, request);
       }
+      public virtual global::Reachy.Sdk.Camera.RestartCommandAck SendRestartRequest(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SendRestartRequest(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Reachy.Sdk.Camera.RestartCommandAck SendRestartRequest(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SendRestartRequest, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Camera.RestartCommandAck> SendRestartRequestAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SendRestartRequestAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Camera.RestartCommandAck> SendRestartRequestAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SendRestartRequest, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override CameraServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -234,7 +264,8 @@ namespace Reachy.Sdk.Camera {
           .AddMethod(__Method_StreamImage, serviceImpl.StreamImage)
           .AddMethod(__Method_GetZoomLevel, serviceImpl.GetZoomLevel)
           .AddMethod(__Method_GetZoomSpeed, serviceImpl.GetZoomSpeed)
-          .AddMethod(__Method_SendZoomCommand, serviceImpl.SendZoomCommand).Build();
+          .AddMethod(__Method_SendZoomCommand, serviceImpl.SendZoomCommand)
+          .AddMethod(__Method_SendRestartRequest, serviceImpl.SendRestartRequest).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -248,6 +279,7 @@ namespace Reachy.Sdk.Camera {
       serviceBinder.AddMethod(__Method_GetZoomLevel, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Camera.Camera, global::Reachy.Sdk.Camera.ZoomLevel>(serviceImpl.GetZoomLevel));
       serviceBinder.AddMethod(__Method_GetZoomSpeed, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Camera.Camera, global::Reachy.Sdk.Camera.ZoomSpeed>(serviceImpl.GetZoomSpeed));
       serviceBinder.AddMethod(__Method_SendZoomCommand, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Camera.ZoomCommand, global::Reachy.Sdk.Camera.ZoomCommandAck>(serviceImpl.SendZoomCommand));
+      serviceBinder.AddMethod(__Method_SendRestartRequest, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Camera.RestartCommandAck>(serviceImpl.SendRestartRequest));
     }
 
   }
