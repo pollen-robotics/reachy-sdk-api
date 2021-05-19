@@ -4,7 +4,7 @@ package reachy.sdk.mobility;
 
 message DirectionVector {
     double x = 1;
-    double y = 0;
+    double y = 2;
 }
 
 message TargetDirectionCommand {
