@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package reachy.sdk.mobility;
+
+message DirectionVector {
+    double x = 1;
+    double y = 0;
+}
+
+message TargetDirectionCommand {
+    DirectionVector direction = 1;
+}
+
+message TargetDirectionCommandAck {
+    bool success = 1;
+}
+
+message WheelingModeCommand {
+    WheelingModePossiblities mode = 1;
+}
+
+message WheelingModeCommandAck {
+    bool success = 1;
+}
+
+enum WheelingModePossiblities {
+    IDLE = 0;
+    CLOSE_LOOP = 1;
+}
+
+service CameraService {
+    rpc SendDirection(TargetDirectionCommand) returns (TargetDirectionCommandAck);
+    rpc SetWheelingMode(WheelingModeCommand) returns (WheelingModeCommandAck);
+}
