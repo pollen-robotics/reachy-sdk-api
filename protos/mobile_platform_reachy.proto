@@ -28,7 +28,7 @@ enum WheelingModePossiblities {
     CLOSE_LOOP = 1;
 }
 
-service CameraService {
+service MobilityService {
     rpc SendDirection(TargetDirectionCommand) returns (TargetDirectionCommandAck);
     rpc SetWheelingMode(WheelingModeCommand) returns (WheelingModeCommandAck);
 }
