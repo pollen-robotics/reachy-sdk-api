@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/empty.proto";
+
 package reachy.sdk.camera;
 
 message Image {
@@ -13,6 +16,10 @@ enum CameraId {
 
 message Camera {
     CameraId id = 1;
+}
+
+message Cameras {
+    repeated CameraId ids = 1;
 }
 
 message ImageRequest {
@@ -53,6 +60,13 @@ message ZoomCommand {
     }
 }
 
+message ZoomFocusMessage {
+    google.protobuf.UInt32Value left_focus = 1;
+    google.protobuf.UInt32Value left_zoom = 2;
+    google.protobuf.UInt32Value right_focus = 3;
+    google.protobuf.UInt32Value right_zoom = 4;
+}
+
 service CameraService {
     rpc GetImage(ImageRequest) returns (Image);
     rpc StreamImage(StreamImageRequest) returns (stream Image);
@@ -60,4 +74,10 @@ service CameraService {
     rpc GetZoomLevel(Camera) returns (ZoomLevel);
     rpc GetZoomSpeed(Camera) returns (ZoomSpeed);
     rpc SendZoomCommand(ZoomCommand) returns (ZoomCommandAck);
+
+    rpc GetZoomFocus(google.protobuf.Empty) returns (ZoomFocusMessage);
+    rpc SetZoomFocus(ZoomFocusMessage) returns (ZoomCommandAck);
+
+    rpc StartAutofocus(Camera) returns (ZoomCommandAck);
+    rpc StopAutofocus(Camera) returns (ZoomCommandAck);
 }

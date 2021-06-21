@@ -12,6 +12,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,8 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13\x63\x61mera_reachy.proto\x12\x11reachy.sdk.camera\"\x15\n\x05Image\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"1\n\x06\x43\x61mera\x12\'\n\x02id\x18\x01 \x01(\x0e\x32\x1b.reachy.sdk.camera.CameraId\"9\n\x0cImageRequest\x12)\n\x06\x63\x61mera\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.camera.Camera\"F\n\x12StreamImageRequest\x12\x30\n\x07request\x18\x01 \x01(\x0b\x32\x1f.reachy.sdk.camera.ImageRequest\"\x1a\n\tZoomSpeed\x12\r\n\x05speed\x18\x01 \x01(\r\"\x0c\n\nZoomHoming\"E\n\tZoomLevel\x12\x38\n\x05level\x18\x01 \x01(\x0e\x32).reachy.sdk.camera.ZoomLevelPossibilities\"!\n\x0eZoomCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\xea\x01\n\x0bZoomCommand\x12)\n\x06\x63\x61mera\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.camera.Camera\x12\x37\n\x0ehoming_command\x18\x02 \x01(\x0b\x32\x1d.reachy.sdk.camera.ZoomHomingH\x00\x12\x35\n\rspeed_command\x18\x03 \x01(\x0b\x32\x1c.reachy.sdk.camera.ZoomSpeedH\x00\x12\x35\n\rlevel_command\x18\x04 \x01(\x0b\x32\x1c.reachy.sdk.camera.ZoomLevelH\x00\x42\t\n\x07\x63ommand*\x1f\n\x08\x43\x61meraId\x12\x08\n\x04LEFT\x10\x00\x12\t\n\x05RIGHT\x10\x01*>\n\x16ZoomLevelPossibilities\x12\x08\n\x04ZERO\x10\x00\x12\x06\n\x02IN\x10\x01\x12\t\n\x05INTER\x10\x02\x12\x07\n\x03OUT\x10\x03\x32\x90\x03\n\rCameraService\x12\x45\n\x08GetImage\x12\x1f.reachy.sdk.camera.ImageRequest\x1a\x18.reachy.sdk.camera.Image\x12P\n\x0bStreamImage\x12%.reachy.sdk.camera.StreamImageRequest\x1a\x18.reachy.sdk.camera.Image0\x01\x12G\n\x0cGetZoomLevel\x12\x19.reachy.sdk.camera.Camera\x1a\x1c.reachy.sdk.camera.ZoomLevel\x12G\n\x0cGetZoomSpeed\x12\x19.reachy.sdk.camera.Camera\x1a\x1c.reachy.sdk.camera.ZoomSpeed\x12T\n\x0fSendZoomCommand\x12\x1e.reachy.sdk.camera.ZoomCommand\x1a!.reachy.sdk.camera.ZoomCommandAckb\x06proto3'
-)
+  serialized_pb=b'\n\x13\x63\x61mera_reachy.proto\x12\x11reachy.sdk.camera\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/protobuf/empty.proto\"\x15\n\x05Image\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"1\n\x06\x43\x61mera\x12\'\n\x02id\x18\x01 \x01(\x0e\x32\x1b.reachy.sdk.camera.CameraId\"3\n\x07\x43\x61meras\x12(\n\x03ids\x18\x01 \x03(\x0e\x32\x1b.reachy.sdk.camera.CameraId\"9\n\x0cImageRequest\x12)\n\x06\x63\x61mera\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.camera.Camera\"F\n\x12StreamImageRequest\x12\x30\n\x07request\x18\x01 \x01(\x0b\x32\x1f.reachy.sdk.camera.ImageRequest\"\x1a\n\tZoomSpeed\x12\r\n\x05speed\x18\x01 \x01(\r\"\x0c\n\nZoomHoming\"E\n\tZoomLevel\x12\x38\n\x05level\x18\x01 \x01(\x0e\x32).reachy.sdk.camera.ZoomLevelPossibilities\"!\n\x0eZoomCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\xea\x01\n\x0bZoomCommand\x12)\n\x06\x63\x61mera\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.camera.Camera\x12\x37\n\x0ehoming_command\x18\x02 \x01(\x0b\x32\x1d.reachy.sdk.camera.ZoomHomingH\x00\x12\x35\n\rspeed_command\x18\x03 \x01(\x0b\x32\x1c.reachy.sdk.camera.ZoomSpeedH\x00\x12\x35\n\rlevel_command\x18\x04 \x01(\x0b\x32\x1c.reachy.sdk.camera.ZoomLevelH\x00\x42\t\n\x07\x63ommand\"\xda\x01\n\x10ZoomFocusMessage\x12\x30\n\nleft_focus\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12/\n\tleft_zoom\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x31\n\x0bright_focus\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x30\n\nright_zoom\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value*\x1f\n\x08\x43\x61meraId\x12\x08\n\x04LEFT\x10\x00\x12\t\n\x05RIGHT\x10\x01*>\n\x16ZoomLevelPossibilities\x12\x08\n\x04ZERO\x10\x00\x12\x06\n\x02IN\x10\x01\x12\t\n\x05INTER\x10\x02\x12\x07\n\x03OUT\x10\x03\x32\xd4\x05\n\rCameraService\x12\x45\n\x08GetImage\x12\x1f.reachy.sdk.camera.ImageRequest\x1a\x18.reachy.sdk.camera.Image\x12P\n\x0bStreamImage\x12%.reachy.sdk.camera.StreamImageRequest\x1a\x18.reachy.sdk.camera.Image0\x01\x12G\n\x0cGetZoomLevel\x12\x19.reachy.sdk.camera.Camera\x1a\x1c.reachy.sdk.camera.ZoomLevel\x12G\n\x0cGetZoomSpeed\x12\x19.reachy.sdk.camera.Camera\x1a\x1c.reachy.sdk.camera.ZoomSpeed\x12T\n\x0fSendZoomCommand\x12\x1e.reachy.sdk.camera.ZoomCommand\x1a!.reachy.sdk.camera.ZoomCommandAck\x12K\n\x0cGetZoomFocus\x12\x16.google.protobuf.Empty\x1a#.reachy.sdk.camera.ZoomFocusMessage\x12V\n\x0cSetZoomFocus\x12#.reachy.sdk.camera.ZoomFocusMessage\x1a!.reachy.sdk.camera.ZoomCommandAck\x12N\n\x0eStartAutofocus\x12\x19.reachy.sdk.camera.Camera\x1a!.reachy.sdk.camera.ZoomCommandAck\x12M\n\rStopAutofocus\x12\x19.reachy.sdk.camera.Camera\x1a!.reachy.sdk.camera.ZoomCommandAckb\x06proto3'
+  ,
+  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
 _CAMERAID = _descriptor.EnumDescriptor(
   name='CameraId',
@@ -43,8 +46,8 @@ _CAMERAID = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=632,
-  serialized_end=663,
+  serialized_start=967,
+  serialized_end=998,
 )
 _sym_db.RegisterEnumDescriptor(_CAMERAID)
 
@@ -79,8 +82,8 @@ _ZOOMLEVELPOSSIBILITIES = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=665,
-  serialized_end=727,
+  serialized_start=1000,
+  serialized_end=1062,
 )
 _sym_db.RegisterEnumDescriptor(_ZOOMLEVELPOSSIBILITIES)
 
@@ -121,8 +124,8 @@ _IMAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=42,
-  serialized_end=63,
+  serialized_start=103,
+  serialized_end=124,
 )
 
 
@@ -153,8 +156,40 @@ _CAMERA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=65,
-  serialized_end=114,
+  serialized_start=126,
+  serialized_end=175,
+)
+
+
+_CAMERAS = _descriptor.Descriptor(
+  name='Cameras',
+  full_name='reachy.sdk.camera.Cameras',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='ids', full_name='reachy.sdk.camera.Cameras.ids', index=0,
+      number=1, type=14, cpp_type=8, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=177,
+  serialized_end=228,
 )
 
 
@@ -185,8 +220,8 @@ _IMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=116,
-  serialized_end=173,
+  serialized_start=230,
+  serialized_end=287,
 )
 
 
@@ -217,8 +252,8 @@ _STREAMIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=175,
-  serialized_end=245,
+  serialized_start=289,
+  serialized_end=359,
 )
 
 
@@ -249,8 +284,8 @@ _ZOOMSPEED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=247,
-  serialized_end=273,
+  serialized_start=361,
+  serialized_end=387,
 )
 
 
@@ -274,8 +309,8 @@ _ZOOMHOMING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=275,
-  serialized_end=287,
+  serialized_start=389,
+  serialized_end=401,
 )
 
 
@@ -306,8 +341,8 @@ _ZOOMLEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=289,
-  serialized_end=358,
+  serialized_start=403,
+  serialized_end=472,
 )
 
 
@@ -338,8 +373,8 @@ _ZOOMCOMMANDACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=360,
-  serialized_end=393,
+  serialized_start=474,
+  serialized_end=507,
 )
 
 
@@ -396,11 +431,65 @@ _ZOOMCOMMAND = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=396,
-  serialized_end=630,
+  serialized_start=510,
+  serialized_end=744,
+)
+
+
+_ZOOMFOCUSMESSAGE = _descriptor.Descriptor(
+  name='ZoomFocusMessage',
+  full_name='reachy.sdk.camera.ZoomFocusMessage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='left_focus', full_name='reachy.sdk.camera.ZoomFocusMessage.left_focus', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='left_zoom', full_name='reachy.sdk.camera.ZoomFocusMessage.left_zoom', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='right_focus', full_name='reachy.sdk.camera.ZoomFocusMessage.right_focus', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='right_zoom', full_name='reachy.sdk.camera.ZoomFocusMessage.right_zoom', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=747,
+  serialized_end=965,
 )
 
 _CAMERA.fields_by_name['id'].enum_type = _CAMERAID
+_CAMERAS.fields_by_name['ids'].enum_type = _CAMERAID
 _IMAGEREQUEST.fields_by_name['camera'].message_type = _CAMERA
 _STREAMIMAGEREQUEST.fields_by_name['request'].message_type = _IMAGEREQUEST
 _ZOOMLEVEL.fields_by_name['level'].enum_type = _ZOOMLEVELPOSSIBILITIES
@@ -417,8 +506,13 @@ _ZOOMCOMMAND.fields_by_name['speed_command'].containing_oneof = _ZOOMCOMMAND.one
 _ZOOMCOMMAND.oneofs_by_name['command'].fields.append(
   _ZOOMCOMMAND.fields_by_name['level_command'])
 _ZOOMCOMMAND.fields_by_name['level_command'].containing_oneof = _ZOOMCOMMAND.oneofs_by_name['command']
+_ZOOMFOCUSMESSAGE.fields_by_name['left_focus'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
+_ZOOMFOCUSMESSAGE.fields_by_name['left_zoom'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
+_ZOOMFOCUSMESSAGE.fields_by_name['right_focus'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
+_ZOOMFOCUSMESSAGE.fields_by_name['right_zoom'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
 DESCRIPTOR.message_types_by_name['Image'] = _IMAGE
 DESCRIPTOR.message_types_by_name['Camera'] = _CAMERA
+DESCRIPTOR.message_types_by_name['Cameras'] = _CAMERAS
 DESCRIPTOR.message_types_by_name['ImageRequest'] = _IMAGEREQUEST
 DESCRIPTOR.message_types_by_name['StreamImageRequest'] = _STREAMIMAGEREQUEST
 DESCRIPTOR.message_types_by_name['ZoomSpeed'] = _ZOOMSPEED
@@ -426,6 +520,7 @@ DESCRIPTOR.message_types_by_name['ZoomHoming'] = _ZOOMHOMING
 DESCRIPTOR.message_types_by_name['ZoomLevel'] = _ZOOMLEVEL
 DESCRIPTOR.message_types_by_name['ZoomCommandAck'] = _ZOOMCOMMANDACK
 DESCRIPTOR.message_types_by_name['ZoomCommand'] = _ZOOMCOMMAND
+DESCRIPTOR.message_types_by_name['ZoomFocusMessage'] = _ZOOMFOCUSMESSAGE
 DESCRIPTOR.enum_types_by_name['CameraId'] = _CAMERAID
 DESCRIPTOR.enum_types_by_name['ZoomLevelPossibilities'] = _ZOOMLEVELPOSSIBILITIES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -443,6 +538,13 @@ Camera = _reflection.GeneratedProtocolMessageType('Camera', (_message.Message,),
   # @@protoc_insertion_point(class_scope:reachy.sdk.camera.Camera)
   })
 _sym_db.RegisterMessage(Camera)
+
+Cameras = _reflection.GeneratedProtocolMessageType('Cameras', (_message.Message,), {
+  'DESCRIPTOR' : _CAMERAS,
+  '__module__' : 'camera_reachy_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.camera.Cameras)
+  })
+_sym_db.RegisterMessage(Cameras)
 
 ImageRequest = _reflection.GeneratedProtocolMessageType('ImageRequest', (_message.Message,), {
   'DESCRIPTOR' : _IMAGEREQUEST,
@@ -493,6 +595,13 @@ ZoomCommand = _reflection.GeneratedProtocolMessageType('ZoomCommand', (_message.
   })
 _sym_db.RegisterMessage(ZoomCommand)
 
+ZoomFocusMessage = _reflection.GeneratedProtocolMessageType('ZoomFocusMessage', (_message.Message,), {
+  'DESCRIPTOR' : _ZOOMFOCUSMESSAGE,
+  '__module__' : 'camera_reachy_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.camera.ZoomFocusMessage)
+  })
+_sym_db.RegisterMessage(ZoomFocusMessage)
+
 
 
 _CAMERASERVICE = _descriptor.ServiceDescriptor(
@@ -502,8 +611,8 @@ _CAMERASERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=730,
-  serialized_end=1130,
+  serialized_start=1065,
+  serialized_end=1789,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetImage',
@@ -551,6 +660,46 @@ _CAMERASERVICE = _descriptor.ServiceDescriptor(
     index=4,
     containing_service=None,
     input_type=_ZOOMCOMMAND,
+    output_type=_ZOOMCOMMANDACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetZoomFocus',
+    full_name='reachy.sdk.camera.CameraService.GetZoomFocus',
+    index=5,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_ZOOMFOCUSMESSAGE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SetZoomFocus',
+    full_name='reachy.sdk.camera.CameraService.SetZoomFocus',
+    index=6,
+    containing_service=None,
+    input_type=_ZOOMFOCUSMESSAGE,
+    output_type=_ZOOMCOMMANDACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='StartAutofocus',
+    full_name='reachy.sdk.camera.CameraService.StartAutofocus',
+    index=7,
+    containing_service=None,
+    input_type=_CAMERA,
+    output_type=_ZOOMCOMMANDACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='StopAutofocus',
+    full_name='reachy.sdk.camera.CameraService.StopAutofocus',
+    index=8,
+    containing_service=None,
+    input_type=_CAMERA,
     output_type=_ZOOMCOMMANDACK,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
