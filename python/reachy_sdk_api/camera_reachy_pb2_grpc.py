@@ -3,6 +3,7 @@
 import grpc
 
 import camera_reachy_pb2 as camera__reachy__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class CameraServiceStub(object):
@@ -37,6 +38,26 @@ class CameraServiceStub(object):
         self.SendZoomCommand = channel.unary_unary(
                 '/reachy.sdk.camera.CameraService/SendZoomCommand',
                 request_serializer=camera__reachy__pb2.ZoomCommand.SerializeToString,
+                response_deserializer=camera__reachy__pb2.ZoomCommandAck.FromString,
+                )
+        self.GetZoomFocus = channel.unary_unary(
+                '/reachy.sdk.camera.CameraService/GetZoomFocus',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=camera__reachy__pb2.ZoomFocusMessage.FromString,
+                )
+        self.SetZoomFocus = channel.unary_unary(
+                '/reachy.sdk.camera.CameraService/SetZoomFocus',
+                request_serializer=camera__reachy__pb2.ZoomFocusMessage.SerializeToString,
+                response_deserializer=camera__reachy__pb2.ZoomCommandAck.FromString,
+                )
+        self.StartAutofocus = channel.unary_unary(
+                '/reachy.sdk.camera.CameraService/StartAutofocus',
+                request_serializer=camera__reachy__pb2.Camera.SerializeToString,
+                response_deserializer=camera__reachy__pb2.ZoomCommandAck.FromString,
+                )
+        self.StopAutofocus = channel.unary_unary(
+                '/reachy.sdk.camera.CameraService/StopAutofocus',
+                request_serializer=camera__reachy__pb2.Camera.SerializeToString,
                 response_deserializer=camera__reachy__pb2.ZoomCommandAck.FromString,
                 )
 
@@ -74,6 +95,30 @@ class CameraServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetZoomFocus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetZoomFocus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def StartAutofocus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def StopAutofocus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CameraServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -100,6 +145,26 @@ def add_CameraServiceServicer_to_server(servicer, server):
             'SendZoomCommand': grpc.unary_unary_rpc_method_handler(
                     servicer.SendZoomCommand,
                     request_deserializer=camera__reachy__pb2.ZoomCommand.FromString,
+                    response_serializer=camera__reachy__pb2.ZoomCommandAck.SerializeToString,
+            ),
+            'GetZoomFocus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetZoomFocus,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=camera__reachy__pb2.ZoomFocusMessage.SerializeToString,
+            ),
+            'SetZoomFocus': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetZoomFocus,
+                    request_deserializer=camera__reachy__pb2.ZoomFocusMessage.FromString,
+                    response_serializer=camera__reachy__pb2.ZoomCommandAck.SerializeToString,
+            ),
+            'StartAutofocus': grpc.unary_unary_rpc_method_handler(
+                    servicer.StartAutofocus,
+                    request_deserializer=camera__reachy__pb2.Camera.FromString,
+                    response_serializer=camera__reachy__pb2.ZoomCommandAck.SerializeToString,
+            ),
+            'StopAutofocus': grpc.unary_unary_rpc_method_handler(
+                    servicer.StopAutofocus,
+                    request_deserializer=camera__reachy__pb2.Camera.FromString,
                     response_serializer=camera__reachy__pb2.ZoomCommandAck.SerializeToString,
             ),
     }
@@ -193,6 +258,74 @@ class CameraService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.camera.CameraService/SendZoomCommand',
             camera__reachy__pb2.ZoomCommand.SerializeToString,
+            camera__reachy__pb2.ZoomCommandAck.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetZoomFocus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.camera.CameraService/GetZoomFocus',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            camera__reachy__pb2.ZoomFocusMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetZoomFocus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.camera.CameraService/SetZoomFocus',
+            camera__reachy__pb2.ZoomFocusMessage.SerializeToString,
+            camera__reachy__pb2.ZoomCommandAck.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StartAutofocus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.camera.CameraService/StartAutofocus',
+            camera__reachy__pb2.Camera.SerializeToString,
+            camera__reachy__pb2.ZoomCommandAck.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StopAutofocus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.camera.CameraService/StopAutofocus',
+            camera__reachy__pb2.Camera.SerializeToString,
             camera__reachy__pb2.ZoomCommandAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
