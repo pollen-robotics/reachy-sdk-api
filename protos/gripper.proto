@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package reachy.sdk.gripper;
+
+enum GripperId {
+    NONE = 0;
+    LEFT = 1;
+    RIGHT = 2;
+}
+
+message OpenCommand {
+    GripperId id = 1;
+}
+
+message CloseCommand {
+    GripperId id = 1;
+    float force = 2;
+}
+
+message GripperCommand {
+    oneof command {
+        OpenCommand open = 1;
+        CloseCommand close = 2;
+    }
+}
+
+message GrippersAck {
+    bool success = 1;
+}
+
+message GrippersCommand {
+    repeated GripperCommand commands = 1;
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+service GripperService {
+    rpc SendGripperCommands(GrippersCommand) returns (GrippersAck);
+}
