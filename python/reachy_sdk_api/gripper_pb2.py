@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\rgripper.proto\x12\x12reachy.sdk.gripper\x1a\x1fgoogle/protobuf/timestamp.proto\"8\n\x0bOpenCommand\x12)\n\x02id\x18\x01 \x01(\x0e\x32\x1d.reachy.sdk.gripper.GripperId\"H\n\x0c\x43loseCommand\x12)\n\x02id\x18\x01 \x01(\x0e\x32\x1d.reachy.sdk.gripper.GripperId\x12\r\n\x05\x66orce\x18\x02 \x01(\x02\"\x7f\n\x0eGripperCommand\x12/\n\x04open\x18\x01 \x01(\x0b\x32\x1f.reachy.sdk.gripper.OpenCommandH\x00\x12\x31\n\x05\x63lose\x18\x02 \x01(\x0b\x32 .reachy.sdk.gripper.CloseCommandH\x00\x42\t\n\x07\x63ommand\"\x1e\n\x0bGrippersAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"v\n\x0fGrippersCommand\x12\x34\n\x08\x63ommands\x18\x01 \x03(\x0b\x32\".reachy.sdk.gripper.GripperCommand\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp**\n\tGripperId\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04LEFT\x10\x01\x12\t\n\x05RIGHT\x10\x02\x32m\n\x0eGripperService\x12[\n\x13SendGripperCommands\x12#.reachy.sdk.gripper.GrippersCommand\x1a\x1f.reachy.sdk.gripper.GrippersAckb\x06proto3'
+  serialized_pb=b'\n\rgripper.proto\x12\x12reachy.sdk.gripper\x1a\x1fgoogle/protobuf/timestamp.proto\"[\n\x0eGripperCommand\x12)\n\x02id\x18\x01 \x01(\x0e\x32\x1d.reachy.sdk.gripper.GripperId\x12\x0f\n\x07opening\x18\x02 \x01(\x02\x12\r\n\x05\x66orce\x18\x03 \x01(\x02\"\x1e\n\x0bGrippersAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"v\n\x0fGrippersCommand\x12\x34\n\x08\x63ommands\x18\x01 \x03(\x0b\x32\".reachy.sdk.gripper.GripperCommand\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp**\n\tGripperId\x12\x08\n\x04NONE\x10\x00\x12\x08\n\x04LEFT\x10\x01\x12\t\n\x05RIGHT\x10\x02\x32m\n\x0eGripperService\x12[\n\x13SendGripperCommands\x12#.reachy.sdk.gripper.GrippersCommand\x1a\x1f.reachy.sdk.gripper.GrippersAckb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -50,8 +50,8 @@ _GRIPPERID = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=483,
-  serialized_end=525,
+  serialized_start=315,
+  serialized_end=357,
 )
 _sym_db.RegisterEnumDescriptor(_GRIPPERID)
 
@@ -62,56 +62,31 @@ RIGHT = 2
 
 
 
-_OPENCOMMAND = _descriptor.Descriptor(
-  name='OpenCommand',
-  full_name='reachy.sdk.gripper.OpenCommand',
+_GRIPPERCOMMAND = _descriptor.Descriptor(
+  name='GripperCommand',
+  full_name='reachy.sdk.gripper.GripperCommand',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='reachy.sdk.gripper.OpenCommand.id', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=70,
-  serialized_end=126,
-)
-
-
-_CLOSECOMMAND = _descriptor.Descriptor(
-  name='CloseCommand',
-  full_name='reachy.sdk.gripper.CloseCommand',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='reachy.sdk.gripper.CloseCommand.id', index=0,
+      name='id', full_name='reachy.sdk.gripper.GripperCommand.id', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='force', full_name='reachy.sdk.gripper.CloseCommand.force', index=1,
+      name='opening', full_name='reachy.sdk.gripper.GripperCommand.opening', index=1,
       number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='force', full_name='reachy.sdk.gripper.GripperCommand.force', index=2,
+      number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -128,52 +103,8 @@ _CLOSECOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=128,
-  serialized_end=200,
-)
-
-
-_GRIPPERCOMMAND = _descriptor.Descriptor(
-  name='GripperCommand',
-  full_name='reachy.sdk.gripper.GripperCommand',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='open', full_name='reachy.sdk.gripper.GripperCommand.open', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='close', full_name='reachy.sdk.gripper.GripperCommand.close', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='command', full_name='reachy.sdk.gripper.GripperCommand.command',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=202,
-  serialized_end=329,
+  serialized_start=70,
+  serialized_end=161,
 )
 
 
@@ -204,8 +135,8 @@ _GRIPPERSACK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=331,
-  serialized_end=361,
+  serialized_start=163,
+  serialized_end=193,
 )
 
 
@@ -243,43 +174,18 @@ _GRIPPERSCOMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=363,
-  serialized_end=481,
+  serialized_start=195,
+  serialized_end=313,
 )
 
-_OPENCOMMAND.fields_by_name['id'].enum_type = _GRIPPERID
-_CLOSECOMMAND.fields_by_name['id'].enum_type = _GRIPPERID
-_GRIPPERCOMMAND.fields_by_name['open'].message_type = _OPENCOMMAND
-_GRIPPERCOMMAND.fields_by_name['close'].message_type = _CLOSECOMMAND
-_GRIPPERCOMMAND.oneofs_by_name['command'].fields.append(
-  _GRIPPERCOMMAND.fields_by_name['open'])
-_GRIPPERCOMMAND.fields_by_name['open'].containing_oneof = _GRIPPERCOMMAND.oneofs_by_name['command']
-_GRIPPERCOMMAND.oneofs_by_name['command'].fields.append(
-  _GRIPPERCOMMAND.fields_by_name['close'])
-_GRIPPERCOMMAND.fields_by_name['close'].containing_oneof = _GRIPPERCOMMAND.oneofs_by_name['command']
+_GRIPPERCOMMAND.fields_by_name['id'].enum_type = _GRIPPERID
 _GRIPPERSCOMMAND.fields_by_name['commands'].message_type = _GRIPPERCOMMAND
 _GRIPPERSCOMMAND.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-DESCRIPTOR.message_types_by_name['OpenCommand'] = _OPENCOMMAND
-DESCRIPTOR.message_types_by_name['CloseCommand'] = _CLOSECOMMAND
 DESCRIPTOR.message_types_by_name['GripperCommand'] = _GRIPPERCOMMAND
 DESCRIPTOR.message_types_by_name['GrippersAck'] = _GRIPPERSACK
 DESCRIPTOR.message_types_by_name['GrippersCommand'] = _GRIPPERSCOMMAND
 DESCRIPTOR.enum_types_by_name['GripperId'] = _GRIPPERID
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-OpenCommand = _reflection.GeneratedProtocolMessageType('OpenCommand', (_message.Message,), {
-  'DESCRIPTOR' : _OPENCOMMAND,
-  '__module__' : 'gripper_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.gripper.OpenCommand)
-  })
-_sym_db.RegisterMessage(OpenCommand)
-
-CloseCommand = _reflection.GeneratedProtocolMessageType('CloseCommand', (_message.Message,), {
-  'DESCRIPTOR' : _CLOSECOMMAND,
-  '__module__' : 'gripper_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.gripper.CloseCommand)
-  })
-_sym_db.RegisterMessage(CloseCommand)
 
 GripperCommand = _reflection.GeneratedProtocolMessageType('GripperCommand', (_message.Message,), {
   'DESCRIPTOR' : _GRIPPERCOMMAND,
@@ -311,8 +217,8 @@ _GRIPPERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=527,
-  serialized_end=636,
+  serialized_start=359,
+  serialized_end=468,
   methods=[
   _descriptor.MethodDescriptor(
     name='SendGripperCommands',

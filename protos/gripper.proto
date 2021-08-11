@@ -10,20 +10,10 @@ enum GripperId {
     RIGHT = 2;
 }
 
-message OpenCommand {
-    GripperId id = 1;
-}
-
-message CloseCommand {
-    GripperId id = 1;
-    float force = 2;
-}
-
 message GripperCommand {
-    oneof command {
-        OpenCommand open = 1;
-        CloseCommand close = 2;
-    }
+    GripperId id = 1;
+    float opening = 2;
+    float force = 3;
 }
 
 message GrippersAck {
