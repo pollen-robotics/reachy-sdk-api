@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package reachy.sdk.restart;
+
+enum SignalType {
+    RESTART = 0;
+    STOP = 1;
+}
+
+message RestartCmd {
+    SignalType cmd = 1;
+}
+
+message RestartSignalAck {
+    bool success = 1;
+}
+
+service RestartService {
+    rpc SendRestartSignal(RestartCmd) returns (RestartSignalAck);
+}
