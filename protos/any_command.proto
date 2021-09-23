@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package reachy.sdk.commands;
+
+import "fullbody_cartesian_command.proto";
+import "gripper.proto";
+import "joint.proto";
+import "mobile_platform_reachy.proto";
+
+
+message AnyCommand {
+    oneof command {
+        reachy.sdk.kinematics.FullBodyCartesianCommand full_body = 1;
+        reachy.sdk.gripper.GrippersCommand gripper = 2;
+        reachy.sdk.joint.JointsCommand joints = 3;
+        reachy.sdk.mobility.WheelingModeCommand wheeling_mode = 4;
+        reachy.sdk.mobility.TargetDirectionCommand wheeling_direction = 5;
+    }
+}
