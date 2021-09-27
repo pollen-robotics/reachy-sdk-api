@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 package reachy.sdk.joint;
 
 import "fullbody_cartesian_command.proto";
@@ -13,4 +15,5 @@ message AnyJointsCommand {
         reachy.sdk.gripper.GrippersCommand gripper = 2;
         reachy.sdk.joint.JointsCommand joints = 3;
     }
+    google.protobuf.Timestamp timestamp = 15;
 }
