@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package reachy.sdk.joint;
+
+import "fullbody_cartesian_command.proto";
+import "gripper.proto";
+import "joint.proto";
+
+
+message AnyJointsCommand {
+    oneof command {
+        reachy.sdk.kinematics.FullBodyCartesianCommand full_body = 1;
+        reachy.sdk.gripper.GrippersCommand gripper = 2;
+        reachy.sdk.joint.JointsCommand joints = 3;
+    }
+}

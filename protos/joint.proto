@@ -114,15 +114,6 @@ message JointsCommandAck {
     bool success = 1;
 }
 
-message AnyJointsCommand {
-    oneof command {
-        reachy.sdk.kinematics.FullBodyCartesianCommand full_body = 1;
-        reachy.sdk.gripper.GrippersCommand gripper = 2;
-        reachy.sdk.joint.JointsCommand joints = 3;
-    }
-}
-
-
 service JointService {
     rpc GetAllJointsId(google.protobuf.Empty) returns (JointsId);
 
