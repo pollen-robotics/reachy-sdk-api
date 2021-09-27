@@ -24,18 +24,19 @@ namespace Reachy.Sdk.Joint {
     static AnyJointCommandReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Chdhbnlfam9pbnRfY29tbWFuZC5wcm90bxIQcmVhY2h5LnNkay5qb2ludBog",
-            "ZnVsbGJvZHlfY2FydGVzaWFuX2NvbW1hbmQucHJvdG8aDWdyaXBwZXIucHJv",
-            "dG8aC2pvaW50LnByb3RvIs4BChBBbnlKb2ludHNDb21tYW5kEkQKCWZ1bGxf",
-            "Ym9keRgBIAEoCzIvLnJlYWNoeS5zZGsua2luZW1hdGljcy5GdWxsQm9keUNh",
-            "cnRlc2lhbkNvbW1hbmRIABI2CgdncmlwcGVyGAIgASgLMiMucmVhY2h5LnNk",
-            "ay5ncmlwcGVyLkdyaXBwZXJzQ29tbWFuZEgAEjEKBmpvaW50cxgDIAEoCzIf",
-            "LnJlYWNoeS5zZGsuam9pbnQuSm9pbnRzQ29tbWFuZEgAQgkKB2NvbW1hbmRi",
-            "BnByb3RvMw=="));
+            "Chdhbnlfam9pbnRfY29tbWFuZC5wcm90bxIQcmVhY2h5LnNkay5qb2ludBof",
+            "Z29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90bxogZnVsbGJvZHlfY2Fy",
+            "dGVzaWFuX2NvbW1hbmQucHJvdG8aDWdyaXBwZXIucHJvdG8aC2pvaW50LnBy",
+            "b3RvIv0BChBBbnlKb2ludHNDb21tYW5kEkQKCWZ1bGxfYm9keRgBIAEoCzIv",
+            "LnJlYWNoeS5zZGsua2luZW1hdGljcy5GdWxsQm9keUNhcnRlc2lhbkNvbW1h",
+            "bmRIABI2CgdncmlwcGVyGAIgASgLMiMucmVhY2h5LnNkay5ncmlwcGVyLkdy",
+            "aXBwZXJzQ29tbWFuZEgAEjEKBmpvaW50cxgDIAEoCzIfLnJlYWNoeS5zZGsu",
+            "am9pbnQuSm9pbnRzQ29tbWFuZEgAEi0KCXRpbWVzdGFtcBgPIAEoCzIaLmdv",
+            "b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCCQoHY29tbWFuZGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Reachy.Sdk.Kinematics.FullbodyCartesianCommandReflection.Descriptor, global::Reachy.Sdk.Gripper.GripperReflection.Descriptor, global::Reachy.Sdk.Joint.JointReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Reachy.Sdk.Kinematics.FullbodyCartesianCommandReflection.Descriptor, global::Reachy.Sdk.Gripper.GripperReflection.Descriptor, global::Reachy.Sdk.Joint.JointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.AnyJointsCommand), global::Reachy.Sdk.Joint.AnyJointsCommand.Parser, new[]{ "FullBody", "Gripper", "Joints" }, new[]{ "Command" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.AnyJointsCommand), global::Reachy.Sdk.Joint.AnyJointsCommand.Parser, new[]{ "FullBody", "Gripper", "Joints", "Timestamp" }, new[]{ "Command" }, null, null, null)
           }));
     }
     #endregion
@@ -71,6 +72,7 @@ namespace Reachy.Sdk.Joint {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public AnyJointsCommand(AnyJointsCommand other) : this() {
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
       switch (other.CommandCase) {
         case CommandOneofCase.FullBody:
           FullBody = other.FullBody.Clone();
@@ -124,6 +126,17 @@ namespace Reachy.Sdk.Joint {
       }
     }
 
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 15;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
     private object command_;
     /// <summary>Enum of possible cases for the "command" oneof.</summary>
     public enum CommandOneofCase {
@@ -160,6 +173,7 @@ namespace Reachy.Sdk.Joint {
       if (!object.Equals(FullBody, other.FullBody)) return false;
       if (!object.Equals(Gripper, other.Gripper)) return false;
       if (!object.Equals(Joints, other.Joints)) return false;
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
       if (CommandCase != other.CommandCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -170,6 +184,7 @@ namespace Reachy.Sdk.Joint {
       if (commandCase_ == CommandOneofCase.FullBody) hash ^= FullBody.GetHashCode();
       if (commandCase_ == CommandOneofCase.Gripper) hash ^= Gripper.GetHashCode();
       if (commandCase_ == CommandOneofCase.Joints) hash ^= Joints.GetHashCode();
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       hash ^= (int) commandCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -199,6 +214,10 @@ namespace Reachy.Sdk.Joint {
         output.WriteRawTag(26);
         output.WriteMessage(Joints);
       }
+      if (timestamp_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Timestamp);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -220,6 +239,10 @@ namespace Reachy.Sdk.Joint {
         output.WriteRawTag(26);
         output.WriteMessage(Joints);
       }
+      if (timestamp_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Timestamp);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -238,6 +261,9 @@ namespace Reachy.Sdk.Joint {
       if (commandCase_ == CommandOneofCase.Joints) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Joints);
       }
+      if (timestamp_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -248,6 +274,12 @@ namespace Reachy.Sdk.Joint {
     public void MergeFrom(AnyJointsCommand other) {
       if (other == null) {
         return;
+      }
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
       }
       switch (other.CommandCase) {
         case CommandOneofCase.FullBody:
@@ -311,6 +343,13 @@ namespace Reachy.Sdk.Joint {
             Joints = subBuilder;
             break;
           }
+          case 122: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
         }
       }
     #endif
@@ -350,6 +389,13 @@ namespace Reachy.Sdk.Joint {
             }
             input.ReadMessage(subBuilder);
             Joints = subBuilder;
+            break;
+          }
+          case 122: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
             break;
           }
         }
