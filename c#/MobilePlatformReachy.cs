@@ -31,14 +31,18 @@ namespace Reachy.Sdk.Mobility {
             "YXJnZXREaXJlY3Rpb25Db21tYW5kQWNrEg8KB3N1Y2Nlc3MYASABKAgiUgoT",
             "V2hlZWxpbmdNb2RlQ29tbWFuZBI7CgRtb2RlGAEgASgOMi0ucmVhY2h5LnNk",
             "ay5tb2JpbGl0eS5XaGVlbGluZ01vZGVQb3NzaWJsaXRpZXMiKQoWV2hlZWxp",
-            "bmdNb2RlQ29tbWFuZEFjaxIPCgdzdWNjZXNzGAEgASgIKjQKGFdoZWVsaW5n",
-            "TW9kZVBvc3NpYmxpdGllcxIICgRJRExFEAASDgoKQ0xPU0VfTE9PUBABMukB",
-            "Cg9Nb2JpbGl0eVNlcnZpY2USbAoNU2VuZERpcmVjdGlvbhIrLnJlYWNoeS5z",
-            "ZGsubW9iaWxpdHkuVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZBouLnJlYWNoeS5z",
-            "ZGsubW9iaWxpdHkuVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZEFjaxJoCg9TZXRX",
-            "aGVlbGluZ01vZGUSKC5yZWFjaHkuc2RrLm1vYmlsaXR5LldoZWVsaW5nTW9k",
-            "ZUNvbW1hbmQaKy5yZWFjaHkuc2RrLm1vYmlsaXR5LldoZWVsaW5nTW9kZUNv",
-            "bW1hbmRBY2tiBnByb3RvMw=="));
+            "bmdNb2RlQ29tbWFuZEFjaxIPCgdzdWNjZXNzGAEgASgIIq0BChRBbnlNb2Jp",
+            "bGVCYXNlQ29tbWFuZBJHChB0YXJnZXRfZGlyZWN0aW9uGAEgASgLMisucmVh",
+            "Y2h5LnNkay5tb2JpbGl0eS5UYXJnZXREaXJlY3Rpb25Db21tYW5kSAASQQoN",
+            "d2hlZWxpbmdfbW9kZRgCIAEoCzIoLnJlYWNoeS5zZGsubW9iaWxpdHkuV2hl",
+            "ZWxpbmdNb2RlQ29tbWFuZEgAQgkKB2NvbW1hbmQqNAoYV2hlZWxpbmdNb2Rl",
+            "UG9zc2libGl0aWVzEggKBElETEUQABIOCgpDTE9TRV9MT09QEAEy6QEKD01v",
+            "YmlsaXR5U2VydmljZRJsCg1TZW5kRGlyZWN0aW9uEisucmVhY2h5LnNkay5t",
+            "b2JpbGl0eS5UYXJnZXREaXJlY3Rpb25Db21tYW5kGi4ucmVhY2h5LnNkay5t",
+            "b2JpbGl0eS5UYXJnZXREaXJlY3Rpb25Db21tYW5kQWNrEmgKD1NldFdoZWVs",
+            "aW5nTW9kZRIoLnJlYWNoeS5zZGsubW9iaWxpdHkuV2hlZWxpbmdNb2RlQ29t",
+            "bWFuZBorLnJlYWNoeS5zZGsubW9iaWxpdHkuV2hlZWxpbmdNb2RlQ29tbWFu",
+            "ZEFja2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Reachy.Sdk.Mobility.WheelingModePossiblities), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -46,7 +50,8 @@ namespace Reachy.Sdk.Mobility {
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.TargetDirectionCommand), global::Reachy.Sdk.Mobility.TargetDirectionCommand.Parser, new[]{ "Direction" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.TargetDirectionCommandAck), global::Reachy.Sdk.Mobility.TargetDirectionCommandAck.Parser, new[]{ "Success" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.WheelingModeCommand), global::Reachy.Sdk.Mobility.WheelingModeCommand.Parser, new[]{ "Mode" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.WheelingModeCommandAck), global::Reachy.Sdk.Mobility.WheelingModeCommandAck.Parser, new[]{ "Success" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.WheelingModeCommandAck), global::Reachy.Sdk.Mobility.WheelingModeCommandAck.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.AnyMobileBaseCommand), global::Reachy.Sdk.Mobility.AnyMobileBaseCommand.Parser, new[]{ "TargetDirection", "WheelingMode" }, new[]{ "Command" }, null, null, null)
           }));
     }
     #endregion
@@ -957,6 +962,271 @@ namespace Reachy.Sdk.Mobility {
             break;
           case 8: {
             Success = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class AnyMobileBaseCommand : pb::IMessage<AnyMobileBaseCommand>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AnyMobileBaseCommand> _parser = new pb::MessageParser<AnyMobileBaseCommand>(() => new AnyMobileBaseCommand());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AnyMobileBaseCommand> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AnyMobileBaseCommand() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AnyMobileBaseCommand(AnyMobileBaseCommand other) : this() {
+      switch (other.CommandCase) {
+        case CommandOneofCase.TargetDirection:
+          TargetDirection = other.TargetDirection.Clone();
+          break;
+        case CommandOneofCase.WheelingMode:
+          WheelingMode = other.WheelingMode.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AnyMobileBaseCommand Clone() {
+      return new AnyMobileBaseCommand(this);
+    }
+
+    /// <summary>Field number for the "target_direction" field.</summary>
+    public const int TargetDirectionFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Mobility.TargetDirectionCommand TargetDirection {
+      get { return commandCase_ == CommandOneofCase.TargetDirection ? (global::Reachy.Sdk.Mobility.TargetDirectionCommand) command_ : null; }
+      set {
+        command_ = value;
+        commandCase_ = value == null ? CommandOneofCase.None : CommandOneofCase.TargetDirection;
+      }
+    }
+
+    /// <summary>Field number for the "wheeling_mode" field.</summary>
+    public const int WheelingModeFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Mobility.WheelingModeCommand WheelingMode {
+      get { return commandCase_ == CommandOneofCase.WheelingMode ? (global::Reachy.Sdk.Mobility.WheelingModeCommand) command_ : null; }
+      set {
+        command_ = value;
+        commandCase_ = value == null ? CommandOneofCase.None : CommandOneofCase.WheelingMode;
+      }
+    }
+
+    private object command_;
+    /// <summary>Enum of possible cases for the "command" oneof.</summary>
+    public enum CommandOneofCase {
+      None = 0,
+      TargetDirection = 1,
+      WheelingMode = 2,
+    }
+    private CommandOneofCase commandCase_ = CommandOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CommandOneofCase CommandCase {
+      get { return commandCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearCommand() {
+      commandCase_ = CommandOneofCase.None;
+      command_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AnyMobileBaseCommand);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AnyMobileBaseCommand other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(TargetDirection, other.TargetDirection)) return false;
+      if (!object.Equals(WheelingMode, other.WheelingMode)) return false;
+      if (CommandCase != other.CommandCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (commandCase_ == CommandOneofCase.TargetDirection) hash ^= TargetDirection.GetHashCode();
+      if (commandCase_ == CommandOneofCase.WheelingMode) hash ^= WheelingMode.GetHashCode();
+      hash ^= (int) commandCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (commandCase_ == CommandOneofCase.TargetDirection) {
+        output.WriteRawTag(10);
+        output.WriteMessage(TargetDirection);
+      }
+      if (commandCase_ == CommandOneofCase.WheelingMode) {
+        output.WriteRawTag(18);
+        output.WriteMessage(WheelingMode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (commandCase_ == CommandOneofCase.TargetDirection) {
+        output.WriteRawTag(10);
+        output.WriteMessage(TargetDirection);
+      }
+      if (commandCase_ == CommandOneofCase.WheelingMode) {
+        output.WriteRawTag(18);
+        output.WriteMessage(WheelingMode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (commandCase_ == CommandOneofCase.TargetDirection) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetDirection);
+      }
+      if (commandCase_ == CommandOneofCase.WheelingMode) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WheelingMode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AnyMobileBaseCommand other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.CommandCase) {
+        case CommandOneofCase.TargetDirection:
+          if (TargetDirection == null) {
+            TargetDirection = new global::Reachy.Sdk.Mobility.TargetDirectionCommand();
+          }
+          TargetDirection.MergeFrom(other.TargetDirection);
+          break;
+        case CommandOneofCase.WheelingMode:
+          if (WheelingMode == null) {
+            WheelingMode = new global::Reachy.Sdk.Mobility.WheelingModeCommand();
+          }
+          WheelingMode.MergeFrom(other.WheelingMode);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::Reachy.Sdk.Mobility.TargetDirectionCommand subBuilder = new global::Reachy.Sdk.Mobility.TargetDirectionCommand();
+            if (commandCase_ == CommandOneofCase.TargetDirection) {
+              subBuilder.MergeFrom(TargetDirection);
+            }
+            input.ReadMessage(subBuilder);
+            TargetDirection = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Reachy.Sdk.Mobility.WheelingModeCommand subBuilder = new global::Reachy.Sdk.Mobility.WheelingModeCommand();
+            if (commandCase_ == CommandOneofCase.WheelingMode) {
+              subBuilder.MergeFrom(WheelingMode);
+            }
+            input.ReadMessage(subBuilder);
+            WheelingMode = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::Reachy.Sdk.Mobility.TargetDirectionCommand subBuilder = new global::Reachy.Sdk.Mobility.TargetDirectionCommand();
+            if (commandCase_ == CommandOneofCase.TargetDirection) {
+              subBuilder.MergeFrom(TargetDirection);
+            }
+            input.ReadMessage(subBuilder);
+            TargetDirection = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Reachy.Sdk.Mobility.WheelingModeCommand subBuilder = new global::Reachy.Sdk.Mobility.WheelingModeCommand();
+            if (commandCase_ == CommandOneofCase.WheelingMode) {
+              subBuilder.MergeFrom(WheelingMode);
+            }
+            input.ReadMessage(subBuilder);
+            WheelingMode = subBuilder;
             break;
           }
         }

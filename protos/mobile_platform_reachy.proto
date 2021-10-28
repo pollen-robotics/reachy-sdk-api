@@ -28,6 +28,13 @@ enum WheelingModePossiblities {
     CLOSE_LOOP = 1;
 }
 
+message AnyMobileBaseCommand {
+    oneof command {
+        TargetDirectionCommand target_direction = 1;
+        WheelingModeCommand wheeling_mode = 2;
+    }
+}
+
 service MobilityService {
     rpc SendDirection(TargetDirectionCommand) returns (TargetDirectionCommandAck);
     rpc SetWheelingMode(WheelingModeCommand) returns (WheelingModeCommandAck);

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1cmobile_platform_reachy.proto\x12\x13reachy.sdk.mobility\"\'\n\x0f\x44irectionVector\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\"Q\n\x16TargetDirectionCommand\x12\x37\n\tdirection\x18\x01 \x01(\x0b\x32$.reachy.sdk.mobility.DirectionVector\",\n\x19TargetDirectionCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"R\n\x13WheelingModeCommand\x12;\n\x04mode\x18\x01 \x01(\x0e\x32-.reachy.sdk.mobility.WheelingModePossiblities\")\n\x16WheelingModeCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08*4\n\x18WheelingModePossiblities\x12\x08\n\x04IDLE\x10\x00\x12\x0e\n\nCLOSE_LOOP\x10\x01\x32\xe9\x01\n\x0fMobilityService\x12l\n\rSendDirection\x12+.reachy.sdk.mobility.TargetDirectionCommand\x1a..reachy.sdk.mobility.TargetDirectionCommandAck\x12h\n\x0fSetWheelingMode\x12(.reachy.sdk.mobility.WheelingModeCommand\x1a+.reachy.sdk.mobility.WheelingModeCommandAckb\x06proto3'
+  serialized_pb=b'\n\x1cmobile_platform_reachy.proto\x12\x13reachy.sdk.mobility\"\'\n\x0f\x44irectionVector\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\"Q\n\x16TargetDirectionCommand\x12\x37\n\tdirection\x18\x01 \x01(\x0b\x32$.reachy.sdk.mobility.DirectionVector\",\n\x19TargetDirectionCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"R\n\x13WheelingModeCommand\x12;\n\x04mode\x18\x01 \x01(\x0e\x32-.reachy.sdk.mobility.WheelingModePossiblities\")\n\x16WheelingModeCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\xad\x01\n\x14\x41nyMobileBaseCommand\x12G\n\x10target_direction\x18\x01 \x01(\x0b\x32+.reachy.sdk.mobility.TargetDirectionCommandH\x00\x12\x41\n\rwheeling_mode\x18\x02 \x01(\x0b\x32(.reachy.sdk.mobility.WheelingModeCommandH\x00\x42\t\n\x07\x63ommand*4\n\x18WheelingModePossiblities\x12\x08\n\x04IDLE\x10\x00\x12\x0e\n\nCLOSE_LOOP\x10\x01\x32\xe9\x01\n\x0fMobilityService\x12l\n\rSendDirection\x12+.reachy.sdk.mobility.TargetDirectionCommand\x1a..reachy.sdk.mobility.TargetDirectionCommandAck\x12h\n\x0fSetWheelingMode\x12(.reachy.sdk.mobility.WheelingModeCommand\x1a+.reachy.sdk.mobility.WheelingModeCommandAckb\x06proto3'
 )
 
 _WHEELINGMODEPOSSIBLITIES = _descriptor.EnumDescriptor(
@@ -43,8 +43,8 @@ _WHEELINGMODEPOSSIBLITIES = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=350,
-  serialized_end=402,
+  serialized_start=526,
+  serialized_end=578,
 )
 _sym_db.RegisterEnumDescriptor(_WHEELINGMODEPOSSIBLITIES)
 
@@ -220,13 +220,66 @@ _WHEELINGMODECOMMANDACK = _descriptor.Descriptor(
   serialized_end=348,
 )
 
+
+_ANYMOBILEBASECOMMAND = _descriptor.Descriptor(
+  name='AnyMobileBaseCommand',
+  full_name='reachy.sdk.mobility.AnyMobileBaseCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='target_direction', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.target_direction', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='wheeling_mode', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.wheeling_mode', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='command', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.command',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=351,
+  serialized_end=524,
+)
+
 _TARGETDIRECTIONCOMMAND.fields_by_name['direction'].message_type = _DIRECTIONVECTOR
 _WHEELINGMODECOMMAND.fields_by_name['mode'].enum_type = _WHEELINGMODEPOSSIBLITIES
+_ANYMOBILEBASECOMMAND.fields_by_name['target_direction'].message_type = _TARGETDIRECTIONCOMMAND
+_ANYMOBILEBASECOMMAND.fields_by_name['wheeling_mode'].message_type = _WHEELINGMODECOMMAND
+_ANYMOBILEBASECOMMAND.oneofs_by_name['command'].fields.append(
+  _ANYMOBILEBASECOMMAND.fields_by_name['target_direction'])
+_ANYMOBILEBASECOMMAND.fields_by_name['target_direction'].containing_oneof = _ANYMOBILEBASECOMMAND.oneofs_by_name['command']
+_ANYMOBILEBASECOMMAND.oneofs_by_name['command'].fields.append(
+  _ANYMOBILEBASECOMMAND.fields_by_name['wheeling_mode'])
+_ANYMOBILEBASECOMMAND.fields_by_name['wheeling_mode'].containing_oneof = _ANYMOBILEBASECOMMAND.oneofs_by_name['command']
 DESCRIPTOR.message_types_by_name['DirectionVector'] = _DIRECTIONVECTOR
 DESCRIPTOR.message_types_by_name['TargetDirectionCommand'] = _TARGETDIRECTIONCOMMAND
 DESCRIPTOR.message_types_by_name['TargetDirectionCommandAck'] = _TARGETDIRECTIONCOMMANDACK
 DESCRIPTOR.message_types_by_name['WheelingModeCommand'] = _WHEELINGMODECOMMAND
 DESCRIPTOR.message_types_by_name['WheelingModeCommandAck'] = _WHEELINGMODECOMMANDACK
+DESCRIPTOR.message_types_by_name['AnyMobileBaseCommand'] = _ANYMOBILEBASECOMMAND
 DESCRIPTOR.enum_types_by_name['WheelingModePossiblities'] = _WHEELINGMODEPOSSIBLITIES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -265,6 +318,13 @@ WheelingModeCommandAck = _reflection.GeneratedProtocolMessageType('WheelingModeC
   })
 _sym_db.RegisterMessage(WheelingModeCommandAck)
 
+AnyMobileBaseCommand = _reflection.GeneratedProtocolMessageType('AnyMobileBaseCommand', (_message.Message,), {
+  'DESCRIPTOR' : _ANYMOBILEBASECOMMAND,
+  '__module__' : 'mobile_platform_reachy_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.mobility.AnyMobileBaseCommand)
+  })
+_sym_db.RegisterMessage(AnyMobileBaseCommand)
+
 
 
 _MOBILITYSERVICE = _descriptor.ServiceDescriptor(
@@ -274,8 +334,8 @@ _MOBILITYSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=405,
-  serialized_end=638,
+  serialized_start=581,
+  serialized_end=814,
   methods=[
   _descriptor.MethodDescriptor(
     name='SendDirection',
