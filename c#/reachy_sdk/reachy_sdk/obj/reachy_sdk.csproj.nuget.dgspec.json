@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/pierrerouanet/Dev/ReachySDK/reachy-sdk-api/c#/reachy_sdk/reachy_sdk/reachy_sdk.csproj": {}
+  },
+  "projects": {
+    "/Users/pierrerouanet/Dev/ReachySDK/reachy-sdk-api/c#/reachy_sdk/reachy_sdk/reachy_sdk.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/pierrerouanet/Dev/ReachySDK/reachy-sdk-api/c#/reachy_sdk/reachy_sdk/reachy_sdk.csproj",
+        "projectName": "reachy_sdk",
+        "projectPath": "/Users/pierrerouanet/Dev/ReachySDK/reachy-sdk-api/c#/reachy_sdk/reachy_sdk/reachy_sdk.csproj",
+        "packagesPath": "/Users/pierrerouanet/.nuget/packages/",
+        "outputPath": "/Users/pierrerouanet/Dev/ReachySDK/reachy-sdk-api/c#/reachy_sdk/reachy_sdk/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/pierrerouanet/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.14.0, )"
+            },
+            "Grpc": {
+              "target": "Package",
+              "version": "[2.34.1, )"
+            },
+            "Grpc.Net.Client": {
+              "target": "Package",
+              "version": "[2.34.0, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.34.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

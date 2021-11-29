@@ -1,0 +1,4 @@
+../../../protos/../c#/Fan.cs \
+../../../protos/../c#/FanGrpc.cs: /Users/pierrerouanet/.nuget/packages/grpc.tools/2.34.1/build/native/include/google/protobuf/timestamp.proto\
+ /Users/pierrerouanet/.nuget/packages/grpc.tools/2.34.1/build/native/include/google/protobuf/empty.proto\
+ ../../../protos/fan.proto

@@ -1,0 +1,3 @@
+../../../protos/../c#/Trajectory.cs \
+../../../protos/../c#/TrajectoryGrpc.cs: /Users/pierrerouanet/.nuget/packages/grpc.tools/2.34.1/build/native/include/google/protobuf/wrappers.proto\
+ ../../../protos/trajectory.proto

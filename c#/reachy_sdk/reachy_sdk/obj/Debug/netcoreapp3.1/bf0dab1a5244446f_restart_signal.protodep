@@ -1,0 +1,2 @@
+../../../protos/../c#/RestartSignal.cs \
+../../../protos/../c#/RestartSignalGrpc.cs: ../../../protos/restart_signal.proto

@@ -1,0 +1,2 @@
+../../../protos/../c#/MobilePlatformReachy.cs \
+../../../protos/../c#/MobilePlatformReachyGrpc.cs: ../../../protos/mobile_platform_reachy.proto
