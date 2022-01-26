@@ -1,7 +1,0 @@
-../../../protos/../c#/ArmKinematics.cs \
-../../../protos/../c#/ArmKinematicsGrpc.cs: /Users/pierrerouanet/.nuget/packages/grpc.tools/2.34.1/build/native/include/google/protobuf/wrappers.proto\
- /Users/pierrerouanet/.nuget/packages/grpc.tools/2.34.1/build/native/include/google/protobuf/timestamp.proto\
- /Users/pierrerouanet/.nuget/packages/grpc.tools/2.34.1/build/native/include/google/protobuf/empty.proto\
- ../../../protos/joint.proto\
- ../../../protos/kinematics.proto\
- ../../../protos/arm_kinematics.proto
