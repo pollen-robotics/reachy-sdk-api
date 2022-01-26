@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17orbita_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"?\n\x0fOrbitaIKRequest\x12,\n\x01q\x18\x01 \x01(\x0b\x32!.reachy.sdk.kinematics.Quaternion\"-\n\nLookVector\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\t\n\x01z\x18\x03 \x01(\x01\"`\n\x10OrbitaIKSolution\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12;\n\rdisk_position\x18\x02 \x01(\x0b\x32$.reachy.sdk.kinematics.JointPosition2\xd6\x01\n\x10OrbitaKinematics\x12\x62\n\x0f\x43omputeOrbitaIK\x12&.reachy.sdk.kinematics.OrbitaIKRequest\x1a\'.reachy.sdk.kinematics.OrbitaIKSolution\x12^\n\x16GetQuaternionTransform\x12!.reachy.sdk.kinematics.LookVector\x1a!.reachy.sdk.kinematics.Quaternionb\x06proto3'
+  serialized_pb=b'\n\x17orbita_kinematics.proto\x12\x15reachy.sdk.kinematics\x1a\x10kinematics.proto\"?\n\x0fOrbitaIKRequest\x12,\n\x01q\x18\x01 \x01(\x0b\x32!.reachy.sdk.kinematics.Quaternionb\x06proto3'
   ,
   dependencies=[kinematics__pb2.DESCRIPTOR,])
 
@@ -58,96 +58,8 @@ _ORBITAIKREQUEST = _descriptor.Descriptor(
   serialized_end=131,
 )
 
-
-_LOOKVECTOR = _descriptor.Descriptor(
-  name='LookVector',
-  full_name='reachy.sdk.kinematics.LookVector',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='x', full_name='reachy.sdk.kinematics.LookVector.x', index=0,
-      number=1, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='y', full_name='reachy.sdk.kinematics.LookVector.y', index=1,
-      number=2, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='z', full_name='reachy.sdk.kinematics.LookVector.z', index=2,
-      number=3, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=133,
-  serialized_end=178,
-)
-
-
-_ORBITAIKSOLUTION = _descriptor.Descriptor(
-  name='OrbitaIKSolution',
-  full_name='reachy.sdk.kinematics.OrbitaIKSolution',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='success', full_name='reachy.sdk.kinematics.OrbitaIKSolution.success', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='disk_position', full_name='reachy.sdk.kinematics.OrbitaIKSolution.disk_position', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=180,
-  serialized_end=276,
-)
-
 _ORBITAIKREQUEST.fields_by_name['q'].message_type = kinematics__pb2._QUATERNION
-_ORBITAIKSOLUTION.fields_by_name['disk_position'].message_type = kinematics__pb2._JOINTPOSITION
 DESCRIPTOR.message_types_by_name['OrbitaIKRequest'] = _ORBITAIKREQUEST
-DESCRIPTOR.message_types_by_name['LookVector'] = _LOOKVECTOR
-DESCRIPTOR.message_types_by_name['OrbitaIKSolution'] = _ORBITAIKSOLUTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 OrbitaIKRequest = _reflection.GeneratedProtocolMessageType('OrbitaIKRequest', (_message.Message,), {
@@ -157,55 +69,5 @@ OrbitaIKRequest = _reflection.GeneratedProtocolMessageType('OrbitaIKRequest', (_
   })
 _sym_db.RegisterMessage(OrbitaIKRequest)
 
-LookVector = _reflection.GeneratedProtocolMessageType('LookVector', (_message.Message,), {
-  'DESCRIPTOR' : _LOOKVECTOR,
-  '__module__' : 'orbita_kinematics_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.LookVector)
-  })
-_sym_db.RegisterMessage(LookVector)
-
-OrbitaIKSolution = _reflection.GeneratedProtocolMessageType('OrbitaIKSolution', (_message.Message,), {
-  'DESCRIPTOR' : _ORBITAIKSOLUTION,
-  '__module__' : 'orbita_kinematics_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.kinematics.OrbitaIKSolution)
-  })
-_sym_db.RegisterMessage(OrbitaIKSolution)
-
-
-
-_ORBITAKINEMATICS = _descriptor.ServiceDescriptor(
-  name='OrbitaKinematics',
-  full_name='reachy.sdk.kinematics.OrbitaKinematics',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=279,
-  serialized_end=493,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ComputeOrbitaIK',
-    full_name='reachy.sdk.kinematics.OrbitaKinematics.ComputeOrbitaIK',
-    index=0,
-    containing_service=None,
-    input_type=_ORBITAIKREQUEST,
-    output_type=_ORBITAIKSOLUTION,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetQuaternionTransform',
-    full_name='reachy.sdk.kinematics.OrbitaKinematics.GetQuaternionTransform',
-    index=1,
-    containing_service=None,
-    input_type=_LOOKVECTOR,
-    output_type=kinematics__pb2._QUATERNION,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_ORBITAKINEMATICS)
-
-DESCRIPTOR.services_by_name['OrbitaKinematics'] = _ORBITAKINEMATICS
 
 # @@protoc_insertion_point(module_scope)
