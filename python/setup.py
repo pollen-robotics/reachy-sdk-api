@@ -10,7 +10,7 @@ with open(path.join(here, '..', 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='reachy-sdk-api',
-    version='0.3.1',
+    version='0.4.5',
     packages=find_packages(exclude=['tests']),    
     install_requires=[
         'grpcio',
