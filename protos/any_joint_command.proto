@@ -7,6 +7,7 @@ package reachy.sdk.joint;
 import "fullbody_cartesian_command.proto";
 import "gripper.proto";
 import "joint.proto";
+import "gripperMX28.proto";
 
 
 message AnyJointsCommand {
@@ -14,6 +15,7 @@ message AnyJointsCommand {
         reachy.sdk.kinematics.FullBodyCartesianCommand full_body = 1;
         reachy.sdk.gripper.GrippersCommand gripper = 2;
         reachy.sdk.joint.JointsCommand joints = 3;
+        reachy.sdk.gripperMX28.GrippersMX28Command gripperMX28 = 4;
     }
     google.protobuf.Timestamp timestamp = 15;
 }

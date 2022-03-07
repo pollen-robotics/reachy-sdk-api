@@ -15,6 +15,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 import fullbody_cartesian_command_pb2 as fullbody__cartesian__command__pb2
 import gripper_pb2 as gripper__pb2
 import joint_pb2 as joint__pb2
+import gripperMX28_pb2 as gripperMX28__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x61ny_joint_command.proto\x12\x10reachy.sdk.joint\x1a\x1fgoogle/protobuf/timestamp.proto\x1a fullbody_cartesian_command.proto\x1a\rgripper.proto\x1a\x0bjoint.proto\"\xfd\x01\n\x10\x41nyJointsCommand\x12\x44\n\tfull_body\x18\x01 \x01(\x0b\x32/.reachy.sdk.kinematics.FullBodyCartesianCommandH\x00\x12\x36\n\x07gripper\x18\x02 \x01(\x0b\x32#.reachy.sdk.gripper.GrippersCommandH\x00\x12\x31\n\x06joints\x18\x03 \x01(\x0b\x32\x1f.reachy.sdk.joint.JointsCommandH\x00\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.TimestampB\t\n\x07\x63ommandb\x06proto3'
+  serialized_pb=b'\n\x17\x61ny_joint_command.proto\x12\x10reachy.sdk.joint\x1a\x1fgoogle/protobuf/timestamp.proto\x1a fullbody_cartesian_command.proto\x1a\rgripper.proto\x1a\x0bjoint.proto\x1a\x11gripperMX28.proto\"\xc1\x02\n\x10\x41nyJointsCommand\x12\x44\n\tfull_body\x18\x01 \x01(\x0b\x32/.reachy.sdk.kinematics.FullBodyCartesianCommandH\x00\x12\x36\n\x07gripper\x18\x02 \x01(\x0b\x32#.reachy.sdk.gripper.GrippersCommandH\x00\x12\x31\n\x06joints\x18\x03 \x01(\x0b\x32\x1f.reachy.sdk.joint.JointsCommandH\x00\x12\x42\n\x0bgripperMX28\x18\x04 \x01(\x0b\x32+.reachy.sdk.gripperMX28.GrippersMX28CommandH\x00\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.TimestampB\t\n\x07\x63ommandb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,fullbody__cartesian__command__pb2.DESCRIPTOR,gripper__pb2.DESCRIPTOR,joint__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,fullbody__cartesian__command__pb2.DESCRIPTOR,gripper__pb2.DESCRIPTOR,joint__pb2.DESCRIPTOR,gripperMX28__pb2.DESCRIPTOR,])
 
 
 
@@ -60,7 +61,14 @@ _ANYJOINTSCOMMAND = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='reachy.sdk.joint.AnyJointsCommand.timestamp', index=3,
+      name='gripperMX28', full_name='reachy.sdk.joint.AnyJointsCommand.gripperMX28', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='reachy.sdk.joint.AnyJointsCommand.timestamp', index=4,
       number=15, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -83,13 +91,14 @@ _ANYJOINTSCOMMAND = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=141,
-  serialized_end=394,
+  serialized_start=160,
+  serialized_end=481,
 )
 
 _ANYJOINTSCOMMAND.fields_by_name['full_body'].message_type = fullbody__cartesian__command__pb2._FULLBODYCARTESIANCOMMAND
 _ANYJOINTSCOMMAND.fields_by_name['gripper'].message_type = gripper__pb2._GRIPPERSCOMMAND
 _ANYJOINTSCOMMAND.fields_by_name['joints'].message_type = joint__pb2._JOINTSCOMMAND
+_ANYJOINTSCOMMAND.fields_by_name['gripperMX28'].message_type = gripperMX28__pb2._GRIPPERSMX28COMMAND
 _ANYJOINTSCOMMAND.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _ANYJOINTSCOMMAND.oneofs_by_name['command'].fields.append(
   _ANYJOINTSCOMMAND.fields_by_name['full_body'])
@@ -100,6 +109,9 @@ _ANYJOINTSCOMMAND.fields_by_name['gripper'].containing_oneof = _ANYJOINTSCOMMAND
 _ANYJOINTSCOMMAND.oneofs_by_name['command'].fields.append(
   _ANYJOINTSCOMMAND.fields_by_name['joints'])
 _ANYJOINTSCOMMAND.fields_by_name['joints'].containing_oneof = _ANYJOINTSCOMMAND.oneofs_by_name['command']
+_ANYJOINTSCOMMAND.oneofs_by_name['command'].fields.append(
+  _ANYJOINTSCOMMAND.fields_by_name['gripperMX28'])
+_ANYJOINTSCOMMAND.fields_by_name['gripperMX28'].containing_oneof = _ANYJOINTSCOMMAND.oneofs_by_name['command']
 DESCRIPTOR.message_types_by_name['AnyJointsCommand'] = _ANYJOINTSCOMMAND
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+import "gripper.proto";
+
+package reachy.sdk.gripperMX28;
+
+message GripperMX28Command {
+    reachy.sdk.gripper.GripperId id = 1;
+    float goal_position = 2;
+}
+
+message GrippersMX28Command {
+    repeated GripperMX28Command commands = 1;
+    google.protobuf.Timestamp timestamp = 15;
+}
+
+service GripperMX28Service {
+    rpc SendGripperMX28Commands(GrippersMX28Command) returns (reachy.sdk.gripper.GrippersAck);
+}
