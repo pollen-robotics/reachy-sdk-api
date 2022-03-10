@@ -27,18 +27,21 @@ namespace Reachy.Sdk.Joint {
             "Chdhbnlfam9pbnRfY29tbWFuZC5wcm90bxIQcmVhY2h5LnNkay5qb2ludBof",
             "Z29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90bxogZnVsbGJvZHlfY2Fy",
             "dGVzaWFuX2NvbW1hbmQucHJvdG8aDWdyaXBwZXIucHJvdG8aC2pvaW50LnBy",
-            "b3RvGhFncmlwcGVyTVgyOC5wcm90byLBAgoQQW55Sm9pbnRzQ29tbWFuZBJE",
-            "CglmdWxsX2JvZHkYASABKAsyLy5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuRnVs",
-            "bEJvZHlDYXJ0ZXNpYW5Db21tYW5kSAASNgoHZ3JpcHBlchgCIAEoCzIjLnJl",
-            "YWNoeS5zZGsuZ3JpcHBlci5HcmlwcGVyc0NvbW1hbmRIABIxCgZqb2ludHMY",
-            "AyABKAsyHy5yZWFjaHkuc2RrLmpvaW50LkpvaW50c0NvbW1hbmRIABJCCgtn",
-            "cmlwcGVyTVgyOBgEIAEoCzIrLnJlYWNoeS5zZGsuZ3JpcHBlck1YMjguR3Jp",
-            "cHBlcnNNWDI4Q29tbWFuZEgAEi0KCXRpbWVzdGFtcBgPIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5UaW1lc3RhbXBCCQoHY29tbWFuZGIGcHJvdG8z"));
+            "b3RvGhFncmlwcGVyTVgyOC5wcm90bxoYYXV0b21hdGljX2dyYXNwaW5nLnBy",
+            "b3RvIogDChBBbnlKb2ludHNDb21tYW5kEkQKCWZ1bGxfYm9keRgBIAEoCzIv",
+            "LnJlYWNoeS5zZGsua2luZW1hdGljcy5GdWxsQm9keUNhcnRlc2lhbkNvbW1h",
+            "bmRIABI2CgdncmlwcGVyGAIgASgLMiMucmVhY2h5LnNkay5ncmlwcGVyLkdy",
+            "aXBwZXJzQ29tbWFuZEgAEjEKBmpvaW50cxgDIAEoCzIfLnJlYWNoeS5zZGsu",
+            "am9pbnQuSm9pbnRzQ29tbWFuZEgAEkIKC2dyaXBwZXJNWDI4GAQgASgLMisu",
+            "cmVhY2h5LnNkay5ncmlwcGVyTVgyOC5HcmlwcGVyc01YMjhDb21tYW5kSAAS",
+            "RQoMYXV0b2dyYXNwaW5nGAUgASgLMi0ucmVhY2h5LnNkay5ncmFzcGluZy5B",
+            "dXRvbWF0aWNHcmFzcGluZ0NvbW1hbmRIABItCgl0aW1lc3RhbXAYDyABKAsy",
+            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgkKB2NvbW1hbmRiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Reachy.Sdk.Kinematics.FullbodyCartesianCommandReflection.Descriptor, global::Reachy.Sdk.Gripper.GripperReflection.Descriptor, global::Reachy.Sdk.Joint.JointReflection.Descriptor, global::Reachy.Sdk.GripperMX28.GripperMX28Reflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Reachy.Sdk.Kinematics.FullbodyCartesianCommandReflection.Descriptor, global::Reachy.Sdk.Gripper.GripperReflection.Descriptor, global::Reachy.Sdk.Joint.JointReflection.Descriptor, global::Reachy.Sdk.GripperMX28.GripperMX28Reflection.Descriptor, global::Reachy.Sdk.Grasping.AutomaticGraspingReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.AnyJointsCommand), global::Reachy.Sdk.Joint.AnyJointsCommand.Parser, new[]{ "FullBody", "Gripper", "Joints", "GripperMX28", "Timestamp" }, new[]{ "Command" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.AnyJointsCommand), global::Reachy.Sdk.Joint.AnyJointsCommand.Parser, new[]{ "FullBody", "Gripper", "Joints", "GripperMX28", "Autograsping", "Timestamp" }, new[]{ "Command" }, null, null, null)
           }));
     }
     #endregion
@@ -87,6 +90,9 @@ namespace Reachy.Sdk.Joint {
           break;
         case CommandOneofCase.GripperMX28:
           GripperMX28 = other.GripperMX28.Clone();
+          break;
+        case CommandOneofCase.Autograsping:
+          Autograsping = other.Autograsping.Clone();
           break;
       }
 
@@ -142,6 +148,17 @@ namespace Reachy.Sdk.Joint {
       }
     }
 
+    /// <summary>Field number for the "autograsping" field.</summary>
+    public const int AutograspingFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Grasping.AutomaticGraspingCommand Autograsping {
+      get { return commandCase_ == CommandOneofCase.Autograsping ? (global::Reachy.Sdk.Grasping.AutomaticGraspingCommand) command_ : null; }
+      set {
+        command_ = value;
+        commandCase_ = value == null ? CommandOneofCase.None : CommandOneofCase.Autograsping;
+      }
+    }
+
     /// <summary>Field number for the "timestamp" field.</summary>
     public const int TimestampFieldNumber = 15;
     private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
@@ -161,6 +178,7 @@ namespace Reachy.Sdk.Joint {
       Gripper = 2,
       Joints = 3,
       GripperMX28 = 4,
+      Autograsping = 5,
     }
     private CommandOneofCase commandCase_ = CommandOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -191,6 +209,7 @@ namespace Reachy.Sdk.Joint {
       if (!object.Equals(Gripper, other.Gripper)) return false;
       if (!object.Equals(Joints, other.Joints)) return false;
       if (!object.Equals(GripperMX28, other.GripperMX28)) return false;
+      if (!object.Equals(Autograsping, other.Autograsping)) return false;
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       if (CommandCase != other.CommandCase) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -203,6 +222,7 @@ namespace Reachy.Sdk.Joint {
       if (commandCase_ == CommandOneofCase.Gripper) hash ^= Gripper.GetHashCode();
       if (commandCase_ == CommandOneofCase.Joints) hash ^= Joints.GetHashCode();
       if (commandCase_ == CommandOneofCase.GripperMX28) hash ^= GripperMX28.GetHashCode();
+      if (commandCase_ == CommandOneofCase.Autograsping) hash ^= Autograsping.GetHashCode();
       if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       hash ^= (int) commandCase_;
       if (_unknownFields != null) {
@@ -237,6 +257,10 @@ namespace Reachy.Sdk.Joint {
         output.WriteRawTag(34);
         output.WriteMessage(GripperMX28);
       }
+      if (commandCase_ == CommandOneofCase.Autograsping) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Autograsping);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(122);
         output.WriteMessage(Timestamp);
@@ -266,6 +290,10 @@ namespace Reachy.Sdk.Joint {
         output.WriteRawTag(34);
         output.WriteMessage(GripperMX28);
       }
+      if (commandCase_ == CommandOneofCase.Autograsping) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Autograsping);
+      }
       if (timestamp_ != null) {
         output.WriteRawTag(122);
         output.WriteMessage(Timestamp);
@@ -290,6 +318,9 @@ namespace Reachy.Sdk.Joint {
       }
       if (commandCase_ == CommandOneofCase.GripperMX28) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(GripperMX28);
+      }
+      if (commandCase_ == CommandOneofCase.Autograsping) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Autograsping);
       }
       if (timestamp_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
@@ -335,6 +366,12 @@ namespace Reachy.Sdk.Joint {
             GripperMX28 = new global::Reachy.Sdk.GripperMX28.GrippersMX28Command();
           }
           GripperMX28.MergeFrom(other.GripperMX28);
+          break;
+        case CommandOneofCase.Autograsping:
+          if (Autograsping == null) {
+            Autograsping = new global::Reachy.Sdk.Grasping.AutomaticGraspingCommand();
+          }
+          Autograsping.MergeFrom(other.Autograsping);
           break;
       }
 
@@ -386,6 +423,15 @@ namespace Reachy.Sdk.Joint {
             }
             input.ReadMessage(subBuilder);
             GripperMX28 = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Reachy.Sdk.Grasping.AutomaticGraspingCommand subBuilder = new global::Reachy.Sdk.Grasping.AutomaticGraspingCommand();
+            if (commandCase_ == CommandOneofCase.Autograsping) {
+              subBuilder.MergeFrom(Autograsping);
+            }
+            input.ReadMessage(subBuilder);
+            Autograsping = subBuilder;
             break;
           }
           case 122: {
@@ -443,6 +489,15 @@ namespace Reachy.Sdk.Joint {
             }
             input.ReadMessage(subBuilder);
             GripperMX28 = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Reachy.Sdk.Grasping.AutomaticGraspingCommand subBuilder = new global::Reachy.Sdk.Grasping.AutomaticGraspingCommand();
+            if (commandCase_ == CommandOneofCase.Autograsping) {
+              subBuilder.MergeFrom(Autograsping);
+            }
+            input.ReadMessage(subBuilder);
+            Autograsping = subBuilder;
             break;
           }
           case 122: {

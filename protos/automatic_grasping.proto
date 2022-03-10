@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package reachy.sdk.grasping;
+
+import "arm_kinematics.proto";
+
+message AutomaticGraspingCommandAck {
+    bool success = 1;
+}
+
+message AutomaticGraspingCommand {
+    reachy.sdk.kinematics.ArmSide side = 1;
+    bool request_autograsping = 2;
+}
+
+service AutomaticGraspingCommandService {
+    rpc RequestAutomaticGraspingCommand(AutomaticGraspingCommand) returns (AutomaticGraspingCommandAck);
+}
