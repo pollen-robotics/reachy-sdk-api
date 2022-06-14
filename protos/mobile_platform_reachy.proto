@@ -1,10 +1,13 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
 package reachy.sdk.mobility;
 
 message DirectionVector {
     double x = 1;
     double y = 2;
+    double theta = 3;
 }
 
 message TargetDirectionCommand {
@@ -24,11 +27,31 @@ message WheelingModeCommandAck {
 }
 
 enum WheelingModePossiblities {
-    IDLE = 0;
-    CLOSE_LOOP = 1;
+    OPEN_LOOP = 0;
+    BREAK = 1;
+}
+
+message BatteryLevel {
+    double level = 1;
+}
+
+message MobileBasePresence {
+    bool presence = 1;
+}
+
+message AnyMobileBaseCommand {
+    oneof command {
+        TargetDirectionCommand target_direction = 1;
+        WheelingModeCommand wheeling_mode = 2;
+    }
 }
 
 service MobilityService {
     rpc SendDirection(TargetDirectionCommand) returns (TargetDirectionCommandAck);
     rpc SetWheelingMode(WheelingModeCommand) returns (WheelingModeCommandAck);
+    rpc GetBatteryLevel(google.protobuf.Empty) returns (BatteryLevel);
+}
+
+service MobileBasePresenceService {
+    rpc GetMobileBasePresence(google.protobuf.Empty) returns (MobileBasePresence);
 }
