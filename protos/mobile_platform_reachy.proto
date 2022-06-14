@@ -4,6 +4,7 @@ import "google/protobuf/empty.proto";
 
 package reachy.sdk.mobility;
 
+// Speed commands in SI units (m/s and rad/s)
 message DirectionVector {
     double x = 1;
     double y = 2;
@@ -18,17 +19,77 @@ message TargetDirectionCommandAck {
     bool success = 1;
 }
 
-message WheelingModeCommand {
-    WheelingModePossiblities mode = 1;
+message GoToVector {
+    double x_goal = 1;
+    double y_goal = 2;
+    double theta_goal = 3;
 }
 
-message WheelingModeCommandAck {
+message GoToAck {
     bool success = 1;
 }
 
-enum WheelingModePossiblities {
+message SetSpeedVector {
+    double x_vel = 1;
+    double y_vel = 2;
+    double rot_vel = 3;
+    double duration = 4;
+}
+
+message SetSpeedAck {
+    bool success = 1;
+}
+
+message OdometryVector {
+    double x = 1;
+    double y = 2;
+    double theta = 3;
+}
+
+message ResetOdometryAck {
+    bool success = 1;
+}
+
+message DistanceToGoalVector {
+    double delta_x = 1;
+    double delta_y = 2;
+    double delta_theta = 3;
+    double distance = 4;
+}
+
+message IsGoToFinishedAck {
+    bool is_finished = 1;
+}
+
+
+enum ControlModePossiblities {
     OPEN_LOOP = 0;
-    BREAK = 1;
+    PID = 1;
+}
+
+message ControlModeCommand {
+    ControlModePossiblities mode = 1;
+}
+
+message ControlModeCommandAck {
+    bool success = 1;
+}
+
+enum ZuuuModePossiblities {
+    CMD_VEL = 0;
+    BRAKE = 1;
+    FREE_WHEEL = 2;
+    SPEED = 3;
+    GOTO = 4;
+    EMERGENCY_STOP = 5;
+}
+
+message ZuuuModeCommand {
+    ZuuuModePossiblities mode = 1;
+}
+
+message ZuuuModeCommandAck {
+    bool success = 1;
 }
 
 message BatteryLevel {
@@ -42,14 +103,26 @@ message MobileBasePresence {
 message AnyMobileBaseCommand {
     oneof command {
         TargetDirectionCommand target_direction = 1;
-        WheelingModeCommand wheeling_mode = 2;
+        ControlModeCommand wheeling_mode = 2;
     }
 }
 
 service MobilityService {
+    // Mobility commands
     rpc SendDirection(TargetDirectionCommand) returns (TargetDirectionCommandAck);
-    rpc SetWheelingMode(WheelingModeCommand) returns (WheelingModeCommandAck);
+    rpc SendSetSpeed(SetSpeedVector) returns (SetSpeedAck);
+    rpc SendGoTo(GoToVector) returns (GoToAck);
+
+    // GoTo management
+    rpc IsGoToFinished(google.protobuf.Empty) returns (IsGoToFinishedAck);
+    rpc DistanceToGoal(google.protobuf.Empty) returns (DistanceToGoalVector);
+
+    // Utility
+    rpc SetControlMode(ControlModeCommand) returns (ControlModeCommandAck);
+    rpc SetZuuuMode(ZuuuModeCommand) returns (ZuuuModeCommandAck);
     rpc GetBatteryLevel(google.protobuf.Empty) returns (BatteryLevel);
+    rpc GetOdometry(google.protobuf.Empty) returns (OdometryVector);
+    rpc ResetOdometry(google.protobuf.Empty) returns (ResetOdometryAck);
 }
 
 service MobileBasePresenceService {
