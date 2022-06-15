@@ -30,11 +30,6 @@ class MobilityServiceStub(object):
                 request_serializer=mobile__platform__reachy__pb2.GoToVector.SerializeToString,
                 response_deserializer=mobile__platform__reachy__pb2.GoToAck.FromString,
                 )
-        self.IsGoToFinished = channel.unary_unary(
-                '/reachy.sdk.mobility.MobilityService/IsGoToFinished',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=mobile__platform__reachy__pb2.IsGoToFinishedAck.FromString,
-                )
         self.DistanceToGoal = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/DistanceToGoal',
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
@@ -89,15 +84,9 @@ class MobilityServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def IsGoToFinished(self, request, context):
+    def DistanceToGoal(self, request, context):
         """GoTo management
         """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def DistanceToGoal(self, request, context):
-        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -150,11 +139,6 @@ def add_MobilityServiceServicer_to_server(servicer, server):
                     servicer.SendGoTo,
                     request_deserializer=mobile__platform__reachy__pb2.GoToVector.FromString,
                     response_serializer=mobile__platform__reachy__pb2.GoToAck.SerializeToString,
-            ),
-            'IsGoToFinished': grpc.unary_unary_rpc_method_handler(
-                    servicer.IsGoToFinished,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=mobile__platform__reachy__pb2.IsGoToFinishedAck.SerializeToString,
             ),
             'DistanceToGoal': grpc.unary_unary_rpc_method_handler(
                     servicer.DistanceToGoal,
@@ -244,23 +228,6 @@ class MobilityService(object):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/SendGoTo',
             mobile__platform__reachy__pb2.GoToVector.SerializeToString,
             mobile__platform__reachy__pb2.GoToAck.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def IsGoToFinished(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/IsGoToFinished',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            mobile__platform__reachy__pb2.IsGoToFinishedAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

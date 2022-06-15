@@ -4,7 +4,6 @@
 """Generated protocol buffer code."""
 from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -16,11 +15,87 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cmobile_platform_reachy.proto\x12\x13reachy.sdk.mobility\x1a\x1bgoogle/protobuf/empty.proto\"6\n\x0f\x44irectionVector\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\r\n\x05theta\x18\x03 \x01(\x01\"Q\n\x16TargetDirectionCommand\x12\x37\n\tdirection\x18\x01 \x01(\x0b\x32$.reachy.sdk.mobility.DirectionVector\",\n\x19TargetDirectionCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"@\n\nGoToVector\x12\x0e\n\x06x_goal\x18\x01 \x01(\x01\x12\x0e\n\x06y_goal\x18\x02 \x01(\x01\x12\x12\n\ntheta_goal\x18\x03 \x01(\x01\"\x1a\n\x07GoToAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"Q\n\x0eSetSpeedVector\x12\r\n\x05x_vel\x18\x01 \x01(\x01\x12\r\n\x05y_vel\x18\x02 \x01(\x01\x12\x0f\n\x07rot_vel\x18\x03 \x01(\x01\x12\x10\n\x08\x64uration\x18\x04 \x01(\x01\"\x1e\n\x0bSetSpeedAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"5\n\x0eOdometryVector\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\r\n\x05theta\x18\x03 \x01(\x01\"#\n\x10ResetOdometryAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"_\n\x14\x44istanceToGoalVector\x12\x0f\n\x07\x64\x65lta_x\x18\x01 \x01(\x01\x12\x0f\n\x07\x64\x65lta_y\x18\x02 \x01(\x01\x12\x13\n\x0b\x64\x65lta_theta\x18\x03 \x01(\x01\x12\x10\n\x08\x64istance\x18\x04 \x01(\x01\"(\n\x11IsGoToFinishedAck\x12\x13\n\x0bis_finished\x18\x01 \x01(\x08\"P\n\x12\x43ontrolModeCommand\x12:\n\x04mode\x18\x01 \x01(\x0e\x32,.reachy.sdk.mobility.ControlModePossiblities\"(\n\x15\x43ontrolModeCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"J\n\x0fZuuuModeCommand\x12\x37\n\x04mode\x18\x01 \x01(\x0e\x32).reachy.sdk.mobility.ZuuuModePossiblities\"%\n\x12ZuuuModeCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\x1d\n\x0c\x42\x61tteryLevel\x12\r\n\x05level\x18\x01 \x01(\x01\"&\n\x12MobileBasePresence\x12\x10\n\x08presence\x18\x01 \x01(\x08\"\xac\x01\n\x14\x41nyMobileBaseCommand\x12G\n\x10target_direction\x18\x01 \x01(\x0b\x32+.reachy.sdk.mobility.TargetDirectionCommandH\x00\x12@\n\rwheeling_mode\x18\x02 \x01(\x0b\x32\'.reachy.sdk.mobility.ControlModeCommandH\x00\x42\t\n\x07\x63ommand*1\n\x17\x43ontrolModePossiblities\x12\r\n\tOPEN_LOOP\x10\x00\x12\x07\n\x03PID\x10\x01*g\n\x14ZuuuModePossiblities\x12\x0b\n\x07\x43MD_VEL\x10\x00\x12\t\n\x05\x42RAKE\x10\x01\x12\x0e\n\nFREE_WHEEL\x10\x02\x12\t\n\x05SPEED\x10\x03\x12\x08\n\x04GOTO\x10\x04\x12\x12\n\x0e\x45MERGENCY_STOP\x10\x05\x32\xf7\x06\n\x0fMobilityService\x12l\n\rSendDirection\x12+.reachy.sdk.mobility.TargetDirectionCommand\x1a..reachy.sdk.mobility.TargetDirectionCommandAck\x12U\n\x0cSendSetSpeed\x12#.reachy.sdk.mobility.SetSpeedVector\x1a .reachy.sdk.mobility.SetSpeedAck\x12I\n\x08SendGoTo\x12\x1f.reachy.sdk.mobility.GoToVector\x1a\x1c.reachy.sdk.mobility.GoToAck\x12P\n\x0eIsGoToFinished\x12\x16.google.protobuf.Empty\x1a&.reachy.sdk.mobility.IsGoToFinishedAck\x12S\n\x0e\x44istanceToGoal\x12\x16.google.protobuf.Empty\x1a).reachy.sdk.mobility.DistanceToGoalVector\x12\x65\n\x0eSetControlMode\x12\'.reachy.sdk.mobility.ControlModeCommand\x1a*.reachy.sdk.mobility.ControlModeCommandAck\x12\\\n\x0bSetZuuuMode\x12$.reachy.sdk.mobility.ZuuuModeCommand\x1a\'.reachy.sdk.mobility.ZuuuModeCommandAck\x12L\n\x0fGetBatteryLevel\x12\x16.google.protobuf.Empty\x1a!.reachy.sdk.mobility.BatteryLevel\x12J\n\x0bGetOdometry\x12\x16.google.protobuf.Empty\x1a#.reachy.sdk.mobility.OdometryVector\x12N\n\rResetOdometry\x12\x16.google.protobuf.Empty\x1a%.reachy.sdk.mobility.ResetOdometryAck2u\n\x19MobileBasePresenceService\x12X\n\x15GetMobileBasePresence\x12\x16.google.protobuf.Empty\x1a\'.reachy.sdk.mobility.MobileBasePresenceb\x06proto3')
+DESCRIPTOR = _descriptor.FileDescriptor(
+  name='mobile_platform_reachy.proto',
+  package='reachy.sdk.mobility',
+  syntax='proto3',
+  serialized_options=None,
+  create_key=_descriptor._internal_create_key,
+  serialized_pb=b'\n\x1cmobile_platform_reachy.proto\x12\x13reachy.sdk.mobility\x1a\x1bgoogle/protobuf/empty.proto\"6\n\x0f\x44irectionVector\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\r\n\x05theta\x18\x03 \x01(\x01\"Q\n\x16TargetDirectionCommand\x12\x37\n\tdirection\x18\x01 \x01(\x0b\x32$.reachy.sdk.mobility.DirectionVector\",\n\x19TargetDirectionCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"@\n\nGoToVector\x12\x0e\n\x06x_goal\x18\x01 \x01(\x01\x12\x0e\n\x06y_goal\x18\x02 \x01(\x01\x12\x12\n\ntheta_goal\x18\x03 \x01(\x01\"\x1a\n\x07GoToAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"Q\n\x0eSetSpeedVector\x12\r\n\x05x_vel\x18\x01 \x01(\x01\x12\r\n\x05y_vel\x18\x02 \x01(\x01\x12\x0f\n\x07rot_vel\x18\x03 \x01(\x01\x12\x10\n\x08\x64uration\x18\x04 \x01(\x01\"\x1e\n\x0bSetSpeedAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"5\n\x0eOdometryVector\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\x12\r\n\x05theta\x18\x03 \x01(\x01\"#\n\x10ResetOdometryAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"_\n\x14\x44istanceToGoalVector\x12\x0f\n\x07\x64\x65lta_x\x18\x01 \x01(\x01\x12\x0f\n\x07\x64\x65lta_y\x18\x02 \x01(\x01\x12\x13\n\x0b\x64\x65lta_theta\x18\x03 \x01(\x01\x12\x10\n\x08\x64istance\x18\x04 \x01(\x01\"P\n\x12\x43ontrolModeCommand\x12:\n\x04mode\x18\x01 \x01(\x0e\x32,.reachy.sdk.mobility.ControlModePossiblities\"(\n\x15\x43ontrolModeCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"J\n\x0fZuuuModeCommand\x12\x37\n\x04mode\x18\x01 \x01(\x0e\x32).reachy.sdk.mobility.ZuuuModePossiblities\"%\n\x12ZuuuModeCommandAck\x12\x0f\n\x07success\x18\x01 \x01(\x08\"\x1d\n\x0c\x42\x61tteryLevel\x12\r\n\x05level\x18\x01 \x01(\x01\"&\n\x12MobileBasePresence\x12\x10\n\x08presence\x18\x01 \x01(\x08\"\xac\x01\n\x14\x41nyMobileBaseCommand\x12G\n\x10target_direction\x18\x01 \x01(\x0b\x32+.reachy.sdk.mobility.TargetDirectionCommandH\x00\x12@\n\rwheeling_mode\x18\x02 \x01(\x0b\x32\'.reachy.sdk.mobility.ControlModeCommandH\x00\x42\t\n\x07\x63ommand*1\n\x17\x43ontrolModePossiblities\x12\r\n\tOPEN_LOOP\x10\x00\x12\x07\n\x03PID\x10\x01*g\n\x14ZuuuModePossiblities\x12\x0b\n\x07\x43MD_VEL\x10\x00\x12\t\n\x05\x42RAKE\x10\x01\x12\x0e\n\nFREE_WHEEL\x10\x02\x12\t\n\x05SPEED\x10\x03\x12\x08\n\x04GOTO\x10\x04\x12\x12\n\x0e\x45MERGENCY_STOP\x10\x05\x32\xa5\x06\n\x0fMobilityService\x12l\n\rSendDirection\x12+.reachy.sdk.mobility.TargetDirectionCommand\x1a..reachy.sdk.mobility.TargetDirectionCommandAck\x12U\n\x0cSendSetSpeed\x12#.reachy.sdk.mobility.SetSpeedVector\x1a .reachy.sdk.mobility.SetSpeedAck\x12I\n\x08SendGoTo\x12\x1f.reachy.sdk.mobility.GoToVector\x1a\x1c.reachy.sdk.mobility.GoToAck\x12S\n\x0e\x44istanceToGoal\x12\x16.google.protobuf.Empty\x1a).reachy.sdk.mobility.DistanceToGoalVector\x12\x65\n\x0eSetControlMode\x12\'.reachy.sdk.mobility.ControlModeCommand\x1a*.reachy.sdk.mobility.ControlModeCommandAck\x12\\\n\x0bSetZuuuMode\x12$.reachy.sdk.mobility.ZuuuModeCommand\x1a\'.reachy.sdk.mobility.ZuuuModeCommandAck\x12L\n\x0fGetBatteryLevel\x12\x16.google.protobuf.Empty\x1a!.reachy.sdk.mobility.BatteryLevel\x12J\n\x0bGetOdometry\x12\x16.google.protobuf.Empty\x1a#.reachy.sdk.mobility.OdometryVector\x12N\n\rResetOdometry\x12\x16.google.protobuf.Empty\x1a%.reachy.sdk.mobility.ResetOdometryAck2u\n\x19MobileBasePresenceService\x12X\n\x15GetMobileBasePresence\x12\x16.google.protobuf.Empty\x1a\'.reachy.sdk.mobility.MobileBasePresenceb\x06proto3'
+  ,
+  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
-_CONTROLMODEPOSSIBLITIES = DESCRIPTOR.enum_types_by_name['ControlModePossiblities']
+_CONTROLMODEPOSSIBLITIES = _descriptor.EnumDescriptor(
+  name='ControlModePossiblities',
+  full_name='reachy.sdk.mobility.ControlModePossiblities',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='OPEN_LOOP', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='PID', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1150,
+  serialized_end=1199,
+)
+_sym_db.RegisterEnumDescriptor(_CONTROLMODEPOSSIBLITIES)
+
 ControlModePossiblities = enum_type_wrapper.EnumTypeWrapper(_CONTROLMODEPOSSIBLITIES)
-_ZUUUMODEPOSSIBLITIES = DESCRIPTOR.enum_types_by_name['ZuuuModePossiblities']
+_ZUUUMODEPOSSIBLITIES = _descriptor.EnumDescriptor(
+  name='ZuuuModePossiblities',
+  full_name='reachy.sdk.mobility.ZuuuModePossiblities',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='CMD_VEL', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BRAKE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='FREE_WHEEL', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SPEED', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GOTO', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='EMERGENCY_STOP', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1201,
+  serialized_end=1304,
+)
+_sym_db.RegisterEnumDescriptor(_ZUUUMODEPOSSIBLITIES)
+
 ZuuuModePossiblities = enum_type_wrapper.EnumTypeWrapper(_ZUUUMODEPOSSIBLITIES)
 OPEN_LOOP = 0
 PID = 1
@@ -32,24 +107,678 @@ GOTO = 4
 EMERGENCY_STOP = 5
 
 
-_DIRECTIONVECTOR = DESCRIPTOR.message_types_by_name['DirectionVector']
-_TARGETDIRECTIONCOMMAND = DESCRIPTOR.message_types_by_name['TargetDirectionCommand']
-_TARGETDIRECTIONCOMMANDACK = DESCRIPTOR.message_types_by_name['TargetDirectionCommandAck']
-_GOTOVECTOR = DESCRIPTOR.message_types_by_name['GoToVector']
-_GOTOACK = DESCRIPTOR.message_types_by_name['GoToAck']
-_SETSPEEDVECTOR = DESCRIPTOR.message_types_by_name['SetSpeedVector']
-_SETSPEEDACK = DESCRIPTOR.message_types_by_name['SetSpeedAck']
-_ODOMETRYVECTOR = DESCRIPTOR.message_types_by_name['OdometryVector']
-_RESETODOMETRYACK = DESCRIPTOR.message_types_by_name['ResetOdometryAck']
-_DISTANCETOGOALVECTOR = DESCRIPTOR.message_types_by_name['DistanceToGoalVector']
-_ISGOTOFINISHEDACK = DESCRIPTOR.message_types_by_name['IsGoToFinishedAck']
-_CONTROLMODECOMMAND = DESCRIPTOR.message_types_by_name['ControlModeCommand']
-_CONTROLMODECOMMANDACK = DESCRIPTOR.message_types_by_name['ControlModeCommandAck']
-_ZUUUMODECOMMAND = DESCRIPTOR.message_types_by_name['ZuuuModeCommand']
-_ZUUUMODECOMMANDACK = DESCRIPTOR.message_types_by_name['ZuuuModeCommandAck']
-_BATTERYLEVEL = DESCRIPTOR.message_types_by_name['BatteryLevel']
-_MOBILEBASEPRESENCE = DESCRIPTOR.message_types_by_name['MobileBasePresence']
-_ANYMOBILEBASECOMMAND = DESCRIPTOR.message_types_by_name['AnyMobileBaseCommand']
+
+_DIRECTIONVECTOR = _descriptor.Descriptor(
+  name='DirectionVector',
+  full_name='reachy.sdk.mobility.DirectionVector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='x', full_name='reachy.sdk.mobility.DirectionVector.x', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='reachy.sdk.mobility.DirectionVector.y', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='theta', full_name='reachy.sdk.mobility.DirectionVector.theta', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=82,
+  serialized_end=136,
+)
+
+
+_TARGETDIRECTIONCOMMAND = _descriptor.Descriptor(
+  name='TargetDirectionCommand',
+  full_name='reachy.sdk.mobility.TargetDirectionCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='direction', full_name='reachy.sdk.mobility.TargetDirectionCommand.direction', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=138,
+  serialized_end=219,
+)
+
+
+_TARGETDIRECTIONCOMMANDACK = _descriptor.Descriptor(
+  name='TargetDirectionCommandAck',
+  full_name='reachy.sdk.mobility.TargetDirectionCommandAck',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='reachy.sdk.mobility.TargetDirectionCommandAck.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=221,
+  serialized_end=265,
+)
+
+
+_GOTOVECTOR = _descriptor.Descriptor(
+  name='GoToVector',
+  full_name='reachy.sdk.mobility.GoToVector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='x_goal', full_name='reachy.sdk.mobility.GoToVector.x_goal', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='y_goal', full_name='reachy.sdk.mobility.GoToVector.y_goal', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='theta_goal', full_name='reachy.sdk.mobility.GoToVector.theta_goal', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=267,
+  serialized_end=331,
+)
+
+
+_GOTOACK = _descriptor.Descriptor(
+  name='GoToAck',
+  full_name='reachy.sdk.mobility.GoToAck',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='reachy.sdk.mobility.GoToAck.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=333,
+  serialized_end=359,
+)
+
+
+_SETSPEEDVECTOR = _descriptor.Descriptor(
+  name='SetSpeedVector',
+  full_name='reachy.sdk.mobility.SetSpeedVector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='x_vel', full_name='reachy.sdk.mobility.SetSpeedVector.x_vel', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='y_vel', full_name='reachy.sdk.mobility.SetSpeedVector.y_vel', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rot_vel', full_name='reachy.sdk.mobility.SetSpeedVector.rot_vel', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='duration', full_name='reachy.sdk.mobility.SetSpeedVector.duration', index=3,
+      number=4, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=361,
+  serialized_end=442,
+)
+
+
+_SETSPEEDACK = _descriptor.Descriptor(
+  name='SetSpeedAck',
+  full_name='reachy.sdk.mobility.SetSpeedAck',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='reachy.sdk.mobility.SetSpeedAck.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=444,
+  serialized_end=474,
+)
+
+
+_ODOMETRYVECTOR = _descriptor.Descriptor(
+  name='OdometryVector',
+  full_name='reachy.sdk.mobility.OdometryVector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='x', full_name='reachy.sdk.mobility.OdometryVector.x', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='reachy.sdk.mobility.OdometryVector.y', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='theta', full_name='reachy.sdk.mobility.OdometryVector.theta', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=476,
+  serialized_end=529,
+)
+
+
+_RESETODOMETRYACK = _descriptor.Descriptor(
+  name='ResetOdometryAck',
+  full_name='reachy.sdk.mobility.ResetOdometryAck',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='reachy.sdk.mobility.ResetOdometryAck.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=531,
+  serialized_end=566,
+)
+
+
+_DISTANCETOGOALVECTOR = _descriptor.Descriptor(
+  name='DistanceToGoalVector',
+  full_name='reachy.sdk.mobility.DistanceToGoalVector',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='delta_x', full_name='reachy.sdk.mobility.DistanceToGoalVector.delta_x', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delta_y', full_name='reachy.sdk.mobility.DistanceToGoalVector.delta_y', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delta_theta', full_name='reachy.sdk.mobility.DistanceToGoalVector.delta_theta', index=2,
+      number=3, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='distance', full_name='reachy.sdk.mobility.DistanceToGoalVector.distance', index=3,
+      number=4, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=568,
+  serialized_end=663,
+)
+
+
+_CONTROLMODECOMMAND = _descriptor.Descriptor(
+  name='ControlModeCommand',
+  full_name='reachy.sdk.mobility.ControlModeCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='mode', full_name='reachy.sdk.mobility.ControlModeCommand.mode', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=665,
+  serialized_end=745,
+)
+
+
+_CONTROLMODECOMMANDACK = _descriptor.Descriptor(
+  name='ControlModeCommandAck',
+  full_name='reachy.sdk.mobility.ControlModeCommandAck',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='reachy.sdk.mobility.ControlModeCommandAck.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=747,
+  serialized_end=787,
+)
+
+
+_ZUUUMODECOMMAND = _descriptor.Descriptor(
+  name='ZuuuModeCommand',
+  full_name='reachy.sdk.mobility.ZuuuModeCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='mode', full_name='reachy.sdk.mobility.ZuuuModeCommand.mode', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=789,
+  serialized_end=863,
+)
+
+
+_ZUUUMODECOMMANDACK = _descriptor.Descriptor(
+  name='ZuuuModeCommandAck',
+  full_name='reachy.sdk.mobility.ZuuuModeCommandAck',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='reachy.sdk.mobility.ZuuuModeCommandAck.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=865,
+  serialized_end=902,
+)
+
+
+_BATTERYLEVEL = _descriptor.Descriptor(
+  name='BatteryLevel',
+  full_name='reachy.sdk.mobility.BatteryLevel',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='level', full_name='reachy.sdk.mobility.BatteryLevel.level', index=0,
+      number=1, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=904,
+  serialized_end=933,
+)
+
+
+_MOBILEBASEPRESENCE = _descriptor.Descriptor(
+  name='MobileBasePresence',
+  full_name='reachy.sdk.mobility.MobileBasePresence',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='presence', full_name='reachy.sdk.mobility.MobileBasePresence.presence', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=935,
+  serialized_end=973,
+)
+
+
+_ANYMOBILEBASECOMMAND = _descriptor.Descriptor(
+  name='AnyMobileBaseCommand',
+  full_name='reachy.sdk.mobility.AnyMobileBaseCommand',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='target_direction', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.target_direction', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='wheeling_mode', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.wheeling_mode', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='command', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.command',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=976,
+  serialized_end=1148,
+)
+
+_TARGETDIRECTIONCOMMAND.fields_by_name['direction'].message_type = _DIRECTIONVECTOR
+_CONTROLMODECOMMAND.fields_by_name['mode'].enum_type = _CONTROLMODEPOSSIBLITIES
+_ZUUUMODECOMMAND.fields_by_name['mode'].enum_type = _ZUUUMODEPOSSIBLITIES
+_ANYMOBILEBASECOMMAND.fields_by_name['target_direction'].message_type = _TARGETDIRECTIONCOMMAND
+_ANYMOBILEBASECOMMAND.fields_by_name['wheeling_mode'].message_type = _CONTROLMODECOMMAND
+_ANYMOBILEBASECOMMAND.oneofs_by_name['command'].fields.append(
+  _ANYMOBILEBASECOMMAND.fields_by_name['target_direction'])
+_ANYMOBILEBASECOMMAND.fields_by_name['target_direction'].containing_oneof = _ANYMOBILEBASECOMMAND.oneofs_by_name['command']
+_ANYMOBILEBASECOMMAND.oneofs_by_name['command'].fields.append(
+  _ANYMOBILEBASECOMMAND.fields_by_name['wheeling_mode'])
+_ANYMOBILEBASECOMMAND.fields_by_name['wheeling_mode'].containing_oneof = _ANYMOBILEBASECOMMAND.oneofs_by_name['command']
+DESCRIPTOR.message_types_by_name['DirectionVector'] = _DIRECTIONVECTOR
+DESCRIPTOR.message_types_by_name['TargetDirectionCommand'] = _TARGETDIRECTIONCOMMAND
+DESCRIPTOR.message_types_by_name['TargetDirectionCommandAck'] = _TARGETDIRECTIONCOMMANDACK
+DESCRIPTOR.message_types_by_name['GoToVector'] = _GOTOVECTOR
+DESCRIPTOR.message_types_by_name['GoToAck'] = _GOTOACK
+DESCRIPTOR.message_types_by_name['SetSpeedVector'] = _SETSPEEDVECTOR
+DESCRIPTOR.message_types_by_name['SetSpeedAck'] = _SETSPEEDACK
+DESCRIPTOR.message_types_by_name['OdometryVector'] = _ODOMETRYVECTOR
+DESCRIPTOR.message_types_by_name['ResetOdometryAck'] = _RESETODOMETRYACK
+DESCRIPTOR.message_types_by_name['DistanceToGoalVector'] = _DISTANCETOGOALVECTOR
+DESCRIPTOR.message_types_by_name['ControlModeCommand'] = _CONTROLMODECOMMAND
+DESCRIPTOR.message_types_by_name['ControlModeCommandAck'] = _CONTROLMODECOMMANDACK
+DESCRIPTOR.message_types_by_name['ZuuuModeCommand'] = _ZUUUMODECOMMAND
+DESCRIPTOR.message_types_by_name['ZuuuModeCommandAck'] = _ZUUUMODECOMMANDACK
+DESCRIPTOR.message_types_by_name['BatteryLevel'] = _BATTERYLEVEL
+DESCRIPTOR.message_types_by_name['MobileBasePresence'] = _MOBILEBASEPRESENCE
+DESCRIPTOR.message_types_by_name['AnyMobileBaseCommand'] = _ANYMOBILEBASECOMMAND
+DESCRIPTOR.enum_types_by_name['ControlModePossiblities'] = _CONTROLMODEPOSSIBLITIES
+DESCRIPTOR.enum_types_by_name['ZuuuModePossiblities'] = _ZUUUMODEPOSSIBLITIES
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
 DirectionVector = _reflection.GeneratedProtocolMessageType('DirectionVector', (_message.Message,), {
   'DESCRIPTOR' : _DIRECTIONVECTOR,
   '__module__' : 'mobile_platform_reachy_pb2'
@@ -120,13 +849,6 @@ DistanceToGoalVector = _reflection.GeneratedProtocolMessageType('DistanceToGoalV
   })
 _sym_db.RegisterMessage(DistanceToGoalVector)
 
-IsGoToFinishedAck = _reflection.GeneratedProtocolMessageType('IsGoToFinishedAck', (_message.Message,), {
-  'DESCRIPTOR' : _ISGOTOFINISHEDACK,
-  '__module__' : 'mobile_platform_reachy_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.mobility.IsGoToFinishedAck)
-  })
-_sym_db.RegisterMessage(IsGoToFinishedAck)
-
 ControlModeCommand = _reflection.GeneratedProtocolMessageType('ControlModeCommand', (_message.Message,), {
   'DESCRIPTOR' : _CONTROLMODECOMMAND,
   '__module__' : 'mobile_platform_reachy_pb2'
@@ -176,53 +898,137 @@ AnyMobileBaseCommand = _reflection.GeneratedProtocolMessageType('AnyMobileBaseCo
   })
 _sym_db.RegisterMessage(AnyMobileBaseCommand)
 
-_MOBILITYSERVICE = DESCRIPTOR.services_by_name['MobilityService']
-_MOBILEBASEPRESENCESERVICE = DESCRIPTOR.services_by_name['MobileBasePresenceService']
-if _descriptor._USE_C_DESCRIPTORS == False:
 
-  DESCRIPTOR._options = None
-  _CONTROLMODEPOSSIBLITIES._serialized_start=1192
-  _CONTROLMODEPOSSIBLITIES._serialized_end=1241
-  _ZUUUMODEPOSSIBLITIES._serialized_start=1243
-  _ZUUUMODEPOSSIBLITIES._serialized_end=1346
-  _DIRECTIONVECTOR._serialized_start=82
-  _DIRECTIONVECTOR._serialized_end=136
-  _TARGETDIRECTIONCOMMAND._serialized_start=138
-  _TARGETDIRECTIONCOMMAND._serialized_end=219
-  _TARGETDIRECTIONCOMMANDACK._serialized_start=221
-  _TARGETDIRECTIONCOMMANDACK._serialized_end=265
-  _GOTOVECTOR._serialized_start=267
-  _GOTOVECTOR._serialized_end=331
-  _GOTOACK._serialized_start=333
-  _GOTOACK._serialized_end=359
-  _SETSPEEDVECTOR._serialized_start=361
-  _SETSPEEDVECTOR._serialized_end=442
-  _SETSPEEDACK._serialized_start=444
-  _SETSPEEDACK._serialized_end=474
-  _ODOMETRYVECTOR._serialized_start=476
-  _ODOMETRYVECTOR._serialized_end=529
-  _RESETODOMETRYACK._serialized_start=531
-  _RESETODOMETRYACK._serialized_end=566
-  _DISTANCETOGOALVECTOR._serialized_start=568
-  _DISTANCETOGOALVECTOR._serialized_end=663
-  _ISGOTOFINISHEDACK._serialized_start=665
-  _ISGOTOFINISHEDACK._serialized_end=705
-  _CONTROLMODECOMMAND._serialized_start=707
-  _CONTROLMODECOMMAND._serialized_end=787
-  _CONTROLMODECOMMANDACK._serialized_start=789
-  _CONTROLMODECOMMANDACK._serialized_end=829
-  _ZUUUMODECOMMAND._serialized_start=831
-  _ZUUUMODECOMMAND._serialized_end=905
-  _ZUUUMODECOMMANDACK._serialized_start=907
-  _ZUUUMODECOMMANDACK._serialized_end=944
-  _BATTERYLEVEL._serialized_start=946
-  _BATTERYLEVEL._serialized_end=975
-  _MOBILEBASEPRESENCE._serialized_start=977
-  _MOBILEBASEPRESENCE._serialized_end=1015
-  _ANYMOBILEBASECOMMAND._serialized_start=1018
-  _ANYMOBILEBASECOMMAND._serialized_end=1190
-  _MOBILITYSERVICE._serialized_start=1349
-  _MOBILITYSERVICE._serialized_end=2236
-  _MOBILEBASEPRESENCESERVICE._serialized_start=2238
-  _MOBILEBASEPRESENCESERVICE._serialized_end=2355
+
+_MOBILITYSERVICE = _descriptor.ServiceDescriptor(
+  name='MobilityService',
+  full_name='reachy.sdk.mobility.MobilityService',
+  file=DESCRIPTOR,
+  index=0,
+  serialized_options=None,
+  create_key=_descriptor._internal_create_key,
+  serialized_start=1307,
+  serialized_end=2112,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='SendDirection',
+    full_name='reachy.sdk.mobility.MobilityService.SendDirection',
+    index=0,
+    containing_service=None,
+    input_type=_TARGETDIRECTIONCOMMAND,
+    output_type=_TARGETDIRECTIONCOMMANDACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SendSetSpeed',
+    full_name='reachy.sdk.mobility.MobilityService.SendSetSpeed',
+    index=1,
+    containing_service=None,
+    input_type=_SETSPEEDVECTOR,
+    output_type=_SETSPEEDACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SendGoTo',
+    full_name='reachy.sdk.mobility.MobilityService.SendGoTo',
+    index=2,
+    containing_service=None,
+    input_type=_GOTOVECTOR,
+    output_type=_GOTOACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DistanceToGoal',
+    full_name='reachy.sdk.mobility.MobilityService.DistanceToGoal',
+    index=3,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_DISTANCETOGOALVECTOR,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SetControlMode',
+    full_name='reachy.sdk.mobility.MobilityService.SetControlMode',
+    index=4,
+    containing_service=None,
+    input_type=_CONTROLMODECOMMAND,
+    output_type=_CONTROLMODECOMMANDACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SetZuuuMode',
+    full_name='reachy.sdk.mobility.MobilityService.SetZuuuMode',
+    index=5,
+    containing_service=None,
+    input_type=_ZUUUMODECOMMAND,
+    output_type=_ZUUUMODECOMMANDACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetBatteryLevel',
+    full_name='reachy.sdk.mobility.MobilityService.GetBatteryLevel',
+    index=6,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_BATTERYLEVEL,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetOdometry',
+    full_name='reachy.sdk.mobility.MobilityService.GetOdometry',
+    index=7,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_ODOMETRYVECTOR,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ResetOdometry',
+    full_name='reachy.sdk.mobility.MobilityService.ResetOdometry',
+    index=8,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_RESETODOMETRYACK,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_MOBILITYSERVICE)
+
+DESCRIPTOR.services_by_name['MobilityService'] = _MOBILITYSERVICE
+
+
+_MOBILEBASEPRESENCESERVICE = _descriptor.ServiceDescriptor(
+  name='MobileBasePresenceService',
+  full_name='reachy.sdk.mobility.MobileBasePresenceService',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  create_key=_descriptor._internal_create_key,
+  serialized_start=2114,
+  serialized_end=2231,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='GetMobileBasePresence',
+    full_name='reachy.sdk.mobility.MobileBasePresenceService.GetMobileBasePresence',
+    index=0,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=_MOBILEBASEPRESENCE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_MOBILEBASEPRESENCESERVICE)
+
+DESCRIPTOR.services_by_name['MobileBasePresenceService'] = _MOBILEBASEPRESENCESERVICE
+
 # @@protoc_insertion_point(module_scope)

@@ -57,11 +57,6 @@ message DistanceToGoalVector {
     double distance = 4;
 }
 
-message IsGoToFinishedAck {
-    bool is_finished = 1;
-}
-
-
 enum ControlModePossiblities {
     OPEN_LOOP = 0;
     PID = 1;
@@ -114,7 +109,6 @@ service MobilityService {
     rpc SendGoTo(GoToVector) returns (GoToAck);
 
     // GoTo management
-    rpc IsGoToFinished(google.protobuf.Empty) returns (IsGoToFinishedAck);
     rpc DistanceToGoal(google.protobuf.Empty) returns (DistanceToGoalVector);
 
     // Utility
