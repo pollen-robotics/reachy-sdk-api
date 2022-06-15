@@ -1,14 +1,16 @@
 syntax = "proto3";
 
 import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
 
 package reachy.sdk.mobility;
 
 // Speed commands in SI units (m/s and rad/s)
 message DirectionVector {
-    double x = 1;
-    double y = 2;
-    double theta = 3;
+    // use FloatValue instead of double to avoid 0.0 default value being ignored
+    google.protobuf.FloatValue x = 1;
+    google.protobuf.FloatValue y = 2;
+    google.protobuf.FloatValue theta = 3;
 }
 
 message TargetDirectionCommand {
@@ -16,50 +18,51 @@ message TargetDirectionCommand {
 }
 
 message TargetDirectionCommandAck {
-    bool success = 1;
+    google.protobuf.BoolValue success = 1;
 }
 
 message GoToVector {
-    double x_goal = 1;
-    double y_goal = 2;
-    double theta_goal = 3;
+    google.protobuf.FloatValue x_goal = 1;
+    google.protobuf.FloatValue y_goal = 2;
+    google.protobuf.FloatValue theta_goal = 3;
 }
 
 message GoToAck {
-    bool success = 1;
+    google.protobuf.BoolValue success = 1;
 }
 
 message SetSpeedVector {
-    double x_vel = 1;
-    double y_vel = 2;
-    double rot_vel = 3;
-    double duration = 4;
+    google.protobuf.FloatValue x_vel = 1;
+    google.protobuf.FloatValue y_vel = 2;
+    google.protobuf.FloatValue rot_vel = 3;
+    google.protobuf.FloatValue duration = 4;
 }
 
 message SetSpeedAck {
-    bool success = 1;
+    google.protobuf.BoolValue success = 1;
 }
 
 message OdometryVector {
-    double x = 1;
-    double y = 2;
-    double theta = 3;
+    google.protobuf.FloatValue x = 1;
+    google.protobuf.FloatValue y = 2;
+    google.protobuf.FloatValue theta = 3;
 }
 
 message ResetOdometryAck {
-    bool success = 1;
+    google.protobuf.BoolValue success = 1;
 }
 
 message DistanceToGoalVector {
-    double delta_x = 1;
-    double delta_y = 2;
-    double delta_theta = 3;
-    double distance = 4;
+    google.protobuf.FloatValue delta_x = 1;
+    google.protobuf.FloatValue delta_y = 2;
+    google.protobuf.FloatValue delta_theta = 3;
+    google.protobuf.FloatValue distance = 4;
 }
 
 enum ControlModePossiblities {
-    OPEN_LOOP = 0;
-    PID = 1;
+    NONE_CONTROL_MODE = 0;
+    OPEN_LOOP = 1;
+    PID = 2;
 }
 
 message ControlModeCommand {
@@ -67,16 +70,17 @@ message ControlModeCommand {
 }
 
 message ControlModeCommandAck {
-    bool success = 1;
+    google.protobuf.BoolValue success = 1;
 }
 
 enum ZuuuModePossiblities {
-    CMD_VEL = 0;
-    BRAKE = 1;
-    FREE_WHEEL = 2;
-    SPEED = 3;
-    GOTO = 4;
-    EMERGENCY_STOP = 5;
+    NONE_ZUU_MODE = 0;
+    CMD_VEL = 1;
+    BRAKE = 2;
+    FREE_WHEEL = 3;
+    SPEED = 4;
+    GOTO = 5;
+    EMERGENCY_STOP = 6;
 }
 
 message ZuuuModeCommand {
@@ -84,15 +88,15 @@ message ZuuuModeCommand {
 }
 
 message ZuuuModeCommandAck {
-    bool success = 1;
+    google.protobuf.BoolValue success = 1;
 }
 
 message BatteryLevel {
-    double level = 1;
+    google.protobuf.FloatValue level = 1;
 }
 
 message MobileBasePresence {
-    bool presence = 1;
+    google.protobuf.BoolValue presence = 1;
 }
 
 message AnyMobileBaseCommand {
