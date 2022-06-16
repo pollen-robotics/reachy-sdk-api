@@ -74,7 +74,7 @@ message ControlModeCommandAck {
 }
 
 enum ZuuuModePossiblities {
-    NONE_ZUU_MODE = 0;
+    NONE_ZUUU_MODE = 0;
     CMD_VEL = 1;
     BRAKE = 2;
     FREE_WHEEL = 3;
