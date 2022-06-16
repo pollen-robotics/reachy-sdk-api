@@ -40,10 +40,20 @@ class MobilityServiceStub(object):
                 request_serializer=mobile__platform__reachy__pb2.ControlModeCommand.SerializeToString,
                 response_deserializer=mobile__platform__reachy__pb2.ControlModeCommandAck.FromString,
                 )
+        self.GetControlMode = channel.unary_unary(
+                '/reachy.sdk.mobility.MobilityService/GetControlMode',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=mobile__platform__reachy__pb2.ControlModeCommand.FromString,
+                )
         self.SetZuuuMode = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/SetZuuuMode',
                 request_serializer=mobile__platform__reachy__pb2.ZuuuModeCommand.SerializeToString,
                 response_deserializer=mobile__platform__reachy__pb2.ZuuuModeCommandAck.FromString,
+                )
+        self.GetZuuuMode = channel.unary_unary(
+                '/reachy.sdk.mobility.MobilityService/GetZuuuMode',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=mobile__platform__reachy__pb2.ZuuuModeCommand.FromString,
                 )
         self.GetBatteryLevel = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/GetBatteryLevel',
@@ -98,7 +108,19 @@ class MobilityServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetControlMode(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def SetZuuuMode(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetZuuuMode(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -150,10 +172,20 @@ def add_MobilityServiceServicer_to_server(servicer, server):
                     request_deserializer=mobile__platform__reachy__pb2.ControlModeCommand.FromString,
                     response_serializer=mobile__platform__reachy__pb2.ControlModeCommandAck.SerializeToString,
             ),
+            'GetControlMode': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetControlMode,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=mobile__platform__reachy__pb2.ControlModeCommand.SerializeToString,
+            ),
             'SetZuuuMode': grpc.unary_unary_rpc_method_handler(
                     servicer.SetZuuuMode,
                     request_deserializer=mobile__platform__reachy__pb2.ZuuuModeCommand.FromString,
                     response_serializer=mobile__platform__reachy__pb2.ZuuuModeCommandAck.SerializeToString,
+            ),
+            'GetZuuuMode': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetZuuuMode,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=mobile__platform__reachy__pb2.ZuuuModeCommand.SerializeToString,
             ),
             'GetBatteryLevel': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBatteryLevel,
@@ -266,6 +298,23 @@ class MobilityService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def GetControlMode(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/GetControlMode',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            mobile__platform__reachy__pb2.ControlModeCommand.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def SetZuuuMode(request,
             target,
             options=(),
@@ -279,6 +328,23 @@ class MobilityService(object):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/SetZuuuMode',
             mobile__platform__reachy__pb2.ZuuuModeCommand.SerializeToString,
             mobile__platform__reachy__pb2.ZuuuModeCommandAck.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetZuuuMode(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/GetZuuuMode',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            mobile__platform__reachy__pb2.ZuuuModeCommand.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
