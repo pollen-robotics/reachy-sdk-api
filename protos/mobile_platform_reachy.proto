@@ -17,18 +17,10 @@ message TargetDirectionCommand {
     DirectionVector direction = 1;
 }
 
-message TargetDirectionCommandAck {
-    google.protobuf.BoolValue success = 1;
-}
-
 message GoToVector {
     google.protobuf.FloatValue x_goal = 1;
     google.protobuf.FloatValue y_goal = 2;
     google.protobuf.FloatValue theta_goal = 3;
-}
-
-message GoToAck {
-    google.protobuf.BoolValue success = 1;
 }
 
 message SetSpeedVector {
@@ -38,18 +30,10 @@ message SetSpeedVector {
     google.protobuf.FloatValue duration = 4;
 }
 
-message SetSpeedAck {
-    google.protobuf.BoolValue success = 1;
-}
-
 message OdometryVector {
     google.protobuf.FloatValue x = 1;
     google.protobuf.FloatValue y = 2;
     google.protobuf.FloatValue theta = 3;
-}
-
-message ResetOdometryAck {
-    google.protobuf.BoolValue success = 1;
 }
 
 message DistanceToGoalVector {
@@ -69,10 +53,6 @@ message ControlModeCommand {
     ControlModePossiblities mode = 1;
 }
 
-message ControlModeCommandAck {
-    google.protobuf.BoolValue success = 1;
-}
-
 enum ZuuuModePossiblities {
     NONE_ZUUU_MODE = 0;
     CMD_VEL = 1;
@@ -85,10 +65,6 @@ enum ZuuuModePossiblities {
 
 message ZuuuModeCommand {
     ZuuuModePossiblities mode = 1;
-}
-
-message ZuuuModeCommandAck {
-    google.protobuf.BoolValue success = 1;
 }
 
 message BatteryLevel {
@@ -107,6 +83,14 @@ message AnyMobileBaseCommand {
     }
 }
 
+message SetZuuuSafetyRequest {
+    google.protobuf.BoolValue safety_on = 1;
+}
+
+message MobilityServiceAck {
+    google.protobuf.BoolValue success = 1;
+}
+
 service MobilityService {
     // Mobility commands
     rpc SendDirection(TargetDirectionCommand) returns (TargetDirectionCommandAck);
@@ -117,13 +101,15 @@ service MobilityService {
     rpc DistanceToGoal(google.protobuf.Empty) returns (DistanceToGoalVector);
 
     // Utility
-    rpc SetControlMode(ControlModeCommand) returns (ControlModeCommandAck);
+    rpc SetControlMode(ControlModeCommand) returns (MobilityServiceAck);
     rpc GetControlMode(google.protobuf.Empty) returns (ControlModeCommand);
-    rpc SetZuuuMode(ZuuuModeCommand) returns (ZuuuModeCommandAck);
+    rpc SetZuuuMode(ZuuuModeCommand) returns (MobilityServiceAck);
     rpc GetZuuuMode(google.protobuf.Empty) returns (ZuuuModeCommand);
     rpc GetBatteryLevel(google.protobuf.Empty) returns (BatteryLevel);
     rpc GetOdometry(google.protobuf.Empty) returns (OdometryVector);
-    rpc ResetOdometry(google.protobuf.Empty) returns (ResetOdometryAck);
+    rpc ResetOdometry(google.protobuf.Empty) returns (MobilityServiceAck);
+    rpc SetZuuuSafety(SetZuuuSafetyRequest) returns (MobilityServiceAck);
+    rpc RestartZuuuHal(google.protobuf.Empty) returns (MobilityServiceAck);
 }
 
 service MobileBasePresenceService {
