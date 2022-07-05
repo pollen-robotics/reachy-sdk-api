@@ -18,17 +18,17 @@ class MobilityServiceStub(object):
         self.SendDirection = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/SendDirection',
                 request_serializer=mobile__platform__reachy__pb2.TargetDirectionCommand.SerializeToString,
-                response_deserializer=mobile__platform__reachy__pb2.TargetDirectionCommandAck.FromString,
+                response_deserializer=mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
                 )
         self.SendSetSpeed = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/SendSetSpeed',
                 request_serializer=mobile__platform__reachy__pb2.SetSpeedVector.SerializeToString,
-                response_deserializer=mobile__platform__reachy__pb2.SetSpeedAck.FromString,
+                response_deserializer=mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
                 )
         self.SendGoTo = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/SendGoTo',
                 request_serializer=mobile__platform__reachy__pb2.GoToVector.SerializeToString,
-                response_deserializer=mobile__platform__reachy__pb2.GoToAck.FromString,
+                response_deserializer=mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
                 )
         self.DistanceToGoal = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/DistanceToGoal',
@@ -38,7 +38,7 @@ class MobilityServiceStub(object):
         self.SetControlMode = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/SetControlMode',
                 request_serializer=mobile__platform__reachy__pb2.ControlModeCommand.SerializeToString,
-                response_deserializer=mobile__platform__reachy__pb2.ControlModeCommandAck.FromString,
+                response_deserializer=mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
                 )
         self.GetControlMode = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/GetControlMode',
@@ -48,7 +48,7 @@ class MobilityServiceStub(object):
         self.SetZuuuMode = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/SetZuuuMode',
                 request_serializer=mobile__platform__reachy__pb2.ZuuuModeCommand.SerializeToString,
-                response_deserializer=mobile__platform__reachy__pb2.ZuuuModeCommandAck.FromString,
+                response_deserializer=mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
                 )
         self.GetZuuuMode = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/GetZuuuMode',
@@ -68,7 +68,7 @@ class MobilityServiceStub(object):
         self.ResetOdometry = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/ResetOdometry',
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=mobile__platform__reachy__pb2.ResetOdometryAck.FromString,
+                response_deserializer=mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
                 )
         self.SetZuuuSafety = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/SetZuuuSafety',
@@ -172,17 +172,17 @@ def add_MobilityServiceServicer_to_server(servicer, server):
             'SendDirection': grpc.unary_unary_rpc_method_handler(
                     servicer.SendDirection,
                     request_deserializer=mobile__platform__reachy__pb2.TargetDirectionCommand.FromString,
-                    response_serializer=mobile__platform__reachy__pb2.TargetDirectionCommandAck.SerializeToString,
+                    response_serializer=mobile__platform__reachy__pb2.MobilityServiceAck.SerializeToString,
             ),
             'SendSetSpeed': grpc.unary_unary_rpc_method_handler(
                     servicer.SendSetSpeed,
                     request_deserializer=mobile__platform__reachy__pb2.SetSpeedVector.FromString,
-                    response_serializer=mobile__platform__reachy__pb2.SetSpeedAck.SerializeToString,
+                    response_serializer=mobile__platform__reachy__pb2.MobilityServiceAck.SerializeToString,
             ),
             'SendGoTo': grpc.unary_unary_rpc_method_handler(
                     servicer.SendGoTo,
                     request_deserializer=mobile__platform__reachy__pb2.GoToVector.FromString,
-                    response_serializer=mobile__platform__reachy__pb2.GoToAck.SerializeToString,
+                    response_serializer=mobile__platform__reachy__pb2.MobilityServiceAck.SerializeToString,
             ),
             'DistanceToGoal': grpc.unary_unary_rpc_method_handler(
                     servicer.DistanceToGoal,
@@ -192,7 +192,7 @@ def add_MobilityServiceServicer_to_server(servicer, server):
             'SetControlMode': grpc.unary_unary_rpc_method_handler(
                     servicer.SetControlMode,
                     request_deserializer=mobile__platform__reachy__pb2.ControlModeCommand.FromString,
-                    response_serializer=mobile__platform__reachy__pb2.ControlModeCommandAck.SerializeToString,
+                    response_serializer=mobile__platform__reachy__pb2.MobilityServiceAck.SerializeToString,
             ),
             'GetControlMode': grpc.unary_unary_rpc_method_handler(
                     servicer.GetControlMode,
@@ -202,7 +202,7 @@ def add_MobilityServiceServicer_to_server(servicer, server):
             'SetZuuuMode': grpc.unary_unary_rpc_method_handler(
                     servicer.SetZuuuMode,
                     request_deserializer=mobile__platform__reachy__pb2.ZuuuModeCommand.FromString,
-                    response_serializer=mobile__platform__reachy__pb2.ZuuuModeCommandAck.SerializeToString,
+                    response_serializer=mobile__platform__reachy__pb2.MobilityServiceAck.SerializeToString,
             ),
             'GetZuuuMode': grpc.unary_unary_rpc_method_handler(
                     servicer.GetZuuuMode,
@@ -222,7 +222,7 @@ def add_MobilityServiceServicer_to_server(servicer, server):
             'ResetOdometry': grpc.unary_unary_rpc_method_handler(
                     servicer.ResetOdometry,
                     request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=mobile__platform__reachy__pb2.ResetOdometryAck.SerializeToString,
+                    response_serializer=mobile__platform__reachy__pb2.MobilityServiceAck.SerializeToString,
             ),
             'SetZuuuSafety': grpc.unary_unary_rpc_method_handler(
                     servicer.SetZuuuSafety,
@@ -257,7 +257,7 @@ class MobilityService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/SendDirection',
             mobile__platform__reachy__pb2.TargetDirectionCommand.SerializeToString,
-            mobile__platform__reachy__pb2.TargetDirectionCommandAck.FromString,
+            mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -274,7 +274,7 @@ class MobilityService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/SendSetSpeed',
             mobile__platform__reachy__pb2.SetSpeedVector.SerializeToString,
-            mobile__platform__reachy__pb2.SetSpeedAck.FromString,
+            mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -291,7 +291,7 @@ class MobilityService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/SendGoTo',
             mobile__platform__reachy__pb2.GoToVector.SerializeToString,
-            mobile__platform__reachy__pb2.GoToAck.FromString,
+            mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -325,7 +325,7 @@ class MobilityService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/SetControlMode',
             mobile__platform__reachy__pb2.ControlModeCommand.SerializeToString,
-            mobile__platform__reachy__pb2.ControlModeCommandAck.FromString,
+            mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -359,7 +359,7 @@ class MobilityService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/SetZuuuMode',
             mobile__platform__reachy__pb2.ZuuuModeCommand.SerializeToString,
-            mobile__platform__reachy__pb2.ZuuuModeCommandAck.FromString,
+            mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -427,7 +427,7 @@ class MobilityService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/ResetOdometry',
             google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            mobile__platform__reachy__pb2.ResetOdometryAck.FromString,
+            mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

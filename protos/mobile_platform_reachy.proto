@@ -58,9 +58,7 @@ enum ZuuuModePossiblities {
     CMD_VEL = 1;
     BRAKE = 2;
     FREE_WHEEL = 3;
-    SPEED = 4;
-    GOTO = 5;
-    EMERGENCY_STOP = 6;
+    EMERGENCY_STOP = 4;
 }
 
 message ZuuuModeCommand {
@@ -93,9 +91,9 @@ message MobilityServiceAck {
 
 service MobilityService {
     // Mobility commands
-    rpc SendDirection(TargetDirectionCommand) returns (TargetDirectionCommandAck);
-    rpc SendSetSpeed(SetSpeedVector) returns (SetSpeedAck);
-    rpc SendGoTo(GoToVector) returns (GoToAck);
+    rpc SendDirection(TargetDirectionCommand) returns (MobilityServiceAck);
+    rpc SendSetSpeed(SetSpeedVector) returns (MobilityServiceAck);
+    rpc SendGoTo(GoToVector) returns (MobilityServiceAck);
 
     // GoTo management
     rpc DistanceToGoal(google.protobuf.Empty) returns (DistanceToGoalVector);
