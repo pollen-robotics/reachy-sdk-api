@@ -75,11 +75,6 @@ class MobilityServiceStub(object):
                 request_serializer=mobile__platform__reachy__pb2.SetZuuuSafetyRequest.SerializeToString,
                 response_deserializer=mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
                 )
-        self.RestartZuuuHal = channel.unary_unary(
-                '/reachy.sdk.mobility.MobilityService/RestartZuuuHal',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
-                )
 
 
 class MobilityServiceServicer(object):
@@ -160,12 +155,6 @@ class MobilityServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def RestartZuuuHal(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_MobilityServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -227,11 +216,6 @@ def add_MobilityServiceServicer_to_server(servicer, server):
             'SetZuuuSafety': grpc.unary_unary_rpc_method_handler(
                     servicer.SetZuuuSafety,
                     request_deserializer=mobile__platform__reachy__pb2.SetZuuuSafetyRequest.FromString,
-                    response_serializer=mobile__platform__reachy__pb2.MobilityServiceAck.SerializeToString,
-            ),
-            'RestartZuuuHal': grpc.unary_unary_rpc_method_handler(
-                    servicer.RestartZuuuHal,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                     response_serializer=mobile__platform__reachy__pb2.MobilityServiceAck.SerializeToString,
             ),
     }
@@ -444,23 +428,6 @@ class MobilityService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/SetZuuuSafety',
             mobile__platform__reachy__pb2.SetZuuuSafetyRequest.SerializeToString,
-            mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RestartZuuuHal(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/RestartZuuuHal',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

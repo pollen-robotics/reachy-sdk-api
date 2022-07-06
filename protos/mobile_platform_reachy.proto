@@ -109,7 +109,6 @@ service MobilityService {
     rpc GetOdometry(google.protobuf.Empty) returns (OdometryVector);
     rpc ResetOdometry(google.protobuf.Empty) returns (MobilityServiceAck);
     rpc SetZuuuSafety(SetZuuuSafetyRequest) returns (MobilityServiceAck);
-    rpc RestartZuuuHal(google.protobuf.Empty) returns (MobilityServiceAck);
 }
 
 service MobileBasePresenceService {
