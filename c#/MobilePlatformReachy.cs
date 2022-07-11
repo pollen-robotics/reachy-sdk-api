@@ -25,42 +25,126 @@ namespace Reachy.Sdk.Mobility {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Chxtb2JpbGVfcGxhdGZvcm1fcmVhY2h5LnByb3RvEhNyZWFjaHkuc2RrLm1v",
-            "YmlsaXR5IicKD0RpcmVjdGlvblZlY3RvchIJCgF4GAEgASgBEgkKAXkYAiAB",
-            "KAEiUQoWVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZBI3CglkaXJlY3Rpb24YASAB",
-            "KAsyJC5yZWFjaHkuc2RrLm1vYmlsaXR5LkRpcmVjdGlvblZlY3RvciIsChlU",
-            "YXJnZXREaXJlY3Rpb25Db21tYW5kQWNrEg8KB3N1Y2Nlc3MYASABKAgiUgoT",
-            "V2hlZWxpbmdNb2RlQ29tbWFuZBI7CgRtb2RlGAEgASgOMi0ucmVhY2h5LnNk",
-            "ay5tb2JpbGl0eS5XaGVlbGluZ01vZGVQb3NzaWJsaXRpZXMiKQoWV2hlZWxp",
-            "bmdNb2RlQ29tbWFuZEFjaxIPCgdzdWNjZXNzGAEgASgIKjQKGFdoZWVsaW5n",
-            "TW9kZVBvc3NpYmxpdGllcxIICgRJRExFEAASDgoKQ0xPU0VfTE9PUBABMukB",
-            "Cg9Nb2JpbGl0eVNlcnZpY2USbAoNU2VuZERpcmVjdGlvbhIrLnJlYWNoeS5z",
-            "ZGsubW9iaWxpdHkuVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZBouLnJlYWNoeS5z",
-            "ZGsubW9iaWxpdHkuVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZEFjaxJoCg9TZXRX",
-            "aGVlbGluZ01vZGUSKC5yZWFjaHkuc2RrLm1vYmlsaXR5LldoZWVsaW5nTW9k",
-            "ZUNvbW1hbmQaKy5yZWFjaHkuc2RrLm1vYmlsaXR5LldoZWVsaW5nTW9kZUNv",
-            "bW1hbmRBY2tiBnByb3RvMw=="));
+            "YmlsaXR5Ghtnb29nbGUvcHJvdG9idWYvZW1wdHkucHJvdG8aHmdvb2dsZS9w",
+            "cm90b2J1Zi93cmFwcGVycy5wcm90byKNAQoPRGlyZWN0aW9uVmVjdG9yEiYK",
+            "AXgYASABKAsyGy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZRImCgF5GAIg",
+            "ASgLMhsuZ29vZ2xlLnByb3RvYnVmLkZsb2F0VmFsdWUSKgoFdGhldGEYAyAB",
+            "KAsyGy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZSJRChZUYXJnZXREaXJl",
+            "Y3Rpb25Db21tYW5kEjcKCWRpcmVjdGlvbhgBIAEoCzIkLnJlYWNoeS5zZGsu",
+            "bW9iaWxpdHkuRGlyZWN0aW9uVmVjdG9yIkgKGVRhcmdldERpcmVjdGlvbkNv",
+            "bW1hbmRBY2sSKwoHc3VjY2VzcxgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5C",
+            "b29sVmFsdWUilwEKCkdvVG9WZWN0b3ISKwoGeF9nb2FsGAEgASgLMhsuZ29v",
+            "Z2xlLnByb3RvYnVmLkZsb2F0VmFsdWUSKwoGeV9nb2FsGAIgASgLMhsuZ29v",
+            "Z2xlLnByb3RvYnVmLkZsb2F0VmFsdWUSLwoKdGhldGFfZ29hbBgDIAEoCzIb",
+            "Lmdvb2dsZS5wcm90b2J1Zi5GbG9hdFZhbHVlIjYKB0dvVG9BY2sSKwoHc3Vj",
+            "Y2VzcxgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5Cb29sVmFsdWUixQEKDlNl",
+            "dFNwZWVkVmVjdG9yEioKBXhfdmVsGAEgASgLMhsuZ29vZ2xlLnByb3RvYnVm",
+            "LkZsb2F0VmFsdWUSKgoFeV92ZWwYAiABKAsyGy5nb29nbGUucHJvdG9idWYu",
+            "RmxvYXRWYWx1ZRIsCgdyb3RfdmVsGAMgASgLMhsuZ29vZ2xlLnByb3RvYnVm",
+            "LkZsb2F0VmFsdWUSLQoIZHVyYXRpb24YBCABKAsyGy5nb29nbGUucHJvdG9i",
+            "dWYuRmxvYXRWYWx1ZSI6CgtTZXRTcGVlZEFjaxIrCgdzdWNjZXNzGAEgASgL",
+            "MhouZ29vZ2xlLnByb3RvYnVmLkJvb2xWYWx1ZSKMAQoOT2RvbWV0cnlWZWN0",
+            "b3ISJgoBeBgBIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5GbG9hdFZhbHVlEiYK",
+            "AXkYAiABKAsyGy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZRIqCgV0aGV0",
+            "YRgDIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5GbG9hdFZhbHVlIj8KEFJlc2V0",
+            "T2RvbWV0cnlBY2sSKwoHc3VjY2VzcxgBIAEoCzIaLmdvb2dsZS5wcm90b2J1",
+            "Zi5Cb29sVmFsdWUi0wEKFERpc3RhbmNlVG9Hb2FsVmVjdG9yEiwKB2RlbHRh",
+            "X3gYASABKAsyGy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZRIsCgdkZWx0",
+            "YV95GAIgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkZsb2F0VmFsdWUSMAoLZGVs",
+            "dGFfdGhldGEYAyABKAsyGy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZRIt",
+            "CghkaXN0YW5jZRgEIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5GbG9hdFZhbHVl",
+            "IlAKEkNvbnRyb2xNb2RlQ29tbWFuZBI6CgRtb2RlGAEgASgOMiwucmVhY2h5",
+            "LnNkay5tb2JpbGl0eS5Db250cm9sTW9kZVBvc3NpYmxpdGllcyJEChVDb250",
+            "cm9sTW9kZUNvbW1hbmRBY2sSKwoHc3VjY2VzcxgBIAEoCzIaLmdvb2dsZS5w",
+            "cm90b2J1Zi5Cb29sVmFsdWUiSgoPWnV1dU1vZGVDb21tYW5kEjcKBG1vZGUY",
+            "ASABKA4yKS5yZWFjaHkuc2RrLm1vYmlsaXR5Llp1dXVNb2RlUG9zc2libGl0",
+            "aWVzIkEKElp1dXVNb2RlQ29tbWFuZEFjaxIrCgdzdWNjZXNzGAEgASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLkJvb2xWYWx1ZSI6CgxCYXR0ZXJ5TGV2ZWwSKgoF",
+            "bGV2ZWwYASABKAsyGy5nb29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZSJ2ChJN",
+            "b2JpbGVCYXNlUHJlc2VuY2USLAoIcHJlc2VuY2UYASABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuQm9vbFZhbHVlEjIKDW1vZGVsX3ZlcnNpb24YAiABKAsyGy5n",
+            "b29nbGUucHJvdG9idWYuRmxvYXRWYWx1ZSKsAQoUQW55TW9iaWxlQmFzZUNv",
+            "bW1hbmQSRwoQdGFyZ2V0X2RpcmVjdGlvbhgBIAEoCzIrLnJlYWNoeS5zZGsu",
+            "bW9iaWxpdHkuVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZEgAEkAKDXdoZWVsaW5n",
+            "X21vZGUYAiABKAsyJy5yZWFjaHkuc2RrLm1vYmlsaXR5LkNvbnRyb2xNb2Rl",
+            "Q29tbWFuZEgAQgkKB2NvbW1hbmQqSAoXQ29udHJvbE1vZGVQb3NzaWJsaXRp",
+            "ZXMSFQoRTk9ORV9DT05UUk9MX01PREUQABINCglPUEVOX0xPT1AQARIHCgNQ",
+            "SUQQAip7ChRadXV1TW9kZVBvc3NpYmxpdGllcxISCg5OT05FX1pVVVVfTU9E",
+            "RRAAEgsKB0NNRF9WRUwQARIJCgVCUkFLRRACEg4KCkZSRUVfV0hFRUwQAxIJ",
+            "CgVTUEVFRBAEEggKBEdPVE8QBRISCg5FTUVSR0VOQ1lfU1RPUBAGMsUHCg9N",
+            "b2JpbGl0eVNlcnZpY2USbAoNU2VuZERpcmVjdGlvbhIrLnJlYWNoeS5zZGsu",
+            "bW9iaWxpdHkuVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZBouLnJlYWNoeS5zZGsu",
+            "bW9iaWxpdHkuVGFyZ2V0RGlyZWN0aW9uQ29tbWFuZEFjaxJVCgxTZW5kU2V0",
+            "U3BlZWQSIy5yZWFjaHkuc2RrLm1vYmlsaXR5LlNldFNwZWVkVmVjdG9yGiAu",
+            "cmVhY2h5LnNkay5tb2JpbGl0eS5TZXRTcGVlZEFjaxJJCghTZW5kR29UbxIf",
+            "LnJlYWNoeS5zZGsubW9iaWxpdHkuR29Ub1ZlY3RvchocLnJlYWNoeS5zZGsu",
+            "bW9iaWxpdHkuR29Ub0FjaxJTCg5EaXN0YW5jZVRvR29hbBIWLmdvb2dsZS5w",
+            "cm90b2J1Zi5FbXB0eRopLnJlYWNoeS5zZGsubW9iaWxpdHkuRGlzdGFuY2VU",
+            "b0dvYWxWZWN0b3ISZQoOU2V0Q29udHJvbE1vZGUSJy5yZWFjaHkuc2RrLm1v",
+            "YmlsaXR5LkNvbnRyb2xNb2RlQ29tbWFuZBoqLnJlYWNoeS5zZGsubW9iaWxp",
+            "dHkuQ29udHJvbE1vZGVDb21tYW5kQWNrElEKDkdldENvbnRyb2xNb2RlEhYu",
+            "Z29vZ2xlLnByb3RvYnVmLkVtcHR5GicucmVhY2h5LnNkay5tb2JpbGl0eS5D",
+            "b250cm9sTW9kZUNvbW1hbmQSXAoLU2V0WnV1dU1vZGUSJC5yZWFjaHkuc2Rr",
+            "Lm1vYmlsaXR5Llp1dXVNb2RlQ29tbWFuZBonLnJlYWNoeS5zZGsubW9iaWxp",
+            "dHkuWnV1dU1vZGVDb21tYW5kQWNrEksKC0dldFp1dXVNb2RlEhYuZ29vZ2xl",
+            "LnByb3RvYnVmLkVtcHR5GiQucmVhY2h5LnNkay5tb2JpbGl0eS5adXV1TW9k",
+            "ZUNvbW1hbmQSTAoPR2V0QmF0dGVyeUxldmVsEhYuZ29vZ2xlLnByb3RvYnVm",
+            "LkVtcHR5GiEucmVhY2h5LnNkay5tb2JpbGl0eS5CYXR0ZXJ5TGV2ZWwSSgoL",
+            "R2V0T2RvbWV0cnkSFi5nb29nbGUucHJvdG9idWYuRW1wdHkaIy5yZWFjaHku",
+            "c2RrLm1vYmlsaXR5Lk9kb21ldHJ5VmVjdG9yEk4KDVJlc2V0T2RvbWV0cnkS",
+            "Fi5nb29nbGUucHJvdG9idWYuRW1wdHkaJS5yZWFjaHkuc2RrLm1vYmlsaXR5",
+            "LlJlc2V0T2RvbWV0cnlBY2sydQoZTW9iaWxlQmFzZVByZXNlbmNlU2Vydmlj",
+            "ZRJYChVHZXRNb2JpbGVCYXNlUHJlc2VuY2USFi5nb29nbGUucHJvdG9idWYu",
+            "RW1wdHkaJy5yZWFjaHkuc2RrLm1vYmlsaXR5Lk1vYmlsZUJhc2VQcmVzZW5j",
+            "ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Reachy.Sdk.Mobility.WheelingModePossiblities), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.DirectionVector), global::Reachy.Sdk.Mobility.DirectionVector.Parser, new[]{ "X", "Y" }, null, null, null, null),
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Reachy.Sdk.Mobility.ControlModePossiblities), typeof(global::Reachy.Sdk.Mobility.ZuuuModePossiblities), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.DirectionVector), global::Reachy.Sdk.Mobility.DirectionVector.Parser, new[]{ "X", "Y", "Theta" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.TargetDirectionCommand), global::Reachy.Sdk.Mobility.TargetDirectionCommand.Parser, new[]{ "Direction" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.TargetDirectionCommandAck), global::Reachy.Sdk.Mobility.TargetDirectionCommandAck.Parser, new[]{ "Success" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.WheelingModeCommand), global::Reachy.Sdk.Mobility.WheelingModeCommand.Parser, new[]{ "Mode" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.WheelingModeCommandAck), global::Reachy.Sdk.Mobility.WheelingModeCommandAck.Parser, new[]{ "Success" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.GoToVector), global::Reachy.Sdk.Mobility.GoToVector.Parser, new[]{ "XGoal", "YGoal", "ThetaGoal" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.GoToAck), global::Reachy.Sdk.Mobility.GoToAck.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.SetSpeedVector), global::Reachy.Sdk.Mobility.SetSpeedVector.Parser, new[]{ "XVel", "YVel", "RotVel", "Duration" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.SetSpeedAck), global::Reachy.Sdk.Mobility.SetSpeedAck.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.OdometryVector), global::Reachy.Sdk.Mobility.OdometryVector.Parser, new[]{ "X", "Y", "Theta" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.ResetOdometryAck), global::Reachy.Sdk.Mobility.ResetOdometryAck.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.DistanceToGoalVector), global::Reachy.Sdk.Mobility.DistanceToGoalVector.Parser, new[]{ "DeltaX", "DeltaY", "DeltaTheta", "Distance" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.ControlModeCommand), global::Reachy.Sdk.Mobility.ControlModeCommand.Parser, new[]{ "Mode" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.ControlModeCommandAck), global::Reachy.Sdk.Mobility.ControlModeCommandAck.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.ZuuuModeCommand), global::Reachy.Sdk.Mobility.ZuuuModeCommand.Parser, new[]{ "Mode" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.ZuuuModeCommandAck), global::Reachy.Sdk.Mobility.ZuuuModeCommandAck.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.BatteryLevel), global::Reachy.Sdk.Mobility.BatteryLevel.Parser, new[]{ "Level" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.MobileBasePresence), global::Reachy.Sdk.Mobility.MobileBasePresence.Parser, new[]{ "Presence", "ModelVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Mobility.AnyMobileBaseCommand), global::Reachy.Sdk.Mobility.AnyMobileBaseCommand.Parser, new[]{ "TargetDirection", "WheelingMode" }, new[]{ "Command" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Enums
-  public enum WheelingModePossiblities {
-    [pbr::OriginalName("IDLE")] Idle = 0,
-    [pbr::OriginalName("CLOSE_LOOP")] CloseLoop = 1,
+  public enum ControlModePossiblities {
+    [pbr::OriginalName("NONE_CONTROL_MODE")] NoneControlMode = 0,
+    [pbr::OriginalName("OPEN_LOOP")] OpenLoop = 1,
+    [pbr::OriginalName("PID")] Pid = 2,
+  }
+
+  public enum ZuuuModePossiblities {
+    [pbr::OriginalName("NONE_ZUUU_MODE")] NoneZuuuMode = 0,
+    [pbr::OriginalName("CMD_VEL")] CmdVel = 1,
+    [pbr::OriginalName("BRAKE")] Brake = 2,
+    [pbr::OriginalName("FREE_WHEEL")] FreeWheel = 3,
+    [pbr::OriginalName("SPEED")] Speed = 4,
+    [pbr::OriginalName("GOTO")] Goto = 5,
+    [pbr::OriginalName("EMERGENCY_STOP")] EmergencyStop = 6,
   }
 
   #endregion
 
   #region Messages
+  /// <summary>
+  /// Speed commands in SI units (m/s and rad/s)
+  /// </summary>
   public sealed partial class DirectionVector : pb::IMessage<DirectionVector>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -90,8 +174,9 @@ namespace Reachy.Sdk.Mobility {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DirectionVector(DirectionVector other) : this() {
-      x_ = other.x_;
-      y_ = other.y_;
+      X = other.X;
+      Y = other.Y;
+      Theta = other.Theta;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -102,25 +187,45 @@ namespace Reachy.Sdk.Mobility {
 
     /// <summary>Field number for the "x" field.</summary>
     public const int XFieldNumber = 1;
-    private double x_;
+    private static readonly pb::FieldCodec<float?> _single_x_codec = pb::FieldCodec.ForStructWrapper<float>(10);
+    private float? x_;
+    /// <summary>
+    /// use FloatValue instead of double to avoid 0.0 default value being ignored
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double X {
+    public float? X {
       get { return x_; }
       set {
         x_ = value;
       }
     }
 
+
     /// <summary>Field number for the "y" field.</summary>
     public const int YFieldNumber = 2;
-    private double y_;
+    private static readonly pb::FieldCodec<float?> _single_y_codec = pb::FieldCodec.ForStructWrapper<float>(18);
+    private float? y_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double Y {
+    public float? Y {
       get { return y_; }
       set {
         y_ = value;
       }
     }
+
+
+    /// <summary>Field number for the "theta" field.</summary>
+    public const int ThetaFieldNumber = 3;
+    private static readonly pb::FieldCodec<float?> _single_theta_codec = pb::FieldCodec.ForStructWrapper<float>(26);
+    private float? theta_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? Theta {
+      get { return theta_; }
+      set {
+        theta_ = value;
+      }
+    }
+
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
@@ -135,16 +240,18 @@ namespace Reachy.Sdk.Mobility {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(X, other.X)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(Theta, other.Theta)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (X != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(X);
-      if (Y != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Y);
+      if (x_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(X);
+      if (y_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(Y);
+      if (theta_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(Theta);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -161,13 +268,14 @@ namespace Reachy.Sdk.Mobility {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (X != 0D) {
-        output.WriteRawTag(9);
-        output.WriteDouble(X);
+      if (x_ != null) {
+        _single_x_codec.WriteTagAndValue(output, X);
       }
-      if (Y != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(Y);
+      if (y_ != null) {
+        _single_y_codec.WriteTagAndValue(output, Y);
+      }
+      if (theta_ != null) {
+        _single_theta_codec.WriteTagAndValue(output, Theta);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -178,13 +286,14 @@ namespace Reachy.Sdk.Mobility {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (X != 0D) {
-        output.WriteRawTag(9);
-        output.WriteDouble(X);
+      if (x_ != null) {
+        _single_x_codec.WriteTagAndValue(ref output, X);
       }
-      if (Y != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(Y);
+      if (y_ != null) {
+        _single_y_codec.WriteTagAndValue(ref output, Y);
+      }
+      if (theta_ != null) {
+        _single_theta_codec.WriteTagAndValue(ref output, Theta);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -195,11 +304,14 @@ namespace Reachy.Sdk.Mobility {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (X != 0D) {
-        size += 1 + 8;
+      if (x_ != null) {
+        size += _single_x_codec.CalculateSizeWithTag(X);
       }
-      if (Y != 0D) {
-        size += 1 + 8;
+      if (y_ != null) {
+        size += _single_y_codec.CalculateSizeWithTag(Y);
+      }
+      if (theta_ != null) {
+        size += _single_theta_codec.CalculateSizeWithTag(Theta);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -212,11 +324,20 @@ namespace Reachy.Sdk.Mobility {
       if (other == null) {
         return;
       }
-      if (other.X != 0D) {
-        X = other.X;
+      if (other.x_ != null) {
+        if (x_ == null || other.X != 0F) {
+          X = other.X;
+        }
       }
-      if (other.Y != 0D) {
-        Y = other.Y;
+      if (other.y_ != null) {
+        if (y_ == null || other.Y != 0F) {
+          Y = other.Y;
+        }
+      }
+      if (other.theta_ != null) {
+        if (theta_ == null || other.Theta != 0F) {
+          Theta = other.Theta;
+        }
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -232,12 +353,25 @@ namespace Reachy.Sdk.Mobility {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 9: {
-            X = input.ReadDouble();
+          case 10: {
+            float? value = _single_x_codec.Read(input);
+            if (x_ == null || value != 0F) {
+              X = value;
+            }
             break;
           }
-          case 17: {
-            Y = input.ReadDouble();
+          case 18: {
+            float? value = _single_y_codec.Read(input);
+            if (y_ == null || value != 0F) {
+              Y = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_theta_codec.Read(input);
+            if (theta_ == null || value != 0F) {
+              Theta = value;
+            }
             break;
           }
         }
@@ -254,12 +388,25 @@ namespace Reachy.Sdk.Mobility {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 9: {
-            X = input.ReadDouble();
+          case 10: {
+            float? value = _single_x_codec.Read(ref input);
+            if (x_ == null || value != 0F) {
+              X = value;
+            }
             break;
           }
-          case 17: {
-            Y = input.ReadDouble();
+          case 18: {
+            float? value = _single_y_codec.Read(ref input);
+            if (y_ == null || value != 0F) {
+              Y = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_theta_codec.Read(ref input);
+            if (theta_ == null || value != 0F) {
+              Theta = value;
+            }
             break;
           }
         }
@@ -479,7 +626,7 @@ namespace Reachy.Sdk.Mobility {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public TargetDirectionCommandAck(TargetDirectionCommandAck other) : this() {
-      success_ = other.success_;
+      Success = other.Success;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -490,14 +637,16 @@ namespace Reachy.Sdk.Mobility {
 
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
-    private bool success_;
+    private static readonly pb::FieldCodec<bool?> _single_success_codec = pb::FieldCodec.ForStructWrapper<bool>(10);
+    private bool? success_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Success {
+    public bool? Success {
       get { return success_; }
       set {
         success_ = value;
       }
     }
+
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
@@ -519,7 +668,7 @@ namespace Reachy.Sdk.Mobility {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Success != false) hash ^= Success.GetHashCode();
+      if (success_ != null) hash ^= Success.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -536,9 +685,8 @@ namespace Reachy.Sdk.Mobility {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Success != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Success);
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(output, Success);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -549,9 +697,8 @@ namespace Reachy.Sdk.Mobility {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Success != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Success);
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(ref output, Success);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -562,8 +709,8 @@ namespace Reachy.Sdk.Mobility {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Success != false) {
-        size += 1 + 1;
+      if (success_ != null) {
+        size += _single_success_codec.CalculateSizeWithTag(Success);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -576,8 +723,10 @@ namespace Reachy.Sdk.Mobility {
       if (other == null) {
         return;
       }
-      if (other.Success != false) {
-        Success = other.Success;
+      if (other.success_ != null) {
+        if (success_ == null || other.Success != false) {
+          Success = other.Success;
+        }
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -593,8 +742,11 @@ namespace Reachy.Sdk.Mobility {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Success = input.ReadBool();
+          case 10: {
+            bool? value = _single_success_codec.Read(input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
             break;
           }
         }
@@ -611,8 +763,11 @@ namespace Reachy.Sdk.Mobility {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Success = input.ReadBool();
+          case 10: {
+            bool? value = _single_success_codec.Read(ref input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
             break;
           }
         }
@@ -622,15 +777,15 @@ namespace Reachy.Sdk.Mobility {
 
   }
 
-  public sealed partial class WheelingModeCommand : pb::IMessage<WheelingModeCommand>
+  public sealed partial class GoToVector : pb::IMessage<GoToVector>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<WheelingModeCommand> _parser = new pb::MessageParser<WheelingModeCommand>(() => new WheelingModeCommand());
+    private static readonly pb::MessageParser<GoToVector> _parser = new pb::MessageParser<GoToVector>(() => new GoToVector());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<WheelingModeCommand> Parser { get { return _parser; } }
+    public static pb::MessageParser<GoToVector> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -643,55 +798,89 @@ namespace Reachy.Sdk.Mobility {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public WheelingModeCommand() {
+    public GoToVector() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public WheelingModeCommand(WheelingModeCommand other) : this() {
-      mode_ = other.mode_;
+    public GoToVector(GoToVector other) : this() {
+      XGoal = other.XGoal;
+      YGoal = other.YGoal;
+      ThetaGoal = other.ThetaGoal;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public WheelingModeCommand Clone() {
-      return new WheelingModeCommand(this);
+    public GoToVector Clone() {
+      return new GoToVector(this);
     }
 
-    /// <summary>Field number for the "mode" field.</summary>
-    public const int ModeFieldNumber = 1;
-    private global::Reachy.Sdk.Mobility.WheelingModePossiblities mode_ = global::Reachy.Sdk.Mobility.WheelingModePossiblities.Idle;
+    /// <summary>Field number for the "x_goal" field.</summary>
+    public const int XGoalFieldNumber = 1;
+    private static readonly pb::FieldCodec<float?> _single_xGoal_codec = pb::FieldCodec.ForStructWrapper<float>(10);
+    private float? xGoal_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Reachy.Sdk.Mobility.WheelingModePossiblities Mode {
-      get { return mode_; }
+    public float? XGoal {
+      get { return xGoal_; }
       set {
-        mode_ = value;
+        xGoal_ = value;
       }
     }
 
+
+    /// <summary>Field number for the "y_goal" field.</summary>
+    public const int YGoalFieldNumber = 2;
+    private static readonly pb::FieldCodec<float?> _single_yGoal_codec = pb::FieldCodec.ForStructWrapper<float>(18);
+    private float? yGoal_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? YGoal {
+      get { return yGoal_; }
+      set {
+        yGoal_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "theta_goal" field.</summary>
+    public const int ThetaGoalFieldNumber = 3;
+    private static readonly pb::FieldCodec<float?> _single_thetaGoal_codec = pb::FieldCodec.ForStructWrapper<float>(26);
+    private float? thetaGoal_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? ThetaGoal {
+      get { return thetaGoal_; }
+      set {
+        thetaGoal_ = value;
+      }
+    }
+
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as WheelingModeCommand);
+      return Equals(other as GoToVector);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(WheelingModeCommand other) {
+    public bool Equals(GoToVector other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Mode != other.Mode) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(XGoal, other.XGoal)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(YGoal, other.YGoal)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(ThetaGoal, other.ThetaGoal)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Mode != global::Reachy.Sdk.Mobility.WheelingModePossiblities.Idle) hash ^= Mode.GetHashCode();
+      if (xGoal_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(XGoal);
+      if (yGoal_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(YGoal);
+      if (thetaGoal_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(ThetaGoal);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -708,7 +897,1673 @@ namespace Reachy.Sdk.Mobility {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Mode != global::Reachy.Sdk.Mobility.WheelingModePossiblities.Idle) {
+      if (xGoal_ != null) {
+        _single_xGoal_codec.WriteTagAndValue(output, XGoal);
+      }
+      if (yGoal_ != null) {
+        _single_yGoal_codec.WriteTagAndValue(output, YGoal);
+      }
+      if (thetaGoal_ != null) {
+        _single_thetaGoal_codec.WriteTagAndValue(output, ThetaGoal);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (xGoal_ != null) {
+        _single_xGoal_codec.WriteTagAndValue(ref output, XGoal);
+      }
+      if (yGoal_ != null) {
+        _single_yGoal_codec.WriteTagAndValue(ref output, YGoal);
+      }
+      if (thetaGoal_ != null) {
+        _single_thetaGoal_codec.WriteTagAndValue(ref output, ThetaGoal);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (xGoal_ != null) {
+        size += _single_xGoal_codec.CalculateSizeWithTag(XGoal);
+      }
+      if (yGoal_ != null) {
+        size += _single_yGoal_codec.CalculateSizeWithTag(YGoal);
+      }
+      if (thetaGoal_ != null) {
+        size += _single_thetaGoal_codec.CalculateSizeWithTag(ThetaGoal);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GoToVector other) {
+      if (other == null) {
+        return;
+      }
+      if (other.xGoal_ != null) {
+        if (xGoal_ == null || other.XGoal != 0F) {
+          XGoal = other.XGoal;
+        }
+      }
+      if (other.yGoal_ != null) {
+        if (yGoal_ == null || other.YGoal != 0F) {
+          YGoal = other.YGoal;
+        }
+      }
+      if (other.thetaGoal_ != null) {
+        if (thetaGoal_ == null || other.ThetaGoal != 0F) {
+          ThetaGoal = other.ThetaGoal;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            float? value = _single_xGoal_codec.Read(input);
+            if (xGoal_ == null || value != 0F) {
+              XGoal = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_yGoal_codec.Read(input);
+            if (yGoal_ == null || value != 0F) {
+              YGoal = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_thetaGoal_codec.Read(input);
+            if (thetaGoal_ == null || value != 0F) {
+              ThetaGoal = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            float? value = _single_xGoal_codec.Read(ref input);
+            if (xGoal_ == null || value != 0F) {
+              XGoal = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_yGoal_codec.Read(ref input);
+            if (yGoal_ == null || value != 0F) {
+              YGoal = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_thetaGoal_codec.Read(ref input);
+            if (thetaGoal_ == null || value != 0F) {
+              ThetaGoal = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class GoToAck : pb::IMessage<GoToAck>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GoToAck> _parser = new pb::MessageParser<GoToAck>(() => new GoToAck());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GoToAck> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GoToAck() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GoToAck(GoToAck other) : this() {
+      Success = other.Success;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GoToAck Clone() {
+      return new GoToAck(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private static readonly pb::FieldCodec<bool?> _single_success_codec = pb::FieldCodec.ForStructWrapper<bool>(10);
+    private bool? success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool? Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GoToAck);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GoToAck other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (success_ != null) hash ^= Success.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(output, Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(ref output, Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (success_ != null) {
+        size += _single_success_codec.CalculateSizeWithTag(Success);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GoToAck other) {
+      if (other == null) {
+        return;
+      }
+      if (other.success_ != null) {
+        if (success_ == null || other.Success != false) {
+          Success = other.Success;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(ref input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class SetSpeedVector : pb::IMessage<SetSpeedVector>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SetSpeedVector> _parser = new pb::MessageParser<SetSpeedVector>(() => new SetSpeedVector());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetSpeedVector> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetSpeedVector() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetSpeedVector(SetSpeedVector other) : this() {
+      XVel = other.XVel;
+      YVel = other.YVel;
+      RotVel = other.RotVel;
+      Duration = other.Duration;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetSpeedVector Clone() {
+      return new SetSpeedVector(this);
+    }
+
+    /// <summary>Field number for the "x_vel" field.</summary>
+    public const int XVelFieldNumber = 1;
+    private static readonly pb::FieldCodec<float?> _single_xVel_codec = pb::FieldCodec.ForStructWrapper<float>(10);
+    private float? xVel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? XVel {
+      get { return xVel_; }
+      set {
+        xVel_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "y_vel" field.</summary>
+    public const int YVelFieldNumber = 2;
+    private static readonly pb::FieldCodec<float?> _single_yVel_codec = pb::FieldCodec.ForStructWrapper<float>(18);
+    private float? yVel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? YVel {
+      get { return yVel_; }
+      set {
+        yVel_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "rot_vel" field.</summary>
+    public const int RotVelFieldNumber = 3;
+    private static readonly pb::FieldCodec<float?> _single_rotVel_codec = pb::FieldCodec.ForStructWrapper<float>(26);
+    private float? rotVel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? RotVel {
+      get { return rotVel_; }
+      set {
+        rotVel_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "duration" field.</summary>
+    public const int DurationFieldNumber = 4;
+    private static readonly pb::FieldCodec<float?> _single_duration_codec = pb::FieldCodec.ForStructWrapper<float>(34);
+    private float? duration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? Duration {
+      get { return duration_; }
+      set {
+        duration_ = value;
+      }
+    }
+
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetSpeedVector);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetSpeedVector other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(XVel, other.XVel)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(YVel, other.YVel)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(RotVel, other.RotVel)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(Duration, other.Duration)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (xVel_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(XVel);
+      if (yVel_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(YVel);
+      if (rotVel_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(RotVel);
+      if (duration_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(Duration);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (xVel_ != null) {
+        _single_xVel_codec.WriteTagAndValue(output, XVel);
+      }
+      if (yVel_ != null) {
+        _single_yVel_codec.WriteTagAndValue(output, YVel);
+      }
+      if (rotVel_ != null) {
+        _single_rotVel_codec.WriteTagAndValue(output, RotVel);
+      }
+      if (duration_ != null) {
+        _single_duration_codec.WriteTagAndValue(output, Duration);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (xVel_ != null) {
+        _single_xVel_codec.WriteTagAndValue(ref output, XVel);
+      }
+      if (yVel_ != null) {
+        _single_yVel_codec.WriteTagAndValue(ref output, YVel);
+      }
+      if (rotVel_ != null) {
+        _single_rotVel_codec.WriteTagAndValue(ref output, RotVel);
+      }
+      if (duration_ != null) {
+        _single_duration_codec.WriteTagAndValue(ref output, Duration);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (xVel_ != null) {
+        size += _single_xVel_codec.CalculateSizeWithTag(XVel);
+      }
+      if (yVel_ != null) {
+        size += _single_yVel_codec.CalculateSizeWithTag(YVel);
+      }
+      if (rotVel_ != null) {
+        size += _single_rotVel_codec.CalculateSizeWithTag(RotVel);
+      }
+      if (duration_ != null) {
+        size += _single_duration_codec.CalculateSizeWithTag(Duration);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetSpeedVector other) {
+      if (other == null) {
+        return;
+      }
+      if (other.xVel_ != null) {
+        if (xVel_ == null || other.XVel != 0F) {
+          XVel = other.XVel;
+        }
+      }
+      if (other.yVel_ != null) {
+        if (yVel_ == null || other.YVel != 0F) {
+          YVel = other.YVel;
+        }
+      }
+      if (other.rotVel_ != null) {
+        if (rotVel_ == null || other.RotVel != 0F) {
+          RotVel = other.RotVel;
+        }
+      }
+      if (other.duration_ != null) {
+        if (duration_ == null || other.Duration != 0F) {
+          Duration = other.Duration;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            float? value = _single_xVel_codec.Read(input);
+            if (xVel_ == null || value != 0F) {
+              XVel = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_yVel_codec.Read(input);
+            if (yVel_ == null || value != 0F) {
+              YVel = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_rotVel_codec.Read(input);
+            if (rotVel_ == null || value != 0F) {
+              RotVel = value;
+            }
+            break;
+          }
+          case 34: {
+            float? value = _single_duration_codec.Read(input);
+            if (duration_ == null || value != 0F) {
+              Duration = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            float? value = _single_xVel_codec.Read(ref input);
+            if (xVel_ == null || value != 0F) {
+              XVel = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_yVel_codec.Read(ref input);
+            if (yVel_ == null || value != 0F) {
+              YVel = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_rotVel_codec.Read(ref input);
+            if (rotVel_ == null || value != 0F) {
+              RotVel = value;
+            }
+            break;
+          }
+          case 34: {
+            float? value = _single_duration_codec.Read(ref input);
+            if (duration_ == null || value != 0F) {
+              Duration = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class SetSpeedAck : pb::IMessage<SetSpeedAck>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SetSpeedAck> _parser = new pb::MessageParser<SetSpeedAck>(() => new SetSpeedAck());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetSpeedAck> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetSpeedAck() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetSpeedAck(SetSpeedAck other) : this() {
+      Success = other.Success;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetSpeedAck Clone() {
+      return new SetSpeedAck(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private static readonly pb::FieldCodec<bool?> _single_success_codec = pb::FieldCodec.ForStructWrapper<bool>(10);
+    private bool? success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool? Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetSpeedAck);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetSpeedAck other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (success_ != null) hash ^= Success.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(output, Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(ref output, Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (success_ != null) {
+        size += _single_success_codec.CalculateSizeWithTag(Success);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetSpeedAck other) {
+      if (other == null) {
+        return;
+      }
+      if (other.success_ != null) {
+        if (success_ == null || other.Success != false) {
+          Success = other.Success;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(ref input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class OdometryVector : pb::IMessage<OdometryVector>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<OdometryVector> _parser = new pb::MessageParser<OdometryVector>(() => new OdometryVector());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<OdometryVector> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public OdometryVector() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public OdometryVector(OdometryVector other) : this() {
+      X = other.X;
+      Y = other.Y;
+      Theta = other.Theta;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public OdometryVector Clone() {
+      return new OdometryVector(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private static readonly pb::FieldCodec<float?> _single_x_codec = pb::FieldCodec.ForStructWrapper<float>(10);
+    private float? x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private static readonly pb::FieldCodec<float?> _single_y_codec = pb::FieldCodec.ForStructWrapper<float>(18);
+    private float? y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "theta" field.</summary>
+    public const int ThetaFieldNumber = 3;
+    private static readonly pb::FieldCodec<float?> _single_theta_codec = pb::FieldCodec.ForStructWrapper<float>(26);
+    private float? theta_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? Theta {
+      get { return theta_; }
+      set {
+        theta_ = value;
+      }
+    }
+
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as OdometryVector);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(OdometryVector other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(Theta, other.Theta)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (x_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(X);
+      if (y_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(Y);
+      if (theta_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(Theta);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (x_ != null) {
+        _single_x_codec.WriteTagAndValue(output, X);
+      }
+      if (y_ != null) {
+        _single_y_codec.WriteTagAndValue(output, Y);
+      }
+      if (theta_ != null) {
+        _single_theta_codec.WriteTagAndValue(output, Theta);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (x_ != null) {
+        _single_x_codec.WriteTagAndValue(ref output, X);
+      }
+      if (y_ != null) {
+        _single_y_codec.WriteTagAndValue(ref output, Y);
+      }
+      if (theta_ != null) {
+        _single_theta_codec.WriteTagAndValue(ref output, Theta);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (x_ != null) {
+        size += _single_x_codec.CalculateSizeWithTag(X);
+      }
+      if (y_ != null) {
+        size += _single_y_codec.CalculateSizeWithTag(Y);
+      }
+      if (theta_ != null) {
+        size += _single_theta_codec.CalculateSizeWithTag(Theta);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(OdometryVector other) {
+      if (other == null) {
+        return;
+      }
+      if (other.x_ != null) {
+        if (x_ == null || other.X != 0F) {
+          X = other.X;
+        }
+      }
+      if (other.y_ != null) {
+        if (y_ == null || other.Y != 0F) {
+          Y = other.Y;
+        }
+      }
+      if (other.theta_ != null) {
+        if (theta_ == null || other.Theta != 0F) {
+          Theta = other.Theta;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            float? value = _single_x_codec.Read(input);
+            if (x_ == null || value != 0F) {
+              X = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_y_codec.Read(input);
+            if (y_ == null || value != 0F) {
+              Y = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_theta_codec.Read(input);
+            if (theta_ == null || value != 0F) {
+              Theta = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            float? value = _single_x_codec.Read(ref input);
+            if (x_ == null || value != 0F) {
+              X = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_y_codec.Read(ref input);
+            if (y_ == null || value != 0F) {
+              Y = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_theta_codec.Read(ref input);
+            if (theta_ == null || value != 0F) {
+              Theta = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ResetOdometryAck : pb::IMessage<ResetOdometryAck>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ResetOdometryAck> _parser = new pb::MessageParser<ResetOdometryAck>(() => new ResetOdometryAck());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ResetOdometryAck> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ResetOdometryAck() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ResetOdometryAck(ResetOdometryAck other) : this() {
+      Success = other.Success;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ResetOdometryAck Clone() {
+      return new ResetOdometryAck(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private static readonly pb::FieldCodec<bool?> _single_success_codec = pb::FieldCodec.ForStructWrapper<bool>(10);
+    private bool? success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool? Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ResetOdometryAck);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ResetOdometryAck other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (success_ != null) hash ^= Success.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(output, Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(ref output, Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (success_ != null) {
+        size += _single_success_codec.CalculateSizeWithTag(Success);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ResetOdometryAck other) {
+      if (other == null) {
+        return;
+      }
+      if (other.success_ != null) {
+        if (success_ == null || other.Success != false) {
+          Success = other.Success;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(ref input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class DistanceToGoalVector : pb::IMessage<DistanceToGoalVector>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DistanceToGoalVector> _parser = new pb::MessageParser<DistanceToGoalVector>(() => new DistanceToGoalVector());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DistanceToGoalVector> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DistanceToGoalVector() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DistanceToGoalVector(DistanceToGoalVector other) : this() {
+      DeltaX = other.DeltaX;
+      DeltaY = other.DeltaY;
+      DeltaTheta = other.DeltaTheta;
+      Distance = other.Distance;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DistanceToGoalVector Clone() {
+      return new DistanceToGoalVector(this);
+    }
+
+    /// <summary>Field number for the "delta_x" field.</summary>
+    public const int DeltaXFieldNumber = 1;
+    private static readonly pb::FieldCodec<float?> _single_deltaX_codec = pb::FieldCodec.ForStructWrapper<float>(10);
+    private float? deltaX_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? DeltaX {
+      get { return deltaX_; }
+      set {
+        deltaX_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "delta_y" field.</summary>
+    public const int DeltaYFieldNumber = 2;
+    private static readonly pb::FieldCodec<float?> _single_deltaY_codec = pb::FieldCodec.ForStructWrapper<float>(18);
+    private float? deltaY_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? DeltaY {
+      get { return deltaY_; }
+      set {
+        deltaY_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "delta_theta" field.</summary>
+    public const int DeltaThetaFieldNumber = 3;
+    private static readonly pb::FieldCodec<float?> _single_deltaTheta_codec = pb::FieldCodec.ForStructWrapper<float>(26);
+    private float? deltaTheta_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? DeltaTheta {
+      get { return deltaTheta_; }
+      set {
+        deltaTheta_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "distance" field.</summary>
+    public const int DistanceFieldNumber = 4;
+    private static readonly pb::FieldCodec<float?> _single_distance_codec = pb::FieldCodec.ForStructWrapper<float>(34);
+    private float? distance_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? Distance {
+      get { return distance_; }
+      set {
+        distance_ = value;
+      }
+    }
+
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DistanceToGoalVector);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DistanceToGoalVector other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(DeltaX, other.DeltaX)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(DeltaY, other.DeltaY)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(DeltaTheta, other.DeltaTheta)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(Distance, other.Distance)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (deltaX_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(DeltaX);
+      if (deltaY_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(DeltaY);
+      if (deltaTheta_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(DeltaTheta);
+      if (distance_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(Distance);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (deltaX_ != null) {
+        _single_deltaX_codec.WriteTagAndValue(output, DeltaX);
+      }
+      if (deltaY_ != null) {
+        _single_deltaY_codec.WriteTagAndValue(output, DeltaY);
+      }
+      if (deltaTheta_ != null) {
+        _single_deltaTheta_codec.WriteTagAndValue(output, DeltaTheta);
+      }
+      if (distance_ != null) {
+        _single_distance_codec.WriteTagAndValue(output, Distance);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (deltaX_ != null) {
+        _single_deltaX_codec.WriteTagAndValue(ref output, DeltaX);
+      }
+      if (deltaY_ != null) {
+        _single_deltaY_codec.WriteTagAndValue(ref output, DeltaY);
+      }
+      if (deltaTheta_ != null) {
+        _single_deltaTheta_codec.WriteTagAndValue(ref output, DeltaTheta);
+      }
+      if (distance_ != null) {
+        _single_distance_codec.WriteTagAndValue(ref output, Distance);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (deltaX_ != null) {
+        size += _single_deltaX_codec.CalculateSizeWithTag(DeltaX);
+      }
+      if (deltaY_ != null) {
+        size += _single_deltaY_codec.CalculateSizeWithTag(DeltaY);
+      }
+      if (deltaTheta_ != null) {
+        size += _single_deltaTheta_codec.CalculateSizeWithTag(DeltaTheta);
+      }
+      if (distance_ != null) {
+        size += _single_distance_codec.CalculateSizeWithTag(Distance);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DistanceToGoalVector other) {
+      if (other == null) {
+        return;
+      }
+      if (other.deltaX_ != null) {
+        if (deltaX_ == null || other.DeltaX != 0F) {
+          DeltaX = other.DeltaX;
+        }
+      }
+      if (other.deltaY_ != null) {
+        if (deltaY_ == null || other.DeltaY != 0F) {
+          DeltaY = other.DeltaY;
+        }
+      }
+      if (other.deltaTheta_ != null) {
+        if (deltaTheta_ == null || other.DeltaTheta != 0F) {
+          DeltaTheta = other.DeltaTheta;
+        }
+      }
+      if (other.distance_ != null) {
+        if (distance_ == null || other.Distance != 0F) {
+          Distance = other.Distance;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            float? value = _single_deltaX_codec.Read(input);
+            if (deltaX_ == null || value != 0F) {
+              DeltaX = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_deltaY_codec.Read(input);
+            if (deltaY_ == null || value != 0F) {
+              DeltaY = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_deltaTheta_codec.Read(input);
+            if (deltaTheta_ == null || value != 0F) {
+              DeltaTheta = value;
+            }
+            break;
+          }
+          case 34: {
+            float? value = _single_distance_codec.Read(input);
+            if (distance_ == null || value != 0F) {
+              Distance = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            float? value = _single_deltaX_codec.Read(ref input);
+            if (deltaX_ == null || value != 0F) {
+              DeltaX = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_deltaY_codec.Read(ref input);
+            if (deltaY_ == null || value != 0F) {
+              DeltaY = value;
+            }
+            break;
+          }
+          case 26: {
+            float? value = _single_deltaTheta_codec.Read(ref input);
+            if (deltaTheta_ == null || value != 0F) {
+              DeltaTheta = value;
+            }
+            break;
+          }
+          case 34: {
+            float? value = _single_distance_codec.Read(ref input);
+            if (distance_ == null || value != 0F) {
+              Distance = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ControlModeCommand : pb::IMessage<ControlModeCommand>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ControlModeCommand> _parser = new pb::MessageParser<ControlModeCommand>(() => new ControlModeCommand());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ControlModeCommand> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ControlModeCommand() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ControlModeCommand(ControlModeCommand other) : this() {
+      mode_ = other.mode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ControlModeCommand Clone() {
+      return new ControlModeCommand(this);
+    }
+
+    /// <summary>Field number for the "mode" field.</summary>
+    public const int ModeFieldNumber = 1;
+    private global::Reachy.Sdk.Mobility.ControlModePossiblities mode_ = global::Reachy.Sdk.Mobility.ControlModePossiblities.NoneControlMode;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Mobility.ControlModePossiblities Mode {
+      get { return mode_; }
+      set {
+        mode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ControlModeCommand);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ControlModeCommand other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Mode != other.Mode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Mode != global::Reachy.Sdk.Mobility.ControlModePossiblities.NoneControlMode) hash ^= Mode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Mode != global::Reachy.Sdk.Mobility.ControlModePossiblities.NoneControlMode) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Mode);
       }
@@ -721,7 +2576,7 @@ namespace Reachy.Sdk.Mobility {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Mode != global::Reachy.Sdk.Mobility.WheelingModePossiblities.Idle) {
+      if (Mode != global::Reachy.Sdk.Mobility.ControlModePossiblities.NoneControlMode) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Mode);
       }
@@ -734,7 +2589,7 @@ namespace Reachy.Sdk.Mobility {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Mode != global::Reachy.Sdk.Mobility.WheelingModePossiblities.Idle) {
+      if (Mode != global::Reachy.Sdk.Mobility.ControlModePossiblities.NoneControlMode) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Mode);
       }
       if (_unknownFields != null) {
@@ -744,11 +2599,11 @@ namespace Reachy.Sdk.Mobility {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(WheelingModeCommand other) {
+    public void MergeFrom(ControlModeCommand other) {
       if (other == null) {
         return;
       }
-      if (other.Mode != global::Reachy.Sdk.Mobility.WheelingModePossiblities.Idle) {
+      if (other.Mode != global::Reachy.Sdk.Mobility.ControlModePossiblities.NoneControlMode) {
         Mode = other.Mode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -766,7 +2621,7 @@ namespace Reachy.Sdk.Mobility {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Mode = (global::Reachy.Sdk.Mobility.WheelingModePossiblities) input.ReadEnum();
+            Mode = (global::Reachy.Sdk.Mobility.ControlModePossiblities) input.ReadEnum();
             break;
           }
         }
@@ -784,7 +2639,7 @@ namespace Reachy.Sdk.Mobility {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Mode = (global::Reachy.Sdk.Mobility.WheelingModePossiblities) input.ReadEnum();
+            Mode = (global::Reachy.Sdk.Mobility.ControlModePossiblities) input.ReadEnum();
             break;
           }
         }
@@ -794,19 +2649,19 @@ namespace Reachy.Sdk.Mobility {
 
   }
 
-  public sealed partial class WheelingModeCommandAck : pb::IMessage<WheelingModeCommandAck>
+  public sealed partial class ControlModeCommandAck : pb::IMessage<ControlModeCommandAck>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<WheelingModeCommandAck> _parser = new pb::MessageParser<WheelingModeCommandAck>(() => new WheelingModeCommandAck());
+    private static readonly pb::MessageParser<ControlModeCommandAck> _parser = new pb::MessageParser<ControlModeCommandAck>(() => new ControlModeCommandAck());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<WheelingModeCommandAck> Parser { get { return _parser; } }
+    public static pb::MessageParser<ControlModeCommandAck> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -815,41 +2670,43 @@ namespace Reachy.Sdk.Mobility {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public WheelingModeCommandAck() {
+    public ControlModeCommandAck() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public WheelingModeCommandAck(WheelingModeCommandAck other) : this() {
-      success_ = other.success_;
+    public ControlModeCommandAck(ControlModeCommandAck other) : this() {
+      Success = other.Success;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public WheelingModeCommandAck Clone() {
-      return new WheelingModeCommandAck(this);
+    public ControlModeCommandAck Clone() {
+      return new ControlModeCommandAck(this);
     }
 
     /// <summary>Field number for the "success" field.</summary>
     public const int SuccessFieldNumber = 1;
-    private bool success_;
+    private static readonly pb::FieldCodec<bool?> _single_success_codec = pb::FieldCodec.ForStructWrapper<bool>(10);
+    private bool? success_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Success {
+    public bool? Success {
       get { return success_; }
       set {
         success_ = value;
       }
     }
 
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as WheelingModeCommandAck);
+      return Equals(other as ControlModeCommandAck);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(WheelingModeCommandAck other) {
+    public bool Equals(ControlModeCommandAck other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -863,7 +2720,7 @@ namespace Reachy.Sdk.Mobility {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Success != false) hash ^= Success.GetHashCode();
+      if (success_ != null) hash ^= Success.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -880,9 +2737,8 @@ namespace Reachy.Sdk.Mobility {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Success != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Success);
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(output, Success);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -893,9 +2749,8 @@ namespace Reachy.Sdk.Mobility {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Success != false) {
-        output.WriteRawTag(8);
-        output.WriteBool(Success);
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(ref output, Success);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -906,8 +2761,8 @@ namespace Reachy.Sdk.Mobility {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Success != false) {
-        size += 1 + 1;
+      if (success_ != null) {
+        size += _single_success_codec.CalculateSizeWithTag(Success);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -916,12 +2771,192 @@ namespace Reachy.Sdk.Mobility {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(WheelingModeCommandAck other) {
+    public void MergeFrom(ControlModeCommandAck other) {
       if (other == null) {
         return;
       }
-      if (other.Success != false) {
-        Success = other.Success;
+      if (other.success_ != null) {
+        if (success_ == null || other.Success != false) {
+          Success = other.Success;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(ref input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ZuuuModeCommand : pb::IMessage<ZuuuModeCommand>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ZuuuModeCommand> _parser = new pb::MessageParser<ZuuuModeCommand>(() => new ZuuuModeCommand());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ZuuuModeCommand> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZuuuModeCommand() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZuuuModeCommand(ZuuuModeCommand other) : this() {
+      mode_ = other.mode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZuuuModeCommand Clone() {
+      return new ZuuuModeCommand(this);
+    }
+
+    /// <summary>Field number for the "mode" field.</summary>
+    public const int ModeFieldNumber = 1;
+    private global::Reachy.Sdk.Mobility.ZuuuModePossiblities mode_ = global::Reachy.Sdk.Mobility.ZuuuModePossiblities.NoneZuuuMode;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Mobility.ZuuuModePossiblities Mode {
+      get { return mode_; }
+      set {
+        mode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ZuuuModeCommand);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ZuuuModeCommand other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Mode != other.Mode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Mode != global::Reachy.Sdk.Mobility.ZuuuModePossiblities.NoneZuuuMode) hash ^= Mode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Mode != global::Reachy.Sdk.Mobility.ZuuuModePossiblities.NoneZuuuMode) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Mode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Mode != global::Reachy.Sdk.Mobility.ZuuuModePossiblities.NoneZuuuMode) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Mode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Mode != global::Reachy.Sdk.Mobility.ZuuuModePossiblities.NoneZuuuMode) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Mode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ZuuuModeCommand other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Mode != global::Reachy.Sdk.Mobility.ZuuuModePossiblities.NoneZuuuMode) {
+        Mode = other.Mode;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -938,7 +2973,7 @@ namespace Reachy.Sdk.Mobility {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Success = input.ReadBool();
+            Mode = (global::Reachy.Sdk.Mobility.ZuuuModePossiblities) input.ReadEnum();
             break;
           }
         }
@@ -956,7 +2991,856 @@ namespace Reachy.Sdk.Mobility {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Success = input.ReadBool();
+            Mode = (global::Reachy.Sdk.Mobility.ZuuuModePossiblities) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ZuuuModeCommandAck : pb::IMessage<ZuuuModeCommandAck>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ZuuuModeCommandAck> _parser = new pb::MessageParser<ZuuuModeCommandAck>(() => new ZuuuModeCommandAck());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ZuuuModeCommandAck> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZuuuModeCommandAck() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZuuuModeCommandAck(ZuuuModeCommandAck other) : this() {
+      Success = other.Success;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ZuuuModeCommandAck Clone() {
+      return new ZuuuModeCommandAck(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private static readonly pb::FieldCodec<bool?> _single_success_codec = pb::FieldCodec.ForStructWrapper<bool>(10);
+    private bool? success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool? Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ZuuuModeCommandAck);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ZuuuModeCommandAck other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (success_ != null) hash ^= Success.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(output, Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (success_ != null) {
+        _single_success_codec.WriteTagAndValue(ref output, Success);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (success_ != null) {
+        size += _single_success_codec.CalculateSizeWithTag(Success);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ZuuuModeCommandAck other) {
+      if (other == null) {
+        return;
+      }
+      if (other.success_ != null) {
+        if (success_ == null || other.Success != false) {
+          Success = other.Success;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            bool? value = _single_success_codec.Read(ref input);
+            if (success_ == null || value != false) {
+              Success = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class BatteryLevel : pb::IMessage<BatteryLevel>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BatteryLevel> _parser = new pb::MessageParser<BatteryLevel>(() => new BatteryLevel());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<BatteryLevel> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BatteryLevel() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BatteryLevel(BatteryLevel other) : this() {
+      Level = other.Level;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public BatteryLevel Clone() {
+      return new BatteryLevel(this);
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 1;
+    private static readonly pb::FieldCodec<float?> _single_level_codec = pb::FieldCodec.ForStructWrapper<float>(10);
+    private float? level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as BatteryLevel);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(BatteryLevel other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(Level, other.Level)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (level_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(Level);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (level_ != null) {
+        _single_level_codec.WriteTagAndValue(output, Level);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (level_ != null) {
+        _single_level_codec.WriteTagAndValue(ref output, Level);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (level_ != null) {
+        size += _single_level_codec.CalculateSizeWithTag(Level);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(BatteryLevel other) {
+      if (other == null) {
+        return;
+      }
+      if (other.level_ != null) {
+        if (level_ == null || other.Level != 0F) {
+          Level = other.Level;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            float? value = _single_level_codec.Read(input);
+            if (level_ == null || value != 0F) {
+              Level = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            float? value = _single_level_codec.Read(ref input);
+            if (level_ == null || value != 0F) {
+              Level = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class MobileBasePresence : pb::IMessage<MobileBasePresence>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MobileBasePresence> _parser = new pb::MessageParser<MobileBasePresence>(() => new MobileBasePresence());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<MobileBasePresence> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[15]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MobileBasePresence() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MobileBasePresence(MobileBasePresence other) : this() {
+      Presence = other.Presence;
+      ModelVersion = other.ModelVersion;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MobileBasePresence Clone() {
+      return new MobileBasePresence(this);
+    }
+
+    /// <summary>Field number for the "presence" field.</summary>
+    public const int PresenceFieldNumber = 1;
+    private static readonly pb::FieldCodec<bool?> _single_presence_codec = pb::FieldCodec.ForStructWrapper<bool>(10);
+    private bool? presence_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool? Presence {
+      get { return presence_; }
+      set {
+        presence_ = value;
+      }
+    }
+
+
+    /// <summary>Field number for the "model_version" field.</summary>
+    public const int ModelVersionFieldNumber = 2;
+    private static readonly pb::FieldCodec<float?> _single_modelVersion_codec = pb::FieldCodec.ForStructWrapper<float>(18);
+    private float? modelVersion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float? ModelVersion {
+      get { return modelVersion_; }
+      set {
+        modelVersion_ = value;
+      }
+    }
+
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as MobileBasePresence);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(MobileBasePresence other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Presence != other.Presence) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.Equals(ModelVersion, other.ModelVersion)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (presence_ != null) hash ^= Presence.GetHashCode();
+      if (modelVersion_ != null) hash ^= pbc::ProtobufEqualityComparers.BitwiseNullableSingleEqualityComparer.GetHashCode(ModelVersion);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (presence_ != null) {
+        _single_presence_codec.WriteTagAndValue(output, Presence);
+      }
+      if (modelVersion_ != null) {
+        _single_modelVersion_codec.WriteTagAndValue(output, ModelVersion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (presence_ != null) {
+        _single_presence_codec.WriteTagAndValue(ref output, Presence);
+      }
+      if (modelVersion_ != null) {
+        _single_modelVersion_codec.WriteTagAndValue(ref output, ModelVersion);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (presence_ != null) {
+        size += _single_presence_codec.CalculateSizeWithTag(Presence);
+      }
+      if (modelVersion_ != null) {
+        size += _single_modelVersion_codec.CalculateSizeWithTag(ModelVersion);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(MobileBasePresence other) {
+      if (other == null) {
+        return;
+      }
+      if (other.presence_ != null) {
+        if (presence_ == null || other.Presence != false) {
+          Presence = other.Presence;
+        }
+      }
+      if (other.modelVersion_ != null) {
+        if (modelVersion_ == null || other.ModelVersion != 0F) {
+          ModelVersion = other.ModelVersion;
+        }
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            bool? value = _single_presence_codec.Read(input);
+            if (presence_ == null || value != false) {
+              Presence = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_modelVersion_codec.Read(input);
+            if (modelVersion_ == null || value != 0F) {
+              ModelVersion = value;
+            }
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            bool? value = _single_presence_codec.Read(ref input);
+            if (presence_ == null || value != false) {
+              Presence = value;
+            }
+            break;
+          }
+          case 18: {
+            float? value = _single_modelVersion_codec.Read(ref input);
+            if (modelVersion_ == null || value != 0F) {
+              ModelVersion = value;
+            }
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class AnyMobileBaseCommand : pb::IMessage<AnyMobileBaseCommand>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AnyMobileBaseCommand> _parser = new pb::MessageParser<AnyMobileBaseCommand>(() => new AnyMobileBaseCommand());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<AnyMobileBaseCommand> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Reachy.Sdk.Mobility.MobilePlatformReachyReflection.Descriptor.MessageTypes[16]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AnyMobileBaseCommand() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AnyMobileBaseCommand(AnyMobileBaseCommand other) : this() {
+      switch (other.CommandCase) {
+        case CommandOneofCase.TargetDirection:
+          TargetDirection = other.TargetDirection.Clone();
+          break;
+        case CommandOneofCase.WheelingMode:
+          WheelingMode = other.WheelingMode.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public AnyMobileBaseCommand Clone() {
+      return new AnyMobileBaseCommand(this);
+    }
+
+    /// <summary>Field number for the "target_direction" field.</summary>
+    public const int TargetDirectionFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Mobility.TargetDirectionCommand TargetDirection {
+      get { return commandCase_ == CommandOneofCase.TargetDirection ? (global::Reachy.Sdk.Mobility.TargetDirectionCommand) command_ : null; }
+      set {
+        command_ = value;
+        commandCase_ = value == null ? CommandOneofCase.None : CommandOneofCase.TargetDirection;
+      }
+    }
+
+    /// <summary>Field number for the "wheeling_mode" field.</summary>
+    public const int WheelingModeFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Reachy.Sdk.Mobility.ControlModeCommand WheelingMode {
+      get { return commandCase_ == CommandOneofCase.WheelingMode ? (global::Reachy.Sdk.Mobility.ControlModeCommand) command_ : null; }
+      set {
+        command_ = value;
+        commandCase_ = value == null ? CommandOneofCase.None : CommandOneofCase.WheelingMode;
+      }
+    }
+
+    private object command_;
+    /// <summary>Enum of possible cases for the "command" oneof.</summary>
+    public enum CommandOneofCase {
+      None = 0,
+      TargetDirection = 1,
+      WheelingMode = 2,
+    }
+    private CommandOneofCase commandCase_ = CommandOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public CommandOneofCase CommandCase {
+      get { return commandCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearCommand() {
+      commandCase_ = CommandOneofCase.None;
+      command_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as AnyMobileBaseCommand);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(AnyMobileBaseCommand other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(TargetDirection, other.TargetDirection)) return false;
+      if (!object.Equals(WheelingMode, other.WheelingMode)) return false;
+      if (CommandCase != other.CommandCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (commandCase_ == CommandOneofCase.TargetDirection) hash ^= TargetDirection.GetHashCode();
+      if (commandCase_ == CommandOneofCase.WheelingMode) hash ^= WheelingMode.GetHashCode();
+      hash ^= (int) commandCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (commandCase_ == CommandOneofCase.TargetDirection) {
+        output.WriteRawTag(10);
+        output.WriteMessage(TargetDirection);
+      }
+      if (commandCase_ == CommandOneofCase.WheelingMode) {
+        output.WriteRawTag(18);
+        output.WriteMessage(WheelingMode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (commandCase_ == CommandOneofCase.TargetDirection) {
+        output.WriteRawTag(10);
+        output.WriteMessage(TargetDirection);
+      }
+      if (commandCase_ == CommandOneofCase.WheelingMode) {
+        output.WriteRawTag(18);
+        output.WriteMessage(WheelingMode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (commandCase_ == CommandOneofCase.TargetDirection) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetDirection);
+      }
+      if (commandCase_ == CommandOneofCase.WheelingMode) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WheelingMode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(AnyMobileBaseCommand other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.CommandCase) {
+        case CommandOneofCase.TargetDirection:
+          if (TargetDirection == null) {
+            TargetDirection = new global::Reachy.Sdk.Mobility.TargetDirectionCommand();
+          }
+          TargetDirection.MergeFrom(other.TargetDirection);
+          break;
+        case CommandOneofCase.WheelingMode:
+          if (WheelingMode == null) {
+            WheelingMode = new global::Reachy.Sdk.Mobility.ControlModeCommand();
+          }
+          WheelingMode.MergeFrom(other.WheelingMode);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::Reachy.Sdk.Mobility.TargetDirectionCommand subBuilder = new global::Reachy.Sdk.Mobility.TargetDirectionCommand();
+            if (commandCase_ == CommandOneofCase.TargetDirection) {
+              subBuilder.MergeFrom(TargetDirection);
+            }
+            input.ReadMessage(subBuilder);
+            TargetDirection = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Reachy.Sdk.Mobility.ControlModeCommand subBuilder = new global::Reachy.Sdk.Mobility.ControlModeCommand();
+            if (commandCase_ == CommandOneofCase.WheelingMode) {
+              subBuilder.MergeFrom(WheelingMode);
+            }
+            input.ReadMessage(subBuilder);
+            WheelingMode = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::Reachy.Sdk.Mobility.TargetDirectionCommand subBuilder = new global::Reachy.Sdk.Mobility.TargetDirectionCommand();
+            if (commandCase_ == CommandOneofCase.TargetDirection) {
+              subBuilder.MergeFrom(TargetDirection);
+            }
+            input.ReadMessage(subBuilder);
+            TargetDirection = subBuilder;
+            break;
+          }
+          case 18: {
+            global::Reachy.Sdk.Mobility.ControlModeCommand subBuilder = new global::Reachy.Sdk.Mobility.ControlModeCommand();
+            if (commandCase_ == CommandOneofCase.WheelingMode) {
+              subBuilder.MergeFrom(WheelingMode);
+            }
+            input.ReadMessage(subBuilder);
+            WheelingMode = subBuilder;
             break;
           }
         }
