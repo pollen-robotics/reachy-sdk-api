@@ -91,10 +91,10 @@ _ANYJOINTSCOMMAND = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
+
   serialized_start=160,
   serialized_end=481,
 )
-
 _ANYJOINTSCOMMAND.fields_by_name['full_body'].message_type = fullbody__cartesian__command__pb2._FULLBODYCARTESIANCOMMAND
 _ANYJOINTSCOMMAND.fields_by_name['gripper'].message_type = gripper__pb2._GRIPPERSCOMMAND
 _ANYJOINTSCOMMAND.fields_by_name['joints'].message_type = joint__pb2._JOINTSCOMMAND

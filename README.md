@@ -70,8 +70,25 @@ Service: **SensorService**
 * **GetSensorsState** - Return the state of the requested sensors.
 * **StreamSensorStates** - Stream the state of the requested sensors.
 
+### In *[mobile_platform_reachy.proto](https://github.com/pollen-robotics/reachy-sdk-api/blob/main/protos/mobile_platform_reachy.proto)*:
+Service : **MobilityService**
+* **SendDirection** - Send velocities commands to the mobile base for a predifined period of time.
+* **SendSetSpeed** - Send velocities commands to the mobile base.
+* **SendGoTo** - Send GoTo instruction to the mobile base.
+* **DistanceToGoal** - Return delta x, delta y, delta theta and distance from the last goal position sent using SendGoTo.
+* **SetControlMode** - Set the mobile base's control mode.
+* **GetControlMode** - Get the mobile base's control mode.
+* **SetZuuuMode** - Set the mobile base's drive mode.
+* **GetZuuuMode** - Get the mobile base's drive mode.
+* **GetBatteryLevel** - Get the mobile base's battery voltage.
+* **GetOdometry** - Get the mobile base's odometry.
+* **ResetOdometry** - Reset the mobile base's odometry.
+* **SetZuuuSafety** - Disable / enable the mobile base's anti-collision safety provided by the Lidar.
+
+Service : **MobileBasePresenceService**
+* **GetMobileBasePresence** - Return if a mobile base is specified in Reachy config file. If yes, return the mobile base's version.
 ---
 
 This API is part of the version 2021 software release of Reachy.
 
-Visit [pollen-robotics.com](https://pollen-robotics.com) to learn more or visit [our forum](https://forum.pollen-robotics.com) if you have any questions.
+Visit [pollen-robotics.com](https://pollen-robotics.com) to learn more or join our [Dicord community](https://discord.com/invite/Kg3mZHTKgs) if you have any questions or want to share your ideas.

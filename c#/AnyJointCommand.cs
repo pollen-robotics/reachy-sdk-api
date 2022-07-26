@@ -26,19 +26,16 @@ namespace Reachy.Sdk.Joint {
           string.Concat(
             "Chdhbnlfam9pbnRfY29tbWFuZC5wcm90bxIQcmVhY2h5LnNkay5qb2ludBof",
             "Z29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5wcm90bxogZnVsbGJvZHlfY2Fy",
-            "dGVzaWFuX2NvbW1hbmQucHJvdG8aDWdyaXBwZXIucHJvdG8aC2pvaW50LnBy",
-            "b3RvGhFncmlwcGVyTVgyOC5wcm90byLBAgoQQW55Sm9pbnRzQ29tbWFuZBJE",
-            "CglmdWxsX2JvZHkYASABKAsyLy5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuRnVs",
-            "bEJvZHlDYXJ0ZXNpYW5Db21tYW5kSAASNgoHZ3JpcHBlchgCIAEoCzIjLnJl",
-            "YWNoeS5zZGsuZ3JpcHBlci5HcmlwcGVyc0NvbW1hbmRIABIxCgZqb2ludHMY",
-            "AyABKAsyHy5yZWFjaHkuc2RrLmpvaW50LkpvaW50c0NvbW1hbmRIABJCCgtn",
-            "cmlwcGVyTVgyOBgEIAEoCzIrLnJlYWNoeS5zZGsuZ3JpcHBlck1YMjguR3Jp",
-            "cHBlcnNNWDI4Q29tbWFuZEgAEi0KCXRpbWVzdGFtcBgPIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5UaW1lc3RhbXBCCQoHY29tbWFuZGIGcHJvdG8z"));
+            "dGVzaWFuX2NvbW1hbmQucHJvdG8aC2pvaW50LnByb3RvIsUBChBBbnlKb2lu",
+            "dHNDb21tYW5kEkQKCWZ1bGxfYm9keRgBIAEoCzIvLnJlYWNoeS5zZGsua2lu",
+            "ZW1hdGljcy5GdWxsQm9keUNhcnRlc2lhbkNvbW1hbmRIABIxCgZqb2ludHMY",
+            "AyABKAsyHy5yZWFjaHkuc2RrLmpvaW50LkpvaW50c0NvbW1hbmRIABItCgl0",
+            "aW1lc3RhbXAYDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgkK",
+            "B2NvbW1hbmRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Reachy.Sdk.Kinematics.FullbodyCartesianCommandReflection.Descriptor, global::Reachy.Sdk.Gripper.GripperReflection.Descriptor, global::Reachy.Sdk.Joint.JointReflection.Descriptor, global::Reachy.Sdk.GripperMX28.GripperMX28Reflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Reachy.Sdk.Kinematics.FullbodyCartesianCommandReflection.Descriptor, global::Reachy.Sdk.Joint.JointReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.AnyJointsCommand), global::Reachy.Sdk.Joint.AnyJointsCommand.Parser, new[]{ "FullBody", "Gripper", "Joints", "GripperMX28", "Timestamp" }, new[]{ "Command" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Joint.AnyJointsCommand), global::Reachy.Sdk.Joint.AnyJointsCommand.Parser, new[]{ "FullBody", "Joints", "Timestamp" }, new[]{ "Command" }, null, null, null)
           }));
     }
     #endregion
@@ -161,6 +158,7 @@ namespace Reachy.Sdk.Joint {
       Gripper = 2,
       Joints = 3,
       GripperMX28 = 4,
+
     }
     private CommandOneofCase commandCase_ = CommandOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -191,6 +189,7 @@ namespace Reachy.Sdk.Joint {
       if (!object.Equals(Gripper, other.Gripper)) return false;
       if (!object.Equals(Joints, other.Joints)) return false;
       if (!object.Equals(GripperMX28, other.GripperMX28)) return false;
+
       if (!object.Equals(Timestamp, other.Timestamp)) return false;
       if (CommandCase != other.CommandCase) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -229,6 +228,7 @@ namespace Reachy.Sdk.Joint {
         output.WriteRawTag(18);
         output.WriteMessage(Gripper);
       }
+
       if (commandCase_ == CommandOneofCase.Joints) {
         output.WriteRawTag(26);
         output.WriteMessage(Joints);

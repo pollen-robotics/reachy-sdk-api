@@ -10,6 +10,7 @@ import "joint.proto";
 import "gripperMX28.proto";
 
 
+
 message AnyJointsCommand {
     oneof command {
         reachy.sdk.kinematics.FullBodyCartesianCommand full_body = 1;
