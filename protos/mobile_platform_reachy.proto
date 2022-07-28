@@ -76,13 +76,6 @@ message MobileBasePresence {
     google.protobuf.FloatValue model_version = 2;
 }
 
-message AnyMobileBaseCommand {
-    oneof command {
-        TargetDirectionCommand target_direction = 1;
-        ControlModeCommand wheeling_mode = 2;
-    }
-}
-
 message SetZuuuSafetyRequest {
     google.protobuf.BoolValue safety_on = 1;
 }

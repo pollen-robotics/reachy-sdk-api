@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package reachy.sdk.mobility;
+
+import "mobile_platform_reachy.proto";
+
+message ResetOdometryMessage {
+    google.protobuf.Empty reset = 1;
+}
+
+message AnyMobileBaseCommand {
+    oneof command {
+        MobileBasePresence presence = 1;
+        TargetDirectionCommand target_direction = 2;
+        ZuuuModeCommand mode_command = 3;
+        GoToVector go_to = 4;
+        ResetOdometryMessage reset_odometry = 5;
+    }
+    google.protobuf.Timestamp timestamp = 15;
+} 
