@@ -43,41 +43,37 @@ namespace Reachy.Sdk.Mobility {
     }
 
     static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.TargetDirectionCommand> __Marshaller_reachy_sdk_mobility_TargetDirectionCommand = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.TargetDirectionCommand.Parser));
-    static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.TargetDirectionCommandAck> __Marshaller_reachy_sdk_mobility_TargetDirectionCommandAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.TargetDirectionCommandAck.Parser));
+    static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.MobilityServiceAck> __Marshaller_reachy_sdk_mobility_MobilityServiceAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.MobilityServiceAck.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.SetSpeedVector> __Marshaller_reachy_sdk_mobility_SetSpeedVector = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.SetSpeedVector.Parser));
-    static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.SetSpeedAck> __Marshaller_reachy_sdk_mobility_SetSpeedAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.SetSpeedAck.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.GoToVector> __Marshaller_reachy_sdk_mobility_GoToVector = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.GoToVector.Parser));
-    static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.GoToAck> __Marshaller_reachy_sdk_mobility_GoToAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.GoToAck.Parser));
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.DistanceToGoalVector> __Marshaller_reachy_sdk_mobility_DistanceToGoalVector = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.DistanceToGoalVector.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.ControlModeCommand> __Marshaller_reachy_sdk_mobility_ControlModeCommand = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.ControlModeCommand.Parser));
-    static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.ControlModeCommandAck> __Marshaller_reachy_sdk_mobility_ControlModeCommandAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.ControlModeCommandAck.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.ZuuuModeCommand> __Marshaller_reachy_sdk_mobility_ZuuuModeCommand = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.ZuuuModeCommand.Parser));
-    static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.ZuuuModeCommandAck> __Marshaller_reachy_sdk_mobility_ZuuuModeCommandAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.ZuuuModeCommandAck.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.BatteryLevel> __Marshaller_reachy_sdk_mobility_BatteryLevel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.BatteryLevel.Parser));
     static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.OdometryVector> __Marshaller_reachy_sdk_mobility_OdometryVector = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.OdometryVector.Parser));
-    static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.ResetOdometryAck> __Marshaller_reachy_sdk_mobility_ResetOdometryAck = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.ResetOdometryAck.Parser));
+    static readonly grpc::Marshaller<global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest> __Marshaller_reachy_sdk_mobility_SetZuuuSafetyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest.Parser));
 
-    static readonly grpc::Method<global::Reachy.Sdk.Mobility.TargetDirectionCommand, global::Reachy.Sdk.Mobility.TargetDirectionCommandAck> __Method_SendDirection = new grpc::Method<global::Reachy.Sdk.Mobility.TargetDirectionCommand, global::Reachy.Sdk.Mobility.TargetDirectionCommandAck>(
+    static readonly grpc::Method<global::Reachy.Sdk.Mobility.TargetDirectionCommand, global::Reachy.Sdk.Mobility.MobilityServiceAck> __Method_SendDirection = new grpc::Method<global::Reachy.Sdk.Mobility.TargetDirectionCommand, global::Reachy.Sdk.Mobility.MobilityServiceAck>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SendDirection",
         __Marshaller_reachy_sdk_mobility_TargetDirectionCommand,
-        __Marshaller_reachy_sdk_mobility_TargetDirectionCommandAck);
+        __Marshaller_reachy_sdk_mobility_MobilityServiceAck);
 
-    static readonly grpc::Method<global::Reachy.Sdk.Mobility.SetSpeedVector, global::Reachy.Sdk.Mobility.SetSpeedAck> __Method_SendSetSpeed = new grpc::Method<global::Reachy.Sdk.Mobility.SetSpeedVector, global::Reachy.Sdk.Mobility.SetSpeedAck>(
+    static readonly grpc::Method<global::Reachy.Sdk.Mobility.SetSpeedVector, global::Reachy.Sdk.Mobility.MobilityServiceAck> __Method_SendSetSpeed = new grpc::Method<global::Reachy.Sdk.Mobility.SetSpeedVector, global::Reachy.Sdk.Mobility.MobilityServiceAck>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SendSetSpeed",
         __Marshaller_reachy_sdk_mobility_SetSpeedVector,
-        __Marshaller_reachy_sdk_mobility_SetSpeedAck);
+        __Marshaller_reachy_sdk_mobility_MobilityServiceAck);
 
-    static readonly grpc::Method<global::Reachy.Sdk.Mobility.GoToVector, global::Reachy.Sdk.Mobility.GoToAck> __Method_SendGoTo = new grpc::Method<global::Reachy.Sdk.Mobility.GoToVector, global::Reachy.Sdk.Mobility.GoToAck>(
+    static readonly grpc::Method<global::Reachy.Sdk.Mobility.GoToVector, global::Reachy.Sdk.Mobility.MobilityServiceAck> __Method_SendGoTo = new grpc::Method<global::Reachy.Sdk.Mobility.GoToVector, global::Reachy.Sdk.Mobility.MobilityServiceAck>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SendGoTo",
         __Marshaller_reachy_sdk_mobility_GoToVector,
-        __Marshaller_reachy_sdk_mobility_GoToAck);
+        __Marshaller_reachy_sdk_mobility_MobilityServiceAck);
 
     static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.DistanceToGoalVector> __Method_DistanceToGoal = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.DistanceToGoalVector>(
         grpc::MethodType.Unary,
@@ -86,12 +82,12 @@ namespace Reachy.Sdk.Mobility {
         __Marshaller_google_protobuf_Empty,
         __Marshaller_reachy_sdk_mobility_DistanceToGoalVector);
 
-    static readonly grpc::Method<global::Reachy.Sdk.Mobility.ControlModeCommand, global::Reachy.Sdk.Mobility.ControlModeCommandAck> __Method_SetControlMode = new grpc::Method<global::Reachy.Sdk.Mobility.ControlModeCommand, global::Reachy.Sdk.Mobility.ControlModeCommandAck>(
+    static readonly grpc::Method<global::Reachy.Sdk.Mobility.ControlModeCommand, global::Reachy.Sdk.Mobility.MobilityServiceAck> __Method_SetControlMode = new grpc::Method<global::Reachy.Sdk.Mobility.ControlModeCommand, global::Reachy.Sdk.Mobility.MobilityServiceAck>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SetControlMode",
         __Marshaller_reachy_sdk_mobility_ControlModeCommand,
-        __Marshaller_reachy_sdk_mobility_ControlModeCommandAck);
+        __Marshaller_reachy_sdk_mobility_MobilityServiceAck);
 
     static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.ControlModeCommand> __Method_GetControlMode = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.ControlModeCommand>(
         grpc::MethodType.Unary,
@@ -100,12 +96,12 @@ namespace Reachy.Sdk.Mobility {
         __Marshaller_google_protobuf_Empty,
         __Marshaller_reachy_sdk_mobility_ControlModeCommand);
 
-    static readonly grpc::Method<global::Reachy.Sdk.Mobility.ZuuuModeCommand, global::Reachy.Sdk.Mobility.ZuuuModeCommandAck> __Method_SetZuuuMode = new grpc::Method<global::Reachy.Sdk.Mobility.ZuuuModeCommand, global::Reachy.Sdk.Mobility.ZuuuModeCommandAck>(
+    static readonly grpc::Method<global::Reachy.Sdk.Mobility.ZuuuModeCommand, global::Reachy.Sdk.Mobility.MobilityServiceAck> __Method_SetZuuuMode = new grpc::Method<global::Reachy.Sdk.Mobility.ZuuuModeCommand, global::Reachy.Sdk.Mobility.MobilityServiceAck>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SetZuuuMode",
         __Marshaller_reachy_sdk_mobility_ZuuuModeCommand,
-        __Marshaller_reachy_sdk_mobility_ZuuuModeCommandAck);
+        __Marshaller_reachy_sdk_mobility_MobilityServiceAck);
 
     static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.ZuuuModeCommand> __Method_GetZuuuMode = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.ZuuuModeCommand>(
         grpc::MethodType.Unary,
@@ -128,12 +124,19 @@ namespace Reachy.Sdk.Mobility {
         __Marshaller_google_protobuf_Empty,
         __Marshaller_reachy_sdk_mobility_OdometryVector);
 
-    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.ResetOdometryAck> __Method_ResetOdometry = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.ResetOdometryAck>(
+    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.MobilityServiceAck> __Method_ResetOdometry = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.MobilityServiceAck>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ResetOdometry",
         __Marshaller_google_protobuf_Empty,
-        __Marshaller_reachy_sdk_mobility_ResetOdometryAck);
+        __Marshaller_reachy_sdk_mobility_MobilityServiceAck);
+
+    static readonly grpc::Method<global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest, global::Reachy.Sdk.Mobility.MobilityServiceAck> __Method_SetZuuuSafety = new grpc::Method<global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest, global::Reachy.Sdk.Mobility.MobilityServiceAck>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SetZuuuSafety",
+        __Marshaller_reachy_sdk_mobility_SetZuuuSafetyRequest,
+        __Marshaller_reachy_sdk_mobility_MobilityServiceAck);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -151,17 +154,17 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.TargetDirectionCommandAck> SendDirection(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.MobilityServiceAck> SendDirection(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.SetSpeedAck> SendSetSpeed(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.MobilityServiceAck> SendSetSpeed(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.GoToAck> SendGoTo(global::Reachy.Sdk.Mobility.GoToVector request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.MobilityServiceAck> SendGoTo(global::Reachy.Sdk.Mobility.GoToVector request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -183,7 +186,7 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.ControlModeCommandAck> SetControlMode(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.MobilityServiceAck> SetControlMode(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -193,7 +196,7 @@ namespace Reachy.Sdk.Mobility {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.ZuuuModeCommandAck> SetZuuuMode(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.MobilityServiceAck> SetZuuuMode(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -213,7 +216,12 @@ namespace Reachy.Sdk.Mobility {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.ResetOdometryAck> ResetOdometry(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.MobilityServiceAck> ResetOdometry(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Reachy.Sdk.Mobility.MobilityServiceAck> SetZuuuSafety(global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -251,7 +259,7 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Reachy.Sdk.Mobility.TargetDirectionCommandAck SendDirection(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SendDirection(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendDirection(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -261,7 +269,7 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Reachy.Sdk.Mobility.TargetDirectionCommandAck SendDirection(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::CallOptions options)
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SendDirection(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SendDirection, null, options, request);
       }
@@ -273,7 +281,7 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.TargetDirectionCommandAck> SendDirectionAsync(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SendDirectionAsync(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendDirectionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -283,39 +291,39 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.TargetDirectionCommandAck> SendDirectionAsync(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SendDirectionAsync(global::Reachy.Sdk.Mobility.TargetDirectionCommand request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SendDirection, null, options, request);
       }
-      public virtual global::Reachy.Sdk.Mobility.SetSpeedAck SendSetSpeed(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SendSetSpeed(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendSetSpeed(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Reachy.Sdk.Mobility.SetSpeedAck SendSetSpeed(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::CallOptions options)
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SendSetSpeed(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SendSetSpeed, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.SetSpeedAck> SendSetSpeedAsync(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SendSetSpeedAsync(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendSetSpeedAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.SetSpeedAck> SendSetSpeedAsync(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SendSetSpeedAsync(global::Reachy.Sdk.Mobility.SetSpeedVector request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SendSetSpeed, null, options, request);
       }
-      public virtual global::Reachy.Sdk.Mobility.GoToAck SendGoTo(global::Reachy.Sdk.Mobility.GoToVector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SendGoTo(global::Reachy.Sdk.Mobility.GoToVector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendGoTo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Reachy.Sdk.Mobility.GoToAck SendGoTo(global::Reachy.Sdk.Mobility.GoToVector request, grpc::CallOptions options)
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SendGoTo(global::Reachy.Sdk.Mobility.GoToVector request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SendGoTo, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.GoToAck> SendGoToAsync(global::Reachy.Sdk.Mobility.GoToVector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SendGoToAsync(global::Reachy.Sdk.Mobility.GoToVector request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SendGoToAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.GoToAck> SendGoToAsync(global::Reachy.Sdk.Mobility.GoToVector request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SendGoToAsync(global::Reachy.Sdk.Mobility.GoToVector request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SendGoTo, null, options, request);
       }
@@ -371,7 +379,7 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Reachy.Sdk.Mobility.ControlModeCommandAck SetControlMode(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SetControlMode(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetControlMode(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -381,7 +389,7 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
-      public virtual global::Reachy.Sdk.Mobility.ControlModeCommandAck SetControlMode(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::CallOptions options)
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SetControlMode(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SetControlMode, null, options, request);
       }
@@ -393,7 +401,7 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.ControlModeCommandAck> SetControlModeAsync(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SetControlModeAsync(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetControlModeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -403,7 +411,7 @@ namespace Reachy.Sdk.Mobility {
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.ControlModeCommandAck> SetControlModeAsync(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SetControlModeAsync(global::Reachy.Sdk.Mobility.ControlModeCommand request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SetControlMode, null, options, request);
       }
@@ -423,19 +431,19 @@ namespace Reachy.Sdk.Mobility {
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetControlMode, null, options, request);
       }
-      public virtual global::Reachy.Sdk.Mobility.ZuuuModeCommandAck SetZuuuMode(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SetZuuuMode(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetZuuuMode(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Reachy.Sdk.Mobility.ZuuuModeCommandAck SetZuuuMode(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::CallOptions options)
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SetZuuuMode(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_SetZuuuMode, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.ZuuuModeCommandAck> SetZuuuModeAsync(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SetZuuuModeAsync(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return SetZuuuModeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.ZuuuModeCommandAck> SetZuuuModeAsync(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SetZuuuModeAsync(global::Reachy.Sdk.Mobility.ZuuuModeCommand request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_SetZuuuMode, null, options, request);
       }
@@ -487,21 +495,37 @@ namespace Reachy.Sdk.Mobility {
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetOdometry, null, options, request);
       }
-      public virtual global::Reachy.Sdk.Mobility.ResetOdometryAck ResetOdometry(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck ResetOdometry(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ResetOdometry(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Reachy.Sdk.Mobility.ResetOdometryAck ResetOdometry(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck ResetOdometry(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ResetOdometry, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.ResetOdometryAck> ResetOdometryAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> ResetOdometryAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ResetOdometryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.ResetOdometryAck> ResetOdometryAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> ResetOdometryAsync(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ResetOdometry, null, options, request);
+      }
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SetZuuuSafety(global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetZuuuSafety(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Reachy.Sdk.Mobility.MobilityServiceAck SetZuuuSafety(global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SetZuuuSafety, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SetZuuuSafetyAsync(global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetZuuuSafetyAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Reachy.Sdk.Mobility.MobilityServiceAck> SetZuuuSafetyAsync(global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SetZuuuSafety, null, options, request);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override MobilityServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -525,7 +549,8 @@ namespace Reachy.Sdk.Mobility {
           .AddMethod(__Method_GetZuuuMode, serviceImpl.GetZuuuMode)
           .AddMethod(__Method_GetBatteryLevel, serviceImpl.GetBatteryLevel)
           .AddMethod(__Method_GetOdometry, serviceImpl.GetOdometry)
-          .AddMethod(__Method_ResetOdometry, serviceImpl.ResetOdometry).Build();
+          .AddMethod(__Method_ResetOdometry, serviceImpl.ResetOdometry)
+          .AddMethod(__Method_SetZuuuSafety, serviceImpl.SetZuuuSafety).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -534,17 +559,18 @@ namespace Reachy.Sdk.Mobility {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, MobilityServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SendDirection, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.TargetDirectionCommand, global::Reachy.Sdk.Mobility.TargetDirectionCommandAck>(serviceImpl.SendDirection));
-      serviceBinder.AddMethod(__Method_SendSetSpeed, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.SetSpeedVector, global::Reachy.Sdk.Mobility.SetSpeedAck>(serviceImpl.SendSetSpeed));
-      serviceBinder.AddMethod(__Method_SendGoTo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.GoToVector, global::Reachy.Sdk.Mobility.GoToAck>(serviceImpl.SendGoTo));
+      serviceBinder.AddMethod(__Method_SendDirection, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.TargetDirectionCommand, global::Reachy.Sdk.Mobility.MobilityServiceAck>(serviceImpl.SendDirection));
+      serviceBinder.AddMethod(__Method_SendSetSpeed, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.SetSpeedVector, global::Reachy.Sdk.Mobility.MobilityServiceAck>(serviceImpl.SendSetSpeed));
+      serviceBinder.AddMethod(__Method_SendGoTo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.GoToVector, global::Reachy.Sdk.Mobility.MobilityServiceAck>(serviceImpl.SendGoTo));
       serviceBinder.AddMethod(__Method_DistanceToGoal, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.DistanceToGoalVector>(serviceImpl.DistanceToGoal));
-      serviceBinder.AddMethod(__Method_SetControlMode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.ControlModeCommand, global::Reachy.Sdk.Mobility.ControlModeCommandAck>(serviceImpl.SetControlMode));
+      serviceBinder.AddMethod(__Method_SetControlMode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.ControlModeCommand, global::Reachy.Sdk.Mobility.MobilityServiceAck>(serviceImpl.SetControlMode));
       serviceBinder.AddMethod(__Method_GetControlMode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.ControlModeCommand>(serviceImpl.GetControlMode));
-      serviceBinder.AddMethod(__Method_SetZuuuMode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.ZuuuModeCommand, global::Reachy.Sdk.Mobility.ZuuuModeCommandAck>(serviceImpl.SetZuuuMode));
+      serviceBinder.AddMethod(__Method_SetZuuuMode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.ZuuuModeCommand, global::Reachy.Sdk.Mobility.MobilityServiceAck>(serviceImpl.SetZuuuMode));
       serviceBinder.AddMethod(__Method_GetZuuuMode, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.ZuuuModeCommand>(serviceImpl.GetZuuuMode));
       serviceBinder.AddMethod(__Method_GetBatteryLevel, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.BatteryLevel>(serviceImpl.GetBatteryLevel));
       serviceBinder.AddMethod(__Method_GetOdometry, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.OdometryVector>(serviceImpl.GetOdometry));
-      serviceBinder.AddMethod(__Method_ResetOdometry, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.ResetOdometryAck>(serviceImpl.ResetOdometry));
+      serviceBinder.AddMethod(__Method_ResetOdometry, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::Reachy.Sdk.Mobility.MobilityServiceAck>(serviceImpl.ResetOdometry));
+      serviceBinder.AddMethod(__Method_SetZuuuSafety, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Reachy.Sdk.Mobility.SetZuuuSafetyRequest, global::Reachy.Sdk.Mobility.MobilityServiceAck>(serviceImpl.SetZuuuSafety));
     }
 
   }
