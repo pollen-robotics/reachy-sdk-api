@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+package reachy.sdk.realsense;
+
+
+message Point {
+    google.protobuf.FloatValue x = 1;
+    google.protobuf.FloatValue y = 2;
+    google.protobuf.FloatValue z = 3;
+}
+
+message PointCloud {
+    repeated Point point_cloud = 4;
+}
+
+message PointCloudMessage {
+    PointCloud ground = 5;
+    PointCloud objects = 6;
+}
