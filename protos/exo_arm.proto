@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "google/protobuf/wrappers.proto";
+
+package reachy.sdk.exo_arm;
+
+
+message ElbowTorques {
+    google.protobuf.Int32Value right = 1;
+    google.protobuf.Int32Value left = 2;
+}

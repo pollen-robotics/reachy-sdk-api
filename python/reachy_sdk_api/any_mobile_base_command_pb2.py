@@ -3,6 +3,7 @@
 # source: any_mobile_base_command.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -16,148 +17,12 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 import mobile_platform_reachy_pb2 as mobile__platform__reachy__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='any_mobile_base_command.proto',
-  package='reachy.sdk.mobility',
-  syntax='proto3',
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1d\x61ny_mobile_base_command.proto\x12\x13reachy.sdk.mobility\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cmobile_platform_reachy.proto\"=\n\x14ResetOdometryMessage\x12%\n\x05reset\x18\x01 \x01(\x0b\x32\x16.google.protobuf.Empty\"\x8b\x03\n\x14\x41nyMobileBaseCommand\x12;\n\x08presence\x18\x01 \x01(\x0b\x32\'.reachy.sdk.mobility.MobileBasePresenceH\x00\x12G\n\x10target_direction\x18\x02 \x01(\x0b\x32+.reachy.sdk.mobility.TargetDirectionCommandH\x00\x12<\n\x0cmode_command\x18\x03 \x01(\x0b\x32$.reachy.sdk.mobility.ZuuuModeCommandH\x00\x12\x30\n\x05go_to\x18\x04 \x01(\x0b\x32\x1f.reachy.sdk.mobility.GoToVectorH\x00\x12\x43\n\x0ereset_odometry\x18\x05 \x01(\x0b\x32).reachy.sdk.mobility.ResetOdometryMessageH\x00\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.TimestampB\t\n\x07\x63ommandb\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,mobile__platform__reachy__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x61ny_mobile_base_command.proto\x12\x13reachy.sdk.mobility\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cmobile_platform_reachy.proto\"=\n\x14ResetOdometryMessage\x12%\n\x05reset\x18\x01 \x01(\x0b\x32\x16.google.protobuf.Empty\"\x8b\x03\n\x14\x41nyMobileBaseCommand\x12;\n\x08presence\x18\x01 \x01(\x0b\x32\'.reachy.sdk.mobility.MobileBasePresenceH\x00\x12G\n\x10target_direction\x18\x02 \x01(\x0b\x32+.reachy.sdk.mobility.TargetDirectionCommandH\x00\x12<\n\x0cmode_command\x18\x03 \x01(\x0b\x32$.reachy.sdk.mobility.ZuuuModeCommandH\x00\x12\x30\n\x05go_to\x18\x04 \x01(\x0b\x32\x1f.reachy.sdk.mobility.GoToVectorH\x00\x12\x43\n\x0ereset_odometry\x18\x05 \x01(\x0b\x32).reachy.sdk.mobility.ResetOdometryMessageH\x00\x12-\n\ttimestamp\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.TimestampB\t\n\x07\x63ommandb\x06proto3')
 
 
 
-
-_RESETODOMETRYMESSAGE = _descriptor.Descriptor(
-  name='ResetOdometryMessage',
-  full_name='reachy.sdk.mobility.ResetOdometryMessage',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='reset', full_name='reachy.sdk.mobility.ResetOdometryMessage.reset', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=146,
-  serialized_end=207,
-)
-
-
-_ANYMOBILEBASECOMMAND = _descriptor.Descriptor(
-  name='AnyMobileBaseCommand',
-  full_name='reachy.sdk.mobility.AnyMobileBaseCommand',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='presence', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.presence', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='target_direction', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.target_direction', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='mode_command', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.mode_command', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='go_to', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.go_to', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='reset_odometry', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.reset_odometry', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='timestamp', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.timestamp', index=5,
-      number=15, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='command', full_name='reachy.sdk.mobility.AnyMobileBaseCommand.command',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=210,
-  serialized_end=605,
-)
-
-_RESETODOMETRYMESSAGE.fields_by_name['reset'].message_type = google_dot_protobuf_dot_empty__pb2._EMPTY
-_ANYMOBILEBASECOMMAND.fields_by_name['presence'].message_type = mobile__platform__reachy__pb2._MOBILEBASEPRESENCE
-_ANYMOBILEBASECOMMAND.fields_by_name['target_direction'].message_type = mobile__platform__reachy__pb2._TARGETDIRECTIONCOMMAND
-_ANYMOBILEBASECOMMAND.fields_by_name['mode_command'].message_type = mobile__platform__reachy__pb2._ZUUUMODECOMMAND
-_ANYMOBILEBASECOMMAND.fields_by_name['go_to'].message_type = mobile__platform__reachy__pb2._GOTOVECTOR
-_ANYMOBILEBASECOMMAND.fields_by_name['reset_odometry'].message_type = _RESETODOMETRYMESSAGE
-_ANYMOBILEBASECOMMAND.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_ANYMOBILEBASECOMMAND.oneofs_by_name['command'].fields.append(
-  _ANYMOBILEBASECOMMAND.fields_by_name['presence'])
-_ANYMOBILEBASECOMMAND.fields_by_name['presence'].containing_oneof = _ANYMOBILEBASECOMMAND.oneofs_by_name['command']
-_ANYMOBILEBASECOMMAND.oneofs_by_name['command'].fields.append(
-  _ANYMOBILEBASECOMMAND.fields_by_name['target_direction'])
-_ANYMOBILEBASECOMMAND.fields_by_name['target_direction'].containing_oneof = _ANYMOBILEBASECOMMAND.oneofs_by_name['command']
-_ANYMOBILEBASECOMMAND.oneofs_by_name['command'].fields.append(
-  _ANYMOBILEBASECOMMAND.fields_by_name['mode_command'])
-_ANYMOBILEBASECOMMAND.fields_by_name['mode_command'].containing_oneof = _ANYMOBILEBASECOMMAND.oneofs_by_name['command']
-_ANYMOBILEBASECOMMAND.oneofs_by_name['command'].fields.append(
-  _ANYMOBILEBASECOMMAND.fields_by_name['go_to'])
-_ANYMOBILEBASECOMMAND.fields_by_name['go_to'].containing_oneof = _ANYMOBILEBASECOMMAND.oneofs_by_name['command']
-_ANYMOBILEBASECOMMAND.oneofs_by_name['command'].fields.append(
-  _ANYMOBILEBASECOMMAND.fields_by_name['reset_odometry'])
-_ANYMOBILEBASECOMMAND.fields_by_name['reset_odometry'].containing_oneof = _ANYMOBILEBASECOMMAND.oneofs_by_name['command']
-DESCRIPTOR.message_types_by_name['ResetOdometryMessage'] = _RESETODOMETRYMESSAGE
-DESCRIPTOR.message_types_by_name['AnyMobileBaseCommand'] = _ANYMOBILEBASECOMMAND
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_RESETODOMETRYMESSAGE = DESCRIPTOR.message_types_by_name['ResetOdometryMessage']
+_ANYMOBILEBASECOMMAND = DESCRIPTOR.message_types_by_name['AnyMobileBaseCommand']
 ResetOdometryMessage = _reflection.GeneratedProtocolMessageType('ResetOdometryMessage', (_message.Message,), {
   'DESCRIPTOR' : _RESETODOMETRYMESSAGE,
   '__module__' : 'any_mobile_base_command_pb2'
@@ -172,5 +37,11 @@ AnyMobileBaseCommand = _reflection.GeneratedProtocolMessageType('AnyMobileBaseCo
   })
 _sym_db.RegisterMessage(AnyMobileBaseCommand)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
+  DESCRIPTOR._options = None
+  _RESETODOMETRYMESSAGE._serialized_start=146
+  _RESETODOMETRYMESSAGE._serialized_end=207
+  _ANYMOBILEBASECOMMAND._serialized_start=210
+  _ANYMOBILEBASECOMMAND._serialized_end=605
 # @@protoc_insertion_point(module_scope)
