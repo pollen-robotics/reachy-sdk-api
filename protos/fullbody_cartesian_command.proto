@@ -4,6 +4,7 @@ package reachy.sdk.kinematics;
 
 import "arm_kinematics.proto";
 import "orbita_kinematics.proto";
+import "head_kinematics.proto";
 
 
 message FullBodyCartesianCommandAck {
