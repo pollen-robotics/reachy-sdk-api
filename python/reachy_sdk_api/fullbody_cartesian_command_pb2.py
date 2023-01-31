@@ -13,11 +13,10 @@ _sym_db = _symbol_database.Default()
 
 
 import arm_kinematics_pb2 as arm__kinematics__pb2
-import orbita_kinematics_pb2 as orbita__kinematics__pb2
 import head_kinematics_pb2 as head__kinematics__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n fullbody_cartesian_command.proto\x12\x15reachy.sdk.kinematics\x1a\x14\x61rm_kinematics.proto\x1a\x17orbita_kinematics.proto\x1a\x15head_kinematics.proto\"\x80\x01\n\x1b\x46ullBodyCartesianCommandAck\x12 \n\x18left_arm_command_success\x18\x01 \x01(\x08\x12!\n\x19right_arm_command_success\x18\x02 \x01(\x08\x12\x1c\n\x14neck_command_success\x18\x03 \x01(\x08\"\xbf\x01\n\x18\x46ullBodyCartesianCommand\x12\x35\n\x08left_arm\x18\x01 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x36\n\tright_arm\x18\x02 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x34\n\x04neck\x18\x03 \x01(\x0b\x32&.reachy.sdk.kinematics.OrbitaIKRequest2\xb3\x02\n\x1f\x46ullBodyCartesianCommandService\x12\x84\x01\n\x1dSendFullBodyCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck\x12\x88\x01\n\x1fStreamFullBodyCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck(\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n fullbody_cartesian_command.proto\x12\x15reachy.sdk.kinematics\x1a\x14\x61rm_kinematics.proto\x1a\x15head_kinematics.proto\"\x80\x01\n\x1b\x46ullBodyCartesianCommandAck\x12 \n\x18left_arm_command_success\x18\x01 \x01(\x08\x12!\n\x19right_arm_command_success\x18\x02 \x01(\x08\x12\x1c\n\x14head_command_success\x18\x03 \x01(\x08\"\xbd\x01\n\x18\x46ullBodyCartesianCommand\x12\x35\n\x08left_arm\x18\x01 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x36\n\tright_arm\x18\x02 \x01(\x0b\x32#.reachy.sdk.kinematics.ArmIKRequest\x12\x32\n\x04head\x18\x03 \x01(\x0b\x32$.reachy.sdk.kinematics.HeadIKRequest2\xb3\x02\n\x1f\x46ullBodyCartesianCommandService\x12\x84\x01\n\x1dSendFullBodyCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck\x12\x88\x01\n\x1fStreamFullBodyCartesianCommands\x12/.reachy.sdk.kinematics.FullBodyCartesianCommand\x1a\x32.reachy.sdk.kinematics.FullBodyCartesianCommandAck(\x01\x62\x06proto3')
 
 
 
@@ -41,10 +40,10 @@ _FULLBODYCARTESIANCOMMANDSERVICE = DESCRIPTOR.services_by_name['FullBodyCartesia
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _FULLBODYCARTESIANCOMMANDACK._serialized_start=130
-  _FULLBODYCARTESIANCOMMANDACK._serialized_end=258
-  _FULLBODYCARTESIANCOMMAND._serialized_start=261
-  _FULLBODYCARTESIANCOMMAND._serialized_end=452
-  _FULLBODYCARTESIANCOMMANDSERVICE._serialized_start=455
-  _FULLBODYCARTESIANCOMMANDSERVICE._serialized_end=762
+  _FULLBODYCARTESIANCOMMANDACK._serialized_start=105
+  _FULLBODYCARTESIANCOMMANDACK._serialized_end=233
+  _FULLBODYCARTESIANCOMMAND._serialized_start=236
+  _FULLBODYCARTESIANCOMMAND._serialized_end=425
+  _FULLBODYCARTESIANCOMMANDSERVICE._serialized_start=428
+  _FULLBODYCARTESIANCOMMANDSERVICE._serialized_end=735
 # @@protoc_insertion_point(module_scope)

@@ -3,20 +3,19 @@ syntax = "proto3";
 package reachy.sdk.kinematics;
 
 import "arm_kinematics.proto";
-import "orbita_kinematics.proto";
 import "head_kinematics.proto";
 
 
 message FullBodyCartesianCommandAck {
     bool left_arm_command_success = 1;
     bool right_arm_command_success = 2;
-    bool neck_command_success = 3;
+    bool head_command_success = 3;
 }
 
 message FullBodyCartesianCommand {
     ArmIKRequest left_arm = 1;
     ArmIKRequest right_arm = 2;
-    OrbitaIKRequest neck = 3;
+    HeadIKRequest head = 3;
 }
 
 service FullBodyCartesianCommandService {
