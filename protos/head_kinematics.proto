@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package reachy.sdk.kinematics;
+
+import "kinematics.proto";
+
+message HeadIKRequest {
+    Quaternion q = 1;
+    JointPosition q0 = 2;
+}
+
+message HeadFKRequest {
+    JointPosition neck_position = 1;
+}
+
+message HeadFKSolution {
+    bool success = 1;
+    Quaternion q = 2;
+}
+
+message HeadIKSolution {
+    bool success = 1;
+    JointPosition neck_position = 2;
+}
+
+
+service HeadKinematics {
+    rpc ComputeHeadFK(HeadFKRequest) returns (HeadFKSolution);
+    rpc ComputeHeadIK(HeadIKRequest) returns (HeadIKSolution);
+}
