@@ -41,10 +41,10 @@ Service: **ArmKinematics**
 * **ComputeArmFK** - Carry out the forward kinematics computation for Reachy's arm.
 * **ComputeArmIK** - Carry out the inverse kinematics computation for Reachy's arm.
 
-### In *[orbita_kinematics.proto](https://github.com/pollen-robotics/reachy-sdk-api/blob/main/protos/orbita_kinematics.proto)*:
-Service: **OrbitaKinematics**
-* **ComputeOrbitaIK** - Carry out the inverse kinematics computation for Reachy's orbita neck.
-* **GetQuaternionTransform** - Get the quaternion corresponding to a given lookVector in Reachy's orbita neck coordinate system.
+### In *[head_kinematics.proto](https://github.com/pollen-robotics/reachy-sdk-api/blob/main/protos/head_kinematics.proto)*:
+Service: **HeadKinematics**
+* **ComputeHeadFK** - Carry out the forward kinematics computation for Reachy's head.
+* **ComputeHeadIK** - Carry out the inverse kinematics computation for Reachy's head.
 
 ### In *[fullbody_cartesian_command.proto](https://github.com/pollen-robotics/reachy-sdk-api/blob/main/protos/fullbody_cartesian_command.proto)*:
 Service: **FullBodyCartesianCommandService**
