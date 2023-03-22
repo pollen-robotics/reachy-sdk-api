@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x63onfig.proto\x12\x11reachy.sdk.config\x1a\x1bgoogle/protobuf/empty.proto\"@\n\x0c\x43onfigReachy\x12\x12\n\ngeneration\x18\x01 \x01(\r\x12\x1c\n\x14mobile_base_presence\x18\x02 \x01(\r2[\n\rConfigService\x12J\n\x0fGetReachyConfig\x12\x16.google.protobuf.Empty\x1a\x1f.reachy.sdk.config.ConfigReachyb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0c\x63onfig.proto\x12\x11reachy.sdk.config\x1a\x1bgoogle/protobuf/empty.proto\"@\n\x0c\x43onfigReachy\x12\x12\n\ngeneration\x18\x01 \x01(\r\x12\x1c\n\x14mobile_base_presence\x18\x02 \x01(\x08\x32[\n\rConfigService\x12J\n\x0fGetReachyConfig\x12\x16.google.protobuf.Empty\x1a\x1f.reachy.sdk.config.ConfigReachyb\x06proto3')
 
 
 

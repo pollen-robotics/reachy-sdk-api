@@ -6,7 +6,7 @@ package reachy.sdk.config;
 
 message ConfigReachy {
     uint32 generation = 1;
-    uint32 mobile_base_presence = 2;
+    bool mobile_base_presence = 2;
 }
 
 service ConfigService {
