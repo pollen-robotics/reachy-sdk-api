@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package reachy.sdk.config;
+
+message ConfigReachy {
+    uint32 generation = 1;
+    uint32 mobile_base_presence = 2;
+}
+
+service ConfigService {
+    rpc GetReachyConfig(google.protobuf.Empty) returns (ConfigReachy);
+}
