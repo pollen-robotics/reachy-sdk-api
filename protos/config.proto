@@ -7,6 +7,7 @@ package reachy.sdk.config;
 message ConfigReachy {
     uint32 generation = 1;
     bool mobile_base_presence = 2;
+    repeated float camera_parameters = 3;
 }
 
 service ConfigService {
