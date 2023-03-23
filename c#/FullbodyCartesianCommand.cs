@@ -25,27 +25,27 @@ namespace Reachy.Sdk.Kinematics {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBmdWxsYm9keV9jYXJ0ZXNpYW5fY29tbWFuZC5wcm90bxIVcmVhY2h5LnNk",
-            "ay5raW5lbWF0aWNzGhRhcm1fa2luZW1hdGljcy5wcm90bxoXb3JiaXRhX2tp",
-            "bmVtYXRpY3MucHJvdG8igAEKG0Z1bGxCb2R5Q2FydGVzaWFuQ29tbWFuZEFj",
-            "axIgChhsZWZ0X2FybV9jb21tYW5kX3N1Y2Nlc3MYASABKAgSIQoZcmlnaHRf",
-            "YXJtX2NvbW1hbmRfc3VjY2VzcxgCIAEoCBIcChRuZWNrX2NvbW1hbmRfc3Vj",
-            "Y2VzcxgDIAEoCCK/AQoYRnVsbEJvZHlDYXJ0ZXNpYW5Db21tYW5kEjUKCGxl",
-            "ZnRfYXJtGAEgASgLMiMucmVhY2h5LnNkay5raW5lbWF0aWNzLkFybUlLUmVx",
-            "dWVzdBI2CglyaWdodF9hcm0YAiABKAsyIy5yZWFjaHkuc2RrLmtpbmVtYXRp",
-            "Y3MuQXJtSUtSZXF1ZXN0EjQKBG5lY2sYAyABKAsyJi5yZWFjaHkuc2RrLmtp",
-            "bmVtYXRpY3MuT3JiaXRhSUtSZXF1ZXN0MrMCCh9GdWxsQm9keUNhcnRlc2lh",
-            "bkNvbW1hbmRTZXJ2aWNlEoQBCh1TZW5kRnVsbEJvZHlDYXJ0ZXNpYW5Db21t",
-            "YW5kcxIvLnJlYWNoeS5zZGsua2luZW1hdGljcy5GdWxsQm9keUNhcnRlc2lh",
-            "bkNvbW1hbmQaMi5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuRnVsbEJvZHlDYXJ0",
-            "ZXNpYW5Db21tYW5kQWNrEogBCh9TdHJlYW1GdWxsQm9keUNhcnRlc2lhbkNv",
-            "bW1hbmRzEi8ucmVhY2h5LnNkay5raW5lbWF0aWNzLkZ1bGxCb2R5Q2FydGVz",
-            "aWFuQ29tbWFuZBoyLnJlYWNoeS5zZGsua2luZW1hdGljcy5GdWxsQm9keUNh",
-            "cnRlc2lhbkNvbW1hbmRBY2soAWIGcHJvdG8z"));
+            "ay5raW5lbWF0aWNzGhRhcm1fa2luZW1hdGljcy5wcm90bxoVaGVhZF9raW5l",
+            "bWF0aWNzLnByb3RvIoABChtGdWxsQm9keUNhcnRlc2lhbkNvbW1hbmRBY2sS",
+            "IAoYbGVmdF9hcm1fY29tbWFuZF9zdWNjZXNzGAEgASgIEiEKGXJpZ2h0X2Fy",
+            "bV9jb21tYW5kX3N1Y2Nlc3MYAiABKAgSHAoUaGVhZF9jb21tYW5kX3N1Y2Nl",
+            "c3MYAyABKAgivQEKGEZ1bGxCb2R5Q2FydGVzaWFuQ29tbWFuZBI1CghsZWZ0",
+            "X2FybRgBIAEoCzIjLnJlYWNoeS5zZGsua2luZW1hdGljcy5Bcm1JS1JlcXVl",
+            "c3QSNgoJcmlnaHRfYXJtGAIgASgLMiMucmVhY2h5LnNkay5raW5lbWF0aWNz",
+            "LkFybUlLUmVxdWVzdBIyCgRoZWFkGAMgASgLMiQucmVhY2h5LnNkay5raW5l",
+            "bWF0aWNzLkhlYWRJS1JlcXVlc3QyswIKH0Z1bGxCb2R5Q2FydGVzaWFuQ29t",
+            "bWFuZFNlcnZpY2UShAEKHVNlbmRGdWxsQm9keUNhcnRlc2lhbkNvbW1hbmRz",
+            "Ei8ucmVhY2h5LnNkay5raW5lbWF0aWNzLkZ1bGxCb2R5Q2FydGVzaWFuQ29t",
+            "bWFuZBoyLnJlYWNoeS5zZGsua2luZW1hdGljcy5GdWxsQm9keUNhcnRlc2lh",
+            "bkNvbW1hbmRBY2sSiAEKH1N0cmVhbUZ1bGxCb2R5Q2FydGVzaWFuQ29tbWFu",
+            "ZHMSLy5yZWFjaHkuc2RrLmtpbmVtYXRpY3MuRnVsbEJvZHlDYXJ0ZXNpYW5D",
+            "b21tYW5kGjIucmVhY2h5LnNkay5raW5lbWF0aWNzLkZ1bGxCb2R5Q2FydGVz",
+            "aWFuQ29tbWFuZEFjaygBYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Reachy.Sdk.Kinematics.ArmKinematicsReflection.Descriptor, global::Reachy.Sdk.Kinematics.OrbitaKinematicsReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Reachy.Sdk.Kinematics.ArmKinematicsReflection.Descriptor, global::Reachy.Sdk.Kinematics.HeadKinematicsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.FullBodyCartesianCommandAck), global::Reachy.Sdk.Kinematics.FullBodyCartesianCommandAck.Parser, new[]{ "LeftArmCommandSuccess", "RightArmCommandSuccess", "NeckCommandSuccess" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.FullBodyCartesianCommand), global::Reachy.Sdk.Kinematics.FullBodyCartesianCommand.Parser, new[]{ "LeftArm", "RightArm", "Neck" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.FullBodyCartesianCommandAck), global::Reachy.Sdk.Kinematics.FullBodyCartesianCommandAck.Parser, new[]{ "LeftArmCommandSuccess", "RightArmCommandSuccess", "HeadCommandSuccess" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Reachy.Sdk.Kinematics.FullBodyCartesianCommand), global::Reachy.Sdk.Kinematics.FullBodyCartesianCommand.Parser, new[]{ "LeftArm", "RightArm", "Head" }, null, null, null, null)
           }));
     }
     #endregion
@@ -83,7 +83,7 @@ namespace Reachy.Sdk.Kinematics {
     public FullBodyCartesianCommandAck(FullBodyCartesianCommandAck other) : this() {
       leftArmCommandSuccess_ = other.leftArmCommandSuccess_;
       rightArmCommandSuccess_ = other.rightArmCommandSuccess_;
-      neckCommandSuccess_ = other.neckCommandSuccess_;
+      headCommandSuccess_ = other.headCommandSuccess_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -114,14 +114,18 @@ namespace Reachy.Sdk.Kinematics {
       }
     }
 
-    /// <summary>Field number for the "neck_command_success" field.</summary>
-    public const int NeckCommandSuccessFieldNumber = 3;
-    private bool neckCommandSuccess_;
+    /// <summary>Field number for the "head_command_success" field.</summary>
+    public const int HeadCommandSuccessFieldNumber = 3;
+    private bool headCommandSuccess_;
+    /// <summary>
+    /// Previously was:
+    /// bool neck_command_success = 3;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool NeckCommandSuccess {
-      get { return neckCommandSuccess_; }
+    public bool HeadCommandSuccess {
+      get { return headCommandSuccess_; }
       set {
-        neckCommandSuccess_ = value;
+        headCommandSuccess_ = value;
       }
     }
 
@@ -140,7 +144,7 @@ namespace Reachy.Sdk.Kinematics {
       }
       if (LeftArmCommandSuccess != other.LeftArmCommandSuccess) return false;
       if (RightArmCommandSuccess != other.RightArmCommandSuccess) return false;
-      if (NeckCommandSuccess != other.NeckCommandSuccess) return false;
+      if (HeadCommandSuccess != other.HeadCommandSuccess) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -149,7 +153,7 @@ namespace Reachy.Sdk.Kinematics {
       int hash = 1;
       if (LeftArmCommandSuccess != false) hash ^= LeftArmCommandSuccess.GetHashCode();
       if (RightArmCommandSuccess != false) hash ^= RightArmCommandSuccess.GetHashCode();
-      if (NeckCommandSuccess != false) hash ^= NeckCommandSuccess.GetHashCode();
+      if (HeadCommandSuccess != false) hash ^= HeadCommandSuccess.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -174,9 +178,9 @@ namespace Reachy.Sdk.Kinematics {
         output.WriteRawTag(16);
         output.WriteBool(RightArmCommandSuccess);
       }
-      if (NeckCommandSuccess != false) {
+      if (HeadCommandSuccess != false) {
         output.WriteRawTag(24);
-        output.WriteBool(NeckCommandSuccess);
+        output.WriteBool(HeadCommandSuccess);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -195,9 +199,9 @@ namespace Reachy.Sdk.Kinematics {
         output.WriteRawTag(16);
         output.WriteBool(RightArmCommandSuccess);
       }
-      if (NeckCommandSuccess != false) {
+      if (HeadCommandSuccess != false) {
         output.WriteRawTag(24);
-        output.WriteBool(NeckCommandSuccess);
+        output.WriteBool(HeadCommandSuccess);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -214,7 +218,7 @@ namespace Reachy.Sdk.Kinematics {
       if (RightArmCommandSuccess != false) {
         size += 1 + 1;
       }
-      if (NeckCommandSuccess != false) {
+      if (HeadCommandSuccess != false) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {
@@ -234,8 +238,8 @@ namespace Reachy.Sdk.Kinematics {
       if (other.RightArmCommandSuccess != false) {
         RightArmCommandSuccess = other.RightArmCommandSuccess;
       }
-      if (other.NeckCommandSuccess != false) {
-        NeckCommandSuccess = other.NeckCommandSuccess;
+      if (other.HeadCommandSuccess != false) {
+        HeadCommandSuccess = other.HeadCommandSuccess;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -260,7 +264,7 @@ namespace Reachy.Sdk.Kinematics {
             break;
           }
           case 24: {
-            NeckCommandSuccess = input.ReadBool();
+            HeadCommandSuccess = input.ReadBool();
             break;
           }
         }
@@ -286,7 +290,7 @@ namespace Reachy.Sdk.Kinematics {
             break;
           }
           case 24: {
-            NeckCommandSuccess = input.ReadBool();
+            HeadCommandSuccess = input.ReadBool();
             break;
           }
         }
@@ -327,7 +331,7 @@ namespace Reachy.Sdk.Kinematics {
     public FullBodyCartesianCommand(FullBodyCartesianCommand other) : this() {
       leftArm_ = other.leftArm_ != null ? other.leftArm_.Clone() : null;
       rightArm_ = other.rightArm_ != null ? other.rightArm_.Clone() : null;
-      neck_ = other.neck_ != null ? other.neck_.Clone() : null;
+      head_ = other.head_ != null ? other.head_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -358,14 +362,18 @@ namespace Reachy.Sdk.Kinematics {
       }
     }
 
-    /// <summary>Field number for the "neck" field.</summary>
-    public const int NeckFieldNumber = 3;
-    private global::Reachy.Sdk.Kinematics.OrbitaIKRequest neck_;
+    /// <summary>Field number for the "head" field.</summary>
+    public const int HeadFieldNumber = 3;
+    private global::Reachy.Sdk.Kinematics.HeadIKRequest head_;
+    /// <summary>
+    /// Previously was:
+    /// OrbitaIKRequest neck = 3;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Reachy.Sdk.Kinematics.OrbitaIKRequest Neck {
-      get { return neck_; }
+    public global::Reachy.Sdk.Kinematics.HeadIKRequest Head {
+      get { return head_; }
       set {
-        neck_ = value;
+        head_ = value;
       }
     }
 
@@ -384,7 +392,7 @@ namespace Reachy.Sdk.Kinematics {
       }
       if (!object.Equals(LeftArm, other.LeftArm)) return false;
       if (!object.Equals(RightArm, other.RightArm)) return false;
-      if (!object.Equals(Neck, other.Neck)) return false;
+      if (!object.Equals(Head, other.Head)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -393,7 +401,7 @@ namespace Reachy.Sdk.Kinematics {
       int hash = 1;
       if (leftArm_ != null) hash ^= LeftArm.GetHashCode();
       if (rightArm_ != null) hash ^= RightArm.GetHashCode();
-      if (neck_ != null) hash ^= Neck.GetHashCode();
+      if (head_ != null) hash ^= Head.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -418,9 +426,9 @@ namespace Reachy.Sdk.Kinematics {
         output.WriteRawTag(18);
         output.WriteMessage(RightArm);
       }
-      if (neck_ != null) {
+      if (head_ != null) {
         output.WriteRawTag(26);
-        output.WriteMessage(Neck);
+        output.WriteMessage(Head);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -439,9 +447,9 @@ namespace Reachy.Sdk.Kinematics {
         output.WriteRawTag(18);
         output.WriteMessage(RightArm);
       }
-      if (neck_ != null) {
+      if (head_ != null) {
         output.WriteRawTag(26);
-        output.WriteMessage(Neck);
+        output.WriteMessage(Head);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -458,8 +466,8 @@ namespace Reachy.Sdk.Kinematics {
       if (rightArm_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RightArm);
       }
-      if (neck_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Neck);
+      if (head_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Head);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -484,11 +492,11 @@ namespace Reachy.Sdk.Kinematics {
         }
         RightArm.MergeFrom(other.RightArm);
       }
-      if (other.neck_ != null) {
-        if (neck_ == null) {
-          Neck = new global::Reachy.Sdk.Kinematics.OrbitaIKRequest();
+      if (other.head_ != null) {
+        if (head_ == null) {
+          Head = new global::Reachy.Sdk.Kinematics.HeadIKRequest();
         }
-        Neck.MergeFrom(other.Neck);
+        Head.MergeFrom(other.Head);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -519,10 +527,10 @@ namespace Reachy.Sdk.Kinematics {
             break;
           }
           case 26: {
-            if (neck_ == null) {
-              Neck = new global::Reachy.Sdk.Kinematics.OrbitaIKRequest();
+            if (head_ == null) {
+              Head = new global::Reachy.Sdk.Kinematics.HeadIKRequest();
             }
-            input.ReadMessage(Neck);
+            input.ReadMessage(Head);
             break;
           }
         }
@@ -554,10 +562,10 @@ namespace Reachy.Sdk.Kinematics {
             break;
           }
           case 26: {
-            if (neck_ == null) {
-              Neck = new global::Reachy.Sdk.Kinematics.OrbitaIKRequest();
+            if (head_ == null) {
+              Head = new global::Reachy.Sdk.Kinematics.HeadIKRequest();
             }
-            input.ReadMessage(Neck);
+            input.ReadMessage(Head);
             break;
           }
         }
