@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package reachy.sdk.config;
+
+message ConfigReachy {
+    uint32 generation = 1;
+    bool mobile_base_presence = 2;
+    repeated float camera_parameters = 3;
+}
+
+service ConfigService {
+    rpc GetReachyConfig(google.protobuf.Empty) returns (ConfigReachy);
+}
