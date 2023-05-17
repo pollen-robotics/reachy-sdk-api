@@ -1,4 +1,4 @@
-# Reachy 2021 SDK API
+# Reachy 2021 and 2023 SDK API
 
 Custom gRPC messages and services used by Reachy's SDK server.
 
