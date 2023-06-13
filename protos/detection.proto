@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "geometry.proto";
+import "metadata.proto";
+
+package reachy.sdk.detection;
+
+message PoseWithCovariance {
+    Pose pose = 1;
+    repeated double covariance = 2;
+}
+
+message ObjectHypothesisWithPose {
+    uint32 id = 1;
+    double score = 2;
+    PoseWithCovariance pose = 3;
+}
+
+message Detection2D {
+    Header header = 1;
+    repeated ObjectHypothesisWithPose results = 2;
+    BoundingBox2D bbox = 3;
+    Image image = 4;
+}
+
+message Detection2DArray {
+    repeated Detection2D detections = 1;
+}
+
+message Detection3D {
+    Header header = 1;
+    repeated ObjectHypothesisWithPose results = 2;
+    BoundingBox3D bbox = 3;
+    PointCloud2 cloud = 4;
+}
+
+message Detection3DArray {
+    repeated Detection3D detections = 1;
+}
+
+message BoundingBox2D {
+    Pose2D center = 1;
+    double size_x = 2;
+    double size_y = 3;
+}
+
+message BoundingBox3D {
+    Pose pose = 1;
+    Vector3 size = 2;
+}
+
+message PointField {
+    string name = 1;
+    uint32 offset = 2;
+    uint8 datatype = 3;
+    uint32 count = 4;
+}
+
+message PointCloud2 {
+    Header header = 1;
+    uint32 height = 2;
+    uint32 width = 3;
+    repeated PointField fields = 4;
+    bool is_bigendian = 5;
+    uint32 point_step = 6;
+    uint32 row_step = 7;
+    bytes data = 8;
+    bool is_dense = 9;
+}
+
+// Use Image from import "camera_reachy.proto"; instead ?
+message Image {
+    Header header = 1;
+    uint32 height = 2;
+    uint32 width = 3;
+    string encoding = 4;
+    uint32 is_bigendian = 5;
+    uint32 step = 6;
+    bytes data = 7;
+}
+
+service DetectionService {
+    rpc GetDetections2D(google.protobuf.Empty) returns (Detection2DArray);
+    rpc GetDetections3D(google.protobuf.Empty) returns (Detection3DArray);
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "kinematics.proto";
+
+package reachy.sdk.geometry;
+
+message Point {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+}
+
+message Vector3 {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+}
+
+message Pose {
+    Point position = 1;
+    Quaternion orientation = 2;
+}
+
+message Pose2D {
+    double x = 1;
+    double y = 2;
+    double theta = 3;
+}
