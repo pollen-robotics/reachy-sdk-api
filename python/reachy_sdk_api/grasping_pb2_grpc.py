@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+import detection_pb2 as detection__pb2
 import grasping_pb2 as grasping__pb2
 
 
@@ -14,17 +15,28 @@ class GraspingServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetReachability = channel.unary_unary(
-                '/reachy.sdk.grasping.GraspingService/GetReachability',
-                request_serializer=grasping__pb2.SpaceGraspPose.SerializeToString,
-                response_deserializer=grasping__pb2.ReachabilityAck.FromString,
+        self.GetGraspPoses = channel.unary_unary(
+                '/reachy.sdk.grasping.GraspingService/GetGraspPoses',
+                request_serializer=detection__pb2.Detection3DArray.SerializeToString,
+                response_deserializer=grasping__pb2.GraspPoseArray.FromString,
+                )
+        self.GetReachableTriplets = channel.unary_unary(
+                '/reachy.sdk.grasping.GraspingService/GetReachableTriplets',
+                request_serializer=grasping__pb2.GraspPoseArray.SerializeToString,
+                response_deserializer=grasping__pb2.ReachableGraspTripletArray.FromString,
                 )
 
 
 class GraspingServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def GetReachability(self, request, context):
+    def GetGraspPoses(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetReachableTriplets(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -33,10 +45,15 @@ class GraspingServiceServicer(object):
 
 def add_GraspingServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetReachability': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetReachability,
-                    request_deserializer=grasping__pb2.SpaceGraspPose.FromString,
-                    response_serializer=grasping__pb2.ReachabilityAck.SerializeToString,
+            'GetGraspPoses': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGraspPoses,
+                    request_deserializer=detection__pb2.Detection3DArray.FromString,
+                    response_serializer=grasping__pb2.GraspPoseArray.SerializeToString,
+            ),
+            'GetReachableTriplets': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetReachableTriplets,
+                    request_deserializer=grasping__pb2.GraspPoseArray.FromString,
+                    response_serializer=grasping__pb2.ReachableGraspTripletArray.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -49,7 +66,7 @@ class GraspingService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def GetReachability(request,
+    def GetGraspPoses(request,
             target,
             options=(),
             channel_credentials=None,
@@ -59,8 +76,25 @@ class GraspingService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.grasping.GraspingService/GetReachability',
-            grasping__pb2.SpaceGraspPose.SerializeToString,
-            grasping__pb2.ReachabilityAck.FromString,
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.grasping.GraspingService/GetGraspPoses',
+            detection__pb2.Detection3DArray.SerializeToString,
+            grasping__pb2.GraspPoseArray.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetReachableTriplets(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.grasping.GraspingService/GetReachableTriplets',
+            grasping__pb2.GraspPoseArray.SerializeToString,
+            grasping__pb2.ReachableGraspTripletArray.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

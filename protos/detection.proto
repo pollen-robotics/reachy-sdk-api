@@ -11,10 +11,14 @@ message PoseWithCovariance {
     repeated double covariance = 2;
 }
 
-message ObjectHypothesisWithPose {
-    uint32 id = 1;
+message Hypothesis {
+    string class_id = 1;
     double score = 2;
-    PoseWithCovariance pose = 3;
+}
+
+message ObjectHypothesisWithPose {
+    Hypothesis hypothesis = 1;
+    PoseWithCovariance pose = 2;
 }
 
 message Detection2D {
@@ -87,7 +91,6 @@ message KnownLabels {
 }
 
 service DetectionService {
-    rpc GetDetections2D(google.protobuf.Empty) returns (Detection2DArray);
     rpc GetDetections3D(google.protobuf.Empty) returns (Detection3DArray);
     rpc GetKnownLabels(google.protobuf.Empty) returns (KnownLabels);
 }

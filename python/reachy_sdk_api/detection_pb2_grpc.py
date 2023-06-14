@@ -15,11 +15,6 @@ class DetectionServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetDetections2D = channel.unary_unary(
-                '/reachy.sdk.detection.DetectionService/GetDetections2D',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=detection__pb2.Detection2DArray.FromString,
-                )
         self.GetDetections3D = channel.unary_unary(
                 '/reachy.sdk.detection.DetectionService/GetDetections3D',
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
@@ -34,12 +29,6 @@ class DetectionServiceStub(object):
 
 class DetectionServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
-
-    def GetDetections2D(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
 
     def GetDetections3D(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -56,11 +45,6 @@ class DetectionServiceServicer(object):
 
 def add_DetectionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetDetections2D': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetDetections2D,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=detection__pb2.Detection2DArray.SerializeToString,
-            ),
             'GetDetections3D': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDetections3D,
                     request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
@@ -80,23 +64,6 @@ def add_DetectionServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class DetectionService(object):
     """Missing associated documentation comment in .proto file."""
-
-    @staticmethod
-    def GetDetections2D(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.detection.DetectionService/GetDetections2D',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            detection__pb2.Detection2DArray.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def GetDetections3D(request,
