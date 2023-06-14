@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/empty.proto";
 import "geometry.proto";
 import "joint.proto";
 import "metadata.proto";
@@ -8,8 +7,8 @@ import "metadata.proto";
 package reachy.sdk.grasping;
 
 message PoseStamped {
-    Header header = 1;
-    Pose pose = 2;
+    reachy.sdk.metadata.Header header = 1;
+    reachy.sdk.geometry.Pose pose = 2;
 }
 
 message GraspPose {
@@ -27,7 +26,7 @@ message GraspPoseArray {
 
 message SpaceGraspPose {
     PoseStamped pose = 1;
-    JointState joints = 2;
+    reachy.sdk.joint.JointState joints = 2;
 }
 
 message ReachableGraspTriplet {

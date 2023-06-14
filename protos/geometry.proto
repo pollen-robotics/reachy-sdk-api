@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/empty.proto";
 import "kinematics.proto";
 
 package reachy.sdk.geometry;
@@ -20,7 +18,7 @@ message Vector3 {
 
 message Pose {
     Point position = 1;
-    Quaternion orientation = 2;
+    reachy.sdk.kinematics.Quaternion orientation = 2;
 }
 
 message Pose2D {
