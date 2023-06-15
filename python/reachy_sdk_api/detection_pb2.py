@@ -13,11 +13,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-import geometry_pb2 as geometry__pb2
+import pose_pb2 as pose__pb2
 import metadata_pb2 as metadata__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0f\x64\x65tection.proto\x12\x14reachy.sdk.detection\x1a\x1bgoogle/protobuf/empty.proto\x1a\x0egeometry.proto\x1a\x0emetadata.proto\"Q\n\x12PoseWithCovariance\x12\'\n\x04pose\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.geometry.Pose\x12\x12\n\ncovariance\x18\x02 \x03(\x01\"-\n\nHypothesis\x12\x10\n\x08\x63lass_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x01\"\x88\x01\n\x18ObjectHypothesisWithPose\x12\x34\n\nhypothesis\x18\x01 \x01(\x0b\x32 .reachy.sdk.detection.Hypothesis\x12\x36\n\x04pose\x18\x02 \x01(\x0b\x32(.reachy.sdk.detection.PoseWithCovariance\"\xda\x01\n\x0b\x44\x65tection2D\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12?\n\x07results\x18\x02 \x03(\x0b\x32..reachy.sdk.detection.ObjectHypothesisWithPose\x12\x31\n\x04\x62\x62ox\x18\x03 \x01(\x0b\x32#.reachy.sdk.detection.BoundingBox2D\x12*\n\x05image\x18\x04 \x01(\x0b\x32\x1b.reachy.sdk.detection.Image\"v\n\x10\x44\x65tection2DArray\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x35\n\ndetections\x18\x02 \x03(\x0b\x32!.reachy.sdk.detection.Detection2D\"\xe0\x01\n\x0b\x44\x65tection3D\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12?\n\x07results\x18\x02 \x03(\x0b\x32..reachy.sdk.detection.ObjectHypothesisWithPose\x12\x31\n\x04\x62\x62ox\x18\x03 \x01(\x0b\x32#.reachy.sdk.detection.BoundingBox3D\x12\x30\n\x05\x63loud\x18\x04 \x01(\x0b\x32!.reachy.sdk.detection.PointCloud2\"v\n\x10\x44\x65tection3DArray\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x35\n\ndetections\x18\x02 \x03(\x0b\x32!.reachy.sdk.detection.Detection3D\"\\\n\rBoundingBox2D\x12+\n\x06\x63\x65nter\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.geometry.Pose2D\x12\x0e\n\x06size_x\x18\x02 \x01(\x01\x12\x0e\n\x06size_y\x18\x03 \x01(\x01\"d\n\rBoundingBox3D\x12\'\n\x04pose\x18\x01 \x01(\x0b\x32\x19.reachy.sdk.geometry.Pose\x12*\n\x04size\x18\x02 \x01(\x0b\x32\x1c.reachy.sdk.geometry.Vector3\"K\n\nPointField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\x02 \x01(\r\x12\x10\n\x08\x64\x61tatype\x18\x03 \x01(\r\x12\r\n\x05\x63ount\x18\x04 \x01(\r\"\xe7\x01\n\x0bPointCloud2\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x0e\n\x06height\x18\x02 \x01(\r\x12\r\n\x05width\x18\x03 \x01(\r\x12\x30\n\x06\x66ields\x18\x04 \x03(\x0b\x32 .reachy.sdk.detection.PointField\x12\x14\n\x0cis_bigendian\x18\x05 \x01(\x08\x12\x12\n\npoint_step\x18\x06 \x01(\r\x12\x10\n\x08row_step\x18\x07 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x08 \x01(\x0c\x12\x10\n\x08is_dense\x18\t \x01(\x08\"\x97\x01\n\x05Image\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x0e\n\x06height\x18\x02 \x01(\r\x12\r\n\x05width\x18\x03 \x01(\r\x12\x10\n\x08\x65ncoding\x18\x04 \x01(\t\x12\x14\n\x0cis_bigendian\x18\x05 \x01(\r\x12\x0c\n\x04step\x18\x06 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x07 \x01(\x0c\"\x1d\n\x0bKnownLabels\x12\x0e\n\x06labels\x18\x01 \x03(\t2\xb2\x01\n\x10\x44\x65tectionService\x12Q\n\x0fGetDetections3D\x12\x16.google.protobuf.Empty\x1a&.reachy.sdk.detection.Detection3DArray\x12K\n\x0eGetKnownLabels\x12\x16.google.protobuf.Empty\x1a!.reachy.sdk.detection.KnownLabelsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0f\x64\x65tection.proto\x12\x14reachy.sdk.detection\x1a\x1bgoogle/protobuf/empty.proto\x1a\npose.proto\x1a\x0emetadata.proto\"M\n\x12PoseWithCovariance\x12#\n\x04pose\x18\x01 \x01(\x0b\x32\x15.reachy.sdk.pose.Pose\x12\x12\n\ncovariance\x18\x02 \x03(\x01\"-\n\nHypothesis\x12\x10\n\x08\x63lass_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x01\"\x88\x01\n\x18ObjectHypothesisWithPose\x12\x34\n\nhypothesis\x18\x01 \x01(\x0b\x32 .reachy.sdk.detection.Hypothesis\x12\x36\n\x04pose\x18\x02 \x01(\x0b\x32(.reachy.sdk.detection.PoseWithCovariance\"\xda\x01\n\x0b\x44\x65tection2D\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12?\n\x07results\x18\x02 \x03(\x0b\x32..reachy.sdk.detection.ObjectHypothesisWithPose\x12\x31\n\x04\x62\x62ox\x18\x03 \x01(\x0b\x32#.reachy.sdk.detection.BoundingBox2D\x12*\n\x05image\x18\x04 \x01(\x0b\x32\x1b.reachy.sdk.detection.Image\"v\n\x10\x44\x65tection2DArray\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x35\n\ndetections\x18\x02 \x03(\x0b\x32!.reachy.sdk.detection.Detection2D\"\xe0\x01\n\x0b\x44\x65tection3D\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12?\n\x07results\x18\x02 \x03(\x0b\x32..reachy.sdk.detection.ObjectHypothesisWithPose\x12\x31\n\x04\x62\x62ox\x18\x03 \x01(\x0b\x32#.reachy.sdk.detection.BoundingBox3D\x12\x30\n\x05\x63loud\x18\x04 \x01(\x0b\x32!.reachy.sdk.detection.PointCloud2\"v\n\x10\x44\x65tection3DArray\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x35\n\ndetections\x18\x02 \x03(\x0b\x32!.reachy.sdk.detection.Detection3D\"X\n\rBoundingBox2D\x12\'\n\x06\x63\x65nter\x18\x01 \x01(\x0b\x32\x17.reachy.sdk.pose.Pose2D\x12\x0e\n\x06size_x\x18\x02 \x01(\x01\x12\x0e\n\x06size_y\x18\x03 \x01(\x01\"\\\n\rBoundingBox3D\x12#\n\x04pose\x18\x01 \x01(\x0b\x32\x15.reachy.sdk.pose.Pose\x12&\n\x04size\x18\x02 \x01(\x0b\x32\x18.reachy.sdk.pose.Vector3\"K\n\nPointField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06offset\x18\x02 \x01(\r\x12\x10\n\x08\x64\x61tatype\x18\x03 \x01(\r\x12\r\n\x05\x63ount\x18\x04 \x01(\r\"\xe7\x01\n\x0bPointCloud2\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x0e\n\x06height\x18\x02 \x01(\r\x12\r\n\x05width\x18\x03 \x01(\r\x12\x30\n\x06\x66ields\x18\x04 \x03(\x0b\x32 .reachy.sdk.detection.PointField\x12\x14\n\x0cis_bigendian\x18\x05 \x01(\x08\x12\x12\n\npoint_step\x18\x06 \x01(\r\x12\x10\n\x08row_step\x18\x07 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x08 \x01(\x0c\x12\x10\n\x08is_dense\x18\t \x01(\x08\"\x97\x01\n\x05Image\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x0e\n\x06height\x18\x02 \x01(\r\x12\r\n\x05width\x18\x03 \x01(\r\x12\x10\n\x08\x65ncoding\x18\x04 \x01(\t\x12\x14\n\x0cis_bigendian\x18\x05 \x01(\r\x12\x0c\n\x04step\x18\x06 \x01(\r\x12\x0c\n\x04\x64\x61ta\x18\x07 \x01(\x0c\"\x1d\n\x0bKnownLabels\x12\x0e\n\x06labels\x18\x01 \x03(\t2\xb2\x01\n\x10\x44\x65tectionService\x12Q\n\x0fGetDetections3D\x12\x16.google.protobuf.Empty\x1a&.reachy.sdk.detection.Detection3DArray\x12K\n\x0eGetKnownLabels\x12\x16.google.protobuf.Empty\x1a!.reachy.sdk.detection.KnownLabelsb\x06proto3')
 
 
 
@@ -129,32 +129,32 @@ _DETECTIONSERVICE = DESCRIPTOR.services_by_name['DetectionService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _POSEWITHCOVARIANCE._serialized_start=102
-  _POSEWITHCOVARIANCE._serialized_end=183
-  _HYPOTHESIS._serialized_start=185
-  _HYPOTHESIS._serialized_end=230
-  _OBJECTHYPOTHESISWITHPOSE._serialized_start=233
-  _OBJECTHYPOTHESISWITHPOSE._serialized_end=369
-  _DETECTION2D._serialized_start=372
-  _DETECTION2D._serialized_end=590
-  _DETECTION2DARRAY._serialized_start=592
-  _DETECTION2DARRAY._serialized_end=710
-  _DETECTION3D._serialized_start=713
-  _DETECTION3D._serialized_end=937
-  _DETECTION3DARRAY._serialized_start=939
-  _DETECTION3DARRAY._serialized_end=1057
-  _BOUNDINGBOX2D._serialized_start=1059
-  _BOUNDINGBOX2D._serialized_end=1151
-  _BOUNDINGBOX3D._serialized_start=1153
-  _BOUNDINGBOX3D._serialized_end=1253
-  _POINTFIELD._serialized_start=1255
-  _POINTFIELD._serialized_end=1330
-  _POINTCLOUD2._serialized_start=1333
-  _POINTCLOUD2._serialized_end=1564
-  _IMAGE._serialized_start=1567
-  _IMAGE._serialized_end=1718
-  _KNOWNLABELS._serialized_start=1720
-  _KNOWNLABELS._serialized_end=1749
-  _DETECTIONSERVICE._serialized_start=1752
-  _DETECTIONSERVICE._serialized_end=1930
+  _POSEWITHCOVARIANCE._serialized_start=98
+  _POSEWITHCOVARIANCE._serialized_end=175
+  _HYPOTHESIS._serialized_start=177
+  _HYPOTHESIS._serialized_end=222
+  _OBJECTHYPOTHESISWITHPOSE._serialized_start=225
+  _OBJECTHYPOTHESISWITHPOSE._serialized_end=361
+  _DETECTION2D._serialized_start=364
+  _DETECTION2D._serialized_end=582
+  _DETECTION2DARRAY._serialized_start=584
+  _DETECTION2DARRAY._serialized_end=702
+  _DETECTION3D._serialized_start=705
+  _DETECTION3D._serialized_end=929
+  _DETECTION3DARRAY._serialized_start=931
+  _DETECTION3DARRAY._serialized_end=1049
+  _BOUNDINGBOX2D._serialized_start=1051
+  _BOUNDINGBOX2D._serialized_end=1139
+  _BOUNDINGBOX3D._serialized_start=1141
+  _BOUNDINGBOX3D._serialized_end=1233
+  _POINTFIELD._serialized_start=1235
+  _POINTFIELD._serialized_end=1310
+  _POINTCLOUD2._serialized_start=1313
+  _POINTCLOUD2._serialized_end=1544
+  _IMAGE._serialized_start=1547
+  _IMAGE._serialized_end=1698
+  _KNOWNLABELS._serialized_start=1700
+  _KNOWNLABELS._serialized_end=1729
+  _DETECTIONSERVICE._serialized_start=1732
+  _DETECTIONSERVICE._serialized_end=1910
 # @@protoc_insertion_point(module_scope)

@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "kinematics.proto";
+import "metadata.proto";
 
 package reachy.sdk.pose;
 
@@ -38,5 +39,5 @@ message Pose2D {
 
 message PoseStamped {
     reachy.sdk.metadata.Header header = 1;
-    reachy.sdk.geometry.Pose pose = 2;
+    Pose pose = 2;
 }

@@ -2,7 +2,6 @@ syntax = "proto3";
 
 import "pose.proto";
 import "joint.proto";
-import "metadata.proto";
 import "detection.proto";
 import "arm_kinematics.proto";
 
@@ -52,7 +51,7 @@ message ReachabilityAck {
 
 message GraspPoseRequest {
     reachy.sdk.detection.Detection3DArray detections = 1;
-    string method = 1;
+    string method = 2;
 }
 
 service GraspingService {
