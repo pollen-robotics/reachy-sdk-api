@@ -1,13 +1,13 @@
 syntax = "proto3";
 
 import "google/protobuf/empty.proto";
-import "geometry.proto";
+import "pose.proto";
 import "metadata.proto";
 
 package reachy.sdk.detection;
 
 message PoseWithCovariance {
-    reachy.sdk.geometry.Pose pose = 1;
+    reachy.sdk.pose.Pose pose = 1;
     repeated double covariance = 2;
 }
 
@@ -46,14 +46,14 @@ message Detection3DArray {
 }
 
 message BoundingBox2D {
-    reachy.sdk.geometry.Pose2D center = 1;
+    reachy.sdk.pose.Pose2D center = 1;
     double size_x = 2;
     double size_y = 3;
 }
 
 message BoundingBox3D {
-    reachy.sdk.geometry.Pose pose = 1;
-    reachy.sdk.geometry.Vector3 size = 2;
+    reachy.sdk.pose.Pose pose = 1;
+    reachy.sdk.pose.Vector3 size = 2;
 }
 
 message PointField {

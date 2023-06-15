@@ -2,7 +2,16 @@ syntax = "proto3";
 
 import "kinematics.proto";
 
-package reachy.sdk.geometry;
+package reachy.sdk.pose;
+
+message Tolerance {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+    double rot_x = 4;
+    double rot_y = 5;
+    double rot_z = 6;
+}
 
 message Point {
     double x = 1;
@@ -25,4 +34,9 @@ message Pose2D {
     double x = 1;
     double y = 2;
     double theta = 3;
+}
+
+message PoseStamped {
+    reachy.sdk.metadata.Header header = 1;
+    reachy.sdk.geometry.Pose pose = 2;
 }

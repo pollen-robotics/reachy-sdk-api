@@ -1,21 +1,17 @@
 syntax = "proto3";
 
-import "geometry.proto";
+import "pose.proto";
 import "joint.proto";
 import "metadata.proto";
 import "detection.proto";
+import "arm_kinematics.proto";
 
 package reachy.sdk.grasping;
-
-message PoseStamped {
-    reachy.sdk.metadata.Header header = 1;
-    reachy.sdk.geometry.Pose pose = 2;
-}
 
 message GraspPose {
     string class_id = 1;
     string grasp_id = 2;
-    PoseStamped grasp_pose = 3;
+    reachy.sdk.pose.PoseStamped grasp_pose = 3;
     double grasp_quality = 4;
     double grasp_opening = 5;
     repeated double margins = 6;
@@ -26,7 +22,7 @@ message GraspPoseArray {
 }
 
 message ArmGraspPose {
-    PoseStamped pose = 1;
+    reachy.sdk.pose.PoseStamped pose = 1;
     reachy.sdk.joint.JointState joints = 2;
 }
 
@@ -44,7 +40,23 @@ message ReachableGraspTripletArray {
     repeated ReachableGraspTriplet reachable_grasp_triplets = 1;
 }
 
+message ReachabilityRequest {
+    reachy.sdk.kinematics.ArmSide side = 1;
+    reachy.sdk.pose.Pose pose = 2;
+    reachy.sdk.pose.Tolerance tolerance = 3;
+}
+
+message ReachabilityAck {
+    bool reachable = 1;
+}
+
+message GraspPoseRequest {
+    reachy.sdk.detection.Detection3DArray detections = 1;
+    string method = 1;
+}
+
 service GraspingService {
-    rpc GetGraspPoses(reachy.sdk.detection.Detection3DArray) returns (GraspPoseArray);
+    rpc GetGraspPoses(GraspPoseRequest) returns (GraspPoseArray);
     rpc GetReachableTriplets(GraspPoseArray) returns (ReachableGraspTripletArray);
+    rpc GetReachability(ReachabilityRequest) returns (ReachabilityAck);
 }
