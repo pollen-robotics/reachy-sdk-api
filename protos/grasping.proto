@@ -56,6 +56,6 @@ message GraspPoseRequest {
 
 service GraspingService {
     rpc GetGraspPoses(GraspPoseRequest) returns (GraspPoseArray);
-    rpc GetReachableTriplets(GraspPoseArray) returns (ReachableGraspTripletArray);
+    rpc GetReachableGraspTriplets(GraspPoseArray) returns (ReachableGraspTripletArray);
     rpc GetReachability(ReachabilityRequest) returns (ReachabilityAck);
 }
