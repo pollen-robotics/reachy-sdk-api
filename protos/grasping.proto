@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 import "pose.proto";
-import "joint.proto";
 import "detection.proto";
 import "arm_kinematics.proto";
+import "metadata.proto";
 
 package reachy.sdk.grasping;
 
@@ -22,7 +22,15 @@ message GraspPoseArray {
 
 message ArmGraspPose {
     reachy.sdk.pose.PoseStamped pose = 1;
-    reachy.sdk.joint.JointState joints = 2;
+    JointState joints = 2;
+}
+
+message JointState {
+    reachy.sdk.metadata.Header header = 1;
+    repeated string name = 2;
+    repeated double position = 3;
+    repeated double velocity = 4;
+    repeated double effort = 5;
 }
 
 message ReachableGraspTriplet {
