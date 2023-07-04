@@ -50,11 +50,14 @@ message ReachableGraspTripletArray {
 message ReachabilityRequest {
     reachy.sdk.kinematics.ArmSide side = 1;
     reachy.sdk.pose.Pose pose = 2;
-    reachy.sdk.pose.Tolerance tolerance = 3;
+    JointState q0 = 3;
+    reachy.sdk.pose.Tolerance tolerance = 4;
 }
 
-message ReachabilityAck {
-    bool reachable = 1;
+message ReachabilityResponse {
+    bool success = 1;
+    JointState joint_position = 2;
+    repeated double errors = 3;
 }
 
 message GraspPoseRequest {
@@ -65,5 +68,5 @@ message GraspPoseRequest {
 service GraspingService {
     rpc GetGraspPoses(GraspPoseRequest) returns (GraspPoseArray);
     rpc GetReachableGraspTriplets(GraspPoseArray) returns (ReachableGraspTripletArray);
-    rpc GetReachability(ReachabilityRequest) returns (ReachabilityAck);
+    rpc GetReachability(ReachabilityRequest) returns (ReachabilityResponse);
 }

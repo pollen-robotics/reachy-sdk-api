@@ -27,7 +27,7 @@ class GraspingServiceStub(object):
         self.GetReachability = channel.unary_unary(
                 '/reachy.sdk.grasping.GraspingService/GetReachability',
                 request_serializer=grasping__pb2.ReachabilityRequest.SerializeToString,
-                response_deserializer=grasping__pb2.ReachabilityAck.FromString,
+                response_deserializer=grasping__pb2.ReachabilityResponse.FromString,
                 )
 
 
@@ -68,7 +68,7 @@ def add_GraspingServiceServicer_to_server(servicer, server):
             'GetReachability': grpc.unary_unary_rpc_method_handler(
                     servicer.GetReachability,
                     request_deserializer=grasping__pb2.ReachabilityRequest.FromString,
-                    response_serializer=grasping__pb2.ReachabilityAck.SerializeToString,
+                    response_serializer=grasping__pb2.ReachabilityResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -127,6 +127,6 @@ class GraspingService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.grasping.GraspingService/GetReachability',
             grasping__pb2.ReachabilityRequest.SerializeToString,
-            grasping__pb2.ReachabilityAck.FromString,
+            grasping__pb2.ReachabilityResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

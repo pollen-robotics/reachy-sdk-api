@@ -18,7 +18,7 @@ import arm_kinematics_pb2 as arm__kinematics__pb2
 import metadata_pb2 as metadata__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0egrasping.proto\x12\x13reachy.sdk.grasping\x1a\npose.proto\x1a\x0f\x64\x65tection.proto\x1a\x14\x61rm_kinematics.proto\x1a\x0emetadata.proto\"\xa0\x01\n\tGraspPose\x12\x10\n\x08\x63lass_id\x18\x01 \x01(\t\x12\x10\n\x08grasp_id\x18\x02 \x01(\t\x12\x30\n\ngrasp_pose\x18\x03 \x01(\x0b\x32\x1c.reachy.sdk.pose.PoseStamped\x12\x15\n\rgrasp_quality\x18\x04 \x01(\x01\x12\x15\n\rgrasp_opening\x18\x05 \x01(\x01\x12\x0f\n\x07margins\x18\x06 \x03(\x01\"E\n\x0eGraspPoseArray\x12\x33\n\x0bgrasp_poses\x18\x01 \x03(\x0b\x32\x1e.reachy.sdk.grasping.GraspPose\"k\n\x0c\x41rmGraspPose\x12*\n\x04pose\x18\x01 \x01(\x0b\x32\x1c.reachy.sdk.pose.PoseStamped\x12/\n\x06joints\x18\x02 \x01(\x0b\x32\x1f.reachy.sdk.grasping.JointState\"{\n\nJointState\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x0c\n\x04name\x18\x02 \x03(\t\x12\x10\n\x08position\x18\x03 \x03(\x01\x12\x10\n\x08velocity\x18\x04 \x03(\x01\x12\x0e\n\x06\x65\x66\x66ort\x18\x05 \x03(\x01\"\x95\x02\n\x15ReachableGraspTriplet\x12\x10\n\x08\x63lass_id\x18\x01 \x01(\t\x12\x10\n\x08grasp_id\x18\x02 \x01(\t\x12\x38\n\rpregrasp_pose\x18\x03 \x01(\x0b\x32!.reachy.sdk.grasping.ArmGraspPose\x12\x35\n\ngrasp_pose\x18\x04 \x01(\x0b\x32!.reachy.sdk.grasping.ArmGraspPose\x12\x39\n\x0epostgrasp_pose\x18\x05 \x01(\x0b\x32!.reachy.sdk.grasping.ArmGraspPose\x12\x15\n\rgrasp_quality\x18\x06 \x01(\x01\x12\x15\n\rgrasp_opening\x18\x07 \x01(\x01\"j\n\x1aReachableGraspTripletArray\x12L\n\x18reachable_grasp_triplets\x18\x01 \x03(\x0b\x32*.reachy.sdk.grasping.ReachableGraspTriplet\"\x97\x01\n\x13ReachabilityRequest\x12,\n\x04side\x18\x01 \x01(\x0e\x32\x1e.reachy.sdk.kinematics.ArmSide\x12#\n\x04pose\x18\x02 \x01(\x0b\x32\x15.reachy.sdk.pose.Pose\x12-\n\ttolerance\x18\x03 \x01(\x0b\x32\x1a.reachy.sdk.pose.Tolerance\"$\n\x0fReachabilityAck\x12\x11\n\treachable\x18\x01 \x01(\x08\"^\n\x10GraspPoseRequest\x12:\n\ndetections\x18\x01 \x01(\x0b\x32&.reachy.sdk.detection.Detection3DArray\x12\x0e\n\x06method\x18\x02 \x01(\t2\xc4\x02\n\x0fGraspingService\x12[\n\rGetGraspPoses\x12%.reachy.sdk.grasping.GraspPoseRequest\x1a#.reachy.sdk.grasping.GraspPoseArray\x12q\n\x19GetReachableGraspTriplets\x12#.reachy.sdk.grasping.GraspPoseArray\x1a/.reachy.sdk.grasping.ReachableGraspTripletArray\x12\x61\n\x0fGetReachability\x12(.reachy.sdk.grasping.ReachabilityRequest\x1a$.reachy.sdk.grasping.ReachabilityAckb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0egrasping.proto\x12\x13reachy.sdk.grasping\x1a\npose.proto\x1a\x0f\x64\x65tection.proto\x1a\x14\x61rm_kinematics.proto\x1a\x0emetadata.proto\"\xa0\x01\n\tGraspPose\x12\x10\n\x08\x63lass_id\x18\x01 \x01(\t\x12\x10\n\x08grasp_id\x18\x02 \x01(\t\x12\x30\n\ngrasp_pose\x18\x03 \x01(\x0b\x32\x1c.reachy.sdk.pose.PoseStamped\x12\x15\n\rgrasp_quality\x18\x04 \x01(\x01\x12\x15\n\rgrasp_opening\x18\x05 \x01(\x01\x12\x0f\n\x07margins\x18\x06 \x03(\x01\"E\n\x0eGraspPoseArray\x12\x33\n\x0bgrasp_poses\x18\x01 \x03(\x0b\x32\x1e.reachy.sdk.grasping.GraspPose\"k\n\x0c\x41rmGraspPose\x12*\n\x04pose\x18\x01 \x01(\x0b\x32\x1c.reachy.sdk.pose.PoseStamped\x12/\n\x06joints\x18\x02 \x01(\x0b\x32\x1f.reachy.sdk.grasping.JointState\"{\n\nJointState\x12+\n\x06header\x18\x01 \x01(\x0b\x32\x1b.reachy.sdk.metadata.Header\x12\x0c\n\x04name\x18\x02 \x03(\t\x12\x10\n\x08position\x18\x03 \x03(\x01\x12\x10\n\x08velocity\x18\x04 \x03(\x01\x12\x0e\n\x06\x65\x66\x66ort\x18\x05 \x03(\x01\"\x95\x02\n\x15ReachableGraspTriplet\x12\x10\n\x08\x63lass_id\x18\x01 \x01(\t\x12\x10\n\x08grasp_id\x18\x02 \x01(\t\x12\x38\n\rpregrasp_pose\x18\x03 \x01(\x0b\x32!.reachy.sdk.grasping.ArmGraspPose\x12\x35\n\ngrasp_pose\x18\x04 \x01(\x0b\x32!.reachy.sdk.grasping.ArmGraspPose\x12\x39\n\x0epostgrasp_pose\x18\x05 \x01(\x0b\x32!.reachy.sdk.grasping.ArmGraspPose\x12\x15\n\rgrasp_quality\x18\x06 \x01(\x01\x12\x15\n\rgrasp_opening\x18\x07 \x01(\x01\"j\n\x1aReachableGraspTripletArray\x12L\n\x18reachable_grasp_triplets\x18\x01 \x03(\x0b\x32*.reachy.sdk.grasping.ReachableGraspTriplet\"\xc4\x01\n\x13ReachabilityRequest\x12,\n\x04side\x18\x01 \x01(\x0e\x32\x1e.reachy.sdk.kinematics.ArmSide\x12#\n\x04pose\x18\x02 \x01(\x0b\x32\x15.reachy.sdk.pose.Pose\x12+\n\x02q0\x18\x03 \x01(\x0b\x32\x1f.reachy.sdk.grasping.JointState\x12-\n\ttolerance\x18\x04 \x01(\x0b\x32\x1a.reachy.sdk.pose.Tolerance\"p\n\x14ReachabilityResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x37\n\x0ejoint_position\x18\x02 \x01(\x0b\x32\x1f.reachy.sdk.grasping.JointState\x12\x0e\n\x06\x65rrors\x18\x03 \x03(\x01\"^\n\x10GraspPoseRequest\x12:\n\ndetections\x18\x01 \x01(\x0b\x32&.reachy.sdk.detection.Detection3DArray\x12\x0e\n\x06method\x18\x02 \x01(\t2\xc9\x02\n\x0fGraspingService\x12[\n\rGetGraspPoses\x12%.reachy.sdk.grasping.GraspPoseRequest\x1a#.reachy.sdk.grasping.GraspPoseArray\x12q\n\x19GetReachableGraspTriplets\x12#.reachy.sdk.grasping.GraspPoseArray\x1a/.reachy.sdk.grasping.ReachableGraspTripletArray\x12\x66\n\x0fGetReachability\x12(.reachy.sdk.grasping.ReachabilityRequest\x1a).reachy.sdk.grasping.ReachabilityResponseb\x06proto3')
 
 
 
@@ -29,7 +29,7 @@ _JOINTSTATE = DESCRIPTOR.message_types_by_name['JointState']
 _REACHABLEGRASPTRIPLET = DESCRIPTOR.message_types_by_name['ReachableGraspTriplet']
 _REACHABLEGRASPTRIPLETARRAY = DESCRIPTOR.message_types_by_name['ReachableGraspTripletArray']
 _REACHABILITYREQUEST = DESCRIPTOR.message_types_by_name['ReachabilityRequest']
-_REACHABILITYACK = DESCRIPTOR.message_types_by_name['ReachabilityAck']
+_REACHABILITYRESPONSE = DESCRIPTOR.message_types_by_name['ReachabilityResponse']
 _GRASPPOSEREQUEST = DESCRIPTOR.message_types_by_name['GraspPoseRequest']
 GraspPose = _reflection.GeneratedProtocolMessageType('GraspPose', (_message.Message,), {
   'DESCRIPTOR' : _GRASPPOSE,
@@ -80,12 +80,12 @@ ReachabilityRequest = _reflection.GeneratedProtocolMessageType('ReachabilityRequ
   })
 _sym_db.RegisterMessage(ReachabilityRequest)
 
-ReachabilityAck = _reflection.GeneratedProtocolMessageType('ReachabilityAck', (_message.Message,), {
-  'DESCRIPTOR' : _REACHABILITYACK,
+ReachabilityResponse = _reflection.GeneratedProtocolMessageType('ReachabilityResponse', (_message.Message,), {
+  'DESCRIPTOR' : _REACHABILITYRESPONSE,
   '__module__' : 'grasping_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.grasping.ReachabilityAck)
+  # @@protoc_insertion_point(class_scope:reachy.sdk.grasping.ReachabilityResponse)
   })
-_sym_db.RegisterMessage(ReachabilityAck)
+_sym_db.RegisterMessage(ReachabilityResponse)
 
 GraspPoseRequest = _reflection.GeneratedProtocolMessageType('GraspPoseRequest', (_message.Message,), {
   'DESCRIPTOR' : _GRASPPOSEREQUEST,
@@ -111,11 +111,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _REACHABLEGRASPTRIPLETARRAY._serialized_start=854
   _REACHABLEGRASPTRIPLETARRAY._serialized_end=960
   _REACHABILITYREQUEST._serialized_start=963
-  _REACHABILITYREQUEST._serialized_end=1114
-  _REACHABILITYACK._serialized_start=1116
-  _REACHABILITYACK._serialized_end=1152
-  _GRASPPOSEREQUEST._serialized_start=1154
-  _GRASPPOSEREQUEST._serialized_end=1248
-  _GRASPINGSERVICE._serialized_start=1251
-  _GRASPINGSERVICE._serialized_end=1575
+  _REACHABILITYREQUEST._serialized_end=1159
+  _REACHABILITYRESPONSE._serialized_start=1161
+  _REACHABILITYRESPONSE._serialized_end=1273
+  _GRASPPOSEREQUEST._serialized_start=1275
+  _GRASPPOSEREQUEST._serialized_end=1369
+  _GRASPINGSERVICE._serialized_start=1372
+  _GRASPINGSERVICE._serialized_end=1701
 # @@protoc_insertion_point(module_scope)
