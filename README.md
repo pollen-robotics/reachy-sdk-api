@@ -26,6 +26,20 @@ pip install -e python
 Open reachy_sdk.sln in Visual Studio\
 Click Build > Build Solution
 
+* For js (on Ubuntu):
+
+```bash
+cd ~/reachy-sdk-api/protos
+protoc --js_out=../js/ *.proto
+```
+
+* For ts (on Ubuntu):
+
+```bash
+sudo npm install -g ts-protoc-gen
+cd ~/reachy-sdk-api/protos
+protoc --plugin=protoc-gen-ts=/usr/local/bin/protoc-gen-ts --ts_out=../ts/ *.proto
+```
 
 ## Services
 ### In *[joint.proto](https://github.com/pollen-robotics/reachy-sdk-api/blob/main/protos/joint.proto)*:
