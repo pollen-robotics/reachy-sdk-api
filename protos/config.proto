@@ -4,11 +4,26 @@ import "google/protobuf/empty.proto";
 
 package reachy.sdk.config;
 
+enum Parts {
+    HEAD = 0;
+    L_ARM = 1;
+    L_GRIPPER = 2;
+    R_ARM = 3;
+    R_GRIPPER = 4;
+    MOBILE_BASE = 5;
+    LIFT = 6;
+}
+
 message ConfigReachy {
-    uint32 generation = 1;
-    bool mobile_base_presence = 2;
-    repeated float camera_parameters = 3;
-    string config = 4;
+    string config = 1;
+    bool with_mobile_base = 2;
+    repeated Parts enabled_parts = 3;
+    repeated Parts disabled_parts = 4;
+
+    string core_software_version = 5;
+
+    string robot_serial_number = 6;
+    string mobile_base_serial_number = 7;    
 }
 
 service ConfigService {
