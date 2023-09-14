@@ -71,17 +71,21 @@ message BatteryLevel {
     google.protobuf.FloatValue level = 1;
 }
 
-message MobileBasePresence {
-    google.protobuf.BoolValue presence = 1;
-    google.protobuf.FloatValue model_version = 2;
+message MobileBaseVersion {
+    google.protobuf.FloatValue model_version = 1;
 }
 
-message SetZuuuSafetyRequest {
+message LidarSafety {
     google.protobuf.BoolValue safety_on = 1;
+    google.protobuf.FloatValue distance = 2;
 }
 
 message MobilityServiceAck {
     google.protobuf.BoolValue success = 1;
+}
+
+message LidarMap {
+    bytes data = 1;
 }
 
 service MobilityService {
@@ -101,9 +105,11 @@ service MobilityService {
     rpc GetBatteryLevel(google.protobuf.Empty) returns (BatteryLevel);
     rpc GetOdometry(google.protobuf.Empty) returns (OdometryVector);
     rpc ResetOdometry(google.protobuf.Empty) returns (MobilityServiceAck);
-    rpc SetZuuuSafety(SetZuuuSafetyRequest) returns (MobilityServiceAck);
-}
 
-service MobileBasePresenceService {
-    rpc GetMobileBasePresence(google.protobuf.Empty) returns (MobileBasePresence);
+    rpc SetZuuuSafety(LidarSafety) returns (MobilityServiceAck);
+    rpc GetZuuuSafety(google.protobuf.Empty) returns (LidarSafety);
+
+    rpc GetLidarMap(google.protobuf.Empty) returns (LidarMap);
+
+    rpc GetMobileBaseVersion(google.protobuf.Empty) returns (MobileBaseVersion);
 }
