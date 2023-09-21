@@ -72,8 +72,23 @@ class MobilityServiceStub(object):
                 )
         self.SetZuuuSafety = channel.unary_unary(
                 '/reachy.sdk.mobility.MobilityService/SetZuuuSafety',
-                request_serializer=mobile__platform__reachy__pb2.SetZuuuSafetyRequest.SerializeToString,
+                request_serializer=mobile__platform__reachy__pb2.LidarSafety.SerializeToString,
                 response_deserializer=mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
+                )
+        self.GetZuuuSafety = channel.unary_unary(
+                '/reachy.sdk.mobility.MobilityService/GetZuuuSafety',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=mobile__platform__reachy__pb2.LidarSafety.FromString,
+                )
+        self.GetLidarMap = channel.unary_unary(
+                '/reachy.sdk.mobility.MobilityService/GetLidarMap',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=mobile__platform__reachy__pb2.LidarMap.FromString,
+                )
+        self.GetMobileBaseVersion = channel.unary_unary(
+                '/reachy.sdk.mobility.MobilityService/GetMobileBaseVersion',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=mobile__platform__reachy__pb2.MobileBaseVersion.FromString,
                 )
 
 
@@ -155,6 +170,24 @@ class MobilityServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetZuuuSafety(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetLidarMap(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetMobileBaseVersion(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_MobilityServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -215,8 +248,23 @@ def add_MobilityServiceServicer_to_server(servicer, server):
             ),
             'SetZuuuSafety': grpc.unary_unary_rpc_method_handler(
                     servicer.SetZuuuSafety,
-                    request_deserializer=mobile__platform__reachy__pb2.SetZuuuSafetyRequest.FromString,
+                    request_deserializer=mobile__platform__reachy__pb2.LidarSafety.FromString,
                     response_serializer=mobile__platform__reachy__pb2.MobilityServiceAck.SerializeToString,
+            ),
+            'GetZuuuSafety': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetZuuuSafety,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=mobile__platform__reachy__pb2.LidarSafety.SerializeToString,
+            ),
+            'GetLidarMap': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetLidarMap,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=mobile__platform__reachy__pb2.LidarMap.SerializeToString,
+            ),
+            'GetMobileBaseVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMobileBaseVersion,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=mobile__platform__reachy__pb2.MobileBaseVersion.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -427,8 +475,59 @@ class MobilityService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/SetZuuuSafety',
-            mobile__platform__reachy__pb2.SetZuuuSafetyRequest.SerializeToString,
+            mobile__platform__reachy__pb2.LidarSafety.SerializeToString,
             mobile__platform__reachy__pb2.MobilityServiceAck.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetZuuuSafety(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/GetZuuuSafety',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            mobile__platform__reachy__pb2.LidarSafety.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetLidarMap(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/GetLidarMap',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            mobile__platform__reachy__pb2.LidarMap.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMobileBaseVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/reachy.sdk.mobility.MobilityService/GetMobileBaseVersion',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            mobile__platform__reachy__pb2.MobileBaseVersion.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

@@ -17,7 +17,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cmobile_platform_reachy.proto\x12\x13reachy.sdk.mobility\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x8d\x01\n\x0f\x44irectionVector\x12&\n\x01x\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12&\n\x01y\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12*\n\x05theta\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"Q\n\x16TargetDirectionCommand\x12\x37\n\tdirection\x18\x01 \x01(\x0b\x32$.reachy.sdk.mobility.DirectionVector\"\x97\x01\n\nGoToVector\x12+\n\x06x_goal\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12+\n\x06y_goal\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12/\n\ntheta_goal\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"\xc5\x01\n\x0eSetSpeedVector\x12*\n\x05x_vel\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12*\n\x05y_vel\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12,\n\x07rot_vel\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\x08\x64uration\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"\x8c\x01\n\x0eOdometryVector\x12&\n\x01x\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12&\n\x01y\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12*\n\x05theta\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"\xd3\x01\n\x14\x44istanceToGoalVector\x12,\n\x07\x64\x65lta_x\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12,\n\x07\x64\x65lta_y\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0b\x64\x65lta_theta\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\x08\x64istance\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"P\n\x12\x43ontrolModeCommand\x12:\n\x04mode\x18\x01 \x01(\x0e\x32,.reachy.sdk.mobility.ControlModePossiblities\"J\n\x0fZuuuModeCommand\x12\x37\n\x04mode\x18\x01 \x01(\x0e\x32).reachy.sdk.mobility.ZuuuModePossiblities\":\n\x0c\x42\x61tteryLevel\x12*\n\x05level\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"v\n\x12MobileBasePresence\x12,\n\x08presence\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rmodel_version\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"E\n\x14SetZuuuSafetyRequest\x12-\n\tsafety_on\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"A\n\x12MobilityServiceAck\x12+\n\x07success\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue*H\n\x17\x43ontrolModePossiblities\x12\x15\n\x11NONE_CONTROL_MODE\x10\x00\x12\r\n\tOPEN_LOOP\x10\x01\x12\x07\n\x03PID\x10\x02*{\n\x14ZuuuModePossiblities\x12\x12\n\x0eNONE_ZUUU_MODE\x10\x00\x12\x0b\n\x07\x43MD_VEL\x10\x01\x12\t\n\x05\x42RAKE\x10\x02\x12\x0e\n\nFREE_WHEEL\x10\x03\x12\t\n\x05SPEED\x10\x04\x12\x08\n\x04GOTO\x10\x05\x12\x12\n\x0e\x45MERGENCY_STOP\x10\x06\x32\xb4\x08\n\x0fMobilityService\x12\x65\n\rSendDirection\x12+.reachy.sdk.mobility.TargetDirectionCommand\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12\\\n\x0cSendSetSpeed\x12#.reachy.sdk.mobility.SetSpeedVector\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12T\n\x08SendGoTo\x12\x1f.reachy.sdk.mobility.GoToVector\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12S\n\x0e\x44istanceToGoal\x12\x16.google.protobuf.Empty\x1a).reachy.sdk.mobility.DistanceToGoalVector\x12\x62\n\x0eSetControlMode\x12\'.reachy.sdk.mobility.ControlModeCommand\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12Q\n\x0eGetControlMode\x12\x16.google.protobuf.Empty\x1a\'.reachy.sdk.mobility.ControlModeCommand\x12\\\n\x0bSetZuuuMode\x12$.reachy.sdk.mobility.ZuuuModeCommand\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12K\n\x0bGetZuuuMode\x12\x16.google.protobuf.Empty\x1a$.reachy.sdk.mobility.ZuuuModeCommand\x12L\n\x0fGetBatteryLevel\x12\x16.google.protobuf.Empty\x1a!.reachy.sdk.mobility.BatteryLevel\x12J\n\x0bGetOdometry\x12\x16.google.protobuf.Empty\x1a#.reachy.sdk.mobility.OdometryVector\x12P\n\rResetOdometry\x12\x16.google.protobuf.Empty\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12\x63\n\rSetZuuuSafety\x12).reachy.sdk.mobility.SetZuuuSafetyRequest\x1a\'.reachy.sdk.mobility.MobilityServiceAck2u\n\x19MobileBasePresenceService\x12X\n\x15GetMobileBasePresence\x12\x16.google.protobuf.Empty\x1a\'.reachy.sdk.mobility.MobileBasePresenceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cmobile_platform_reachy.proto\x12\x13reachy.sdk.mobility\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x8d\x01\n\x0f\x44irectionVector\x12&\n\x01x\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12&\n\x01y\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12*\n\x05theta\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"Q\n\x16TargetDirectionCommand\x12\x37\n\tdirection\x18\x01 \x01(\x0b\x32$.reachy.sdk.mobility.DirectionVector\"\x97\x01\n\nGoToVector\x12+\n\x06x_goal\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12+\n\x06y_goal\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12/\n\ntheta_goal\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"\xc5\x01\n\x0eSetSpeedVector\x12*\n\x05x_vel\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12*\n\x05y_vel\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12,\n\x07rot_vel\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\x08\x64uration\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"\x8c\x01\n\x0eOdometryVector\x12&\n\x01x\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12&\n\x01y\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12*\n\x05theta\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"\xd3\x01\n\x14\x44istanceToGoalVector\x12,\n\x07\x64\x65lta_x\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12,\n\x07\x64\x65lta_y\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x30\n\x0b\x64\x65lta_theta\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12-\n\x08\x64istance\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"P\n\x12\x43ontrolModeCommand\x12:\n\x04mode\x18\x01 \x01(\x0e\x32,.reachy.sdk.mobility.ControlModePossiblities\"J\n\x0fZuuuModeCommand\x12\x37\n\x04mode\x18\x01 \x01(\x0e\x32).reachy.sdk.mobility.ZuuuModePossiblities\":\n\x0c\x42\x61tteryLevel\x12*\n\x05level\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"v\n\x12MobileBasePresence\x12,\n\x08presence\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\rmodel_version\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"G\n\x11MobileBaseVersion\x12\x32\n\rmodel_version\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"\xaa\x01\n\x0bLidarSafety\x12-\n\tsafety_on\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x34\n\x0fsafety_distance\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\x12\x36\n\x11\x63ritical_distance\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.FloatValue\"A\n\x12MobilityServiceAck\x12+\n\x07success\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x18\n\x08LidarMap\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c*H\n\x17\x43ontrolModePossiblities\x12\x15\n\x11NONE_CONTROL_MODE\x10\x00\x12\r\n\tOPEN_LOOP\x10\x01\x12\x07\n\x03PID\x10\x02*{\n\x14ZuuuModePossiblities\x12\x12\n\x0eNONE_ZUUU_MODE\x10\x00\x12\x0b\n\x07\x43MD_VEL\x10\x01\x12\t\n\x05\x42RAKE\x10\x02\x12\x0e\n\nFREE_WHEEL\x10\x03\x12\t\n\x05SPEED\x10\x04\x12\x08\n\x04GOTO\x10\x05\x12\x12\n\x0e\x45MERGENCY_STOP\x10\x06\x32\x94\n\n\x0fMobilityService\x12\x65\n\rSendDirection\x12+.reachy.sdk.mobility.TargetDirectionCommand\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12\\\n\x0cSendSetSpeed\x12#.reachy.sdk.mobility.SetSpeedVector\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12T\n\x08SendGoTo\x12\x1f.reachy.sdk.mobility.GoToVector\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12S\n\x0e\x44istanceToGoal\x12\x16.google.protobuf.Empty\x1a).reachy.sdk.mobility.DistanceToGoalVector\x12\x62\n\x0eSetControlMode\x12\'.reachy.sdk.mobility.ControlModeCommand\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12Q\n\x0eGetControlMode\x12\x16.google.protobuf.Empty\x1a\'.reachy.sdk.mobility.ControlModeCommand\x12\\\n\x0bSetZuuuMode\x12$.reachy.sdk.mobility.ZuuuModeCommand\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12K\n\x0bGetZuuuMode\x12\x16.google.protobuf.Empty\x1a$.reachy.sdk.mobility.ZuuuModeCommand\x12L\n\x0fGetBatteryLevel\x12\x16.google.protobuf.Empty\x1a!.reachy.sdk.mobility.BatteryLevel\x12J\n\x0bGetOdometry\x12\x16.google.protobuf.Empty\x1a#.reachy.sdk.mobility.OdometryVector\x12P\n\rResetOdometry\x12\x16.google.protobuf.Empty\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12Z\n\rSetZuuuSafety\x12 .reachy.sdk.mobility.LidarSafety\x1a\'.reachy.sdk.mobility.MobilityServiceAck\x12I\n\rGetZuuuSafety\x12\x16.google.protobuf.Empty\x1a .reachy.sdk.mobility.LidarSafety\x12\x44\n\x0bGetLidarMap\x12\x16.google.protobuf.Empty\x1a\x1d.reachy.sdk.mobility.LidarMap\x12V\n\x14GetMobileBaseVersion\x12\x16.google.protobuf.Empty\x1a&.reachy.sdk.mobility.MobileBaseVersion2u\n\x19MobileBasePresenceService\x12X\n\x15GetMobileBasePresence\x12\x16.google.protobuf.Empty\x1a\'.reachy.sdk.mobility.MobileBasePresenceb\x06proto3')
 
 _CONTROLMODEPOSSIBLITIES = DESCRIPTOR.enum_types_by_name['ControlModePossiblities']
 ControlModePossiblities = enum_type_wrapper.EnumTypeWrapper(_CONTROLMODEPOSSIBLITIES)
@@ -45,8 +45,10 @@ _CONTROLMODECOMMAND = DESCRIPTOR.message_types_by_name['ControlModeCommand']
 _ZUUUMODECOMMAND = DESCRIPTOR.message_types_by_name['ZuuuModeCommand']
 _BATTERYLEVEL = DESCRIPTOR.message_types_by_name['BatteryLevel']
 _MOBILEBASEPRESENCE = DESCRIPTOR.message_types_by_name['MobileBasePresence']
-_SETZUUUSAFETYREQUEST = DESCRIPTOR.message_types_by_name['SetZuuuSafetyRequest']
+_MOBILEBASEVERSION = DESCRIPTOR.message_types_by_name['MobileBaseVersion']
+_LIDARSAFETY = DESCRIPTOR.message_types_by_name['LidarSafety']
 _MOBILITYSERVICEACK = DESCRIPTOR.message_types_by_name['MobilityServiceAck']
+_LIDARMAP = DESCRIPTOR.message_types_by_name['LidarMap']
 DirectionVector = _reflection.GeneratedProtocolMessageType('DirectionVector', (_message.Message,), {
   'DESCRIPTOR' : _DIRECTIONVECTOR,
   '__module__' : 'mobile_platform_reachy_pb2'
@@ -117,12 +119,19 @@ MobileBasePresence = _reflection.GeneratedProtocolMessageType('MobileBasePresenc
   })
 _sym_db.RegisterMessage(MobileBasePresence)
 
-SetZuuuSafetyRequest = _reflection.GeneratedProtocolMessageType('SetZuuuSafetyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _SETZUUUSAFETYREQUEST,
+MobileBaseVersion = _reflection.GeneratedProtocolMessageType('MobileBaseVersion', (_message.Message,), {
+  'DESCRIPTOR' : _MOBILEBASEVERSION,
   '__module__' : 'mobile_platform_reachy_pb2'
-  # @@protoc_insertion_point(class_scope:reachy.sdk.mobility.SetZuuuSafetyRequest)
+  # @@protoc_insertion_point(class_scope:reachy.sdk.mobility.MobileBaseVersion)
   })
-_sym_db.RegisterMessage(SetZuuuSafetyRequest)
+_sym_db.RegisterMessage(MobileBaseVersion)
+
+LidarSafety = _reflection.GeneratedProtocolMessageType('LidarSafety', (_message.Message,), {
+  'DESCRIPTOR' : _LIDARSAFETY,
+  '__module__' : 'mobile_platform_reachy_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.mobility.LidarSafety)
+  })
+_sym_db.RegisterMessage(LidarSafety)
 
 MobilityServiceAck = _reflection.GeneratedProtocolMessageType('MobilityServiceAck', (_message.Message,), {
   'DESCRIPTOR' : _MOBILITYSERVICEACK,
@@ -131,15 +140,22 @@ MobilityServiceAck = _reflection.GeneratedProtocolMessageType('MobilityServiceAc
   })
 _sym_db.RegisterMessage(MobilityServiceAck)
 
+LidarMap = _reflection.GeneratedProtocolMessageType('LidarMap', (_message.Message,), {
+  'DESCRIPTOR' : _LIDARMAP,
+  '__module__' : 'mobile_platform_reachy_pb2'
+  # @@protoc_insertion_point(class_scope:reachy.sdk.mobility.LidarMap)
+  })
+_sym_db.RegisterMessage(LidarMap)
+
 _MOBILITYSERVICE = DESCRIPTOR.services_by_name['MobilityService']
 _MOBILEBASEPRESENCESERVICE = DESCRIPTOR.services_by_name['MobileBasePresenceService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _CONTROLMODEPOSSIBLITIES._serialized_start=1528
-  _CONTROLMODEPOSSIBLITIES._serialized_end=1600
-  _ZUUUMODEPOSSIBLITIES._serialized_start=1602
-  _ZUUUMODEPOSSIBLITIES._serialized_end=1725
+  _CONTROLMODEPOSSIBLITIES._serialized_start=1729
+  _CONTROLMODEPOSSIBLITIES._serialized_end=1801
+  _ZUUUMODEPOSSIBLITIES._serialized_start=1803
+  _ZUUUMODEPOSSIBLITIES._serialized_end=1926
   _DIRECTIONVECTOR._serialized_start=115
   _DIRECTIONVECTOR._serialized_end=256
   _TARGETDIRECTIONCOMMAND._serialized_start=258
@@ -160,12 +176,16 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _BATTERYLEVEL._serialized_end=1268
   _MOBILEBASEPRESENCE._serialized_start=1270
   _MOBILEBASEPRESENCE._serialized_end=1388
-  _SETZUUUSAFETYREQUEST._serialized_start=1390
-  _SETZUUUSAFETYREQUEST._serialized_end=1459
-  _MOBILITYSERVICEACK._serialized_start=1461
-  _MOBILITYSERVICEACK._serialized_end=1526
-  _MOBILITYSERVICE._serialized_start=1728
-  _MOBILITYSERVICE._serialized_end=2804
-  _MOBILEBASEPRESENCESERVICE._serialized_start=2806
-  _MOBILEBASEPRESENCESERVICE._serialized_end=2923
+  _MOBILEBASEVERSION._serialized_start=1390
+  _MOBILEBASEVERSION._serialized_end=1461
+  _LIDARSAFETY._serialized_start=1464
+  _LIDARSAFETY._serialized_end=1634
+  _MOBILITYSERVICEACK._serialized_start=1636
+  _MOBILITYSERVICEACK._serialized_end=1701
+  _LIDARMAP._serialized_start=1703
+  _LIDARMAP._serialized_end=1727
+  _MOBILITYSERVICE._serialized_start=1929
+  _MOBILITYSERVICE._serialized_end=3229
+  _MOBILEBASEPRESENCESERVICE._serialized_start=3231
+  _MOBILEBASEPRESENCESERVICE._serialized_end=3348
 # @@protoc_insertion_point(module_scope)

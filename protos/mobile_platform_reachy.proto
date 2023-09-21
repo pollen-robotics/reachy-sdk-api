@@ -71,13 +71,19 @@ message BatteryLevel {
     google.protobuf.FloatValue level = 1;
 }
 
+message MobileBasePresence {
+    google.protobuf.BoolValue presence = 1;
+    google.protobuf.FloatValue model_version = 2;
+}
+
 message MobileBaseVersion {
     google.protobuf.FloatValue model_version = 1;
 }
 
 message LidarSafety {
     google.protobuf.BoolValue safety_on = 1;
-    google.protobuf.FloatValue distance = 2;
+    google.protobuf.FloatValue safety_distance = 2;
+    google.protobuf.FloatValue critical_distance = 3;
 }
 
 message MobilityServiceAck {
@@ -112,4 +118,8 @@ service MobilityService {
     rpc GetLidarMap(google.protobuf.Empty) returns (LidarMap);
 
     rpc GetMobileBaseVersion(google.protobuf.Empty) returns (MobileBaseVersion);
+}
+
+service MobileBasePresenceService {
+    rpc GetMobileBasePresence(google.protobuf.Empty) returns (MobileBasePresence);
 }
